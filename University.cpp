@@ -15,3 +15,7 @@ void University::printMenu() {
     std::cout << "3. Search students \n";
     std::cout << "4. Exit\n";
 }
+
+University::MenuOption University::menuEngine() {
+    
+}
