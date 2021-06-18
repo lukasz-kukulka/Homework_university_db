@@ -20,7 +20,8 @@ University::MenuOption University::menuEngine() {
     std::cout << "Please insert you choice: ";
     uint8_t choice = 0;
     std::cin >> choice;
-    switch (static_cast<MenuOption>(choice))
+    menuOption_ = static_cast<MenuOption>(choice);
+    switch (menuOption_)
     {
         case MenuOption::AddStudents : {
 
@@ -37,5 +38,5 @@ University::MenuOption University::menuEngine() {
         default:
         break;
     }
-    return static_cast<MenuOption>(choice);
+    return menuOption_;
 }

@@ -21,5 +21,5 @@ public:
 private:
     void printMenu();
     MenuOption menuEngine();
-    MenuOption menuOption { MenuOption::BaseMenu };
+    MenuOption menuOption_ { MenuOption::BaseMenu };
 };
