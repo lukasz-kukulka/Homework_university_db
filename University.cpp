@@ -40,3 +40,21 @@ University::MenuOption University::menuEngine() {
     }
     return menuOption_;
 }
+
+void University::addNewStudent() {
+    std::cout << "Please insert student name: ";
+    std::cin >> name_;
+    std::cout << '\n';
+    std::cout << "Please insert student surname: ";
+    std::cin >> surname_;
+    std::cout << '\n';
+    std::cout << "Please insert student index number: ";
+    std::cin >> indexNumber_;
+    std::cout << '\n';
+    std::cout << "Please insert student PESEL number: ";
+    std::cin >> peselNumber_;
+    std::cout << '\n';
+    std::cout << "Please insert student surname: ";
+    std::cin >> gender_;
+    std::cout << '\n';
+}

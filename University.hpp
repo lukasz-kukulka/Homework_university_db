@@ -1,4 +1,5 @@
 #pragma once
+#include "Student.hpp"
 
 class University {
 public:
@@ -20,6 +21,13 @@ public:
 
 private:
     void printMenu();
+    void addNewStudent();
+
     MenuOption menuEngine();
     MenuOption menuOption_ { MenuOption::BaseMenu };
+    std::string name_;
+    std::string surname_;
+    size_t indexNumber_;
+    uint64_t peselNumber_;
+    size_t gender_;
 };
