@@ -31,6 +31,7 @@ private:
 
     bool validatingName();
     bool validatingSurname();
+    bool validatingIndexNumber();
 
     MenuOption menuEngine();
 

@@ -50,7 +50,7 @@ void University::insertStudentName() {
         std::cout << "Please insert student name: ";
         std::cin >> name_;
         std::cout << '\n';
-    } while (validatingName() == true);
+    } while (validatingName() == false);
 }
 
 bool University::validatingName() {
@@ -63,7 +63,7 @@ void University::insertStudentSurname() {
         std::cout << "Please insert student surname: ";
         std::cin >> surname_;
         std::cout << '\n';
-    } while (validatingSurname() == true);
+    } while (validatingSurname() == false);
 }
 
 bool University::validatingSurname() {
@@ -72,9 +72,16 @@ bool University::validatingSurname() {
 }
 
 void University::insertStudentIndexNumber() {
-    std::cout << "Please insert student index number: ";
-    std::cin >> indexNumber_;
-    std::cout << '\n';
+    do {
+        std::cout << "Please insert student index number: ";
+        std::cin >> indexNumber_;
+        std::cout << '\n';
+    } while (validatingIndexNumber() == false)
+}
+
+bool University::validatingIndexNumber() {
+    //TODO
+    return true;
 }
 
 void University::insertStudentPeselNumber() {
