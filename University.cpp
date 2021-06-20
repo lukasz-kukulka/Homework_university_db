@@ -46,9 +46,16 @@ void University::addNewStudent() {
 }
 
 void University::insertStudentName() {
-    std::cout << "Please insert student name: ";
-    std::cin >> name_;
-    std::cout << '\n';
+    do {
+        std::cout << "Please insert student name: ";
+        std::cin >> name_;
+        std::cout << '\n';
+    } while (validatingName() == true);
+}
+
+bool University::validatingName() {
+    //TODO
+    return true;
 }
 
 void University::insertStudentSurname() {

@@ -29,6 +29,8 @@ private:
     void insertStudentPeselNumber();
     void insertStudentGender();
 
+    bool validatingName();
+
     MenuOption menuEngine();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
