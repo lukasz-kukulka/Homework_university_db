@@ -1,6 +1,7 @@
 #pragma once
 #include "Student.hpp"
 
+#include <vector>
 class University {
 public:
     University();
@@ -43,4 +44,5 @@ private:
     size_t indexNumber_;
     uint64_t peselNumber_;
     size_t gender_;
+    std::vector<Student>students;
 };

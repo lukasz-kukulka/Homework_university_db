@@ -42,7 +42,12 @@ University::MenuOption University::menuEngine() {
 }
 
 void University::addNewStudent() {
-
+    insertStudentName();
+    insertStudentSurname();
+    insertStudentIndexNumber();
+    insertStudentPeselNumber();
+    insertStudentGender();
+    students.push_back(Student(name_, surname_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
 }
 
 void University::insertStudentName() {
