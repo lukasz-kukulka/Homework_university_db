@@ -43,9 +43,7 @@ University::MenuOption University::menuEngine() {
 
 void University::addNewStudent() {
 
-    std::cout << "Please insert student surname: ";
-    std::cin >> surname_;
-    std::cout << '\n';
+
     std::cout << "Please insert student index number: ";
     std::cin >> indexNumber_;
     std::cout << '\n';
@@ -60,5 +58,11 @@ void University::addNewStudent() {
 void University::insertStudentName() {
     std::cout << "Please insert student name: ";
     std::cin >> name_;
+    std::cout << '\n';
+}
+
+void University::insertStudentSurname() {
+    std::cout << "Please insert student surname: ";
+    std::cin >> surname_;
     std::cout << '\n';
 }
