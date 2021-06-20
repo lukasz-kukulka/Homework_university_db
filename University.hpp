@@ -24,8 +24,10 @@ private:
     void addNewStudent();
     void insertStudentName();
     void insertStudentSurname();
+    void insertStudentIndexNumber();
 
     MenuOption menuEngine();
+
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;
     std::string surname_;

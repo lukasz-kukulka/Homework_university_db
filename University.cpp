@@ -66,3 +66,7 @@ void University::insertStudentSurname() {
     std::cin >> surname_;
     std::cout << '\n';
 }
+
+void University::insertStudentIndexNumber() {
+    
+}
