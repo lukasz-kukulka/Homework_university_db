@@ -33,6 +33,7 @@ private:
     bool validatingSurname();
     bool validatingIndexNumber();
     bool validatingPeselNumber();
+    bool validatingGender();
 
     MenuOption menuEngine();
 

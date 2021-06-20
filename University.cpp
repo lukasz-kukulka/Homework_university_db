@@ -98,7 +98,14 @@ bool University::validatingPeselNumber() {
 }
 
 void University::insertStudentGender() {
-    std::cout << "Please insert student surname: ";
-    std::cin >> gender_;
-    std::cout << '\n';
+    do {
+        std::cout << "Please insert student surname: ";
+        std::cin >> gender_;
+        std::cout << '\n';
+    } while (validatingGender() == false);
+}
+
+bool University::validatingGender() {
+    //TODO
+    return true;
 }
