@@ -59,9 +59,16 @@ bool University::validatingName() {
 }
 
 void University::insertStudentSurname() {
-    std::cout << "Please insert student surname: ";
-    std::cin >> surname_;
-    std::cout << '\n';
+    do {
+        std::cout << "Please insert student surname: ";
+        std::cin >> surname_;
+        std::cout << '\n';
+    } while (validatingSurname() == true);
+}
+
+bool University::validatingSurname() {
+    //TODO
+    return true;
 }
 
 void University::insertStudentIndexNumber() {

@@ -30,6 +30,7 @@ private:
     void insertStudentGender();
 
     bool validatingName();
+    bool validatingSurname();
 
     MenuOption menuEngine();
 
