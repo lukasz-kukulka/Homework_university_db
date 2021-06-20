@@ -76,7 +76,7 @@ void University::insertStudentIndexNumber() {
         std::cout << "Please insert student index number: ";
         std::cin >> indexNumber_;
         std::cout << '\n';
-    } while (validatingIndexNumber() == false)
+    } while (validatingIndexNumber() == false);
 }
 
 bool University::validatingIndexNumber() {
@@ -85,9 +85,16 @@ bool University::validatingIndexNumber() {
 }
 
 void University::insertStudentPeselNumber() {
-    std::cout << "Please insert student PESEL number: ";
-    std::cin >> peselNumber_;
-    std::cout << '\n';
+    do {
+        std::cout << "Please insert student PESEL number: ";
+        std::cin >> peselNumber_;
+        std::cout << '\n';       
+    } while (validatingPeselNumber() == false);
+}
+
+bool University::validatingPeselNumber() {
+    //TODO
+    return true;
 }
 
 void University::insertStudentGender() {
