@@ -42,9 +42,7 @@ University::MenuOption University::menuEngine() {
 }
 
 void University::addNewStudent() {
-    std::cout << "Please insert student surname: ";
-    std::cin >> gender_;
-    std::cout << '\n';
+
 }
 
 void University::insertStudentName() {
@@ -68,5 +66,11 @@ void University::insertStudentIndexNumber() {
 void University::insertStudentPeselNumber() {
     std::cout << "Please insert student PESEL number: ";
     std::cin >> peselNumber_;
+    std::cout << '\n';
+}
+
+void University::insertStudentGender() {
+    std::cout << "Please insert student surname: ";
+    std::cin >> gender_;
     std::cout << '\n';
 }

@@ -22,10 +22,12 @@ public:
 private:
     void printMenu();
     void addNewStudent();
+
     void insertStudentName();
     void insertStudentSurname();
     void insertStudentIndexNumber();
     void insertStudentPeselNumber();
+    void insertStudentGender();
 
     MenuOption menuEngine();
 
