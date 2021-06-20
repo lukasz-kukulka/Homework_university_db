@@ -68,5 +68,7 @@ void University::insertStudentSurname() {
 }
 
 void University::insertStudentIndexNumber() {
-    
+    std::cout << "Please insert student index number: ";
+    std::cin >> indexNumber_;
+    std::cout << '\n';
 }
