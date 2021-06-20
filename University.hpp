@@ -25,6 +25,7 @@ private:
     void insertStudentName();
     void insertStudentSurname();
     void insertStudentIndexNumber();
+    void insertStudentPeselNumber();
 
     MenuOption menuEngine();
 
