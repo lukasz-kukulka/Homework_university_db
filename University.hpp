@@ -22,6 +22,7 @@ public:
 private:
     void printMenu();
     void addNewStudent();
+    void insertStudentName();
 
     MenuOption menuEngine();
     MenuOption menuOption_ { MenuOption::BaseMenu };
