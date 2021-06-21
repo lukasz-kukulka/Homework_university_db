@@ -42,8 +42,8 @@ private:
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;
     std::string surname_;
-    size_t indexNumber_;
-    uint64_t peselNumber_;
+    std::string indexNumber_;
+    std::string peselNumber_;
     size_t gender_;
     std::vector<Student>students;
 };

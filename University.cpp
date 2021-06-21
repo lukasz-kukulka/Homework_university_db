@@ -3,7 +3,10 @@
 #include <iostream>
 
 University::University() {
-
+    for (int i = 0; i < 10; i++) {
+        students.push_back(Student());
+        students[i].printStudent();
+    }
 }
 
 void University::printMenu() {
@@ -116,5 +119,6 @@ bool University::validatingGender() {
 }
 
 void University::showStudents() {
+
     //std::cout << 
 }
