@@ -42,6 +42,7 @@ private:
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;
     std::string surname_;
+    std::string address_;
     std::string indexNumber_;
     std::string peselNumber_;
     size_t gender_;
