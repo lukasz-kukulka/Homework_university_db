@@ -3,10 +3,12 @@
 #include <iostream>
 
 University::University() {
+
     for (int i = 0; i < 10; i++) {
         students.push_back(Student());
         students[i].printStudent();
     }
+    students[0].printBorderBotton();
 }
 
 void University::printMenu() {

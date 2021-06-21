@@ -26,3 +26,8 @@ void Student::printStudent() {
               << '|' << std::setw(sizePeselNumberLimit/2 - peselNumber_.size()/2 + peselNumber_.size()) << peselNumber_ << std::setw(sizePeselNumberLimit/2 - peselNumber_.size()/2 + 1)
               << '|' << std::setw(sizeGenderLimit/2 - convertStudentGender(gender_).size()/2 + convertStudentGender(gender_).size() % 2 + convertStudentGender(gender_).size()) << convertStudentGender(gender_) << std::setw(sizeGenderLimit/2 - convertStudentGender(gender_).size()/2 + 2) << "|\n";
 }
+
+void Student::printBorderBotton() {
+    std::cout << ' ' << std::setfill('-') << std::setw (4 + sizeNameLimit + sizeSurnameLimit + sizeAddressLimit + sizeIndexNumberLimit + sizePeselNumberLimit + sizeGenderLimit
+                                                        + name_.size() % 2 + surname_.size() % 2 + address_.size() % 2 + indexNumber_.size() % 2 + peselNumber_.size() % 2 + convertStudentGender(gender_).size() % 2) << ' ' << '\n\n';
+}
