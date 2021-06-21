@@ -26,6 +26,7 @@ private:
 
     void insertStudentName();
     void insertStudentSurname();
+    void insertAddress();
     void insertStudentIndexNumber();
     void insertStudentPeselNumber();
     void insertStudentGender();
@@ -35,6 +36,7 @@ private:
     bool validatingIndexNumber();
     bool validatingPeselNumber();
     bool validatingGender();
+    bool validatingAddress();
 
     MenuOption menuEngine();
     void showStudents();

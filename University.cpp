@@ -50,7 +50,7 @@ void University::addNewStudent() {
     insertStudentIndexNumber();
     insertStudentPeselNumber();
     insertStudentGender();
-    students.push_back(Student(name_, surname_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
+    students.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
 }
 
 void University::insertStudentName() {
@@ -75,6 +75,19 @@ void University::insertStudentSurname() {
 }
 
 bool University::validatingSurname() {
+    //TODO
+    return true;
+}
+
+void University::insertAddress() {
+    do {
+        std::cout << "Please insert student address: ";
+        std::cin >> surname_;
+        std::cout << '\n';
+    } while (validatingAddress() == false);
+}
+
+bool University::validatingAddress() {
     //TODO
     return true;
 }
