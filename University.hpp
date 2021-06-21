@@ -37,6 +37,7 @@ private:
     bool validatingGender();
 
     MenuOption menuEngine();
+    void showStudents();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;
