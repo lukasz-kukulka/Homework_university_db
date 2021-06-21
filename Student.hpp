@@ -18,17 +18,17 @@ public:
 private:
     
 
-    std::string name_ {"test"};
-    std::string surname_ { "cos tam jest" };
-    std::string address_{ "adress 3" };
-    std::string indexNumber_ { "8212343823" };
+    std::string name_ {"testt"};
+    std::string surname_ { "cos aaaaaaaaaaaaaaaaaaa" };
+    std::string address_{ "adress 33" };
+    std::string indexNumber_ { "8212343823s" };
     std::string peselNumber_{ "82828282821" };
     Gender gender_ { Gender::female };
 
-    uint8_t sizeNameLimit { 20 };
-    uint8_t sizeSurnameLimit { 40 };
-    uint8_t sizeAddressLimit { 60 };
-    uint8_t sizeIndexNumberLimit { 10 };
-    uint8_t sizePeselNumberLimit { 11 };
-    uint8_t sizeGenderLimit { 6 };
+    uint8_t sizeNameLimit { 15 };
+    uint8_t sizeSurnameLimit { 30 };
+    uint8_t sizeAddressLimit { 40 };
+    uint8_t sizeIndexNumberLimit { 12 };
+    uint8_t sizePeselNumberLimit { 13 };
+    uint8_t sizeGenderLimit { 8 };
 };

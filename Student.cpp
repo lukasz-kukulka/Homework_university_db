@@ -17,10 +17,12 @@ std::string Student::convertStudentGender(const Gender gender) {
 }
 
 void Student::printStudent() {
-    std::cout << '|' << std::setw(sizeNameLimit/2 - name_.size()/2 - name_.size() % 2) << name_ << std::setw(sizeNameLimit/2 - name_.size()/2) 
-              << '|' << std::setw(sizeSurnameLimit/2 - surname_.size()/2 - surname_.size() % 2) << surname_ << std::setw(sizeSurnameLimit/2 - surname_.size()/2)
-              << '|' << std::setw(sizeAddressLimit/2 - address_.size()/2 - address_.size() % 2) << address_<< std::setw(sizeAddressLimit/2 - address_.size()/2)
-              << '|' << std::setw(sizeIndexNumberLimit/2 - indexNumber_.size()/2 - indexNumber_.size() % 2) << indexNumber_ << std::setw(sizeIndexNumberLimit/2 - indexNumber_.size()/2)
-              << '|' << std::setw(sizePeselNumberLimit/2 - peselNumber_.size()/2 - peselNumber_.size() % 2) << peselNumber_ << std::setw(sizePeselNumberLimit/2 - peselNumber_.size()/2)
-              << '|' << std::setw(sizeGenderLimit/2 - convertStudentGender(gender_).size()/2 - convertStudentGender(gender_).size() % 2) << convertStudentGender(gender_) << std::setw(sizeGenderLimit/2 - convertStudentGender(gender_).size()/2) << '\n';
+    std::cout << ' ' << std::setfill('-') << std::setw (4 + sizeNameLimit + sizeSurnameLimit + sizeAddressLimit + sizeIndexNumberLimit + sizePeselNumberLimit + sizeGenderLimit
+                                                        + name_.size() % 2 + surname_.size() % 2 + address_.size() % 2 + indexNumber_.size() % 2 + peselNumber_.size() % 2 + convertStudentGender(gender_).size() % 2) << ' ' << '\n';
+    std::cout << std::setfill(' ') << '|' << std::setw(sizeNameLimit/2 - name_.size()/2 + name_.size()) << name_ << std::setw(sizeNameLimit/2 - name_.size()/2 + 1) 
+              << '|' << std::setw(sizeSurnameLimit/2 - surname_.size()/2 + surname_.size()) << surname_ << std::setw(sizeSurnameLimit/2 - surname_.size()/2 + 1)
+              << '|' << std::setw(sizeAddressLimit/2 - address_.size()/2 + address_.size()) << address_<< std::setw(sizeAddressLimit/2 - address_.size()/2 + 1)
+              << '|' << std::setw(sizeIndexNumberLimit/2 - indexNumber_.size()/2 + indexNumber_.size()) << indexNumber_ << std::setw(sizeIndexNumberLimit/2 - indexNumber_.size()/2 + 1)
+              << '|' << std::setw(sizePeselNumberLimit/2 - peselNumber_.size()/2 + peselNumber_.size()) << peselNumber_ << std::setw(sizePeselNumberLimit/2 - peselNumber_.size()/2 + 1)
+              << '|' << std::setw(sizeGenderLimit/2 - convertStudentGender(gender_).size()/2 + convertStudentGender(gender_).size() % 2 + convertStudentGender(gender_).size()) << convertStudentGender(gender_) << std::setw(sizeGenderLimit/2 - convertStudentGender(gender_).size()/2 + 2) << "|\n";
 }
