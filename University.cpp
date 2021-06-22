@@ -38,7 +38,7 @@ University::MenuOption University::menuEngine() {
 
         } break;
         case MenuOption::ShowStudent : {
-
+            
         } break;
         case MenuOption::SearchStudents : {
 
@@ -221,12 +221,21 @@ int University::countRecord() {
 
 University::MenuOption University::searchStudent() {
     uint8_t choice = 0;
-    std::cout << "SEARCH BY\n";
-    std::cout << "1. Surname\n";
-    std::cout << "2. PESEL number\n";
-    std::cout << "Insert your choice: ";
-    std::cin >> choice;
-    return static_cast<MenuOption>(choice + 10);
+    do {
+        std::cout << "SEARCH BY\n";
+        std::cout << "1. Surname\n";
+        std::cout << "2. PESEL number\n";
+        std::cout << "3. Back to main menu\n";
+        std::cout << "Insert your choice: ";
+        std::cin >> choice;
+        if (choice == 1 || choice == 2) {
+            return static_cast<MenuOption>(choice + 10);
+        }
+        if (choice == 3) {
+            return MenuOption::BaseMenu;
+        }
+    } while (choice != 1 || choice != 2 || choice != 0);
+    return MenuOption::BaseMenu;
 }
 
 void University::searchByPeselNumber() {
