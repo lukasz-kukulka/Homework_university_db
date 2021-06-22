@@ -218,3 +218,11 @@ int University::countRecord() {
     file.close();
 	return lineNo / 8;
 }
+
+void University::searchStudent() {
+
+}
+
+void University::searchByPeselNumber() {
+
+}

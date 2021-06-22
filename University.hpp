@@ -44,6 +44,9 @@ private:
     void loadFromFile();
     int countRecord();
 
+    void searchStudent();
+    void searchByPeselNumber();
+
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;
     std::string surname_;
