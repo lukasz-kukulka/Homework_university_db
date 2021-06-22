@@ -42,6 +42,7 @@ private:
     void showStudents();
     void saveToFile(size_t);
     void loadFromFile();
+    int countRecord();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;

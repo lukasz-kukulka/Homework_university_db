@@ -157,19 +157,17 @@ void University::saveToFile(size_t indexStudent) {
     file.close();
 }
 
-void University::loadFromFile(){
-    //students.reserve(countRecord());
+void University::loadFromFile() {
+    students.reserve(countRecord());
     int lineNo = 1;
 	std::string line;
 	std::fstream file;
 	file.open("records.txt", std::ios::in);
-	if (file.good() == false)
-	{
+	if (file.good() == false) {
 		std::cout << "Created new file\n";
 		file.open("records.txt", std::ios::out | std::ios::app);
 	}
 	while (getline(file, line)){
-       
         switch (lineNo){
             case 2: { 
                 name_ = line; 
@@ -197,10 +195,26 @@ void University::loadFromFile(){
                 }  
         }
         lineNo++;
-        if (lineNo > 8){
+        if (lineNo > 8) {
             lineNo = 1;
             students.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
         } 
 	}
     file.close();
+}
+
+int University::countRecord() {
+    int lineNo = 0;
+	std::string line;
+	std::fstream file;
+	file.open("records.txt", std::ios::in);
+	if (file.good() == false) {
+		std::cout << "Created new file\n";
+		file.open("records.txt", std::ios::out | std::ios::app);
+	}
+	while (getline(file, line)){
+        lineNo++;
+    }
+    file.close();
+	return lineNo / 8;
 }
