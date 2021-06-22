@@ -14,10 +14,16 @@ public:
     void printBorderTop();
     void printStudent();
     void printBorderBotton();
-    std::string convertStudentGender(const Gender);
     int getBorderSize() const;
+
+    std::string getName() const { return name_; }
+    std::string getSurname() const { return surname_; }
+    std::string getAddress() const { return address_; }
+    std::string getIndexNumber() const { return indexNumber_; }
+    std::string getPeselNumber() const { return peselNumber_; }
+    std::string getGender();
 private:
-    
+    std::string convertStudentGender(const Gender);
 
     std::string name_ {"testtt"};
     std::string surname_ { "cos aaaa aaaaaaaaaaaaaaa" };

@@ -1,5 +1,6 @@
 #include "University.hpp"
 
+#include <fstream>
 #include <iostream>
 
 University::University() {
@@ -141,3 +142,17 @@ void University::showStudents() {
 
     //std::cout << 
 }
+
+// void University::saveToFile(size_t indexStudent{
+//     std::fstream file;
+//     file.open("records.txt", std::ios::out | std::ios::app);
+//     file << "[Student nr. : " << index + 1 << "]\n";
+//     file << students[index].getFirstName() << "\n";
+//     file << students[index].getOthersName() << "\n";
+//     file << students[index].getEmail() << "\n";
+//     file << students[index].getTel() << "\n";
+//     file << students[index].getStreet() << "\n";
+//     file << students[index].getTown() << "\n";
+//     file << students[index].getCountry() << "\n\n";
+//     file.close();
+// }

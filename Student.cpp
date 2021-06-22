@@ -52,3 +52,7 @@ void Student::printStudent() {
 void Student::printBorderBotton() {
     std::cout << ' ' << std::setfill('-') << std::setw (getBorderSize()) << ' ' << "\n\n";
 }
+
+std::string Student::getGender() { 
+    return convertStudentGender(gender_); 
+}
