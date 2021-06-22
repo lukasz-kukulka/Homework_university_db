@@ -7,10 +7,11 @@ University::University() {
 
     for (int i = 0; i < 10; i++) {
         students.push_back(Student());
-        
+        saveToFile(i);
     }
     students[0].printBorderTop();
     for (auto stu : students) {
+        
         stu.printStudent();
     }
     students[0].printBorderBotton();
@@ -143,16 +144,15 @@ void University::showStudents() {
     //std::cout << 
 }
 
-// void University::saveToFile(size_t indexStudent{
-//     std::fstream file;
-//     file.open("records.txt", std::ios::out | std::ios::app);
-//     file << "[Student nr. : " << index + 1 << "]\n";
-//     file << students[index].getFirstName() << "\n";
-//     file << students[index].getOthersName() << "\n";
-//     file << students[index].getEmail() << "\n";
-//     file << students[index].getTel() << "\n";
-//     file << students[index].getStreet() << "\n";
-//     file << students[index].getTown() << "\n";
-//     file << students[index].getCountry() << "\n\n";
-//     file.close();
-// }
+void University::saveToFile(size_t indexStudent) {
+    std::fstream file;
+    file.open("records.txt", std::ios::out | std::ios::app);
+    file << "[Student nr. : " << indexStudent + 1 << "]\n";
+    file << students[indexStudent].getName() << "\n";
+    file << students[indexStudent].getSurname() << "\n";
+    file << students[indexStudent].getAddress() << "\n";
+    file << students[indexStudent].getIndexNumber() << "\n";
+    file << students[indexStudent].getPeselNumber() << "\n";
+    file << students[indexStudent].getGender() << "\n\n";
+    file.close();
+}
