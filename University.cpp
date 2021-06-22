@@ -219,8 +219,14 @@ int University::countRecord() {
 	return lineNo / 8;
 }
 
-void University::searchStudent() {
-
+University::MenuOption University::searchStudent() {
+    uint8_t choice = 0;
+    std::cout << "SEARCH BY\n";
+    std::cout << "1. Surname\n";
+    std::cout << "2. PESEL number\n";
+    std::cout << "Insert your choice: ";
+    std::cin >> choice;
+    return static_cast<MenuOption>(choice + 10);
 }
 
 void University::searchByPeselNumber() {

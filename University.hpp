@@ -44,7 +44,7 @@ private:
     void loadFromFile();
     int countRecord();
 
-    void searchStudent();
+    MenuOption searchStudent();
     void searchByPeselNumber();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
