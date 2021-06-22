@@ -4,7 +4,7 @@
 #include <iostream>
 
 University::University() {
-
+    loadFromFile();
     for (int i = 0; i < 10; i++) {
         students.push_back(Student());
         saveToFile(i);
@@ -154,5 +154,53 @@ void University::saveToFile(size_t indexStudent) {
     file << students[indexStudent].getIndexNumber() << "\n";
     file << students[indexStudent].getPeselNumber() << "\n";
     file << students[indexStudent].getGender() << "\n\n";
+    file.close();
+}
+
+void University::loadFromFile(){
+    //students.reserve(countRecord());
+    int lineNo = 1;
+	std::string line;
+	std::fstream file;
+	file.open("records.txt", std::ios::in);
+	if (file.good() == false)
+	{
+		std::cout << "Created new file\n";
+		file.open("records.txt", std::ios::out | std::ios::app);
+	}
+	while (getline(file, line)){
+       
+        switch (lineNo){
+            case 2: { 
+                name_ = line; 
+                break;
+                }
+            case 3: { 
+                surname_ = line; 
+                break;
+                }
+            case 4: { 
+                address_ = line; 
+                break;
+                }
+            case 5: { 
+                indexNumber_ = line; 
+                break;
+                }
+            case 6: { 
+                peselNumber_ = line; 
+                break;
+                }
+            case 7: { 
+                line.size() == 4 ? gender_ = 1 : gender_ = 0;
+                break;
+                }  
+        }
+        lineNo++;
+        if (lineNo > 8){
+            lineNo = 1;
+            students.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
+        } 
+	}
     file.close();
 }

@@ -41,6 +41,7 @@ private:
     MenuOption menuEngine();
     void showStudents();
     void saveToFile(size_t);
+    void loadFromFile();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;
