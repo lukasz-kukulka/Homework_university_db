@@ -240,7 +240,6 @@ University::MenuOption University::searchStudent() {
 }
 
 void University::searchByPeselNumber(std::string pesel) {
-    auto iterator = 0;
     for (auto & student : students) {
         if (student.getPeselNumber() == pesel) {
             student.printStudent();
@@ -250,7 +249,6 @@ void University::searchByPeselNumber(std::string pesel) {
 }
 
 void University::searchBySurname(std::string surname) {
-    auto iterator = 0;
     for (auto & student : students) {
         if (student.getSurname() == surname) {
             student.printStudent();
@@ -269,4 +267,30 @@ void University::sortBySurname() {
     std::sort(students.begin(), students.end(), [&](auto const & lhs, auto const & rhs) { 
         return lhs.getSurname() < rhs.getSurname(); 
         });
+}
+
+void University::deleteByIndexNumber(std::string indexNumber) {
+    auto iterator = 0;
+    std::string answer;
+    for (auto & student : students) {
+        iterator++;
+        if (student.getIndexNumber() == indexNumber) {
+            student.printStudent();
+            student.printBorderBotton();
+            break;
+        }
+    }
+    while ( 1 ) {
+        std::cout << "Do you wanna delete this record? Y/N: ";
+        std::string confirm;
+        std::cin >> confirm;
+        if (confirm == "Y" || confirm == "y") {
+            students[iterator] = students[students.size() - 1];
+            students.erase(students.end() - 1);
+            break;
+        }
+    }
+
+    
+
 }

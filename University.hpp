@@ -49,6 +49,7 @@ private:
     void searchBySurname(std::string);
     void sortByPeselNumber();
     void sortBySurname();
+    void deleteByIndexNumber(std::string);
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;
