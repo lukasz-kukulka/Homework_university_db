@@ -247,11 +247,6 @@ void University::searchByPeselNumber(std::string pesel) {
             student.printBorderBotton();
         }
     }
-    // bool sortPeselNumber(const Student &lhs, const Student &rhs) { 
-    //     return lhs.get < rhs.name;
-    // }
-    // auto search[&](auto a, auto b){ return a. ;}
-    // std::sort(students.begin(), students.end(), [&](auto a, auto b){ return a. ;})
 }
 
 void University::searchBySurname(std::string surname) {
@@ -262,4 +257,8 @@ void University::searchBySurname(std::string surname) {
             student.printBorderBotton();
         }
     }
+}
+
+void University::sortByPeselNumber() {
+    std::sort(students.begin(), students.end(), [&](auto const & lhs, auto const & rhs){ return lhs.getPeselNumber() < rhs.getPeselNumber() ;});
 }
