@@ -244,7 +244,7 @@ void University::searchByPeselNumber(std::string pesel) {
     for (auto & student : students) {
         if (student.getPeselNumber() == pesel) {
             student.printStudent();
-
+            student.printBorderBotton();
         }
     }
     // bool sortPeselNumber(const Student &lhs, const Student &rhs) { 
