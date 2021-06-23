@@ -48,6 +48,7 @@ private:
     void searchByPeselNumber(std::string);
     void searchBySurname(std::string);
     void sortByPeselNumber();
+    void sortBySurname();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;

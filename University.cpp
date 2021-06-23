@@ -260,5 +260,13 @@ void University::searchBySurname(std::string surname) {
 }
 
 void University::sortByPeselNumber() {
-    std::sort(students.begin(), students.end(), [&](auto const & lhs, auto const & rhs){ return lhs.getPeselNumber() < rhs.getPeselNumber() ;});
+    std::sort(students.begin(), students.end(), [&](auto const & lhs, auto const & rhs) { 
+        return lhs.getPeselNumber() < rhs.getPeselNumber(); 
+    });
+}
+
+void University::sortBySurname() {
+    std::sort(students.begin(), students.end(), [&](auto const & lhs, auto const & rhs) { 
+        return lhs.getSurname() < rhs.getSurname(); 
+        });
 }
