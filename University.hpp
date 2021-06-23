@@ -46,6 +46,7 @@ private:
 
     MenuOption searchStudent();
     void searchByPeselNumber(std::string);
+    void searchBySurname(std::string);
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;

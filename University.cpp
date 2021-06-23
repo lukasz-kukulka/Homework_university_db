@@ -253,3 +253,13 @@ void University::searchByPeselNumber(std::string pesel) {
     // auto search[&](auto a, auto b){ return a. ;}
     // std::sort(students.begin(), students.end(), [&](auto a, auto b){ return a. ;})
 }
+
+void University::searchBySurname(std::string surname) {
+    auto iterator = 0;
+    for (auto & student : students) {
+        if (student.getSurname() == surname) {
+            student.printStudent();
+            student.printBorderBotton();
+        }
+    }
+}
