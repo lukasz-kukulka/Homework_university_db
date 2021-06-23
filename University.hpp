@@ -45,7 +45,7 @@ private:
     int countRecord();
 
     MenuOption searchStudent();
-    void searchByPeselNumber();
+    void searchByPeselNumber(std::string);
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;

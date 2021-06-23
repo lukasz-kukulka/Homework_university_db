@@ -1,5 +1,6 @@
 #include "University.hpp"
 
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 
@@ -238,6 +239,17 @@ University::MenuOption University::searchStudent() {
     return MenuOption::BaseMenu;
 }
 
-void University::searchByPeselNumber() {
+void University::searchByPeselNumber(std::string pesel) {
+    auto iterator = 0;
+    for (auto & student : students) {
+        if (student.getPeselNumber() == pesel) {
+            student.printStudent();
 
+        }
+    }
+    // bool sortPeselNumber(const Student &lhs, const Student &rhs) { 
+    //     return lhs.get < rhs.name;
+    // }
+    // auto search[&](auto a, auto b){ return a. ;}
+    // std::sort(students.begin(), students.end(), [&](auto a, auto b){ return a. ;})
 }
