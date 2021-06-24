@@ -73,7 +73,13 @@ void University::insertStudentName() {
 }
 
 bool University::validatingName() {
-    //TODO
+    auto result = std::any_of(name_.begin(), name_.end(), [](auto character){ 
+            return std::isalpha(character); 
+    }); 
+    if (result) {
+        std::cout << "In name can't be any digit\n";
+        return false;
+    }
     return true;
 }
 
@@ -123,7 +129,7 @@ void University::insertStudentPeselNumber() {
         std::cout << '\n';  
         std::cout << peselNumber_ << '\n';     //TEST
     } while (validatingPeselNumber() == false);
-    std::cout << "--------------------------------------------------------------"; //TEST
+   //std::cout << "--------------------------------------------------------------"; //TEST
 }
 
 bool University::peselValidDOBCheck() {
@@ -162,12 +168,7 @@ bool University::peselValidWithWeight() {
     std::string weightCheck = "13791379131";
     size_t weightResult = 0;
     for (int i = 0; i < 11; i++) {
-        // std::cout << "weightResult = " << weightResult << '\n' << "(static_cast<size_t>(peselNumber_[i]) = " << static_cast<size_t>(peselNumber_[i]) 
-        //           << "static_cast<size_t>(weightCheck[i]) = " << static_cast<size_t>(weightCheck[i]) << '\n';
-        int peselSingleValue = static_cast<size_t>(peselNumber_[i] - '0');
-        int weightSingleValue = static_cast<size_t>(weightCheck[i] - '0');
         weightResult = weightResult + (static_cast<size_t>(peselNumber_[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
-        
     }
     weightResult = weightResult % 10;
     if (weightResult == 0){
@@ -184,13 +185,13 @@ bool University::peselValidWithWeight() {
 bool University::validatingPeselNumber() {
     bool corectPeselNumber = true;
     corectPeselNumber = peselValidDOBCheck();
-    std::cout << "After peselValidDOBCheck() = " << corectPeselNumber << '\n'; //TEST
+    //std::cout << "After peselValidDOBCheck() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidGenderCheck();
-    std::cout << "After peselValidGenderCheck() = " << corectPeselNumber << '\n'; //TEST
+   // std::cout << "After peselValidGenderCheck() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithCurrentlyDate();
-    std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
+    //std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithWeight();
-    std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
+   // std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
     return corectPeselNumber;
 }
 
