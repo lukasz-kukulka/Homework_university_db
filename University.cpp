@@ -152,7 +152,25 @@ bool University::peselValidWithCurrentlyDate() {
     if (currentlyDate[5] == '1' && (peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
         return false;
     }
+    return true;
+}
 
+bool University::peselValidWithWeight() {
+    std::string weightCheck = "13791379131";
+    size_t weightResult = 0;
+    for (int i = 0; i < 10; i++) {
+        weightResult = weightResult + (static_cast<size_t>(peselNumber_[i]) * static_cast<size_t>(weightCheck[i]));
+    }
+    weightResult = weightResult % 10;
+    if (weightResult == 0){
+        weightResult = 0;
+    } else {
+        weightResult = 10 - weightResult;
+    }
+    if (static_cast<size_t>(peselNumber_[10]) != weightResult) {
+        return false;
+    }
+    return true;
 }
 
 bool University::validatingPeselNumber() {

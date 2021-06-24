@@ -37,6 +37,7 @@ private:
     bool peselValidDOBCheck();
     bool peselValidGenderCheck();
     bool peselValidWithCurrentlyDate();
+    bool peselValidWithWeight();
     bool validatingPeselNumber();
     bool validatingGender();
     bool validatingAddress();
