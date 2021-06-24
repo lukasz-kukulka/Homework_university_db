@@ -145,6 +145,16 @@ bool University::peselValidGenderCheck() {
     return true;
 }
 
+bool University::peselValidWithCurrentlyDate() {
+    if (currentlyDate[5] == '0' && (peselNumber_[2] == '4' || peselNumber_[2] == '5' || peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
+        return false;
+    }
+    if (currentlyDate[5] == '1' && (peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
+        return false;
+    }
+
+}
+
 bool University::validatingPeselNumber() {
     
     return true;

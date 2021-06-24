@@ -36,7 +36,7 @@ private:
     bool validatingIndexNumber();
     bool peselValidDOBCheck();
     bool peselValidGenderCheck();
-    bool peselValidWithCurentlyDate();
+    bool peselValidWithCurrentlyDate();
     bool validatingPeselNumber();
     bool validatingGender();
     bool validatingAddress();
