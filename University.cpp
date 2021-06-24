@@ -122,6 +122,7 @@ void University::insertStudentPeselNumber() {
         std::cin >> peselNumber_;
         std::cout << '\n';       
     } while (validatingPeselNumber() == false);
+    std::cout << "--------------------------------------------------------------";
 }
 
 bool University::peselValidDOBCheck() {
@@ -174,7 +175,10 @@ bool University::peselValidWithWeight() {
 }
 
 bool University::validatingPeselNumber() {
-    
+    peselValidDOBCheck();
+    peselValidGenderCheck();
+    peselValidWithCurrentlyDate();
+    peselValidWithWeight();
     return true;
 }
 
