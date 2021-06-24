@@ -122,8 +122,21 @@ void University::insertStudentPeselNumber() {
     } while (validatingPeselNumber() == false);
 }
 
+bool University::peselValidDOBCheck() {
+    if (peselNumber_[2] != '1' && peselNumber_[2] != '0') {
+        return false;
+    }
+    if (peselNumber_[4] != 0 && peselNumber_[4] != 1 && peselNumber_[4] != 2 && peselNumber_[4] != 3) {
+        return false;
+    }
+    if (peselNumber_[4] != 3 && peselNumber_[5] != 0 && peselNumber_[5] != 1 && peselNumber_[5] != 2) {
+        return false;
+    }
+    return true;
+}
+
 bool University::validatingPeselNumber() {
-    //TODO
+    
     return true;
 }
 
@@ -289,8 +302,9 @@ void University::deleteByIndexNumber(std::string indexNumber) {
             students.erase(students.end() - 1);
             break;
         }
+        if (confirm == "N" || confirm == "n") {
+            break;
+        }
     }
-
-    
-
 }
+
