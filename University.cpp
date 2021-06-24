@@ -4,6 +4,8 @@
 #include <fstream>
 #include <iostream>
 
+constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
+
 University::University() {
     loadFromFile();
     for (int i = 0; i < 10; i++) {
@@ -123,20 +125,21 @@ void University::insertStudentPeselNumber() {
 }
 
 bool University::peselValidDOBCheck() {
-    if (peselNumber_[2] != '1' && peselNumber_[2] != '0') {
-        return false;
-    }
+    if ((peselNumber_[2] == '1' || peselNumber_[2] == '3' || peselNumber_[2] == '5' || peselNumber_[2] == '7' || peselNumber_[2] == '9')  
+        && peselNumber_[2] != '0' && peselNumber_[2] != '1' && peselNumber_[2] != '2') {
+            return false;
+        }
     if (peselNumber_[4] != '0' && peselNumber_[4] != '1' && peselNumber_[4] != '2' && peselNumber_[4] != '3') {
         return false;
     }
-    if (peselNumber_[4] != '3' && peselNumber_[5] != '0' && peselNumber_[5] != '1' && peselNumber_[5] != '2') {
+    if (peselNumber_[4] == '3' && peselNumber_[5] != '0' && peselNumber_[5] != '1' && peselNumber_[5] != '2') {
         return false;
     }
     return true;
 }
 
 bool University::peselValidGenderCheck() {
-    if (peselNumber_[9] % 2 != static_cast<char>(gender_)) {
+    if (static_cast<size_t>(peselNumber_[9]) % 2 != static_cast<size_t>(gender_)) {
         return false;
     }
     return true;
