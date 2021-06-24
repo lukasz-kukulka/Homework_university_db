@@ -35,6 +35,7 @@ private:
     bool validatingSurname();
     bool validatingIndexNumber();
     bool peselValidDOBCheck();
+    bool peselValidGenderCheck();
     bool validatingPeselNumber();
     bool validatingGender();
     bool validatingAddress();
