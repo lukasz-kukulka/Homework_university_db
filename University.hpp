@@ -5,7 +5,7 @@
 class University {
 public:
     University();
-
+    void insertStudentPeselNumber();
     enum class MenuOption {
         BaseMenu = 0,
         AddStudents = 1,
@@ -28,7 +28,7 @@ private:
     void insertStudentSurname();
     void insertAddress();
     void insertStudentIndexNumber();
-    void insertStudentPeselNumber();
+    
     void insertStudentGender();
 
     bool validatingName();

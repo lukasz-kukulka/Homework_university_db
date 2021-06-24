@@ -7,17 +7,17 @@
 constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 
 University::University() {
-    loadFromFile();
-    for (int i = 0; i < 10; i++) {
-        students.push_back(Student());
-        saveToFile(i);
-    }
-    students[0].printBorderTop();
-    for (auto stu : students) {
+    // loadFromFile();
+    // for (int i = 0; i < 10; i++) {
+    //     students.push_back(Student());
+    //     saveToFile(i);
+    // }
+    // students[0].printBorderTop();
+    // for (auto stu : students) {
         
-        stu.printStudent();
-    }
-    students[0].printBorderBotton();
+    //     stu.printStudent();
+    // }
+    // students[0].printBorderBotton();
 }
 
 void University::printMenu() {
@@ -120,9 +120,10 @@ void University::insertStudentPeselNumber() {
     do {
         std::cout << "Please insert student PESEL number: ";
         std::cin >> peselNumber_;
-        std::cout << '\n';       
+        std::cout << '\n';  
+        std::cout << peselNumber_ << '\n';     //TEST
     } while (validatingPeselNumber() == false);
-    std::cout << "--------------------------------------------------------------";
+    std::cout << "--------------------------------------------------------------"; //TEST
 }
 
 bool University::peselValidDOBCheck() {
@@ -140,6 +141,7 @@ bool University::peselValidDOBCheck() {
 }
 
 bool University::peselValidGenderCheck() {
+    gender_ = 1; //TEST
     if (static_cast<size_t>(peselNumber_[9]) % 2 != static_cast<size_t>(gender_)) {
         return false;
     }
@@ -159,8 +161,13 @@ bool University::peselValidWithCurrentlyDate() {
 bool University::peselValidWithWeight() {
     std::string weightCheck = "13791379131";
     size_t weightResult = 0;
-    for (int i = 0; i < 10; i++) {
-        weightResult = weightResult + (static_cast<size_t>(peselNumber_[i]) * static_cast<size_t>(weightCheck[i]));
+    for (int i = 0; i < 11; i++) {
+        // std::cout << "weightResult = " << weightResult << '\n' << "(static_cast<size_t>(peselNumber_[i]) = " << static_cast<size_t>(peselNumber_[i]) 
+        //           << "static_cast<size_t>(weightCheck[i]) = " << static_cast<size_t>(weightCheck[i]) << '\n';
+        int peselSingleValue = static_cast<size_t>(peselNumber_[i] - '0');
+        int weightSingleValue = static_cast<size_t>(weightCheck[i] - '0');
+        weightResult = weightResult + (static_cast<size_t>(peselNumber_[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
+        
     }
     weightResult = weightResult % 10;
     if (weightResult == 0){
@@ -168,18 +175,23 @@ bool University::peselValidWithWeight() {
     } else {
         weightResult = 10 - weightResult;
     }
-    if (static_cast<size_t>(peselNumber_[10]) != weightResult) {
+    if (static_cast<size_t>(peselNumber_[10]- '0') != weightResult) {
         return false;
     }
     return true;
 }
 
 bool University::validatingPeselNumber() {
-    peselValidDOBCheck();
-    peselValidGenderCheck();
-    peselValidWithCurrentlyDate();
-    peselValidWithWeight();
-    return true;
+    bool corectPeselNumber = true;
+    corectPeselNumber = peselValidDOBCheck();
+    std::cout << "After peselValidDOBCheck() = " << corectPeselNumber << '\n'; //TEST
+    corectPeselNumber = peselValidGenderCheck();
+    std::cout << "After peselValidGenderCheck() = " << corectPeselNumber << '\n'; //TEST
+    corectPeselNumber = peselValidWithCurrentlyDate();
+    std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
+    corectPeselNumber = peselValidWithWeight();
+    std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
+    return corectPeselNumber;
 }
 
 void University::insertStudentGender() {

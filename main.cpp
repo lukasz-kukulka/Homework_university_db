@@ -1,7 +1,8 @@
 #include "University.hpp"
 
 int main() {
-    University uniwersity;
+    University university;
+    university.insertStudentPeselNumber();
     return 0;
     
 }
