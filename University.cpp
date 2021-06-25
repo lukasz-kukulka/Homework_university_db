@@ -138,7 +138,7 @@ bool University::validatingIndexNumber() {
         std::cout << "In surname can be only alphabet\n";
         return false;
     }
-    if (indexNumber_.size() > tempStudent.getSizeIndexNumberLimit()) {
+    if (indexNumber_.size() != tempStudent.getSizeIndexNumberLimit()) {
         std::cout << "Length is to long\n";
         return false;
     }
@@ -152,7 +152,6 @@ void University::insertStudentPeselNumber() {
         std::cout << '\n';
         std::cout << peselNumber_ << '\n';  //TEST
     } while (validatingPeselNumber() == false);
-    //std::cout << "--------------------------------------------------------------"; //TEST
 }
 
 bool University::peselValidDOBCheck() {
@@ -214,19 +213,28 @@ bool University::validatingPeselNumber() {
     //std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithWeight();
     // std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
+    if (peselNumber_.size() != tempStudent.getSizePeselNumberLimit()) {
+        corectPeselNumber = false;
+    }
+    if (!corectPeselNumber) {
+        std::cout << "Pesel number in incorrect\n";
+    }
     return corectPeselNumber;
 }
 
 void University::insertStudentGender() {
     do {
-        std::cout << "Please insert student surname: ";
+        std::cout << "Please choose gender 1 - Male , 0 - Female: ";
         std::cin >> gender_;
         std::cout << '\n';
     } while (validatingGender() == false);
 }
 
 bool University::validatingGender() {
-    //TODO
+    if (gender_ !=0 && gender_ != 1) {
+        std::cout << "Wrong value, please choose 0 or 1\n";
+        return false;
+    }
     return true;
 }
 
