@@ -115,7 +115,10 @@ void University::insertAddress() {
 }
 
 bool University::validatingAddress() {
-    //TODO
+    if (address_.size() > tempStudent.getSizeAddressLimit()) {
+        std::cout << "Length is to long\n";
+        return false;
+    }
     return true;
 }
 
