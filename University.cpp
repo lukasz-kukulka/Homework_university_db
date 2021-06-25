@@ -72,7 +72,7 @@ bool University::validatingName() {
     auto result = std::all_of(name_.begin(), name_.end(), [](auto character) {
         return std::isalpha(character);
     });
-    if (result) {
+    if (!result) {
         std::cout << "In name can be only alphabet\n";
         return false;
     }
@@ -95,7 +95,7 @@ bool University::validatingSurname() {
     auto result = std::all_of(surname_.begin(), surname_.end(), [](auto character) {
         return std::isalpha(character);
     });
-    if (result) {
+    if (!result) {
         std::cout << "In surname can be only alphabet\n";
         return false;
     }
@@ -131,7 +131,13 @@ void University::insertStudentIndexNumber() {
 }
 
 bool University::validatingIndexNumber() {
-    //TODO
+    auto result = std::all_of(indexNumber_.begin(), indexNumber_.end(), [](auto character) {
+        return std::isdigit(character);
+    });
+    if (!result) {
+        std::cout << "In surname can be only alphabet\n";
+        return false;
+    }
     return true;
 }
 
