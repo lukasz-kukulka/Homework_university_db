@@ -69,11 +69,11 @@ void University::insertStudentName() {
 }
 
 bool University::validatingName() {
-    auto result = std::any_of(name_.begin(), name_.end(), [](auto character) {
+    auto result = std::all_of(name_.begin(), name_.end(), [](auto character) {
         return std::isalpha(character);
     });
     if (result) {
-        std::cout << "In name can't be any digit\n";
+        std::cout << "In name can be only alphabet\n";
         return false;
     }
     if (name_.size() > tempStudent.getSizeNameLimit()) {
@@ -92,9 +92,13 @@ void University::insertStudentSurname() {
 }
 
 bool University::validatingSurname() {
-    
-
-
+    auto result = std::all_of(surname_.begin(), surname_.end(), [](auto character) {
+        return std::isalpha(character);
+    });
+    if (result) {
+        std::cout << "In surname can be only alphabet\n";
+        return false;
+    }
     if (surname_.size() > tempStudent.getSizeSurnameLimit()) {
         std::cout << "Length is to long\n";
         return false;
