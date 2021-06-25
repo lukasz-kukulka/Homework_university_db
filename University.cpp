@@ -59,14 +59,12 @@ University::MenuOption University::menuEngine() {
 }
 
 void University::addNewStudent() {
-    //std::cout << "TEST ------------------------------------------ \n";
     insertStudentName();
     insertStudentSurname();
     insertStudentGender();
     insertAddress();
     insertStudentIndexNumber();
     insertStudentPeselNumber();
-
     std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertStudentGender(gender_) 
               << " | Address: " << address_ << " | Index nr.: " << indexNumber_ << " | PESEL: " << peselNumber_ << '\n';
     while ( 1 ) {
@@ -79,8 +77,6 @@ void University::addNewStudent() {
             break;
         }
     }
-
-    
 }
 
 void University::insertStudentName() {
