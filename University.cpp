@@ -92,7 +92,13 @@ void University::insertStudentSurname() {
 }
 
 bool University::validatingSurname() {
-    //TODO
+    
+
+
+    if (surname_.size() > tempStudent.getSurnameNameLimit()) {
+        std::cout << "Length is to long\n";
+        return false;
+    }
     return true;
 }
 
