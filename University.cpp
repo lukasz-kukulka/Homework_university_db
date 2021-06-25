@@ -138,6 +138,10 @@ bool University::validatingIndexNumber() {
         std::cout << "In surname can be only alphabet\n";
         return false;
     }
+    if (indexNumber_.size() > tempStudent.getSizeIndexNumberLimit()) {
+        std::cout << "Length is to long\n";
+        return false;
+    }
     return true;
 }
 
