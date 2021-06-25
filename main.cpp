@@ -2,7 +2,7 @@
 
 int main() {
     University university;
-    university.insertStudentPeselNumber();
+    university.applicationStart();
     return 0;
     
 }

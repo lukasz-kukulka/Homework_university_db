@@ -5,7 +5,6 @@
 class University {
 public:
     University();
-    void insertStudentPeselNumber();
     enum class MenuOption {
         BaseMenu = 0,
         AddStudents = 1,
@@ -20,8 +19,15 @@ public:
         Delete = 200
     };
 
-private:
+    enum class YesNoOption {
+        Yes,
+        No,
+        Error
+    };
+
     void applicationStart();
+
+private:
     void printMenu();
     void addNewStudent();
 
@@ -31,7 +37,7 @@ private:
     void insertStudentIndexNumber();
     
     void insertStudentGender();
-
+    void insertStudentPeselNumber();
     bool validatingName();
     bool validatingSurname();
     bool validatingIndexNumber();
@@ -55,6 +61,8 @@ private:
     void sortByPeselNumber();
     void sortBySurname();
     void deleteByIndexNumber(std::string);
+    std::string convertStudentGender(const size_t);
+    YesNoOption yesNoOption();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
     std::string name_;

@@ -38,10 +38,10 @@ private:
     std::string peselNumber_{ "8282828002" };
     Gender gender_ { Gender::female };
 
-    uint8_t sizeNameLimit_ { 16 };
-    uint8_t sizeSurnameLimit_ { 30 };
-    uint8_t sizeAddressLimit_ { 40 };
-    uint8_t sizeIndexNumberLimit_ { 12 };
-    uint8_t sizePeselNumberLimit_ { 14 };
-    uint8_t sizeGenderLimit_ { 8 };
+    size_t sizeNameLimit_ { 16 };
+    size_t sizeSurnameLimit_ { 30 };
+    size_t sizeAddressLimit_ { 40 };
+    size_t sizeIndexNumberLimit_ { 12 };
+    size_t sizePeselNumberLimit_ { 14 };
+    size_t sizeGenderLimit_ { 8 };
 };
