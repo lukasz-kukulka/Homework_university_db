@@ -63,4 +63,5 @@ private:
     std::string peselNumber_;
     size_t gender_;
     std::vector<Student>students;
+    Student tempStudent;
 };
