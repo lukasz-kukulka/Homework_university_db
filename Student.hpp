@@ -22,6 +22,12 @@ public:
     std::string getIndexNumber() const { return indexNumber_; }
     std::string getPeselNumber() const { return peselNumber_; }
     std::string getGender();
+
+    uint8_t getSizeNameLimit() const { return sizeNameLimit_; }
+    uint8_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
+    uint8_t getSizeAddressLimit() const { return sizeAddressLimit_; }
+    uint8_t getSizeIndexNumberLimit() const { return sizeIndexNumberLimit_; }
+    uint8_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
 private:
     std::string convertStudentGender(const Gender);
 
@@ -32,10 +38,10 @@ private:
     std::string peselNumber_{ "8282828002" };
     Gender gender_ { Gender::female };
 
-    uint8_t sizeNameLimit { 16 };
-    uint8_t sizeSurnameLimit { 30 };
-    uint8_t sizeAddressLimit { 40 };
-    uint8_t sizeIndexNumberLimit { 12 };
-    uint8_t sizePeselNumberLimit { 14 };
-    uint8_t sizeGenderLimit { 8 };
+    uint8_t sizeNameLimit_ { 16 };
+    uint8_t sizeSurnameLimit_ { 30 };
+    uint8_t sizeAddressLimit_ { 40 };
+    uint8_t sizeIndexNumberLimit_ { 12 };
+    uint8_t sizePeselNumberLimit_ { 14 };
+    uint8_t sizeGenderLimit_ { 8 };
 };

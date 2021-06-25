@@ -80,6 +80,7 @@ bool University::validatingName() {
         std::cout << "In name can't be any digit\n";
         return false;
     }
+    if (name_.size() > 15)
     return true;
 }
 
