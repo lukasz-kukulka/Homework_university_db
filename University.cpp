@@ -21,6 +21,12 @@ University::University()
     // students[0].printBorderBotton();
 }
 
+void University::applicationStart() {
+    do {
+        printMenu();
+    } while (menuEngine() != MenuOption::Exit);
+}
+
 void University::printMenu() {
     std::cout << " --------------------- \n";
     std::cout << "|  STUDENTS DATABASE  |\n";

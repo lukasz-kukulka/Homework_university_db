@@ -21,6 +21,7 @@ public:
     };
 
 private:
+    void applicationStart();
     void printMenu();
     void addNewStudent();
 
