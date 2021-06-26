@@ -35,9 +35,9 @@ private:
     void insertStudentSurname();
     void insertAddress();
     void insertStudentIndexNumber();
-    
     void insertStudentGender();
     void insertStudentPeselNumber();
+
     bool validatingName();
     bool validatingSurname();
     bool validatingIndexNumber();
@@ -50,6 +50,7 @@ private:
     bool validatingAddress();
 
     MenuOption menuEngine();
+    bool validatingMenuChoose();
     void showStudents();
     void saveToFile(size_t);
     void loadFromFile();

@@ -38,9 +38,11 @@ void University::printMenu() {
 }
 
 University::MenuOption University::menuEngine() {
-    std::cout << "Please insert you choice: ";
     int choice = 0;
-    std::cin >> choice;
+    do {
+        std::cout << "Please insert you choice: ";
+        std::cin >> choice;
+    } while (validatingMenuChoose() == false);
     menuOption_ = static_cast<MenuOption>(choice);
     switch (menuOption_) {
         case MenuOption::AddStudents: {
@@ -56,6 +58,10 @@ University::MenuOption University::menuEngine() {
             break;
         }
     return menuOption_;
+}
+
+bool University::validatingMenuChoose() {
+    return true;
 }
 
 void University::addNewStudent() {
