@@ -42,8 +42,9 @@ University::MenuOption University::menuEngine() {
     do {
         std::cout << "Please insert you choice: ";
         std::cin >> choice;
-    } while (validatingMenuChoose() == false);
+    } while (validatingMenuChoose(choice) == false);
     menuOption_ = static_cast<MenuOption>(choice);
+
     switch (menuOption_) {
         case MenuOption::AddStudents: {
             addNewStudent();
@@ -52,15 +53,21 @@ University::MenuOption University::menuEngine() {
         } break;
         case MenuOption::SearchStudents: {
         } break;
+        case MenuOption::SaveLoadFile : {
+        } break;
         case MenuOption::Exit: {
         } break;
-        default:
-            break;
         }
     return menuOption_;
 }
 
-bool University::validatingMenuChoose() {
+bool University::validatingMenuChoose(const int choosenValueToValid) {
+    if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > 5) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Incorrect value, please put number betwen 1 and 5\n";
+        return false;
+    }
     return true;
 }
 

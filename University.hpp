@@ -7,10 +7,11 @@ public:
     University();
     enum class MenuOption {
         BaseMenu = 0,
-        AddStudents = 1,
-        ShowStudent = 2,
-        SearchStudents = 3,
-        Exit = 4,
+        AddStudents,
+        ShowStudent,
+        SearchStudents,
+        SaveLoadFile,
+        Exit,
         SearchBySurname = 11,
         SearchByPESEL = 12,
         SortBySurname = 21,
@@ -50,7 +51,7 @@ private:
     bool validatingAddress();
 
     MenuOption menuEngine();
-    bool validatingMenuChoose();
+    bool validatingMenuChoose(const int);
     void showStudents();
     void saveToFile(size_t);
     void loadFromFile();
