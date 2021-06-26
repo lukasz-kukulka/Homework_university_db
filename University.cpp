@@ -59,9 +59,11 @@ University::MenuOption University::menuEngine() {
 }
 
 void University::addNewStudent() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     insertStudentName();
     insertStudentSurname();
     insertStudentGender();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     insertAddress();
     insertStudentIndexNumber();
     insertStudentPeselNumber();
@@ -82,7 +84,7 @@ void University::addNewStudent() {
 void University::insertStudentName() {
     do {
         std::cout << "Please insert student name: ";
-        std::cin >> name_;
+        std::getline (std::cin, name_);
     } while (validatingName() == false);
 }
 
@@ -104,7 +106,7 @@ bool University::validatingName() {
 void University::insertStudentSurname() {
     do {
         std::cout << "Please insert student surname: ";
-        std::cin >> surname_;
+        std::getline (std::cin, surname_);
     } while (validatingSurname() == false);
 }
 
@@ -126,7 +128,7 @@ bool University::validatingSurname() {
 void University::insertAddress() {
     do {
         std::cout << "Please insert student address: ";
-        std::cin >> surname_;
+        std::getline (std::cin, address_);
     } while (validatingAddress() == false);
 }
 
@@ -141,7 +143,7 @@ bool University::validatingAddress() {
 void University::insertStudentIndexNumber() {
     do {
         std::cout << "Please insert student index number: ";
-        std::cin >> indexNumber_;
+        std::getline (std::cin, indexNumber_);
     } while (validatingIndexNumber() == false);
 }
 
@@ -163,8 +165,7 @@ bool University::validatingIndexNumber() {
 void University::insertStudentPeselNumber() {
     do {
         std::cout << "Please insert student PESEL number: ";
-        std::cin >> peselNumber_;
-        std::cout << peselNumber_ << '\n';  //TEST
+        std::getline (std::cin, peselNumber_);
     } while (validatingPeselNumber() == false);
 }
 
@@ -237,9 +238,8 @@ bool University::validatingPeselNumber() {
 
 void University::insertStudentGender() {
     do {
-        std::cout << "Please choose gender 1 - Male , 0 - Female: ";
-        std::cin >> gender_;
-        std::cout << '\n';
+        std::cout << "Please choose gender: 1 - Male , 0 - Female: ";
+        std::cin >> gender_;  
     } while (validatingGender() == false);
 }
 
