@@ -412,14 +412,12 @@ void University::deleteByIndexNumber(std::string indexNumber) {
     }
     while (1) {
         std::cout << "Do you wanna delete this record? Y/N: ";
-        std::string confirm;
-        std::cin >> confirm;
-        if (confirm == "Y" || confirm == "y") {
+        if (yesNoOption() == YesNoOption::Yes) {
             students[iterator] = students[students.size() - 1];
             students.erase(students.end() - 1);
             break;
         }
-        if (confirm == "N" || confirm == "n") {
+        if (yesNoOption() == YesNoOption::No) {
             break;
         }
     }

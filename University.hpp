@@ -10,6 +10,7 @@ public:
         AddStudents,
         ShowStudent,
         SearchStudents,
+        SortStudents,
         SaveLoadFile,
         Exit,
         SearchBySurname = 11,
