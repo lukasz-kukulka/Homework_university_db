@@ -44,12 +44,12 @@ University::MenuOption University::menuEngine() {
         std::cin >> choice;
     } while (validatingMenuChoose(choice) == false);
     menuOption_ = static_cast<MenuOption>(choice);
-
     switch (menuOption_) {
         case MenuOption::AddStudents: {
             addNewStudent();
         } break;
         case MenuOption::ShowStudent: {
+            showStudents();
         } break;
         case MenuOption::SearchStudents: {
         } break;
@@ -155,7 +155,7 @@ bool University::validatingAddress() {
 
 void University::insertStudentIndexNumber() {
     do {
-        std::cout << "Please insert student index number: ";
+        std::cout << "Please insert student index number(10 digits): ";
         std::getline (std::cin, indexNumber_);
     } while (validatingIndexNumber() == false);
 }
@@ -265,7 +265,14 @@ bool University::validatingGender() {
 }
 
 void University::showStudents() {
-    //std::cout <<
+    if (!students.empty()) {
+        students[0].printBorderTop();
+        for (auto ele : students) {
+            ele.printStudent();
+        }
+        students[0].printBorderBotton();
+    }
+    std::cout << "Database of students is empty please load form file or add new students\n";
 }
 
 void University::saveToFile(size_t indexStudent) {
