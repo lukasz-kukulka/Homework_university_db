@@ -52,12 +52,13 @@ University::MenuOption University::menuEngine() {
             showStudents();
         } break;
         case MenuOption::SearchStudents: {
+            searchMenuEngine();
         } break;
         case MenuOption::SaveLoadFile : {
         } break;
         case MenuOption::Exit: {
         } break;
-        }
+    }
     return menuOption_;
 }
 
@@ -300,30 +301,24 @@ void University::loadFromFile() {
     }
     while (getline(file, line)) {
         switch (lineNo) {
-        case 2: {
-            name_ = line;
-            break;
-        }
-        case 3: {
-            surname_ = line;
-            break;
-        }
-        case 4: {
-            address_ = line;
-            break;
-        }
-        case 5: {
-            indexNumber_ = line;
-            break;
-        }
-        case 6: {
-            peselNumber_ = line;
-            break;
-        }
-        case 7: {
-            line.size() == 4 ? gender_ = 1 : gender_ = 0;
-            break;
-        }
+            case 2: {
+                name_ = line;
+            } break;
+            case 3: {
+                surname_ = line;
+            } break;
+            case 4: {
+                address_ = line;
+            } break;
+            case 5: {
+                indexNumber_ = line;
+            } break;
+            case 6: {
+                peselNumber_ = line;
+            } break;
+            case 7: {
+                line.size() == 4 ? gender_ = 1 : gender_ = 0;
+            } break;
         }
         lineNo++;
         if (lineNo > 8) {
@@ -350,23 +345,31 @@ int University::countRecord() {
     return lineNo / 8;
 }
 
-University::MenuOption University::searchStudent() {
-    uint8_t choice = 0;
+void University::printSearchMenu() {
+    std::cout << "SEARCH BY\n";
+    std::cout << "1. Surname\n";
+    std::cout << "2. PESEL number\n";
+    std::cout << "3. Back to main menu\n";
+    std::cout << "Insert your choice: ";
+}
+
+University::MenuOption University::searchMenuStudent() {
+    size_t choice = 0;
     do {
-        std::cout << "SEARCH BY\n";
-        std::cout << "1. Surname\n";
-        std::cout << "2. PESEL number\n";
-        std::cout << "3. Back to main menu\n";
-        std::cout << "Insert your choice: ";
         std::cin >> choice;
         if (choice == 1 || choice == 2) {
             return static_cast<MenuOption>(choice + 10);
         }
         if (choice == 3) {
-            return MenuOption::BaseMenu;
+            return MenuOption::Back;
         }
     } while (choice != 1 || choice != 2 || choice != 0);
     return MenuOption::BaseMenu;
+}
+
+void University::searchMenuEngine() {
+    printSearchMenu();
+    searchMenuStudent();
 }
 
 void University::searchByPeselNumber(std::string pesel) {

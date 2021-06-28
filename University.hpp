@@ -58,7 +58,9 @@ private:
     void loadFromFile();
     int countRecord();
 
-    MenuOption searchStudent();
+    void printSearchMenu();
+    MenuOption searchMenuStudent();
+    void searchMenuEngine();
     void searchByPeselNumber(std::string);
     void searchBySurname(std::string);
     void sortByPeselNumber();
