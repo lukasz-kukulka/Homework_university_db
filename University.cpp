@@ -34,7 +34,10 @@ void University::printMenu() {
     std::cout << "1. Add student\n";
     std::cout << "2. Show all students\n";
     std::cout << "3. Search students \n";
-    std::cout << "4. Exit\n\n";
+    std::cout << "4. Sort students \n";
+    std::cout << "5. Save/Load from file\n";
+    std::cout << "6. Delete record\n";
+    std::cout << "7. Exit\n\n";
 }
 
 University::MenuOption University::menuEngine() {
@@ -45,16 +48,21 @@ University::MenuOption University::menuEngine() {
     } while (validatingMenuChoose(choice) == false);
     menuOption_ = static_cast<MenuOption>(choice);
     switch (menuOption_) {
-        case MenuOption::AddStudents: {
+        case MenuOption::AddStudents : {
             addNewStudent();
         } break;
-        case MenuOption::ShowStudent: {
+        case MenuOption::ShowStudent : {
             showStudents();
         } break;
-        case MenuOption::SearchStudents: {
+        case MenuOption::SearchStudents : {
             searchMenuEngine();
         } break;
+        case MenuOption::SortStudents : {
+            
+        } break;
         case MenuOption::SaveLoadFile : {
+        } break;
+        case MenuOption::Delete : {
         } break;
         case MenuOption::Exit: {
         } break;

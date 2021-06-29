@@ -12,13 +12,13 @@ public:
         SearchStudents,
         SortStudents,
         SaveLoadFile,
+        Delete = 200,
         Exit,
         SearchBySurname = 11,
         SearchByPESEL = 12,
         SortBySurname = 21,
         SortByPESEL = 22,
-        Back = 100,
-        Delete = 200
+        Back = 100
     };
 
     enum class YesNoOption {
@@ -68,8 +68,15 @@ private:
     std::string insertSearchSurname();
     void checkIfExistSurname(std::string);
     void searchBySurname();
+
+
+    void sortStudents();
+    void printSortMenu();
     void sortByPeselNumber();
     void sortBySurname();
+
+
+
     void deleteByIndexNumber(std::string);
     std::string convertStudentGender(const size_t);
     YesNoOption yesNoOption();
