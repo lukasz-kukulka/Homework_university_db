@@ -366,19 +366,18 @@ University::MenuOption University::searchMenuStudent() {
 
 void University::searchMenuEngine() {
     printSearchMenu();
-    //MenuOption searchChoose = searchMenuStudent();
-    // while (searchMenuStudent() == MenuOption::Back) {
-    //     switch (searchMenuStudent())
-    //     {
-    //     case MenuOption::SearchByPESEL : {
-    //         searchByPeselNumber();
-    //     } break;
-
-        
-    //     default:
-    //         break;
-    //     }
-    // }
+    MenuOption searchChoose = MenuOption::BaseMenu;
+    while (searchChoose != MenuOption::Back) {
+        searchChoose = searchMenuStudent();
+        switch (searchChoose) {
+            case MenuOption::SearchByPESEL : {
+                searchByPeselNumber();
+            } break;
+            case MenuOption::SearchBySurname : {
+                //searchBySurname();
+            } break;
+        }
+    }
 }
 
 bool University::validatingSearchMenuChoose(const int choosenValueToValid) {
