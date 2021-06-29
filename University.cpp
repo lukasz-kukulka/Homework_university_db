@@ -365,16 +365,16 @@ University::MenuOption University::searchMenuStudent() {
 }
 
 void University::searchMenuEngine() {
-    printSearchMenu();
     MenuOption searchChoose = MenuOption::BaseMenu;
     while (searchChoose != MenuOption::Back) {
+        printSearchMenu();
         searchChoose = searchMenuStudent();
         switch (searchChoose) {
+            case MenuOption::SearchBySurname : {
+                searchBySurname();
+            } break;
             case MenuOption::SearchByPESEL : {
                 searchByPeselNumber();
-            } break;
-            case MenuOption::SearchBySurname : {
-                //searchBySurname();
             } break;
         }
     }
@@ -383,7 +383,6 @@ void University::searchMenuEngine() {
 bool University::validatingSearchMenuChoose(const int choosenValueToValid) {
     if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > 3) {
         std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Incorrect value, please put number betwen 1 and 3\n";
         return false;
     }
@@ -415,6 +414,7 @@ void University::checkIfExistPeselNumber(std::string pesel) {
 }
 
 void University::searchByPeselNumber() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     checkIfExistPeselNumber(insertSearchPeselNumber());
 }
 
@@ -443,7 +443,8 @@ void University::checkIfExistSurname(std::string surname) {
 }
 
 void University::searchBySurname() {
-
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    checkIfExistSurname(insertSearchSurname());
 }
 
 void University::sortByPeselNumber() {
