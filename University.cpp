@@ -357,18 +357,16 @@ University::MenuOption University::searchMenuStudent() {
     size_t choice = 0;
     do {
         std::cin >> choice;
-        if (choice == 1 || choice == 2) {
-            return static_cast<MenuOption>(choice + 10);
-        }
-        if (choice == 3) {
-            return MenuOption::Back;
-        }
-    } while (choice != 1 || choice != 2 || choice != 0);
-    return MenuOption::BaseMenu;
+    } while (validatingSearchMenuChoose(choice) == false);
+    if (choice == 3) {
+        return MenuOption::Back;
+    }
+    return static_cast<MenuOption>(choice + 10);
 }
 
 void University::searchMenuEngine() {
     printSearchMenu();
+    //MenuOption searchChoose = searchMenuStudent();
     // while (searchMenuStudent() == MenuOption::Back) {
     //     switch (searchMenuStudent())
     //     {
@@ -383,6 +381,16 @@ void University::searchMenuEngine() {
     // }
 }
 
+bool University::validatingSearchMenuChoose(const int choosenValueToValid) {
+    if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > 3) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Incorrect value, please put number betwen 1 and 3\n";
+        return false;
+    }
+    return true;
+}
+
 std::string University::insertSearchPeselNumber() {
     std::string insertPesel;
     do {
@@ -390,10 +398,6 @@ std::string University::insertSearchPeselNumber() {
         std::getline (std::cin, insertPesel);
     } while (validatingPeselNumber() == false);
     return insertPesel;
-}
-
-void University::searchByPeselNumber() {
-
 }
 
 void University::checkIfExistPeselNumber(std::string pesel) {
@@ -409,7 +413,10 @@ void University::checkIfExistPeselNumber(std::string pesel) {
     if (ifExistPeselNumber == false) {
         std::cout << "PESEL number dont exist in database\n";
     }
-    
+}
+
+void University::searchByPeselNumber() {
+    checkIfExistPeselNumber(insertSearchPeselNumber());
 }
 
 void University::searchBySurname(std::string surname) {
