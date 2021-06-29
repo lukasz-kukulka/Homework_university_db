@@ -369,7 +369,27 @@ University::MenuOption University::searchMenuStudent() {
 
 void University::searchMenuEngine() {
     printSearchMenu();
-    searchMenuStudent();
+    // while (searchMenuStudent() == MenuOption::Back) {
+    //     switch (searchMenuStudent())
+    //     {
+    //     case MenuOption::SearchByPESEL : {
+    //         searchByPeselNumber();
+    //     } break;
+
+        
+    //     default:
+    //         break;
+    //     }
+    // }
+}
+
+std::string University::insertSearchPeselNumber() {
+    std::string insertPesel;
+    do {
+        std::cout << "Please insert searching PESEL number: ";
+        std::getline (std::cin, insertPesel);
+    } while (validatingPeselNumber() == false);
+    return insertPesel;
 }
 
 void University::searchByPeselNumber(std::string pesel) {
