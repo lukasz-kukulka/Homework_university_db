@@ -418,6 +418,15 @@ void University::searchByPeselNumber() {
     checkIfExistPeselNumber(insertSearchPeselNumber());
 }
 
+std::string University::insertSearchSurname() {
+    std::string insertSurname;
+    do {
+        std::cout << "Please insert searching Surname: ";
+        std::getline (std::cin, insertSurname);
+    } while (validatingSurname() == false);
+    return insertSurname;
+}
+
 void University::checkIfExistSurname(std::string surname) {
     bool ifExistSurname = false;
     for (auto& student : students) {

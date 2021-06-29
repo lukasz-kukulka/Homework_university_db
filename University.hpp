@@ -65,6 +65,7 @@ private:
     std::string insertSearchPeselNumber();
     void checkIfExistPeselNumber(std::string);
     void searchByPeselNumber();
+    std::string insertSearchSurname();
     void checkIfExistSurname(std::string);
     void searchBySurname();
     void sortByPeselNumber();
