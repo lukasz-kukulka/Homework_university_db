@@ -62,7 +62,8 @@ private:
     MenuOption searchMenuStudent();
     void searchMenuEngine();
     std::string insertSearchPeselNumber();
-    void searchByPeselNumber(std::string);
+    void checkIfExistPeselNumber(std::string);
+    void searchByPeselNumber();
     void searchBySurname(std::string);
     void sortByPeselNumber();
     void sortBySurname();

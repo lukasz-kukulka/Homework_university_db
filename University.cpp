@@ -392,13 +392,24 @@ std::string University::insertSearchPeselNumber() {
     return insertPesel;
 }
 
-void University::searchByPeselNumber(std::string pesel) {
+void University::searchByPeselNumber() {
+
+}
+
+void University::checkIfExistPeselNumber(std::string pesel) {
+    bool ifExistPeselNumber = false;
     for (auto& student : students) {
         if (student.getPeselNumber() == pesel) {
             student.printStudent();
             student.printBorderBotton();
+            ifExistPeselNumber = true;
+            break;
         }
     }
+    if (ifExistPeselNumber == false) {
+        std::cout << "PESEL number dont exist in database\n";
+    }
+    
 }
 
 void University::searchBySurname(std::string surname) {
