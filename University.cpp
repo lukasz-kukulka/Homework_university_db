@@ -410,7 +410,7 @@ void University::checkIfExistPeselNumber(std::string pesel) {
         }
     }
     if (ifExistPeselNumber == false) {
-        std::cout << "PESEL number dont exist in database\n";
+        std::cout << "PESEL number don't exist in database\n";
     }
 }
 
@@ -418,13 +418,23 @@ void University::searchByPeselNumber() {
     checkIfExistPeselNumber(insertSearchPeselNumber());
 }
 
-void University::searchBySurname(std::string surname) {
+void University::checkIfExistSurname(std::string surname) {
+    bool ifExistSurname = false;
     for (auto& student : students) {
         if (student.getSurname() == surname) {
             student.printStudent();
             student.printBorderBotton();
+            ifExistSurname = true;
+            break;
         }
     }
+    if (ifExistSurname == false) {
+        std::cout << "Surname don't exist in database\n";
+    }
+}
+
+void University::searchBySurname() {
+
 }
 
 void University::sortByPeselNumber() {
