@@ -466,6 +466,22 @@ void University::printSortMenu() {
     std::cout << "Insert your choice: ";
 }
 
+void University::sortMenuEngine() {
+    MenuOption sortChoose = MenuOption::BaseMenu;
+    while (sortChoose != MenuOption::Back) {
+        printSortMenu();
+        //sortChoose = searchMenuStudent();
+        switch (sortChoose) {
+            case MenuOption::SortByPESEL : {
+                searchBySurname();
+            } break;
+            case MenuOption::SearchByPESEL : {
+                searchByPeselNumber();
+            } break;
+        }
+    }
+}
+
 void University::sortByPeselNumber() {
     std::sort(students.begin(), students.end(), [&](auto const& lhs, auto const& rhs) {
         return lhs.getPeselNumber() < rhs.getPeselNumber();

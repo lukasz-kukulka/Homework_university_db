@@ -72,6 +72,7 @@ private:
 
     void sortStudents();
     void printSortMenu();
+    void sortMenuEngine();
     void sortByPeselNumber();
     void sortBySurname();
 
