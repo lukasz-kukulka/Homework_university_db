@@ -69,14 +69,12 @@ private:
     void checkIfExistSurname(std::string);
     void searchBySurname();
 
-
     void sortStudents();
     void printSortMenu();
     void sortMenuEngine();
+    MenuOption sortMenuStudent();
     void sortByPeselNumber();
     void sortBySurname();
-
-
 
     void deleteByIndexNumber(std::string);
     std::string convertStudentGender(const size_t);

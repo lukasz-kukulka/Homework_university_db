@@ -470,16 +470,20 @@ void University::sortMenuEngine() {
     MenuOption sortChoose = MenuOption::BaseMenu;
     while (sortChoose != MenuOption::Back) {
         printSortMenu();
-        //sortChoose = searchMenuStudent();
+        sortChoose = sortMenuStudent();
         switch (sortChoose) {
             case MenuOption::SortByPESEL : {
-                searchBySurname();
+                sortByPeselNumber();
             } break;
-            case MenuOption::SearchByPESEL : {
-                searchByPeselNumber();
+            case MenuOption::SortBySurname : {
+                sortBySurname();
             } break;
         }
     }
+}
+
+University::MenuOption University::sortMenuStudent() {
+
 }
 
 void University::sortByPeselNumber() {
