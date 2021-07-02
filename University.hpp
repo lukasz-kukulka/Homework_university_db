@@ -87,6 +87,6 @@ private:
     std::string indexNumber_;
     std::string peselNumber_;
     size_t gender_;
-    std::vector<Student>students;
-    Student tempStudent;
+    std::vector<Student>students_;
+    Student tempStudent_;
 };

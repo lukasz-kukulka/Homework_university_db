@@ -7,18 +7,18 @@
 constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 
 University::University()
-    : tempStudent() {
+    : tempStudent_() {
     // loadFromFile();
     // for (int i = 0; i < 10; i++) {
-    //     students.push_back(Student());
+    //     students_.push_back(Student());
     //     saveToFile(i);
     // }
-    // students[0].printBorderTop();
-    // for (auto stu : students) {
+    // students_[0].printBorderTop();
+    // for (auto stu : students_) {
 
     //     stu.printStudent();
     // }
-    // students[0].printBorderBotton();
+    // students_[0].printBorderBotton();
 }
 
 void University::applicationStart() {
@@ -58,7 +58,7 @@ University::MenuOption University::menuEngine() {
             searchMenuEngine();
         } break;
         case MenuOption::SortStudents : {
-            
+            sortMenuEngine();
         } break;
         case MenuOption::SaveLoadFile : {
 
@@ -97,7 +97,7 @@ void University::addNewStudent() {
     while ( 1 ) {
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes) {
-            students.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
+            students_.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
             break;
         }
         if (yesNoOption() == YesNoOption::No) {
@@ -121,7 +121,7 @@ bool University::validatingName() {
         std::cout << "In name can be only alphabet\n";
         return false;
     }
-    if (name_.size() > tempStudent.getSizeNameLimit()) {
+    if (name_.size() > tempStudent_.getSizeNameLimit()) {
         std::cout << "Length is to long\n";
         return false;
     }
@@ -143,7 +143,7 @@ bool University::validatingSurname() {
         std::cout << "In surname can be only alphabet\n";
         return false;
     }
-    if (surname_.size() > tempStudent.getSizeSurnameLimit()) {
+    if (surname_.size() > tempStudent_.getSizeSurnameLimit()) {
         std::cout << "Length is to long\n";
         return false;
     }
@@ -158,7 +158,7 @@ void University::insertAddress() {
 }
 
 bool University::validatingAddress() {
-    if (address_.size() > tempStudent.getSizeAddressLimit()) {
+    if (address_.size() > tempStudent_.getSizeAddressLimit()) {
         std::cout << "Length is to long\n";
         return false;
     }
@@ -180,7 +180,7 @@ bool University::validatingIndexNumber() {
         std::cout << "In surname can be only alphabet\n";
         return false;
     }
-    if (indexNumber_.size() != tempStudent.getSizeIndexNumberLimit() - 2) {
+    if (indexNumber_.size() != tempStudent_.getSizeIndexNumberLimit() - 2) {
         std::cout << "Wrong length, insert 10 digit\n";
         return false;
     }
@@ -252,7 +252,7 @@ bool University::validatingPeselNumber() {
     //std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithWeight();
     // std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
-    if (peselNumber_.size() != tempStudent.getSizePeselNumberLimit() - 3) {
+    if (peselNumber_.size() != tempStudent_.getSizePeselNumberLimit() - 3) {
         corectPeselNumber = false;
     }
     if (!corectPeselNumber) {
@@ -277,12 +277,12 @@ bool University::validatingGender() {
 }
 
 void University::showStudents() {
-    if (!students.empty()) {
-        students[0].printBorderTop();
-        for (auto ele : students) {
+    if (!students_.empty()) {
+        students_[0].printBorderTop();
+        for (auto ele : students_) {
             ele.printStudent();
         }
-        students[0].printBorderBotton();
+        students_[0].printBorderBotton();
     }
     std::cout << "Database of students is empty please load form file or add new students\n";
 }
@@ -291,17 +291,17 @@ void University::saveToFile(size_t indexStudent) {
     std::fstream file;
     file.open("records.txt", std::ios::out | std::ios::app);
     file << "[Student nr. : " << indexStudent + 1 << "]\n";
-    file << students[indexStudent].getName() << "\n";
-    file << students[indexStudent].getSurname() << "\n";
-    file << students[indexStudent].getAddress() << "\n";
-    file << students[indexStudent].getIndexNumber() << "\n";
-    file << students[indexStudent].getPeselNumber() << "\n";
-    file << students[indexStudent].getGender() << "\n\n";
+    file << students_[indexStudent].getName() << "\n";
+    file << students_[indexStudent].getSurname() << "\n";
+    file << students_[indexStudent].getAddress() << "\n";
+    file << students_[indexStudent].getIndexNumber() << "\n";
+    file << students_[indexStudent].getPeselNumber() << "\n";
+    file << students_[indexStudent].getGender() << "\n\n";
     file.close();
 }
 
 void University::loadFromFile() {
-    students.reserve(countRecord());
+    students_.reserve(countRecord());
     int lineNo = 1;
     std::string line;
     std::fstream file;
@@ -334,7 +334,7 @@ void University::loadFromFile() {
         lineNo++;
         if (lineNo > 8) {
             lineNo = 1;
-            students.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
+            students_.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
         }
     }
     file.close();
@@ -411,7 +411,7 @@ std::string University::insertSearchPeselNumber() {
 
 void University::checkIfExistPeselNumber(std::string pesel) {
     bool ifExistPeselNumber = false;
-    for (auto& student : students) {
+    for (auto& student : students_) {
         if (student.getPeselNumber() == pesel) {
             student.printStudent();
             student.printBorderBotton();
@@ -440,7 +440,7 @@ std::string University::insertSearchSurname() {
 
 void University::checkIfExistSurname(std::string surname) {
     bool ifExistSurname = false;
-    for (auto& student : students) {
+    for (auto& student : students_) {
         if (student.getSurname() == surname) {
             student.printStudent();
             student.printBorderBotton();
@@ -494,21 +494,32 @@ University::MenuOption University::sortMenuStudent() {
 }
 
 void University::sortByPeselNumber() {
-    std::sort(students.begin(), students.end(), [&](auto const& lhs, auto const& rhs) {
-        return lhs.getPeselNumber() < rhs.getPeselNumber();
-    });
+    if (!students_.empty()) {
+        std::sort(students_.begin(), students_.end(), [&](auto const& lhs, auto const& rhs) {
+            return lhs.getPeselNumber() < rhs.getPeselNumber();
+        });
+        std::cout << "Database is sorted by PESEL number\n";
+    } else {
+        std::cout << "Database is empty\n";
+    }
+
 }
 
 void University::sortBySurname() {
-    std::sort(students.begin(), students.end(), [&](auto const& lhs, auto const& rhs) {
-        return lhs.getSurname() < rhs.getSurname();
-    });
+    if (!students_.empty()) {
+        std::sort(students_.begin(), students_.end(), [&](auto const& lhs, auto const& rhs) {
+            return lhs.getSurname() < rhs.getSurname();
+        });
+        std::cout << "Database is sorted by surname\n";
+    } else {
+        std::cout << "Database is empty\n";
+    }
 }
 
 void University::deleteByIndexNumber(std::string indexNumber) {
     auto iterator = 0;
     std::string answer;
-    for (auto& student : students) {
+    for (auto& student : students_) {
         iterator++;
         if (student.getIndexNumber() == indexNumber) {
             student.printStudent();
@@ -519,8 +530,8 @@ void University::deleteByIndexNumber(std::string indexNumber) {
     while (1) {
         std::cout << "Do you wanna delete this record? Y/N: ";
         if (yesNoOption() == YesNoOption::Yes) {
-            students[iterator] = students[students.size() - 1];
-            students.erase(students.end() - 1);
+            students_[iterator] = students_[students_.size() - 1];
+            students_.erase(students_.end() - 1);
             break;
         }
         if (yesNoOption() == YesNoOption::No) {
