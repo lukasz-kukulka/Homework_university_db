@@ -368,7 +368,7 @@ University::MenuOption University::searchMenuStudent() {
     size_t choice = 0;
     do {
         std::cin >> choice;
-    } while (validatingSearchMenuChoose(choice) == false);
+    } while (validatingSearchAndSortMenuChoose(choice) == false);
     if (choice == 3) {
         return MenuOption::Back;
     }
@@ -391,7 +391,7 @@ void University::searchMenuEngine() {
     }
 }
 
-bool University::validatingSearchMenuChoose(const int choosenValueToValid) {
+bool University::validatingSearchAndSortMenuChoose(const int choosenValueToValid) {
     if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > 3) {
         std::cin.clear();
         std::cout << "Incorrect value, please put number betwen 1 and 3\n";
@@ -483,7 +483,14 @@ void University::sortMenuEngine() {
 }
 
 University::MenuOption University::sortMenuStudent() {
-
+    size_t choice = 0;
+    do {
+        std::cin >> choice;
+    } while (validatingSearchAndSortMenuChoose(choice) == false);
+    if (choice == 3) {
+        return MenuOption::Back;
+    }
+    return static_cast<MenuOption>(choice + 20);
 }
 
 void University::sortByPeselNumber() {
