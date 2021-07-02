@@ -61,10 +61,13 @@ University::MenuOption University::menuEngine() {
             
         } break;
         case MenuOption::SaveLoadFile : {
+
         } break;
         case MenuOption::Delete : {
+
         } break;
         case MenuOption::Exit: {
+            
         } break;
     }
     return menuOption_;
@@ -453,6 +456,14 @@ void University::checkIfExistSurname(std::string surname) {
 void University::searchBySurname() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     checkIfExistSurname(insertSearchSurname());
+}
+
+void University::printSortMenu() {
+    std::cout << "SORT BY\n";
+    std::cout << "1. PESEL number\n";
+    std::cout << "2. Surname number\n";
+    std::cout << "3. Back to main menu\n";
+    std::cout << "Insert your choice: ";
 }
 
 void University::sortByPeselNumber() {
