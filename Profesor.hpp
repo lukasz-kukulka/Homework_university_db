@@ -2,19 +2,14 @@
 
 #include <string>
 
-class Student {
+class Profesor {
 public:
     enum class Gender : uint8_t {
         female,
         male
     };
-    Student() = default;
-    Student(std::string name, std::string surname, std::string address, std::string indexNumber, std::string peselNumber, Gender gender);
-    
-    void printBorderTop();
-    void printStudent();
-    void printBorderBotton();
-    int getBorderSize() const;
+    Profesor() = default;
+    Profesor(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender, size_t salary);
 
     std::string getName() const { return name_; }
     std::string getSurname() const { return surname_; }
@@ -22,14 +17,15 @@ public:
     std::string getPeselNumber() const { return peselNumber_; }
     std::string getGender();
 
-    std::string getIndexNumber() const { return indexNumber_; }
+    size_t getSalary() const { return salary_; }
 
     uint8_t getSizeNameLimit() const { return sizeNameLimit_; }
     uint8_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
     uint8_t getSizeAddressLimit() const { return sizeAddressLimit_; }
     uint8_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
 
-    uint8_t getSizeIndexNumberLimit() const { return sizeIndexNumberLimit_; }
+    uint8_t getSizeSalaryLimit() const { return sizeSalaryLimit_; }
+
 private:
     std::string convertStudentGender(const Gender);
 
@@ -39,7 +35,7 @@ private:
     std::string peselNumber_{ "8282828002" };
     Gender gender_ { Gender::female };
 
-    std::string indexNumber_ { "8212343823" };
+    size_t salary_ { 1000 };
 
     size_t sizeNameLimit_ { 16 };
     size_t sizeSurnameLimit_ { 30 };
@@ -47,5 +43,5 @@ private:
     size_t sizePeselNumberLimit_ { 14 };
     size_t sizeGenderLimit_ { 8 };
 
-    size_t sizeIndexNumberLimit_ { 12 };
+    size_t sizeSalaryLimit_ { 6 };
 };

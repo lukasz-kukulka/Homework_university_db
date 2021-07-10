@@ -502,7 +502,6 @@ void University::sortByPeselNumber() {
     } else {
         std::cout << "Database is empty\n";
     }
-
 }
 
 void University::sortBySurname() {
