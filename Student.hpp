@@ -2,7 +2,9 @@
 
 #include <string>
 
-class Student {
+#include "Person.hpp"
+
+class Student : public Person{
 public:
     enum class Gender : size_t {
         female,

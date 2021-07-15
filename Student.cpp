@@ -4,12 +4,8 @@
 #include <iostream>
 
 Student::Student(std::string name, std::string surname, std::string address, std::string indexNumber, std::string peselNumber, Gender gender) 
-    : name_(name)
-    , surname_(surname)
-    , address_(address)
+    : Person(name, surname, address, peselNumber, gender)
     , indexNumber_(indexNumber)
-    , peselNumber_(peselNumber)
-    , gender_(gender)
 {}
 
 std::string Student::convertStudentGender(const Gender gender) {
