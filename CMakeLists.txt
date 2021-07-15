@@ -1,5 +1,21 @@
 cmake_minimum_required(VERSION 3.10)
 project(Univesity)
 
-add_executable(${PROJECT_NAME} main.cpp Profesor.cpp University.cpp Student.cpp Person.cpp)
-#add_executable(${PROJECT_NAME}-test test/greeter.ut.cpp greeter.cpp person.cpp)
+set(FILES 
+    Person.cpp
+    Profesor.cpp
+    Student.cpp
+    University.cpp)
+
+add_library(${PROJECT_NAME}-lib ${FILES})
+add_executable(${PROJECT_NAME} main.cpp)
+
+target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
+target_compile_options(${PROJECT_NAME}-lib PRIVATE -Wall -Wextra -Werror -pedantic -Wconversion)
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Werror -pedantic -Wconversion)
+
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
+target_compile_features(${PROJECT_NAME}-lib PRIVATE cxx_std_20)
+
+
+

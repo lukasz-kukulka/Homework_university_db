@@ -4,7 +4,7 @@
 
 class Student {
 public:
-    enum class Gender : uint8_t {
+    enum class Gender : size_t {
         female,
         male
     };
@@ -24,12 +24,7 @@ public:
 
     std::string getIndexNumber() const { return indexNumber_; }
 
-    uint8_t getSizeNameLimit() const { return sizeNameLimit_; }
-    uint8_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
-    uint8_t getSizeAddressLimit() const { return sizeAddressLimit_; }
-    uint8_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
-
-    uint8_t getSizeIndexNumberLimit() const { return sizeIndexNumberLimit_; }
+    size_t getSizeIndexNumberLimit() const { return sizeIndexNumberLimit_; }
 private:
     std::string convertStudentGender(const Gender);
 
@@ -40,12 +35,6 @@ private:
     Gender gender_ { Gender::female };
 
     std::string indexNumber_ { "8212343823" };
-
-    size_t sizeNameLimit_ { 16 };
-    size_t sizeSurnameLimit_ { 30 };
-    size_t sizeAddressLimit_ { 40 };
-    size_t sizePeselNumberLimit_ { 14 };
-    size_t sizeGenderLimit_ { 8 };
 
     size_t sizeIndexNumberLimit_ { 12 };
 };

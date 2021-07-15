@@ -11,21 +11,22 @@ public:
 
     Person() = default;
     Person(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender);
+    //virtual ~Person() = 0;
 
-    std::string getName() const { return name_; }
-    std::string getSurname() const { return surname_; }
-    std::string getAddress() const { return address_; }
-    std::string getPeselNumber() const { return peselNumber_; }
-    std::string getGender();
+    virtual std::string getName() const { return name_; }
+    virtual std::string getSurname() const { return surname_; }
+    virtual std::string getAddress() const { return address_; }
+    virtual std::string getPeselNumber() const { return peselNumber_; }
+    virtual std::string getGender();
 
-    uint8_t getSizeNameLimit() const { return sizeNameLimit_; }
-    uint8_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
-    uint8_t getSizeAddressLimit() const { return sizeAddressLimit_; }
-    uint8_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
-    uint8_t getSizeGenderLimit() const { return sizePeselNumberLimit_; }
+    virtual size_t getSizeNameLimit() const { return sizeNameLimit_; }
+    virtual size_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
+    virtual size_t getSizeAddressLimit() const { return sizeAddressLimit_; }
+    virtual size_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
+    virtual size_t getSizeGenderLimit() const { return sizePeselNumberLimit_; }
 
 protected:
-    std::string convertStudentGender(const Gender);
+    virtual std::string convertStudentGender(const Gender);
 
     std::string name_ {"testtt"};
     std::string surname_ { "cos aaaa aaaaaaaaaaaaaaa" };
