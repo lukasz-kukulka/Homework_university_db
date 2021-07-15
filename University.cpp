@@ -10,15 +10,15 @@ University::University()
     : tempStudent_() {
     // loadFromFile();
     // for (int i = 0; i < 10; i++) {
-    //     students_.push_back(Student());
+    //     person_.push_back(Student());
     //     saveToFile(i);
     // }
-    // students_[0].printBorderTop();
-    // for (auto stu : students_) {
+    // person_[0].printBorderTop();
+    // for (auto stu : person_) {
 
     //     stu.printStudent();
     // }
-    // students_[0].printBorderBotton();
+    // person_[0].printBorderBotton();
 }
 
 void University::applicationStart() {
@@ -69,6 +69,8 @@ University::MenuOption University::menuEngine() {
         case MenuOption::Exit: {
             
         } break;
+        default :
+        break;
     }
     return menuOption_;
 }
@@ -97,8 +99,8 @@ void University::addNewStudent() {
     while ( 1 ) {
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes) {
-            students_.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
-            break;
+            person_.push_back(Person(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+            break; 
         }
         if (yesNoOption() == YesNoOption::No) {
             break;
@@ -277,12 +279,12 @@ bool University::validatingGender() {
 }
 
 void University::showStudents() {
-    if (!students_.empty()) {
-        students_[0].printBorderTop();
-        for (auto ele : students_) {
+    if (!person_.empty()) {
+        person_[0].printBorderTop();
+        for (auto ele : person_) {
             ele.printStudent();
         }
-        students_[0].printBorderBotton();
+        person_[0].printBorderBotton();
     }
     std::cout << "Database of students is empty please load form file or add new students\n";
 }
@@ -291,17 +293,17 @@ void University::saveToFile(size_t indexStudent) {
     std::fstream file;
     file.open("records.txt", std::ios::out | std::ios::app);
     file << "[Student nr. : " << indexStudent + 1 << "]\n";
-    file << students_[indexStudent].getName() << "\n";
-    file << students_[indexStudent].getSurname() << "\n";
-    file << students_[indexStudent].getAddress() << "\n";
-    file << students_[indexStudent].getIndexNumber() << "\n";
-    file << students_[indexStudent].getPeselNumber() << "\n";
-    file << students_[indexStudent].getGender() << "\n\n";
+    file << person_[indexStudent].getName() << "\n";
+    file << person_[indexStudent].getSurname() << "\n";
+    file << person_[indexStudent].getAddress() << "\n";
+    file << person_[indexStudent].getIndexNumber() << "\n";
+    file << person_[indexStudent].getPeselNumber() << "\n";
+    file << person_[indexStudent].getGender() << "\n\n";
     file.close();
 }
 
 void University::loadFromFile() {
-    students_.reserve(countRecord());
+    person_.reserve(countRecord());
     int lineNo = 1;
     std::string line;
     std::fstream file;
@@ -330,11 +332,13 @@ void University::loadFromFile() {
             case 7: {
                 line.size() == 4 ? gender_ = 1 : gender_ = 0;
             } break;
+            default : {  
+            } break;
         }
         lineNo++;
         if (lineNo > 8) {
             lineNo = 1;
-            students_.push_back(Student(name_, surname_, address_, indexNumber_, peselNumber_, static_cast<Student::Gender>(gender_)));
+            person_.push_back(Person(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
         }
     }
     file.close();
@@ -387,6 +391,8 @@ void University::searchMenuEngine() {
             case MenuOption::SearchByPESEL : {
                 searchByPeselNumber();
             } break;
+            default :
+            break;
         }
     }
 }
@@ -411,7 +417,7 @@ std::string University::insertSearchPeselNumber() {
 
 void University::checkIfExistPeselNumber(std::string pesel) {
     bool ifExistPeselNumber = false;
-    for (auto& student : students_) {
+    for (auto& student : person_) {
         if (student.getPeselNumber() == pesel) {
             student.printStudent();
             student.printBorderBotton();
@@ -440,7 +446,7 @@ std::string University::insertSearchSurname() {
 
 void University::checkIfExistSurname(std::string surname) {
     bool ifExistSurname = false;
-    for (auto& student : students_) {
+    for (auto& student : person_) {
         if (student.getSurname() == surname) {
             student.printStudent();
             student.printBorderBotton();
@@ -479,6 +485,8 @@ void University::sortMenuEngine() {
                 sortBySurname();
             } break;
         }
+        default :
+        break;
     }
 }
 
@@ -494,8 +502,8 @@ University::MenuOption University::sortMenuStudent() {
 }
 
 void University::sortByPeselNumber() {
-    if (!students_.empty()) {
-        std::sort(students_.begin(), students_.end(), [&](auto const& lhs, auto const& rhs) {
+    if (!person_.empty()) {
+        std::sort(person_.begin(), person_.end(), [&](auto const& lhs, auto const& rhs) {
             return lhs.getPeselNumber() < rhs.getPeselNumber();
         });
         std::cout << "Database is sorted by PESEL number\n";
@@ -505,8 +513,8 @@ void University::sortByPeselNumber() {
 }
 
 void University::sortBySurname() {
-    if (!students_.empty()) {
-        std::sort(students_.begin(), students_.end(), [&](auto const& lhs, auto const& rhs) {
+    if (!person_.empty()) {
+        std::sort(person_.begin(), person_.end(), [&](auto const& lhs, auto const& rhs) {
             return lhs.getSurname() < rhs.getSurname();
         });
         std::cout << "Database is sorted by surname\n";
@@ -518,7 +526,7 @@ void University::sortBySurname() {
 void University::deleteByIndexNumber(std::string indexNumber) {
     auto iterator = 0;
     std::string answer;
-    for (auto& student : students_) {
+    for (auto& student : person_) {
         iterator++;
         if (student.getIndexNumber() == indexNumber) {
             student.printStudent();
@@ -529,8 +537,8 @@ void University::deleteByIndexNumber(std::string indexNumber) {
     while (1) {
         std::cout << "Do you wanna delete this record? Y/N: ";
         if (yesNoOption() == YesNoOption::Yes) {
-            students_[iterator] = students_[students_.size() - 1];
-            students_.erase(students_.end() - 1);
+            person_[iterator] = person_[person_.size() - 1];
+            person_.erase(person_.end() - 1);
             break;
         }
         if (yesNoOption() == YesNoOption::No) {

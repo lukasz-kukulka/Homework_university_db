@@ -1,7 +1,9 @@
 #pragma once
 #include "Student.hpp"
+#include "Person.hpp"
 
 #include <vector>
+
 class University {
 public:
     University();
@@ -87,6 +89,6 @@ private:
     std::string indexNumber_;
     std::string peselNumber_;
     size_t gender_;
-    std::vector<Student>students_;
-    Student tempStudent_;
+    std::vector<Person>person_;
+    Person tempStudent_;
 };
