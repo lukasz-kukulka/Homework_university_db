@@ -90,5 +90,5 @@ private:
     std::string peselNumber_;
     size_t gender_;
     std::vector<Person>person_;
-    Person tempStudent_;
+    Student tempStudent_;
 };

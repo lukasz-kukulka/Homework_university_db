@@ -25,6 +25,11 @@ public:
     virtual size_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
     virtual size_t getSizeGenderLimit() const { return sizePeselNumberLimit_; }
 
+    virtual void printBorderTop();
+    virtual void printStudent();
+    virtual void printBorderBotton();
+    virtual size_t getBorderSize();
+
 protected:
     virtual std::string convertStudentGender(const Gender);
 

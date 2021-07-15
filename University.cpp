@@ -99,7 +99,7 @@ void University::addNewStudent() {
     while ( 1 ) {
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes) {
-            person_.push_back(Person(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+            person_.push_back(Student(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
             break; 
         }
         if (yesNoOption() == YesNoOption::No) {
@@ -338,7 +338,7 @@ void University::loadFromFile() {
         lineNo++;
         if (lineNo > 8) {
             lineNo = 1;
-            person_.push_back(Person(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+            person_.push_back(Student(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
         }
     }
     file.close();
@@ -484,9 +484,10 @@ void University::sortMenuEngine() {
             case MenuOption::SortBySurname : {
                 sortBySurname();
             } break;
+            default :
+            break;
         }
-        default :
-        break;
+
     }
 }
 
