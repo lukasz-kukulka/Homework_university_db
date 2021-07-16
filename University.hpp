@@ -47,13 +47,15 @@ private:
     void insertStudentName();
     void insertStudentSurname();
     void insertAddress();
-    void insertStudentIndexNumber();
     void insertStudentGender();
     void insertStudentPeselNumber();
+    void insertStudentIndexNumber();
+    void insertProfessorSalary();
 
     bool validatingName();
     bool validatingSurname();
     bool validatingIndexNumber();
+    bool validatingSalary();
     bool peselValidDOBCheck();
     bool peselValidGenderCheck();
     bool peselValidWithCurrentlyDate();
