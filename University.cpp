@@ -84,198 +84,198 @@ bool University::validatingMenuChoose(const int choosenValueToValid) {
     return true;
 }
 
-// void University::addNewStudent() {
-//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-//     insertStudentName();
-//     insertStudentSurname();
-//     insertStudentGender();
-//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-//     insertAddress();
-//     insertStudentIndexNumber();
-//     insertStudentPeselNumber();
-//     std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertStudentGender(gender_) 
-//               << " | Address: " << address_ << " | Index nr.: " << indexNumber_ << " | PESEL: " << peselNumber_ << '\n';
-//     while ( 1 ) {
-//         std::cout << "Are you sure you wanna add this record to database? Y/N ";
-//         if (yesNoOption() == YesNoOption::Yes) {
-//             person_.push_back(Student(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
-//             break; 
-//         }
-//         if (yesNoOption() == YesNoOption::No) {
-//             break;
-//         }
-//     }
-// }
+void University::addNewStudent() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    insertStudentName();
+    insertStudentSurname();
+    insertStudentGender();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    insertAddress();
+    insertStudentIndexNumber();
+    insertStudentPeselNumber();
+    std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertStudentGender(gender_) 
+              << " | Address: " << address_ << " | Index nr.: " << indexNumber_ << " | PESEL: " << peselNumber_ << '\n';
+    while ( 1 ) {
+        std::cout << "Are you sure you wanna add this record to database? Y/N ";
+        if (yesNoOption() == YesNoOption::Yes) {
+            //person_.push_back(Student(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+            break; 
+        }
+        if (yesNoOption() == YesNoOption::No) {
+            break;
+        }
+    }
+}
 
-// void University::insertStudentName() {
-//     do {
-//         std::cout << "Please insert student name: ";
-//         std::getline (std::cin, name_);
-//     } while (validatingName() == false);
-// }
+void University::insertStudentName() {
+    do {
+        std::cout << "Please insert student name: ";
+        std::getline (std::cin, name_);
+    } while (validatingName() == false);
+}
 
-// bool University::validatingName() {
-//     auto result = std::all_of(name_.begin(), name_.end(), [](auto character) {
-//         return std::isalpha(character);
-//     });
-//     if (!result) {
-//         std::cout << "In name can be only alphabet\n";
-//         return false;
-//     }
-//     if (name_.size() > tempStudent_.getSizeNameLimit()) {
-//         std::cout << "Length is to long\n";
-//         return false;
-//     }
-//     return true;
-// }
+bool University::validatingName() {
+    auto result = std::all_of(name_.begin(), name_.end(), [](auto character) {
+        return std::isalpha(character);
+    });
+    if (!result) {
+        std::cout << "In name can be only alphabet\n";
+        return false;
+    }
+    if (name_.size() > sizeNameLimit_) {
+        std::cout << "Length is to long\n";
+        return false;
+    }
+    return true;
+}
 
-// void University::insertStudentSurname() {
-//     do {
-//         std::cout << "Please insert student surname: ";
-//         std::getline (std::cin, surname_);
-//     } while (validatingSurname() == false);
-// }
+void University::insertStudentSurname() {
+    do {
+        std::cout << "Please insert student surname: ";
+        std::getline (std::cin, surname_);
+    } while (validatingSurname() == false);
+}
 
-// bool University::validatingSurname() {
-//     auto result = std::all_of(surname_.begin(), surname_.end(), [](auto character) {
-//         return std::isalpha(character);
-//     });
-//     if (!result) {
-//         std::cout << "In surname can be only alphabet\n";
-//         return false;
-//     }
-//     if (surname_.size() > tempStudent_.getSizeSurnameLimit()) {
-//         std::cout << "Length is to long\n";
-//         return false;
-//     }
-//     return true;
-// }
+bool University::validatingSurname() {
+    auto result = std::all_of(surname_.begin(), surname_.end(), [](auto character) {
+        return std::isalpha(character);
+    });
+    if (!result) {
+        std::cout << "In surname can be only alphabet\n";
+        return false;
+    }
+    if (surname_.size() > sizeSurnameLimit_) {
+        std::cout << "Length is to long\n";
+        return false;
+    }
+    return true;
+}
 
-// void University::insertAddress() {
-//     do {
-//         std::cout << "Please insert student address: ";
-//         std::getline (std::cin, address_);
-//     } while (validatingAddress() == false);
-// }
+void University::insertAddress() {
+    do {
+        std::cout << "Please insert student address: ";
+        std::getline (std::cin, address_);
+    } while (validatingAddress() == false);
+}
 
-// bool University::validatingAddress() {
-//     if (address_.size() > tempStudent_.getSizeAddressLimit()) {
-//         std::cout << "Length is to long\n";
-//         return false;
-//     }
-//     return true;
-// }
+bool University::validatingAddress() {
+    if (address_.size() > sizeAddressLimit_) {
+        std::cout << "Length is to long\n";
+        return false;
+    }
+    return true;
+}
 
-// void University::insertStudentIndexNumber() {
-//     do {
-//         std::cout << "Please insert student index number(10 digits): ";
-//         std::getline (std::cin, indexNumber_);
-//     } while (validatingIndexNumber() == false);
-// }
+void University::insertStudentIndexNumber() {
+    do {
+        std::cout << "Please insert student index number(10 digits): ";
+        std::getline (std::cin, indexNumber_);
+    } while (validatingIndexNumber() == false);
+}
 
-// bool University::validatingIndexNumber() {
-//     auto result = std::all_of(indexNumber_.begin(), indexNumber_.end(), [](auto character) {
-//         return std::isdigit(character);
-//     });
-//     if (!result) {
-//         std::cout << "In surname can be only alphabet\n";
-//         return false;
-//     }
-//     if (indexNumber_.size() != tempStudent_.getSizeIndexNumberLimit() - 2) {
-//         std::cout << "Wrong length, insert 10 digit\n";
-//         return false;
-//     }
-//     return true;
-// }
+bool University::validatingIndexNumber() {
+    auto result = std::all_of(indexNumber_.begin(), indexNumber_.end(), [](auto character) {
+        return std::isdigit(character);
+    });
+    if (!result) {
+        std::cout << "In surname can be only alphabet\n";
+        return false;
+    }
+    if (indexNumber_.size() != sizeIndexNumberLimit_ - 2) {
+        std::cout << "Wrong length, insert 10 digit\n";
+        return false;
+    }
+    return true;
+}
 
-// void University::insertStudentPeselNumber() {
-//     do {
-//         std::cout << "Please insert student PESEL number: ";
-//         std::getline (std::cin, peselNumber_);
-//     } while (validatingPeselNumber() == false);
-// }
+void University::insertStudentPeselNumber() {
+    do {
+        std::cout << "Please insert student PESEL number: ";
+        std::getline (std::cin, peselNumber_);
+    } while (validatingPeselNumber() == false);
+}
 
-// bool University::peselValidDOBCheck() {
-//     if ((peselNumber_[2] == '1' || peselNumber_[2] == '3' || peselNumber_[2] == '5' || peselNumber_[2] == '7' || peselNumber_[2] == '9') && peselNumber_[2] != '0' && peselNumber_[2] != '1' && peselNumber_[2] != '2') {
-//         return false;
-//     }
-//     if (peselNumber_[4] != '0' && peselNumber_[4] != '1' && peselNumber_[4] != '2' && peselNumber_[4] != '3') {
-//         return false;
-//     }
-//     if (peselNumber_[4] == '3' && peselNumber_[5] != '0' && peselNumber_[5] != '1' && peselNumber_[5] != '2') {
-//         return false;
-//     }
-//     return true;
-// }
+bool University::peselValidDOBCheck() {
+    if ((peselNumber_[2] == '1' || peselNumber_[2] == '3' || peselNumber_[2] == '5' || peselNumber_[2] == '7' || peselNumber_[2] == '9') && peselNumber_[2] != '0' && peselNumber_[2] != '1' && peselNumber_[2] != '2') {
+        return false;
+    }
+    if (peselNumber_[4] != '0' && peselNumber_[4] != '1' && peselNumber_[4] != '2' && peselNumber_[4] != '3') {
+        return false;
+    }
+    if (peselNumber_[4] == '3' && peselNumber_[5] != '0' && peselNumber_[5] != '1' && peselNumber_[5] != '2') {
+        return false;
+    }
+    return true;
+}
 
-// bool University::peselValidGenderCheck() {
-//     if (static_cast<size_t>(peselNumber_[9]) % 2 != static_cast<size_t>(gender_)) {
-//         return false;
-//     }
-//     return true;
-// }
+bool University::peselValidGenderCheck() {
+    if (static_cast<size_t>(peselNumber_[9]) % 2 != static_cast<size_t>(gender_)) {
+        return false;
+    }
+    return true;
+}
 
-// bool University::peselValidWithCurrentlyDate() {
-//     if (currentlyDate[5] == '0' && (peselNumber_[2] == '4' || peselNumber_[2] == '5' || peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
-//         return false;
-//     }
-//     if (currentlyDate[5] == '1' && (peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
-//         return false;
-//     }
-//     return true;
-// }
+bool University::peselValidWithCurrentlyDate() {
+    if (currentlyDate[5] == '0' && (peselNumber_[2] == '4' || peselNumber_[2] == '5' || peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
+        return false;
+    }
+    if (currentlyDate[5] == '1' && (peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
+        return false;
+    }
+    return true;
+}
 
-// bool University::peselValidWithWeight() {
-//     std::string weightCheck = "13791379131";
-//     size_t weightResult = 0;
-//     for (int i = 0; i < 11; i++) {
-//         weightResult = weightResult + (static_cast<size_t>(peselNumber_[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
-//     }
-//     weightResult = weightResult % 10;
-//     if (weightResult == 0) {
-//         weightResult = 0;
-//     } else {
-//         weightResult = 10 - weightResult;
-//     }
-//     if (static_cast<size_t>(peselNumber_[10] - '0') != weightResult) {
-//         return false;
-//     }
-//     return true;
-// }
+bool University::peselValidWithWeight() {
+    std::string weightCheck = "13791379131";
+    size_t weightResult = 0;
+    for (int i = 0; i < 11; i++) {
+        weightResult = weightResult + (static_cast<size_t>(peselNumber_[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
+    }
+    weightResult = weightResult % 10;
+    if (weightResult == 0) {
+        weightResult = 0;
+    } else {
+        weightResult = 10 - weightResult;
+    }
+    if (static_cast<size_t>(peselNumber_[10] - '0') != weightResult) {
+        return false;
+    }
+    return true;
+}
 
-// bool University::validatingPeselNumber() {
-//     bool corectPeselNumber = true;
-//     corectPeselNumber = peselValidDOBCheck();
-//     //std::cout << "After peselValidDOBCheck() = " << corectPeselNumber << '\n'; //TEST
-//     corectPeselNumber = peselValidGenderCheck();
-//     // std::cout << "After peselValidGenderCheck() = " << corectPeselNumber << '\n'; //TEST
-//     corectPeselNumber = peselValidWithCurrentlyDate();
-//     //std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
-//     corectPeselNumber = peselValidWithWeight();
-//     // std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
-//     if (peselNumber_.size() != tempStudent_.getSizePeselNumberLimit() - 3) {
-//         corectPeselNumber = false;
-//     }
-//     if (!corectPeselNumber) {
-//         std::cout << "Pesel number is incorrect\n";
-//     }
-//     return corectPeselNumber;
-// }
+bool University::validatingPeselNumber() {
+    bool corectPeselNumber = true;
+    corectPeselNumber = peselValidDOBCheck();
+    //std::cout << "After peselValidDOBCheck() = " << corectPeselNumber << '\n'; //TEST
+    corectPeselNumber = peselValidGenderCheck();
+    // std::cout << "After peselValidGenderCheck() = " << corectPeselNumber << '\n'; //TEST
+    corectPeselNumber = peselValidWithCurrentlyDate();
+    //std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
+    corectPeselNumber = peselValidWithWeight();
+    // std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
+    if (peselNumber_.size() != sizePeselNumberLimit_ - 3) {
+        corectPeselNumber = false;
+    }
+    if (!corectPeselNumber) {
+        std::cout << "Pesel number is incorrect\n";
+    }
+    return corectPeselNumber;
+}
 
-// void University::insertStudentGender() {
-//     do {
-//         std::cout << "Please choose gender: 1 - Male , 0 - Female: ";
-//         std::cin >> gender_;  
-//     } while (validatingGender() == false);
-// }
+void University::insertStudentGender() {
+    do {
+        std::cout << "Please choose gender: 1 - Male , 0 - Female: ";
+        std::cin >> gender_;  
+    } while (validatingGender() == false);
+}
 
-// bool University::validatingGender() {
-//     if (gender_ !=0 && gender_ != 1) {
-//         std::cout << "Wrong value, please choose 0 or 1\n";
-//         return false;
-//     }
-//     return true;
-// }
+bool University::validatingGender() {
+    if (gender_ !=0 && gender_ != 1) {
+        std::cout << "Wrong value, please choose 0 or 1\n";
+        return false;
+    }
+    return true;
+}
 
 // void University::showStudents() {
 //     // if (!person_.empty()) {
@@ -547,19 +547,19 @@ bool University::validatingMenuChoose(const int choosenValueToValid) {
 //     }
 // }
 
-// std::string University::convertStudentGender(const size_t gender) {
-//     return gender == 0 ? "female" : "male";
-// }
+std::string University::convertStudentGender(const size_t gender) {
+    return gender == 0 ? "female" : "male";
+}
 
-// University::YesNoOption University::yesNoOption() {
-//     char answer;
-//     std::cin >> answer;
-//     if (answer == 'Y' || answer == 'y') {
-//         return YesNoOption::Yes;
-//     }
-//     if (answer == 'N' || answer == 'n') {
-//         return YesNoOption::No;
-//     }
-//     std::cout << "Wrong answer, you must choose Y or N\n";
-//     return YesNoOption::Error;
-// }
+University::YesNoOption University::yesNoOption() {
+    char answer;
+    std::cin >> answer;
+    if (answer == 'Y' || answer == 'y') {
+        return YesNoOption::Yes;
+    }
+    if (answer == 'N' || answer == 'n') {
+        return YesNoOption::No;
+    }
+    std::cout << "Wrong answer, you must choose Y or N\n";
+    return YesNoOption::Error;
+}

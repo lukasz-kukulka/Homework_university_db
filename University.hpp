@@ -91,4 +91,12 @@ private:
     std::string peselNumber_;
     size_t gender_;
     std::vector<Person>person_;
+
+    size_t sizeNameLimit_ { 16 };
+    size_t sizeSurnameLimit_ { 30 };
+    size_t sizeAddressLimit_ { 40 };
+    size_t sizePeselNumberLimit_ { 11 };
+    size_t sizeGenderLimit_ { 6 };
+    size_t sizeIndexNumberLimit_ { 10 };
+    size_t sizeSalaryLimit_ { 6 };
 };
