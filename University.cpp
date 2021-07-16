@@ -93,8 +93,12 @@ void University::addNewStudent() {
     insertAddress();
     insertStudentIndexNumber();
     insertStudentPeselNumber();
+    confirmAddRecord();
+}
+
+void University::confirmAddRecord() {
     std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertStudentGender(gender_) 
-              << " | Address: " << address_ << " | Index nr.: " << indexNumber_ << " | PESEL: " << peselNumber_ << '\n';
+              << " | Address: " << address_ << " | Index nr.: " << indexNumber_ << " | PESEL: " << peselNumber_ << '\n'; 
     while ( 1 ) {
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes) {

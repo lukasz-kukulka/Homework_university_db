@@ -32,12 +32,18 @@ public:
         Error
     };
 
+    enum class WithPerson {
+        Anyone,
+        Student,
+        Professor
+    };
+
     void applicationStart();
 
 private:
     void printMenu();
     void addNewStudent();
-
+    void confirmAddRecord();
     void insertStudentName();
     void insertStudentSurname();
     void insertAddress();
@@ -100,6 +106,6 @@ private:
     size_t sizeGenderLimit_ { 6 };
     size_t sizeIndexNumberLimit_ { 10 };
     size_t sizeSalaryLimit_ { 6 };
-    
+
     std::vector<std::shared_ptr<Person>>person_;
 };
