@@ -1,7 +1,9 @@
 #pragma once
-#include "Student.hpp"
-#include "Person.hpp"
 
+#include "Person.hpp"
+#include "Student.hpp"
+
+#include <memory>
 #include <vector>
 
 class University {
@@ -15,13 +17,13 @@ public:
         SearchStudents,
         SortStudents,
         SaveLoadFile,
-        Delete = 200,
         Exit,
         SearchBySurname = 11,
         SearchByPESEL = 12,
         SortBySurname = 21,
         SortByPESEL = 22,
-        Back = 100
+        Back = 100,
+        Delete = 200
     };
 
     enum class YesNoOption {
@@ -90,7 +92,6 @@ private:
     std::string indexNumber_;
     std::string peselNumber_;
     size_t gender_;
-    std::vector<Person>person_;
 
     size_t sizeNameLimit_ { 16 };
     size_t sizeSurnameLimit_ { 30 };
@@ -99,4 +100,6 @@ private:
     size_t sizeGenderLimit_ { 6 };
     size_t sizeIndexNumberLimit_ { 10 };
     size_t sizeSalaryLimit_ { 6 };
+    
+    std::vector<std::shared_ptr<Person>>person_;
 };
