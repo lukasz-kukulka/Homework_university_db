@@ -52,6 +52,7 @@ private:
     void insertStudentIndexNumber();
     void insertProfessorSalary();
 
+    bool validationStringSize(std::string userStringData, std::string maxSize);
     bool validatingName();
     bool validatingSurname();
     bool validatingIndexNumber();

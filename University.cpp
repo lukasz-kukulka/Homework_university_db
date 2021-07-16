@@ -121,6 +121,14 @@ void University::insertStudentName() {
     } while (validatingName() == false);
 }
 
+bool University::validationStringSize(std::string userStringData, std::string maxSize) {
+    if (userStringData.size() > maxSize) {
+        std::cout << "Length is to long\n";
+        return false;
+    }
+    return true;
+
+}
 bool University::validatingName() {
     auto result = std::all_of(name_.begin(), name_.end(), [](auto character) {
         return std::isalpha(character);
