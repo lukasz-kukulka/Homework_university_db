@@ -7,3 +7,5 @@ Person::Person(std::string name, std::string surname, std::string address, std::
     , peselNumber_(peselNumber)
     , gender_(gender)
 {}
+
+Person::~Person() {}

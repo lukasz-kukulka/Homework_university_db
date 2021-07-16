@@ -11,32 +11,32 @@ public:
 
     Person() = default;
     Person(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender);
-    //virtual ~Person() = 0;
+    virtual ~Person();
 
-    virtual std::string getName() const { return name_; }
-    virtual std::string getSurname() const { return surname_; }
-    virtual std::string getAddress() const { return address_; }
-    virtual std::string getPeselNumber() const { return peselNumber_; }
-    virtual std::string getGender();
+    std::string getName() const { return name_; }
+    std::string getSurname() const { return surname_; }
+    std::string getAddress() const { return address_; }
+    std::string getPeselNumber() const { return peselNumber_; }
+    virtual std::string getGender() = 0;
 
-    virtual size_t getSizeNameLimit() const { return sizeNameLimit_; }
-    virtual size_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
-    virtual size_t getSizeAddressLimit() const { return sizeAddressLimit_; }
-    virtual size_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
-    virtual size_t getSizeGenderLimit() const { return sizePeselNumberLimit_; }
+    size_t getSizeNameLimit() const { return sizeNameLimit_; }
+    size_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
+    size_t getSizeAddressLimit() const { return sizeAddressLimit_; }
+    size_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
+    size_t getSizeGenderLimit() const { return sizePeselNumberLimit_; }
 
-    virtual void printBorderTop();
-    virtual void printStudent();
-    virtual void printBorderBotton();
-    virtual size_t getBorderSize();
+    virtual void printBorderTop() = 0;
+    virtual void printStudent() = 0;
+    virtual void printBorderBotton() = 0;
+    virtual size_t getBorderSize() = 0;
 
 protected:
-    virtual std::string convertStudentGender(const Gender);
+    virtual std::string convertStudentGender(const Gender) = 0;
 
     std::string name_ {"testtt"};
     std::string surname_ { "cos aaaa aaaaaaaaaaaaaaa" };
     std::string address_{ "adress 3 3" };
-    std::string peselNumber_{ "8282828002" };
+    std::string peselNumber_{ "82828280021" };
     Gender gender_ { Gender::female };
 
     size_t sizeNameLimit_ { 16 };

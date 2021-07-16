@@ -7,6 +7,7 @@
 class University {
 public:
     University();
+    //~University();
     enum class MenuOption {
         BaseMenu = 0,
         AddStudents,
@@ -90,5 +91,4 @@ private:
     std::string peselNumber_;
     size_t gender_;
     std::vector<Person>person_;
-    Student tempStudent_;
 };

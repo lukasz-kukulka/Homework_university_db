@@ -8,6 +8,7 @@ class Profesor : public Person{
 public:
     Profesor() = default;
     Profesor(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender, size_t salary);
+    ~Profesor(){};
 
     size_t getSalary() const { return salary_; }
 
