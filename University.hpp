@@ -99,6 +99,7 @@ private:
     std::string address_;
     std::string indexNumber_;
     std::string peselNumber_;
+    std::string professorSalary_;
     size_t gender_;
 
     size_t sizeNameLimit_ { 16 };

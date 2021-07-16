@@ -188,7 +188,7 @@ bool University::validatingIndexNumber() {
         std::cout << "In surname can be only alphabet\n";
         return false;
     }
-    if (indexNumber_.size() != sizeIndexNumberLimit_ - 2) {
+    if (indexNumber_.size() != sizeIndexNumberLimit_) {
         std::cout << "Wrong length, insert 10 digit\n";
         return false;
     }
@@ -198,12 +198,23 @@ bool University::validatingIndexNumber() {
 void University::insertProfessorSalary() {
     do {
         std::cout << "Please insert professor salary(max 5 digits): ";
-        std::getline (std::cin, professorSalary);
+        std::getline (std::cin, professorSalary_);
     } while (validatingSalary() == false);
 }
 
 bool University::validatingSalary() {
-    return false;
+    auto result = std::all_of(professorSalary_.begin(), professorSalary_.end(), [](auto character) {
+        return std::isdigit(character);
+    });
+    if (!result) {
+        std::cout << "In surname can be only alphabet\n";
+        return false;
+    }
+    if (professorSalary_.size() != sizeIndexNumberLimit_) {
+        std::cout << "Wrong length, insert 10 digit\n";
+        return false;
+    }
+    return true;
 }
 
 void University::insertStudentPeselNumber() {
