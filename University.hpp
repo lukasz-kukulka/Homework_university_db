@@ -32,7 +32,7 @@ public:
         Error
     };
 
-    enum class WithPerson {
+    enum class WhichPerson {
         Anyone,
         Student,
         Professor
@@ -44,6 +44,7 @@ private:
     void printMenu();
     void addNewStudent();
     void confirmAddRecord();
+    void selectPerson();
 
     void insertStudentName();
     void insertStudentSurname();
@@ -93,13 +94,13 @@ private:
     YesNoOption yesNoOption();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
-    std::string name_;
-    std::string surname_;
-    std::string address_;
-    std::string indexNumber_;
-    std::string peselNumber_;
-    std::string professorSalary_;
-    size_t gender_;
+    std::string name_ {};
+    std::string surname_ {};
+    std::string address_ {};
+    std::string indexNumber_ {};
+    std::string peselNumber_ {};
+    std::string professorSalary_ {};
+    size_t gender_ {};
 
     size_t sizeNameLimit_ { 16 };
     size_t sizeSurnameLimit_ { 30 };
@@ -110,4 +111,5 @@ private:
     size_t sizeSalaryLimit_ { 6 };
 
     std::vector<std::shared_ptr<Person>>person_;
+    WhichPerson userChoice_{ WhichPerson::Anyone };
 };

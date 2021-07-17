@@ -97,6 +97,15 @@ void University::addNewStudent() {
     confirmAddRecord();
 }
 
+void University::selectPerson() {
+    size_t userChoice {};
+    std::cout << "Which person you wanna add to database?\n";
+    std::cout << "1.STUDENT\n";
+    std::cout << "2.PROFESSORS ";
+    std::cin >> userChoice;
+    std::cout << '\n';
+}
+
 void University::confirmAddRecord() {
     std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertStudentGender(gender_) 
               << " | Address: " << address_ << " | Index nr.: " << indexNumber_ << " | PESEL: " << peselNumber_ << '\n'; 
