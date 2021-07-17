@@ -92,9 +92,7 @@ void University::addNewStudent() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     insertAddress();
     insertStudentPeselNumber();
-    
     insertProfessorSalary();
-    
     insertStudentIndexNumber();
     confirmAddRecord();
 }
@@ -167,12 +165,25 @@ bool University::validationIsAlpabet(std::string stringToCheck) {
     auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
         return std::isalpha(character);
     });
-    if (!result) {
-        std::cout << "Insert data can be only alphabet\n";
-        return false;
+    if (result) {
+        return true;
     }
-    return true;
+    std::cout << "Insert data can be only alphabet\n";
+    return false;
+    
 }
+
+bool University::validationIsDigit(std::string stringToCheck) {
+    auto result = std::all_of(indexNumber_.begin(), indexNumber_.end(), [](auto character) {
+        return std::isdigit(character);
+    });
+    if (result) {
+        return true;
+    }
+    std::cout << "Insert data can be only digit\n";
+    return false;
+}
+
 // bool University::validatingName() {
 //     auto result = std::all_of(name_.begin(), name_.end(), [](auto character) {
 //         return std::isalpha(character);
