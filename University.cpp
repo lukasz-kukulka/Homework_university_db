@@ -139,21 +139,24 @@ void University::insertStudentIndexNumber() {
     do {
         std::cout << "Please insert student index number(10 digits): ";
         std::getline (std::cin, indexNumber_);
-    } while (validationStringSize(indexNumber_, sizeIndexNumberLimit_) == false);
+    } while (validationStringSize(indexNumber_, sizeIndexNumberLimit_) == false
+             || validationIsDigit(indexNumber_));
 }
 
 void University::insertProfessorSalary() {
     do {
         std::cout << "Please insert professor salary(max 5 digits): ";
         std::getline (std::cin, professorSalary_);
-    } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false);
+    } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false
+             || validationIsDigit(professorSalary_)));
 }
 
 void University::insertStudentPeselNumber() {
     do {
         std::cout << "Please insert student PESEL number: ";
         std::getline (std::cin, peselNumber_);
-    } while (validatingPeselNumber() == false);
+    } while (validatingPeselNumber() == false
+             || validationIsDigit(peselNumber_)));
 }
 
 void University::insertStudentGender() {
