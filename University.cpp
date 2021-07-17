@@ -91,8 +91,11 @@ void University::addNewStudent() {
     insertStudentGender();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     insertAddress();
-    insertStudentIndexNumber();
     insertStudentPeselNumber();
+    
+    insertProfessorSalary();
+    
+    insertStudentIndexNumber();
     confirmAddRecord();
 }
 
@@ -190,6 +193,17 @@ bool University::validatingIndexNumber() {
         return false;
     }
     return true;
+}
+
+void University::insertProfessorSalary() {
+    do {
+        std::cout << "Please insert professor salary(max 5 digits): ";
+        std::getline (std::cin, professorSalary);
+    } while (validatingSalary() == false);
+}
+
+bool University::validatingSalary() {
+    return false;
 }
 
 void University::insertStudentPeselNumber() {
