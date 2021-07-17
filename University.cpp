@@ -175,7 +175,6 @@ bool University::validationIsAlpabet(std::string stringToCheck) {
     }
     std::cout << "Insert data can be only alphabet\n";
     return false;
-    
 }
 
 bool University::validationIsDigit(std::string stringToCheck) {

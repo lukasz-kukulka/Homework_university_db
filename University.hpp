@@ -56,17 +56,12 @@ private:
     bool validationStringSize(std::string userStringData, size_t maxSize);
     bool validationIsAlpabet(std::string stringToCheck);
     bool validationIsDigit(std::string stringToCheck);
-    //bool validatingName();
-    //bool validatingSurname();
-    //bool validatingIndexNumber();
-    //bool validatingSalary();
     bool peselValidDOBCheck();
     bool peselValidGenderCheck();
     bool peselValidWithCurrentlyDate();
     bool peselValidWithWeight();
     bool validatingPeselNumber();
     bool validatingGender();
-    //bool validatingAddress();
 
     MenuOption menuEngine();
     bool validatingMenuChoose(const int);
