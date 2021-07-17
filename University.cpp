@@ -106,6 +106,24 @@ void University::selectPerson() {
     std::cout << '\n';
 }
 
+bool University::validationSelectPerson(size_t userChoice) {
+    if (userChoice == 1 && userChoice == 2) {
+        assignmentPersonValue(userChoice);
+        return true;
+    } 
+    std::cout << "Wrong answer, insert 1 or 2\n";
+    return false;
+
+}
+
+void University::assignmentPersonValue(size_t userChoice) {
+    if (userChoice == 1) {
+        userChoice_ = WhichPerson::Student;
+    } else if ((userChoice == 2)) {
+        userChoice_ = WhichPerson::Professor;
+    } 
+}
+
 void University::confirmAddRecord() {
     std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertStudentGender(gender_) 
               << " | Address: " << address_ << " | Index nr.: " << indexNumber_ << " | PESEL: " << peselNumber_ << '\n'; 

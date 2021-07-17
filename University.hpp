@@ -54,6 +54,8 @@ private:
     void insertStudentIndexNumber();
     void insertProfessorSalary();
 
+    bool validationSelectPerson(size_t userChoice);
+    void assignmentPersonValue(size_t userChoice);
     bool validationStringSize(std::string userStringData, size_t maxSize);
     bool validationIsAlpabet(std::string stringToCheck);
     bool validationIsDigit(std::string stringToCheck);
