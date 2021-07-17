@@ -54,6 +54,7 @@ private:
     void insertProfessorSalary();
 
     bool validationStringSize(std::string userStringData, size_t maxSize);
+    bool University::validationIsAlpabet(std::string stringToCheck);
     //bool validatingName();
     //bool validatingSurname();
     //bool validatingIndexNumber();

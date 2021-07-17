@@ -162,6 +162,17 @@ void University::insertStudentGender() {
         std::cin >> gender_;  
     } while (validatingGender() == false);
 }
+
+bool University::validationIsAlpabet(std::string stringToCheck) {
+    auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
+        return std::isalpha(character);
+    });
+    if (!result) {
+        std::cout << "Insert data can be only alphabet\n";
+        return false;
+    }
+    return true;
+}
 // bool University::validatingName() {
 //     auto result = std::all_of(name_.begin(), name_.end(), [](auto character) {
 //         return std::isalpha(character);
