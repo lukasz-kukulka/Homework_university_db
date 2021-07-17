@@ -116,14 +116,16 @@ void University::insertStudentName() {
     do {
         std::cout << "Please insert student name: ";
         std::getline (std::cin, name_);
-    } while (validationStringSize(name_, sizeNameLimit_) == false);
+    } while (validationStringSize(name_, sizeNameLimit_) == false
+             || validationIsAlpabet(name_) == false);
 }
 
 void University::insertStudentSurname() {
     do {
         std::cout << "Please insert student surname: ";
         std::getline (std::cin, surname_);
-    } while (validationStringSize(surname_, sizeSurnameLimit_)== false);
+    } while (validationStringSize(surname_, sizeSurnameLimit_)== false)
+             || validationIsAlpabet(surname_) == false;
 }
 
 void University::insertAddress() {
