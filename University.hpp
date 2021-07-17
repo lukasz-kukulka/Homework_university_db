@@ -44,7 +44,7 @@ private:
     void printMenu();
     void addNewStudent();
     void confirmAddRecord();
-    
+
     void insertStudentName();
     void insertStudentSurname();
     void insertAddress();
@@ -53,7 +53,7 @@ private:
     void insertStudentIndexNumber();
     void insertProfessorSalary();
 
-    bool validationStringSize(std::string userStringData, std::string maxSize);
+    bool validationStringSize(std::string userStringData, size_t maxSize);
     //bool validatingName();
     //bool validatingSurname();
     //bool validatingIndexNumber();

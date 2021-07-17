@@ -118,35 +118,35 @@ void University::insertStudentName() {
     do {
         std::cout << "Please insert student name: ";
         std::getline (std::cin, name_);
-    } while (validatingName() == false);
+    } while (validationStringSize(name_, sizeNameLimit_) == false);
 }
 
 void University::insertStudentSurname() {
     do {
         std::cout << "Please insert student surname: ";
         std::getline (std::cin, surname_);
-    } while (validatingSurname() == false);
+    } while (validationStringSize(surname_, sizeSurnameLimit_)== false);
 }
 
 void University::insertAddress() {
     do {
         std::cout << "Please insert student address: ";
         std::getline (std::cin, address_);
-    } while (validatingAddress() == false);
+    } while (validationStringSize(address_, sizeAddressLimit_) == false);
 }
 
 void University::insertStudentIndexNumber() {
     do {
         std::cout << "Please insert student index number(10 digits): ";
         std::getline (std::cin, indexNumber_);
-    } while (validatingIndexNumber() == false);
+    } while (validationStringSize(indexNumber_, sizeIndexNumberLimit_) == false);
 }
 
 void University::insertProfessorSalary() {
     do {
         std::cout << "Please insert professor salary(max 5 digits): ";
         std::getline (std::cin, professorSalary_);
-    } while (validatingSalary() == false);
+    } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false);
 }
 
 void University::insertStudentPeselNumber() {
@@ -238,7 +238,7 @@ void University::insertStudentGender() {
 //     return true;
 // }
 
-bool University::validationStringSize(std::string userStringData, std::string maxSize) {
+bool University::validationStringSize(std::string userStringData, size_t maxSize) {
     if (userStringData.size() > maxSize) {
         std::cout << "Length is to long\n";
         return false;
