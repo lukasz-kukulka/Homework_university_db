@@ -44,6 +44,7 @@ private:
     void printMenu();
     void addNewStudent();
     void confirmAddRecord();
+    
     void insertStudentName();
     void insertStudentSurname();
     void insertAddress();
@@ -53,17 +54,17 @@ private:
     void insertProfessorSalary();
 
     bool validationStringSize(std::string userStringData, std::string maxSize);
-    bool validatingName();
-    bool validatingSurname();
-    bool validatingIndexNumber();
-    bool validatingSalary();
+    //bool validatingName();
+    //bool validatingSurname();
+    //bool validatingIndexNumber();
+    //bool validatingSalary();
     bool peselValidDOBCheck();
     bool peselValidGenderCheck();
     bool peselValidWithCurrentlyDate();
     bool peselValidWithWeight();
     bool validatingPeselNumber();
     bool validatingGender();
-    bool validatingAddress();
+    //bool validatingAddress();
 
     MenuOption menuEngine();
     bool validatingMenuChoose(const int);
