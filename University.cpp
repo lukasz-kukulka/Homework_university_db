@@ -124,8 +124,8 @@ void University::insertStudentSurname() {
     do {
         std::cout << "Please insert student surname: ";
         std::getline (std::cin, surname_);
-    } while (validationStringSize(surname_, sizeSurnameLimit_)== false)
-             || validationIsAlpabet(surname_) == false;
+    } while (validationStringSize(surname_, sizeSurnameLimit_)== false
+             || validationIsAlpabet(surname_) == false);
 }
 
 void University::insertAddress() {
@@ -148,7 +148,7 @@ void University::insertProfessorSalary() {
         std::cout << "Please insert professor salary(max 5 digits): ";
         std::getline (std::cin, professorSalary_);
     } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false
-             || validationIsDigit(professorSalary_)));
+             || validationIsDigit(professorSalary_));
 }
 
 void University::insertStudentPeselNumber() {
@@ -156,7 +156,7 @@ void University::insertStudentPeselNumber() {
         std::cout << "Please insert student PESEL number: ";
         std::getline (std::cin, peselNumber_);
     } while (validatingPeselNumber() == false
-             || validationIsDigit(peselNumber_)));
+             || validationIsDigit(peselNumber_));
 }
 
 void University::insertStudentGender() {
@@ -179,7 +179,7 @@ bool University::validationIsAlpabet(std::string stringToCheck) {
 }
 
 bool University::validationIsDigit(std::string stringToCheck) {
-    auto result = std::all_of(indexNumber_.begin(), indexNumber_.end(), [](auto character) {
+    auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
         return std::isdigit(character);
     });
     if (result) {
@@ -189,85 +189,9 @@ bool University::validationIsDigit(std::string stringToCheck) {
     return false;
 }
 
-// bool University::validatingName() {
-//     auto result = std::all_of(name_.begin(), name_.end(), [](auto character) {
-//         return std::isalpha(character);
-//     });
-//     if (!result) {
-//         std::cout << "In name can be only alphabet\n";
-//         return false;
-//     }
-//     if (name_.size() > sizeNameLimit_) {
-//         std::cout << "Length is to long\n";
-//         return false;
-//     }
-//     return true;
-// }
-
-
-
-// bool University::validatingSurname() {
-//     auto result = std::all_of(surname_.begin(), surname_.end(), [](auto character) {
-//         return std::isalpha(character);
-//     });
-//     if (!result) {
-//         std::cout << "In surname can be only alphabet\n";
-//         return false;
-//     }
-//     if (surname_.size() > sizeSurnameLimit_) {
-//         std::cout << "Length is to long\n";
-//         return false;
-//     }
-//     return true;
-// }
-
-
-
-// bool University::validatingAddress() {
-//     if (address_.size() > sizeAddressLimit_) {
-//         std::cout << "Length is to long\n";
-//         return false;
-//     }
-//     return true;
-// }
-
-
-
-// bool University::validatingIndexNumber() {
-//     auto result = std::all_of(indexNumber_.begin(), indexNumber_.end(), [](auto character) {
-//         return std::isdigit(character);
-//     });
-//     if (!result) {
-//         std::cout << "In surname can be only alphabet\n";
-//         return false;
-//     }
-//     if (indexNumber_.size() != sizeIndexNumberLimit_) {
-//         std::cout << "Wrong length, insert 10 digit\n";
-//         return false;
-//     }
-//     return true;
-// }
-
-
-
-// bool University::validatingSalary() {
-//     auto result = std::all_of(professorSalary_.begin(), professorSalary_.end(), [](auto character) {
-//         return std::isdigit(character);
-//     });
-//     if (!result) {
-//         std::cout << "In surname can be only alphabet\n";
-//         return false;
-//     }
-//     if (professorSalary_.size() != sizeIndexNumberLimit_) {
-//         std::cout << "Wrong length, insert 10 digit\n";
-//         return false;
-//     }
-//     return true;
-// }
-
 bool University::validationStringSize(std::string userStringData, size_t maxSize) {
     if (userStringData.size() > maxSize) {
-        std::cout << "Length is to long\n";
+        std::cout << "Length is to long, maximum length is " << maxSize << '\n';
         return false;
     }
     return true;
