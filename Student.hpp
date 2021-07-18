@@ -10,10 +10,10 @@ public:
     Student(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender, std::string indexNumber);
     ~Student(){};
 
-    void printBorderTop();
-    void printStudent();
-    void printBorderBotton();
-    size_t getBorderSize();
+    void printBorderTop() override;
+    void printPerson() override;
+    void printBorderBotton() override;
+    size_t getBorderSize() override;
 
     std::string getName() const { return name_; }
     std::string getSurname() const { return surname_; }

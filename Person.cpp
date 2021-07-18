@@ -9,3 +9,7 @@ Person::Person(std::string name, std::string surname, std::string address, std::
 {}
 
 Person::~Person() {}
+
+std::string Person::convertStudentGender(const Gender gender) {
+    return gender == Gender::female ? "female" : "male";
+}

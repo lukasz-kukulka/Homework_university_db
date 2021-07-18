@@ -4,6 +4,9 @@
 #include <fstream>
 #include <iostream>
 
+#include "Student.hpp"
+#include "Professor.hpp"
+
 constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 
 University::University() {
@@ -130,13 +133,16 @@ void University::confirmAddRecord() {
          std::cout << " Student index Number: " << indexNumber_ << '\n';
     } else if (userChoicePerson_ == WhichPerson::Professor) {
         std::cout << " Professor salary: " << professorSalary_ << '\n';
-    }
-              
-    while ( 1 ) {
+    }       
+    while ( true ) {
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
-        if (yesNoOption() == YesNoOption::Yes) {
+        if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
             person_.push_back(std::make_shared<Student>(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
             break; 
+        }
+        if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Professor) {
+            person_.push_back(std::make_shared<Professor>(Professor(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+            break;
         }
         if (yesNoOption() == YesNoOption::No) {
             break;

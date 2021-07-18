@@ -3,7 +3,7 @@ project(Univesity)
 
 set(FILES 
     Person.cpp
-    Profesor.cpp
+    Professor.cpp
     Student.cpp
     University.cpp)
 

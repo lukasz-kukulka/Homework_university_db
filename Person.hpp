@@ -17,7 +17,7 @@ public:
     std::string getSurname() const { return surname_; }
     std::string getAddress() const { return address_; }
     std::string getPeselNumber() const { return peselNumber_; }
-    virtual std::string getGender() = 0;
+    std::string getGender() { return convertStudentGender(gender_); };
 
     size_t getSizeNameLimit() const { return sizeNameLimit_; }
     size_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
@@ -25,13 +25,13 @@ public:
     size_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
     size_t getSizeGenderLimit() const { return sizePeselNumberLimit_; }
 
-    virtual void printBorderTop() = 0;
-    virtual void printStudent() = 0;
-    virtual void printBorderBotton() = 0;
-    virtual size_t getBorderSize() = 0;
+    virtual void printBorderTop();
+    virtual void printPerson();
+    virtual void printBorderBotton();
+    virtual size_t getBorderSize();
 
 protected:
-    virtual std::string convertStudentGender(const Gender) = 0;
+    std::string convertStudentGender(const Gender);
 
     std::string name_ {"testtt"};
     std::string surname_ { "cos aaaa aaaaaaaaaaaaaaa" };
