@@ -126,14 +126,17 @@ void University::assignmentPersonValue(size_t userChoicePerson) {
     } 
 }
 
-void University::confirmAddRecord() {
-    std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertStudentGender(gender_) 
+void University::printInsertPersonData() {
+    std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertPersonGender(gender_) 
               << " | Address: " << address_ << " | PESEL: " << peselNumber_;
     if (userChoicePerson_ == WhichPerson::Student) {
          std::cout << " Student index Number: " << indexNumber_ << '\n';
     } else if (userChoicePerson_ == WhichPerson::Professor) {
         std::cout << " Professor salary: " << professorSalary_ << '\n';
-    }       
+    } 
+}
+
+void University::confirmAddRecord() {      
     while ( true ) {
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
@@ -579,7 +582,7 @@ bool University::validatingGender() {
 //     }
 // }
 
-std::string University::convertStudentGender(const size_t gender) {
+std::string University::convertPersonGender(const size_t gender) {
     return gender == 0 ? "female" : "male";
 }
 

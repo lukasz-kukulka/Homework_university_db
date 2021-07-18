@@ -42,6 +42,7 @@ public:
 private:
     void printMenu();
     void addNewStudent();
+    void printInsertPersonData();
     void confirmAddRecord();
     void selectPerson();
 
@@ -91,7 +92,7 @@ private:
     void sortBySurname();
 
     void deleteByIndexNumber(std::string);
-    std::string convertStudentGender(const size_t);
+    std::string convertPersonGender(const size_t);
     YesNoOption yesNoOption();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
