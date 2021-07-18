@@ -98,35 +98,40 @@ void University::addNewStudent() {
 }
 
 void University::selectPerson() {
-    size_t userChoice {};
+    size_t userChoicePerson {};
     std::cout << "Which person you wanna add to database?\n";
     std::cout << "1.STUDENT\n";
     std::cout << "2.PROFESSORS ";
-    std::cin >> userChoice;
+    std::cin >> userChoicePerson;
     std::cout << '\n';
 }
 
-bool University::validationSelectPerson(size_t userChoice) {
-    if (userChoice == 1 && userChoice == 2) {
-        assignmentPersonValue(userChoice);
+bool University::validationSelectPerson(size_t userChoicePerson) {
+    if (userChoicePerson == 1 && userChoicePerson == 2) {
+        assignmentPersonValue(userChoicePerson);
         return true;
     } 
     std::cout << "Wrong answer, insert 1 or 2\n";
     return false;
-
 }
 
-void University::assignmentPersonValue(size_t userChoice) {
-    if (userChoice == 1) {
-        userChoice_ = WhichPerson::Student;
-    } else if ((userChoice == 2)) {
-        userChoice_ = WhichPerson::Professor;
+void University::assignmentPersonValue(size_t userChoicePerson) {
+    if (userChoicePerson == 1) {
+        userChoicePerson_ = WhichPerson::Student;
+    } else if ((userChoicePerson == 2)) {
+        userChoicePerson_ = WhichPerson::Professor;
     } 
 }
 
 void University::confirmAddRecord() {
     std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " <<  convertStudentGender(gender_) 
-              << " | Address: " << address_ << " | Index nr.: " << indexNumber_ << " | PESEL: " << peselNumber_ << '\n'; 
+              << " | Address: " << address_ << " | PESEL: " << peselNumber_;
+    if (userChoicePerson_ == WhichPerson::Student) {
+         std::cout << " Student index Number: " << indexNumber_ << '\n';
+    } else if (userChoicePerson_ == WhichPerson::Professor) {
+        std::cout << " Professor salary: " << professorSalary_ << '\n';
+    }
+              
     while ( 1 ) {
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes) {

@@ -113,5 +113,5 @@ private:
     size_t sizeSalaryLimit_ { 6 };
 
     std::vector<std::shared_ptr<Person>>person_;
-    WhichPerson userChoice_{ WhichPerson::Anyone };
+    WhichPerson userChoicePerson_ { WhichPerson::Anyone };
 };
