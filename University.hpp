@@ -19,6 +19,7 @@ public:
         Exit,
         SearchBySurname = 11,
         SearchByPESEL = 12,
+        SearchBySalary = 13,
         SortBySurname = 21,
         SortByPESEL = 22,
         Back = 100,
@@ -80,6 +81,7 @@ private:
     std::string insertSearchPeselNumber();
     void checkIfExistPeselNumber(std::string);
     void searchByPeselNumber();
+    void searchBySalary();
     std::string insertSearchSurname();
     void checkIfExistSurname(std::string);
     void searchBySurname();

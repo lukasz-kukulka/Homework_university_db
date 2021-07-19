@@ -57,7 +57,7 @@ University::MenuOption University::menuEngine() {
             showStudents();
         } break;
         case MenuOption::SearchStudents : {
-            //searchMenuEngine();
+            searchMenuEngine();
         } break;
         case MenuOption::SortStudents : {
             //sortMenuEngine();
@@ -404,7 +404,8 @@ void University::printSearchMenu() {
     std::cout << "SEARCH BY\n";
     std::cout << "1. Surname\n";
     std::cout << "2. PESEL number\n";
-    std::cout << "3. Back to main menu\n";
+    std::cout << "3. Salary\n";
+    std::cout << "4. Back to main menu\n";
     std::cout << "Insert your choice: ";
 }
 
@@ -413,7 +414,7 @@ University::MenuOption University::searchMenuStudent() {
     do {
         std::cin >> choice;
     } while (validatingSearchAndSortMenuChoose(choice) == false);
-    if (choice == 3) {
+    if (choice == 4) {
         return MenuOption::Back;
     }
     return static_cast<MenuOption>(choice + 10);
@@ -430,6 +431,9 @@ void University::searchMenuEngine() {
             } break;
             case MenuOption::SearchByPESEL : {
                 searchByPeselNumber();
+            } break;
+            case MenuOption::SearchBySalary : {
+                searchBySalary();
             } break;
             default :
             break;
@@ -456,6 +460,11 @@ void University::searchByPeselNumber() {
     checkIfExistPeselNumber(insertSearchPeselNumber());
 }
 
+void University::searchBySalary() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    
+}
+
 std::string University::insertSearchPeselNumber() {
     std::string insertPesel;
     do {
@@ -478,7 +487,7 @@ void University::checkIfExistPeselNumber(std::string pesel) {
         }
     }
     if (ifExistPeselNumber == false) {
-        std::cout << "PESEL number don't exist in database\n";
+        std::cout << "PESEL number don't exist in database\n\n";
     }
 }
 
@@ -503,11 +512,9 @@ void University::checkIfExistSurname(std::string surname) {
         }
     }
     if (ifExistSurname == false) {
-        std::cout << "Surname don't exist in database\n";
+        std::cout << "Surname don't exist in database\n\n";
     }
 }
-
-
 
 // void University::printSortMenu() {
 //     std::cout << "SORT BY\n";
