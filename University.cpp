@@ -51,7 +51,7 @@ University::MenuOption University::menuEngine() {
     menuOption_ = static_cast<MenuOption>(choice);
     switch (menuOption_) {
         case MenuOption::AddStudents : {
-            //addNewStudent();
+            addNewStudent();
         } break;
         case MenuOption::ShowStudent : {
             //showStudents();
@@ -88,6 +88,7 @@ bool University::validatingMenuChoose(const int choosenValueToValid) {
 }
 
 void University::addNewStudent() {
+    selectPerson();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     insertStudentName();
     insertStudentSurname();
@@ -102,15 +103,17 @@ void University::addNewStudent() {
 
 void University::selectPerson() {
     size_t userChoicePerson {};
-    std::cout << "Which person you wanna add to database?\n";
-    std::cout << "1.STUDENT\n";
-    std::cout << "2.PROFESSORS ";
-    std::cin >> userChoicePerson;
-    std::cout << '\n';
+    do {
+        std::cout << "Which person you wanna add to database?\n";
+        std::cout << "1.STUDENT\n";
+        std::cout << "2.PROFESSORS ";
+        std::cin >> userChoicePerson;
+        std::cout << '\n';
+    } while(validationSelectPerson(userChoicePerson) == false);
 }
 
 bool University::validationSelectPerson(size_t userChoicePerson) {
-    if (userChoicePerson == 1 && userChoicePerson == 2) {
+    if (userChoicePerson == 1 || userChoicePerson == 2) {
         assignmentPersonValue(userChoicePerson);
         return true;
     } 
@@ -181,7 +184,7 @@ void University::insertStudentIndexNumber() {
         std::cout << "Please insert student index number(10 digits): ";
         std::getline (std::cin, indexNumber_);
     } while (validationStringSize(indexNumber_, sizeIndexNumberLimit_) == false
-             || validationIsDigit(indexNumber_));
+             || validationIsDigit(indexNumber_) == false);
 }
 
 void University::insertProfessorSalary() {
@@ -189,7 +192,7 @@ void University::insertProfessorSalary() {
         std::cout << "Please insert professor salary(max 5 digits): ";
         std::getline (std::cin, professorSalary_);
     } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false
-             || validationIsDigit(professorSalary_));
+             || validationIsDigit(professorSalary_) == false);
 }
 
 void University::insertStudentPeselNumber() {
@@ -197,7 +200,7 @@ void University::insertStudentPeselNumber() {
         std::cout << "Please insert student PESEL number: ";
         std::getline (std::cin, peselNumber_);
     } while (validatingPeselNumber() == false
-             || validationIsDigit(peselNumber_));
+             || validationIsDigit(peselNumber_) == false);
 }
 
 void University::insertStudentGender() {
@@ -288,14 +291,14 @@ bool University::peselValidWithWeight() {
 bool University::validatingPeselNumber() {
     bool corectPeselNumber = true;
     corectPeselNumber = peselValidDOBCheck();
-    //std::cout << "After peselValidDOBCheck() = " << corectPeselNumber << '\n'; //TEST
+    std::cout << "After peselValidDOBCheck() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidGenderCheck();
-    // std::cout << "After peselValidGenderCheck() = " << corectPeselNumber << '\n'; //TEST
+     std::cout << "After peselValidGenderCheck() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithCurrentlyDate();
-    //std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
+    std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithWeight();
-    // std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
-    if (peselNumber_.size() != sizePeselNumberLimit_ - 3) {
+     std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
+    if (peselNumber_.size() != sizePeselNumberLimit_) {
         corectPeselNumber = false;
     }
     if (!corectPeselNumber) {

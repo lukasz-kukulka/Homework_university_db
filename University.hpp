@@ -110,7 +110,7 @@ private:
     size_t sizePeselNumberLimit_ { 11 };
     size_t sizeGenderLimit_ { 6 };
     size_t sizeIndexNumberLimit_ { 10 };
-    size_t sizeSalaryLimit_ { 6 };
+    size_t sizeSalaryLimit_ { 5 };
 
     std::vector<std::shared_ptr<Person>>person_;
     WhichPerson userChoicePerson_ { WhichPerson::Anyone };
