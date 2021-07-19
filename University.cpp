@@ -96,8 +96,11 @@ void University::addNewStudent() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     insertAddress();
     insertStudentPeselNumber();
-    insertProfessorSalary();
-    insertStudentIndexNumber();
+    if (userChoicePerson_ == WhichPerson::Student) {
+        insertStudentIndexNumber();
+    } else {
+        insertProfessorSalary();
+    }
     confirmAddRecord();
 }
 
@@ -122,11 +125,12 @@ bool University::validationSelectPerson(size_t userChoicePerson) {
 }
 
 void University::assignmentPersonValue(size_t userChoicePerson) {
-    if (userChoicePerson == 1) {
-        userChoicePerson_ = WhichPerson::Student;
-    } else if ((userChoicePerson == 2)) {
-        userChoicePerson_ = WhichPerson::Professor;
-    } 
+    // if (userChoicePerson == 1) {
+    //     userChoicePerson_ = WhichPerson::Student;
+    // } else if ((userChoicePerson == 2)) {
+    //     userChoicePerson_ = WhichPerson::Professor;
+    // } 
+    userChoicePerson_ = static_cast<University::WhichPerson>(userChoicePerson);
 }
 
 void University::printInsertPersonData() {
@@ -158,7 +162,7 @@ void University::confirmAddRecord() {
 
 void University::insertStudentName() {
     do {
-        std::cout << "Please insert student name: ";
+        std::cout << "Please insert person name: ";
         std::getline (std::cin, name_);
     } while (validationStringSize(name_, sizeNameLimit_) == false
              || validationIsAlpabet(name_) == false);
@@ -166,7 +170,7 @@ void University::insertStudentName() {
 
 void University::insertStudentSurname() {
     do {
-        std::cout << "Please insert student surname: ";
+        std::cout << "Please insert person surname: ";
         std::getline (std::cin, surname_);
     } while (validationStringSize(surname_, sizeSurnameLimit_)== false
              || validationIsAlpabet(surname_) == false);
@@ -174,7 +178,7 @@ void University::insertStudentSurname() {
 
 void University::insertAddress() {
     do {
-        std::cout << "Please insert student address: ";
+        std::cout << "Please insert person address: ";
         std::getline (std::cin, address_);
     } while (validationStringSize(address_, sizeAddressLimit_) == false);
 }
@@ -183,7 +187,7 @@ void University::insertStudentIndexNumber() {
     do {
         std::cout << "Please insert student index number(10 digits): ";
         std::getline (std::cin, indexNumber_);
-    } while (validationStringSize(indexNumber_, sizeIndexNumberLimit_) == false
+    } while (validationStringSize(indexNumber_, sizeIndexNumberLimit_, true) == false
              || validationIsDigit(indexNumber_) == false);
 }
 
@@ -197,10 +201,11 @@ void University::insertProfessorSalary() {
 
 void University::insertStudentPeselNumber() {
     do {
-        std::cout << "Please insert student PESEL number: ";
+        std::cout << "Please insert person PESEL number: ";
         std::getline (std::cin, peselNumber_);
     } while (validatingPeselNumber() == false
-             || validationIsDigit(peselNumber_) == false);
+             || validationIsDigit(peselNumber_) == false
+             || validationStringSize(peselNumber_, sizePeselNumberLimit_, true) == false);
 }
 
 void University::insertStudentGender() {
@@ -232,12 +237,18 @@ bool University::validationIsDigit(std::string stringToCheck) {
     return false;
 }
 
-bool University::validationStringSize(std::string userStringData, size_t maxSize) {
-    if (userStringData.size() > maxSize) {
-        std::cout << "Length is to long, maximum length is " << maxSize << '\n';
-        return false;
+bool University::validationStringSize(std::string userStringData, size_t maxSize, bool isEqual) {
+    if (isEqual == false && userStringData.size() <= maxSize) {
+        return true;
+    } 
+    if (isEqual == true && userStringData.size() == maxSize) {
+        return true;
+    } 
+    if (isEqual == true) {
+        std::cout << "Wrong length, value must have " << maxSize << " characters\n";
     }
-    return true;
+    std::cout << "Length is to long, maximum length is " << maxSize << '\n';
+    return false;
 }
 
 bool University::peselValidDOBCheck() {
@@ -298,9 +309,6 @@ bool University::validatingPeselNumber() {
     std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithWeight();
      std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
-    if (peselNumber_.size() != sizePeselNumberLimit_) {
-        corectPeselNumber = false;
-    }
     if (!corectPeselNumber) {
         std::cout << "Pesel number is incorrect\n";
     }

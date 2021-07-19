@@ -56,7 +56,7 @@ private:
 
     bool validationSelectPerson(size_t userChoice);
     void assignmentPersonValue(size_t userChoice);
-    bool validationStringSize(std::string userStringData, size_t maxSize);
+    bool validationStringSize(std::string userStringData, size_t maxSize, bool isEqual = false);
     bool validationIsAlpabet(std::string stringToCheck);
     bool validationIsDigit(std::string stringToCheck);
     bool peselValidDOBCheck();
