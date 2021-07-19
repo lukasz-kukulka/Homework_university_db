@@ -86,6 +86,7 @@ private:
     std::string insertSearchSurname();
     void checkIfExistSurname(std::string);
     void searchBySurname();
+    void whichPersonIs(Person* person);
 
     void sortStudents();
     void printSortMenu();
@@ -117,4 +118,5 @@ private:
 
     std::vector<std::shared_ptr<Person>>person_;
     WhichPerson userChoicePerson_ { WhichPerson::Anyone };
+    WhichPerson currentlyReadingRecord_ { WhichPerson::Anyone };
 };

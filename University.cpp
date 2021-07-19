@@ -437,6 +437,15 @@ void University::searchMenuEngine() {
     }
 }
 
+void University::whichPersonIs(Person* person) {
+    currentlyReadingRecord_ = University::WhichPerson::Anyone;
+    if (person->getSalary().empty()) {
+         currentlyReadingRecord_ = University::WhichPerson::Student;
+    } else {
+        currentlyReadingRecord_ = University::WhichPerson::Professor;
+    }
+}
+
 bool University::validatingSearchAndSortMenuChoose(const int choosenValueToValid) {
     if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > 3) {
         std::cin.clear();
@@ -473,6 +482,7 @@ void University::checkIfExistPeselNumber(std::string pesel) {
         if (person->getPeselNumber() == pesel) {
             person->printPerson();
             person->printBorderBotton();
+            whichPersonIs(person.get());
             ifExistPeselNumber = true;
             break;
         }
