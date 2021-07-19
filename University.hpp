@@ -82,6 +82,7 @@ private:
     void checkIfExistPeselNumber(std::string);
     void searchByPeselNumber();
     void searchBySalary();
+    std::string insertSearchSalary();
     std::string insertSearchSurname();
     void checkIfExistSurname(std::string);
     void searchBySurname();

@@ -404,8 +404,7 @@ void University::printSearchMenu() {
     std::cout << "SEARCH BY\n";
     std::cout << "1. Surname\n";
     std::cout << "2. PESEL number\n";
-    std::cout << "3. Salary\n";
-    std::cout << "4. Back to main menu\n";
+    std::cout << "3. Back to main menu\n";
     std::cout << "Insert your choice: ";
 }
 
@@ -414,7 +413,7 @@ University::MenuOption University::searchMenuStudent() {
     do {
         std::cin >> choice;
     } while (validatingSearchAndSortMenuChoose(choice) == false);
-    if (choice == 4) {
+    if (choice == 3) {
         return MenuOption::Back;
     }
     return static_cast<MenuOption>(choice + 10);
@@ -431,9 +430,6 @@ void University::searchMenuEngine() {
             } break;
             case MenuOption::SearchByPESEL : {
                 searchByPeselNumber();
-            } break;
-            case MenuOption::SearchBySalary : {
-                searchBySalary();
             } break;
             default :
             break;
@@ -458,11 +454,6 @@ void University::searchBySurname() {
 void University::searchByPeselNumber() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     checkIfExistPeselNumber(insertSearchPeselNumber());
-}
-
-void University::searchBySalary() {
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    
 }
 
 std::string University::insertSearchPeselNumber() {
