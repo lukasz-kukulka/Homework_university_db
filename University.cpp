@@ -54,7 +54,7 @@ University::MenuOption University::menuEngine() {
             addNewStudent();
         } break;
         case MenuOption::ShowStudent : {
-            //showStudents();
+            showStudents();
         } break;
         case MenuOption::SearchStudents : {
             //searchMenuEngine();
@@ -125,11 +125,6 @@ bool University::validationSelectPerson(size_t userChoicePerson) {
 }
 
 void University::assignmentPersonValue(size_t userChoicePerson) {
-    // if (userChoicePerson == 1) {
-    //     userChoicePerson_ = WhichPerson::Student;
-    // } else if ((userChoicePerson == 2)) {
-    //     userChoicePerson_ = WhichPerson::Professor;
-    // } 
     userChoicePerson_ = static_cast<University::WhichPerson>(userChoicePerson);
 }
 
@@ -323,16 +318,16 @@ bool University::validatingGender() {
     return true;
 }
 
-// void University::showStudents() {
-//     // if (!person_.empty()) {
-//     //     person_[0].printBorderTop();
-//     //     for (auto ele : person_) {
-//     //         ele.printStudent();
-//     //     }
-//     //     person_[0].printBorderBotton();
-//     // }
-//     // std::cout << "Database of students is empty please load form file or add new students\n";
-// }
+void University::showStudents() {
+    if (!person_.empty()) {
+        person_[0]->getAddress();
+        for (auto ele : person_) {
+            ele->printPerson();
+        }
+        person_[0]->printBorderBotton();
+    }
+    std::cout << "Database of students is empty please load form file or add new students\n";
+}
 
 // void University::saveToFile(size_t indexStudent) {
 //     std::fstream file;
@@ -405,109 +400,114 @@ bool University::validatingGender() {
 //     return lineNo / 8;
 // }
 
-// void University::printSearchMenu() {
-//     std::cout << "SEARCH BY\n";
-//     std::cout << "1. Surname\n";
-//     std::cout << "2. PESEL number\n";
-//     std::cout << "3. Back to main menu\n";
-//     std::cout << "Insert your choice: ";
-// }
+void University::printSearchMenu() {
+    std::cout << "SEARCH BY\n";
+    std::cout << "1. Surname\n";
+    std::cout << "2. PESEL number\n";
+    std::cout << "3. Back to main menu\n";
+    std::cout << "Insert your choice: ";
+}
 
-// University::MenuOption University::searchMenuStudent() {
-//     int choice = 0;
-//     do {
-//         std::cin >> choice;
-//     } while (validatingSearchAndSortMenuChoose(choice) == false);
-//     if (choice == 3) {
-//         return MenuOption::Back;
-//     }
-//     return static_cast<MenuOption>(choice + 10);
-// }
+University::MenuOption University::searchMenuStudent() {
+    int choice = 0;
+    do {
+        std::cin >> choice;
+    } while (validatingSearchAndSortMenuChoose(choice) == false);
+    if (choice == 3) {
+        return MenuOption::Back;
+    }
+    return static_cast<MenuOption>(choice + 10);
+}
 
-// void University::searchMenuEngine() {
-//     MenuOption searchChoose = MenuOption::BaseMenu;
-//     while (searchChoose != MenuOption::Back) {
-//         printSearchMenu();
-//         searchChoose = searchMenuStudent();
-//         switch (searchChoose) {
-//             case MenuOption::SearchBySurname : {
-//                 searchBySurname();
-//             } break;
-//             case MenuOption::SearchByPESEL : {
-//                 searchByPeselNumber();
-//             } break;
-//             default :
-//             break;
-//         }
-//     }
-// }
+void University::searchMenuEngine() {
+    MenuOption searchChoose = MenuOption::BaseMenu;
+    while (searchChoose != MenuOption::Back) {
+        printSearchMenu();
+        searchChoose = searchMenuStudent();
+        switch (searchChoose) {
+            case MenuOption::SearchBySurname : {
+                searchBySurname();
+            } break;
+            case MenuOption::SearchByPESEL : {
+                searchByPeselNumber();
+            } break;
+            default :
+            break;
+        }
+    }
+}
 
-// bool University::validatingSearchAndSortMenuChoose(const int choosenValueToValid) {
-//     if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > 3) {
-//         std::cin.clear();
-//         std::cout << "Incorrect value, please put number betwen 1 and 3\n";
-//         return false;
-//     }
-//     return true;
-// }
+bool University::validatingSearchAndSortMenuChoose(const int choosenValueToValid) {
+    if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > 3) {
+        std::cin.clear();
+        std::cout << "Incorrect value, please put number betwen 1 and 3\n";
+        return false;
+    }
+    return true;
+}
 
-// std::string University::insertSearchPeselNumber() {
-//     std::string insertPesel;
-//     do {
-//         std::cout << "Please insert searching PESEL number: ";
-//         std::getline (std::cin, insertPesel);
-//     } while (validatingPeselNumber() == false);
-//     return insertPesel;
-// }
+void University::searchBySurname() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    checkIfExistSurname(insertSearchSurname());
+}
 
-// void University::checkIfExistPeselNumber(std::string pesel) {
-//     bool ifExistPeselNumber = false;
-//     for (auto& student : person_) {
-//         if (student.getPeselNumber() == pesel) {
-//             student.printStudent();
-//             student.printBorderBotton();
-//             ifExistPeselNumber = true;
-//             break;
-//         }
-//     }
-//     if (ifExistPeselNumber == false) {
-//         std::cout << "PESEL number don't exist in database\n";
-//     }
-// }
+void University::searchByPeselNumber() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    checkIfExistPeselNumber(insertSearchPeselNumber());
+}
 
-// void University::searchByPeselNumber() {
-//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-//     checkIfExistPeselNumber(insertSearchPeselNumber());
-// }
+std::string University::insertSearchPeselNumber() {
+    std::string insertPesel;
+    do {
+        std::cout << "Please insert searching PESEL number: ";
+        std::getline (std::cin, insertPesel);
+    } while (validatingPeselNumber() == false
+             || validationIsDigit(peselNumber_) == false
+             || validationStringSize(peselNumber_, sizePeselNumberLimit_, true) == false);
+    return insertPesel;
+}
 
-// std::string University::insertSearchSurname() {
-//     std::string insertSurname;
-//     do {
-//         std::cout << "Please insert searching Surname: ";
-//         std::getline (std::cin, insertSurname);
-//     } while (validatingSurname() == false);
-//     return insertSurname;
-// }
+void University::checkIfExistPeselNumber(std::string pesel) {
+    bool ifExistPeselNumber = false;
+    for (auto& person : person_) {
+        if (person->getPeselNumber() == pesel) {
+            person->printPerson();
+            person->printBorderBotton();
+            ifExistPeselNumber = true;
+            break;
+        }
+    }
+    if (ifExistPeselNumber == false) {
+        std::cout << "PESEL number don't exist in database\n";
+    }
+}
 
-// void University::checkIfExistSurname(std::string surname) {
-//     bool ifExistSurname = false;
-//     for (auto& student : person_) {
-//         if (student.getSurname() == surname) {
-//             student.printStudent();
-//             student.printBorderBotton();
-//             ifExistSurname = true;
-//             break;
-//         }
-//     }
-//     if (ifExistSurname == false) {
-//         std::cout << "Surname don't exist in database\n";
-//     }
-// }
+std::string University::insertSearchSurname() {
+    std::string insertSurname;
+    do {
+        std::cout << "Please insert searching Surname: ";
+        std::getline (std::cin, insertSurname);
+    } while (validationStringSize(surname_, sizeSurnameLimit_)== false
+             || validationIsAlpabet(surname_) == false);
+    return insertSurname;
+}
 
-// void University::searchBySurname() {
-//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-//     checkIfExistSurname(insertSearchSurname());
-// }
+void University::checkIfExistSurname(std::string surname) {
+    bool ifExistSurname = false;
+    for (auto& person : person_) {
+        if (person->getSurname() == surname) {
+            person->printPerson();
+            person->printBorderBotton();
+            ifExistSurname = true;
+            break;
+        }
+    }
+    if (ifExistSurname == false) {
+        std::cout << "Surname don't exist in database\n";
+    }
+}
+
+
 
 // void University::printSortMenu() {
 //     std::cout << "SORT BY\n";
