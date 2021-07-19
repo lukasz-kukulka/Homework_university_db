@@ -7,6 +7,9 @@
 #include "Student.hpp"
 #include "Professor.hpp"
 
+//to do
+// sprawdzic czy osoba z takim peselem juz istnieje przy dodawaniu
+
 constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 
 University::University() {
@@ -460,9 +463,16 @@ void University::searchBySurname() {
     checkIfExistSurname(insertSearchSurname());
 }
 
+void University::askSalarySetIfProfessor() {
+
+}
+
 void University::searchByPeselNumber() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    checkIfExistPeselNumber(insertSearchPeselNumber());
+    if (checkIfExistPeselNumber(insertSearchPeselNumber()) == true 
+        && currentlyReadingRecord_ == University::WhichPerson::Professor){
+        
+    }
 }
 
 std::string University::insertSearchPeselNumber() {
@@ -476,20 +486,17 @@ std::string University::insertSearchPeselNumber() {
     return insertPesel;
 }
 
-void University::checkIfExistPeselNumber(std::string pesel) {
-    bool ifExistPeselNumber = false;
+bool University::checkIfExistPeselNumber(std::string pesel) {
     for (auto& person : person_) {
         if (person->getPeselNumber() == pesel) {
             person->printPerson();
             person->printBorderBotton();
             whichPersonIs(person.get());
-            ifExistPeselNumber = true;
-            break;
+            return true;
         }
     }
-    if (ifExistPeselNumber == false) {
-        std::cout << "PESEL number don't exist in database\n\n";
-    }
+    std::cout << "PESEL number don't exist in database\n\n";
+    return false;
 }
 
 std::string University::insertSearchSurname() {

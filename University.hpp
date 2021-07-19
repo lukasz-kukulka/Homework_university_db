@@ -79,7 +79,8 @@ private:
     void searchMenuEngine();
     bool validatingSearchAndSortMenuChoose(const int);
     std::string insertSearchPeselNumber();
-    void checkIfExistPeselNumber(std::string);
+    bool checkIfExistPeselNumber(std::string);
+    void askSalarySetIfProfessor();
     void searchByPeselNumber();
     void searchBySalary();
     std::string insertSearchSalary();
