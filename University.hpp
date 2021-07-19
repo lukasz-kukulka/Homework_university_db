@@ -80,7 +80,7 @@ private:
     bool validatingSearchAndSortMenuChoose(const int);
     std::string insertSearchPeselNumber();
     bool checkIfExistPeselNumber(std::string);
-    void askSalarySetIfProfessor();
+    void printSetSalaryMenu();
     void searchByPeselNumber();
     void searchBySalary();
     std::string insertSearchSalary();
@@ -88,6 +88,7 @@ private:
     void checkIfExistSurname(std::string);
     void searchBySurname();
     void whichPersonIs(Person* person);
+    void choiceSetSalary();
 
     void sortStudents();
     void printSortMenu();

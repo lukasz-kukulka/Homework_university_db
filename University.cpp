@@ -463,15 +463,23 @@ void University::searchBySurname() {
     checkIfExistSurname(insertSearchSurname());
 }
 
-void University::askSalarySetIfProfessor() {
+void University::printSetSalaryMenu() {
+    std::cout << "What you wanna do?\n";
+    std::cout << "1. Change salary\n";
+    std::cout << "2. Back\n";
+}
 
+void University::choiceSetSalary() {
+    size_t userChoice {};
+    while (userChoice != 1 && userChoice != 2) {
+        std::cout << "Wrong answer, please insert 1 or 2.\n";
+    }
 }
 
 void University::searchByPeselNumber() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     if (checkIfExistPeselNumber(insertSearchPeselNumber()) == true 
         && currentlyReadingRecord_ == University::WhichPerson::Professor){
-        
     }
 }
 
@@ -492,6 +500,7 @@ bool University::checkIfExistPeselNumber(std::string pesel) {
             person->printPerson();
             person->printBorderBotton();
             whichPersonIs(person.get());
+            professorSalary_ = person->getSalary();
             return true;
         }
     }
