@@ -486,6 +486,14 @@ void University::searchByPeselNumber() {
     }
 }
 
+void University::salaryOptions(size_t userChoice) {
+    if (userChoice == 1) {
+        std::cout << "Insert new salary: ";
+    }
+}
+
+
+
 std::string University::insertSearchPeselNumber() {
     std::string insertPesel;
     do {

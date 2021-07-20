@@ -89,6 +89,7 @@ private:
     void searchBySurname();
     void whichPersonIs(Person* person);
     size_t choiceSetSalary();
+    void salaryOptions(size_t userChoice);
 
     void sortStudents();
     void printSortMenu();
