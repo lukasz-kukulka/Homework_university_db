@@ -469,17 +469,20 @@ void University::printSetSalaryMenu() {
     std::cout << "2. Back\n";
 }
 
-void University::choiceSetSalary() {
+size_t University::choiceSetSalary() {
     size_t userChoice {};
     while (userChoice != 1 && userChoice != 2) {
         std::cout << "Wrong answer, please insert 1 or 2.\n";
     }
+    return userChoice;
 }
 
 void University::searchByPeselNumber() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     if (checkIfExistPeselNumber(insertSearchPeselNumber()) == true 
         && currentlyReadingRecord_ == University::WhichPerson::Professor){
+        printSetSalaryMenu();
+        choiceSetSalary();
     }
 }
 

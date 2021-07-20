@@ -88,7 +88,7 @@ private:
     void checkIfExistSurname(std::string);
     void searchBySurname();
     void whichPersonIs(Person* person);
-    void choiceSetSalary();
+    size_t choiceSetSalary();
 
     void sortStudents();
     void printSortMenu();
