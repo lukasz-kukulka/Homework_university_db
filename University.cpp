@@ -487,12 +487,15 @@ void University::searchByPeselNumber() {
 }
 
 void University::salaryOptions(size_t userChoice) {
+    std::string newSalary {};
     if (userChoice == 1) {
-        std::cout << "Insert new salary: ";
+        do {
+            std::cout << "Insert new salary: ";
+            std::cin >> newSalary;
+        } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false
+             || validationIsDigit(professorSalary_) == false);
     }
 }
-
-
 
 std::string University::insertSearchPeselNumber() {
     std::string insertPesel;
