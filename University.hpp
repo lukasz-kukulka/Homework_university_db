@@ -90,6 +90,7 @@ private:
     void whichPersonIs(Person* person);
     size_t choiceSetSalary();
     void salaryOptions(size_t userChoice);
+    void changingSalary(std::string newSalary);
 
     void sortStudents();
     void printSortMenu();
@@ -120,6 +121,7 @@ private:
     size_t sizeSalaryLimit_ { 5 };
 
     std::vector<std::shared_ptr<Person>>person_;
+    std::shared_ptr<Person>currentlyPerson_;
     WhichPerson userChoicePerson_ { WhichPerson::Anyone };
     WhichPerson currentlyReadingRecord_ { WhichPerson::Anyone };
 };

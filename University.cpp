@@ -441,12 +441,16 @@ void University::searchMenuEngine() {
 }
 
 void University::whichPersonIs(Person* person) {
-    currentlyReadingRecord_ = University::WhichPerson::Anyone;
-    if (person->getSalary().empty()) {
-         currentlyReadingRecord_ = University::WhichPerson::Student;
-    } else {
-        currentlyReadingRecord_ = University::WhichPerson::Professor;
-    }
+    std::shared_ptr<Person>currentlyPerson_(person);
+    currentlyReadingRecord_ = University::WhichPerson::Anyone; //TO DO
+    // if (person->getSalary().empty()) {
+    //      currentlyReadingRecord_ = University::WhichPerson::Student;
+    //      currentlyPerson_ = std::make_shared<Professor>();
+    // }
+    // } else {
+    //     currentlyReadingRecord_ = University::WhichPerson::Professor;
+    //     currentlyPerson_ = std::make_shared<Professor>(person);
+    // }
 }
 
 bool University::validatingSearchAndSortMenuChoose(const int choosenValueToValid) {
@@ -493,8 +497,13 @@ void University::salaryOptions(size_t userChoice) {
             std::cout << "Insert new salary: ";
             std::cin >> newSalary;
         } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false
-             || validationIsDigit(professorSalary_) == false);
+                 || validationIsDigit(professorSalary_) == false);
+        changingSalary(newSalary);
     }
+}
+
+void University::changingSalary(std::string newSalary) {
+    currentlyPerson_->setSalary(newSalary);
 }
 
 std::string University::insertSearchPeselNumber() {

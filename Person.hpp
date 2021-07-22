@@ -26,6 +26,8 @@ public:
     size_t getSizePeselNumberLimit() const { return sizePeselNumberLimit_; }
     size_t getSizeGenderLimit() const { return sizePeselNumberLimit_; }
 
+    void setSalary(std::string salary) { salary_ = salary; }
+
     virtual void printBorderTop() = 0;
     virtual void printPerson() = 0;
     virtual void printBorderBotton() = 0;
