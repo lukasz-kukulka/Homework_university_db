@@ -443,14 +443,14 @@ void University::searchMenuEngine() {
 void University::whichPersonIs(Person* person) {
     std::shared_ptr<Person>currentlyPerson_(person);
     currentlyReadingRecord_ = University::WhichPerson::Anyone; //TO DO
-    // if (person->getSalary().empty()) {
-    //      currentlyReadingRecord_ = University::WhichPerson::Student;
-    //      currentlyPerson_ = std::make_shared<Professor>();
-    // }
-    // } else {
-    //     currentlyReadingRecord_ = University::WhichPerson::Professor;
-    //     currentlyPerson_ = std::make_shared<Professor>(person);
-    // }
+    if (person->getSalary().empty()) {
+         currentlyReadingRecord_ = University::WhichPerson::Student;
+         currentlyPerson_ = (std::make_shared<Student>(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+    
+    } else {
+        currentlyReadingRecord_ = University::WhichPerson::Professor;
+        currentlyPerson_ = (std::make_shared<Professor>(Professor(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+    }
 }
 
 bool University::validatingSearchAndSortMenuChoose(const int choosenValueToValid) {
