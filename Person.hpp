@@ -19,7 +19,8 @@ public:
     std::string getPeselNumber() const { return peselNumber_; }
     std::string getGender() { return convertPersonGender(gender_); };
     virtual std::string getSalary() const { return salary_; }
-
+    virtual std::string getIndexNumber() const { return indexNumber_; }
+    
     size_t getSizeNameLimit() const { return sizeNameLimit_; }
     size_t getSizeSurnameLimit() const { return sizeSurnameLimit_; }
     size_t getSizeAddressLimit() const { return sizeAddressLimit_; }
@@ -42,6 +43,7 @@ protected:
     std::string peselNumber_{ "82828280021" };
     Gender gender_ { Gender::female };
     std::string salary_{ };
+    std::string indexNumber_ { };
 
     size_t sizeNameLimit_ { 16 };
     size_t sizeSurnameLimit_ { 30 };

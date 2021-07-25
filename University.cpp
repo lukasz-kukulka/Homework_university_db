@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+#include <typeinfo>
 
 #include "Student.hpp"
 #include "Professor.hpp"
@@ -332,18 +333,24 @@ void University::showStudents() {
     std::cout << "Database of students is empty please load form file or add new students\n";
 }
 
-// void University::saveToFile(size_t indexStudent) {
-//     std::fstream file;
-//     file.open("records.txt", std::ios::out | std::ios::app);
-//     file << "[Student nr. : " << indexStudent + 1 << "]\n";
-//     file << person_[indexStudent].getName() << "\n";
-//     file << person_[indexStudent].getSurname() << "\n";
-//     file << person_[indexStudent].getAddress() << "\n";
-//     //file << person_[indexStudent].getIndexNumber() << "\n";
-//     file << person_[indexStudent].getPeselNumber() << "\n";
-//     file << person_[indexStudent].getGender() << "\n\n";
-//     file.close();
-// }
+void University::saveToFile(size_t personIndex) {
+    std::fstream file;
+    file.open("records.txt", std::ios::out | std::ios::app);
+    file << "[Person nr. : " << personIndex + 1 << "]\n";
+    if (typeid(person_[personIndex]) == typeid(Student))
+    file << person_[personIndex]->getName() << "\n";
+    file << person_[personIndex]->getSurname() << "\n";
+    file << person_[personIndex]->getAddress() << "\n";
+    file << person_[personIndex]->getSalary() << "\n";
+    file << person_[personIndex]->getPeselNumber() << "\n";
+    file << person_[personIndex]->getGender() << "\n\n";
+    if (typeid(person_[personIndex]) == typeid(Student)) {
+        file << person_[personIndex]->getIndexNumber() << "\n\n";
+    } else {
+        file << person_[personIndex]->getSalary() << "\n\n";
+    }
+    file.close();
+}
 
 // void University::loadFromFile() {
 //     person_.reserve(countRecord());
