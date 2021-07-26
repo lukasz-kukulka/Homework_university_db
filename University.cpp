@@ -337,62 +337,64 @@ void University::saveToFile(size_t personIndex) {
     std::fstream file;
     file.open("records.txt", std::ios::out | std::ios::app);
     file << "[Person nr. : " << personIndex + 1 << "]\n";
-    if (typeid(person_[personIndex]) == typeid(Student))
     file << person_[personIndex]->getName() << "\n";
     file << person_[personIndex]->getSurname() << "\n";
     file << person_[personIndex]->getAddress() << "\n";
-    file << person_[personIndex]->getSalary() << "\n";
     file << person_[personIndex]->getPeselNumber() << "\n";
-    file << person_[personIndex]->getGender() << "\n\n";
-    if (typeid(person_[personIndex]) == typeid(Student)) {
-        file << person_[personIndex]->getIndexNumber() << "\n\n";
-    } else {
-        file << person_[personIndex]->getSalary() << "\n\n";
-    }
+    file << person_[personIndex]->getIndexNumber() << "\n";
+    file << person_[personIndex]->getSalary() << "\n\n";
     file.close();
 }
 
-// void University::loadFromFile() {
-//     person_.reserve(countRecord());
-//     int lineNo = 1;
-//     std::string line;
-//     std::fstream file;
-//     file.open("records.txt", std::ios::in);
-//     if (file.good() == false) {
-//         std::cout << "Created new file\n";
-//         file.open("records.txt", std::ios::out | std::ios::app);
-//     }
-//     while (getline(file, line)) {
-//         switch (lineNo) {
-//             case 2: {
-//                 name_ = line;
-//             } break;
-//             case 3: {
-//                 surname_ = line;
-//             } break;
-//             case 4: {
-//                 address_ = line;
-//             } break;
-//             case 5: {
-//                 indexNumber_ = line;
-//             } break;
-//             case 6: {
-//                 peselNumber_ = line;
-//             } break;
-//             case 7: {
-//                 line.size() == 4 ? gender_ = 1 : gender_ = 0;
-//             } break;
-//             default : {  
-//             } break;
-//         }
-//         lineNo++;
-//         if (lineNo > 8) {
-//             lineNo = 1;
-//             person_.push_back(Student(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
-//         }
-//     }
-//     file.close();
-// }
+void University::loadFromFile() {
+    //person_.reserve(countRecord());
+
+    int lineNo = 1;
+    std::string line;
+    std::fstream file;
+    file.open("records.txt", std::ios::in);
+    if (file.good() == false) {
+        std::cout << "Created new file\n";
+        file.open("records.txt", std::ios::out | std::ios::app);
+    }
+    while (getline(file, line)) {
+        switch (lineNo) {
+            case 2: {
+                name_ = line;
+            } break;
+            case 3: {
+                surname_ = line;
+            } break;
+            case 4: {
+                address_ = line;
+            } break;
+            case 5: {
+                peselNumber_ = line;
+            } break;
+            case 6: {
+                line.size() == 4 ? gender_ = 1 : gender_ = 0;
+            } break;
+            case 7: {
+                indexNumber_ = line;
+            } break;
+            case 8: {
+                professorSalary_ = line;
+            } break;
+            default : {  
+            } break;
+        }
+        lineNo++;
+        if (lineNo > 9) {
+            lineNo = 1;
+            if (indexNumber_.size() < 1) {
+                person_.push_back(std::make_shared<Professor>(Professor(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+            } else {
+                person_.push_back(std::make_shared<Student>(Student(name_, surname_,address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+            }            
+        }
+    }
+    file.close();
+}
 
 // int University::countRecord() {
 //     int lineNo = 0;
