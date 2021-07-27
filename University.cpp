@@ -567,7 +567,8 @@ void University::printSortMenu() {
     std::cout << "SORT BY\n";
     std::cout << "1. PESEL number\n";
     std::cout << "2. Surname number\n";
-    std::cout << "3. Back to main menu\n";
+    std::cout << "3. Surname salary\n";
+    std::cout << "4. Back to main menu\n";
     std::cout << "Insert your choice: ";
 }
 
