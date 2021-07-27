@@ -579,13 +579,13 @@ void University::sortMenuEngine() {
         sortChoose = validationUserChoiceSortMenu();
         switch (sortChoose) {
             case MenuOption::SortByPESEL : {
-                //sortByPeselNumber();
+                sortByPeselNumber();
             } break;
             case MenuOption::SortBySurname : {
-                //sortBySurname();
+                sortBySurname();
             } break;
             case MenuOption::SearchBySalary : {
-                //sortBySalary();
+                sortBySalary();
             } break;
             default :
             break;
