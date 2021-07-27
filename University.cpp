@@ -572,24 +572,27 @@ void University::printSortMenu() {
     std::cout << "Insert your choice: ";
 }
 
-// void University::sortMenuEngine() {
-//     MenuOption sortChoose = MenuOption::BaseMenu;
-//     while (sortChoose != MenuOption::Back) {
-//         printSortMenu();
-//         sortChoose = sortMenuStudent();
-//         switch (sortChoose) {
-//             case MenuOption::SortByPESEL : {
-//                 sortByPeselNumber();
-//             } break;
-//             case MenuOption::SortBySurname : {
-//                 sortBySurname();
-//             } break;
-//             default :
-//             break;
-//         }
+void University::sortMenuEngine() {
+    MenuOption sortChoose = MenuOption::BaseMenu;
+    while (sortChoose != MenuOption::Back) {
+        printSortMenu();
+        sortChoose = sortMenuStudent();
+        switch (sortChoose) {
+            case MenuOption::SortByPESEL : {
+                //sortByPeselNumber();
+            } break;
+            case MenuOption::SortBySurname : {
+                //sortBySurname();
+            } break;
+            case MenuOption::SearchBySalary : {
+                //sortBySurname();
+            } break;
+            default :
+            break;
+        }
 
-//     }
-// }
+    }
+}
 
 // University::MenuOption University::sortMenuStudent() {
 //     int choice = 0;
