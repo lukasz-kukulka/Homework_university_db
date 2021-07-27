@@ -604,16 +604,14 @@ University::MenuOption University::validationUserChoiceSortMenu() {
     return static_cast<MenuOption>(choice + 20);
 }
 
-// void University::sortByPeselNumber() {
-//     if (!person_.empty()) {
-//         std::sort(person_.begin(), person_.end(), [&](auto const& lhs, auto const& rhs) {
-//             return lhs.getPeselNumber() < rhs.getPeselNumber();
-//         });
-//         std::cout << "Database is sorted by PESEL number\n";
-//     } else {
-//         std::cout << "Database is empty\n";
-//     }
-// }
+void University::sortByPeselNumber() {
+    if (!person_.empty()) {
+        std::sort(person_.begin(), person_.end());
+        std::cout << "Database is sorted by PESEL number\n";
+    } else {
+        std::cout << "Database is empty\n";
+    }
+}
 
 // void University::sortBySurname() {
 //     if (!person_.empty()) {
