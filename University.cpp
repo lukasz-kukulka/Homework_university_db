@@ -347,15 +347,13 @@ void University::saveToFile(size_t personIndex) {
 }
 
 void University::loadFromFile() {
-    //person_.reserve(countRecord());
-
+    person_.reserve(countRecord());
     int lineNo = 1;
     std::string line;
     std::fstream file;
     file.open("records.txt", std::ios::in);
     if (file.good() == false) {
-        std::cout << "Created new file\n";
-        file.open("records.txt", std::ios::out | std::ios::app);
+        std::cout << "File not exist\n";
     }
     while (getline(file, line)) {
         switch (lineNo) {
@@ -396,21 +394,21 @@ void University::loadFromFile() {
     file.close();
 }
 
-// int University::countRecord() {
-//     int lineNo = 0;
-//     std::string line;
-//     std::fstream file;
-//     file.open("records.txt", std::ios::in);
-//     if (file.good() == false) {
-//         std::cout << "Created new file\n";
-//         file.open("records.txt", std::ios::out | std::ios::app);
-//     }
-//     while (getline(file, line)) {
-//         lineNo++;
-//     }
-//     file.close();
-//     return lineNo / 8;
-// }
+int University::countRecord() {
+    int lineNo = 0;
+    std::string line;
+    std::fstream file;
+    file.open("records.txt", std::ios::in);
+    if (file.good() == false) {
+        std::cout << "Created new file\n";
+        file.open("records.txt", std::ios::out | std::ios::app);
+    }
+    while (getline(file, line)) {
+        lineNo++;
+    }
+    file.close();
+    return lineNo / 8;
+}
 
 void University::printSearchMenu() {
     std::cout << "SEARCH BY\n";
