@@ -626,29 +626,29 @@ void University::sortBySurname() {
     }
 }
 
-// void University::deleteByIndexNumber(std::string indexNumber) {
-//     auto iterator = 0;
-//     std::string answer;
-//     for (auto& student : person_) {
-//         iterator++;
-//         if (student.getIndexNumber() == indexNumber) {
-//             student.printStudent();
-//             student.printBorderBotton();
-//             break;
-//         }
-//     }
-//     while (1) {
-//         std::cout << "Do you wanna delete this record? Y/N: ";
-//         if (yesNoOption() == YesNoOption::Yes) {
-//             person_[iterator] = person_[person_.size() - 1];
-//             person_.erase(person_.end() - 1);
-//             break;
-//         }
-//         if (yesNoOption() == YesNoOption::No) {
-//             break;
-//         }
-//     }
-// }
+void University::deleteByIndexNumber(std::string indexNumber) {
+    auto iterator = 0;
+    std::string answer;
+    for (auto& person : person_) {
+        iterator++;
+        if (person->getIndexNumber() == indexNumber) {
+            person->printPerson();
+            person->printBorderBotton();
+            break;
+        }
+    }
+    while (1) {
+        std::cout << "Do you wanna delete this record? Y/N: ";
+        if (yesNoOption() == YesNoOption::Yes) {
+            person_[iterator] = person_[person_.size() - 1];
+            person_.erase(person_.end() - 1);
+            break;
+        }
+        if (yesNoOption() == YesNoOption::No) {
+            break;
+        }
+    }
+}
 
 std::string University::convertPersonGender(const size_t gender) {
     return gender == 0 ? "female" : "male";
