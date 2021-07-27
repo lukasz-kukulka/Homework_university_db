@@ -98,6 +98,7 @@ private:
     MenuOption validationUserChoiceSortMenu();
     void sortByPeselNumber();
     void sortBySurname();
+    void sortBySalary();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);

@@ -585,7 +585,7 @@ void University::sortMenuEngine() {
                 //sortBySurname();
             } break;
             case MenuOption::SearchBySalary : {
-                //sortBySurname();
+                //sortBySalary();
             } break;
             default :
             break;
@@ -621,6 +621,17 @@ void University::sortBySurname() {
             return lhs->getSurname() < rhs->getSurname();
         });
         std::cout << "Database is sorted by surname\n";
+    } else {
+        std::cout << "Database is empty\n";
+    }
+}
+
+void University::sortBySalary() {
+    if (!person_.empty()) {
+        std::sort(person_.begin(), person_.end(), [&](auto const& lhs, auto const& rhs) {
+            return lhs->getSalary() > rhs->getSalary();
+        });
+        std::cout << "Database is sorted by salary\n";
     } else {
         std::cout << "Database is empty\n";
     }
