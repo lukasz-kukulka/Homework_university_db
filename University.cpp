@@ -576,7 +576,7 @@ void University::sortMenuEngine() {
     MenuOption sortChoose = MenuOption::BaseMenu;
     while (sortChoose != MenuOption::Back) {
         printSortMenu();
-        sortChoose = sortMenuStudent();
+        sortChoose = validationUserChoiceSortMenu();
         switch (sortChoose) {
             case MenuOption::SortByPESEL : {
                 //sortByPeselNumber();
@@ -590,20 +590,19 @@ void University::sortMenuEngine() {
             default :
             break;
         }
-
     }
 }
 
-// University::MenuOption University::sortMenuStudent() {
-//     int choice = 0;
-//     do {
-//         std::cin >> choice;
-//     } while (validatingSearchAndSortMenuChoose(choice) == false);
-//     if (choice == 3) {
-//         return MenuOption::Back;
-//     }
-//     return static_cast<MenuOption>(choice + 20);
-// }
+University::MenuOption University::validationUserChoiceSortMenu() {
+    int choice = 0;
+    do {
+        std::cin >> choice;
+    } while (validatingSearchAndSortMenuChoose(choice) == false);
+    if (choice == 4) {
+        return MenuOption::Back;
+    }
+    return static_cast<MenuOption>(choice + 20);
+}
 
 // void University::sortByPeselNumber() {
 //     if (!person_.empty()) {

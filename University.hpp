@@ -95,7 +95,7 @@ private:
     void sortStudents();
     void printSortMenu();
     void sortMenuEngine();
-    MenuOption sortMenuStudent();
+    MenuOption validationUserChoiceSortMenu();
     void sortByPeselNumber();
     void sortBySurname();
 
