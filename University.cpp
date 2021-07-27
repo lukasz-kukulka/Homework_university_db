@@ -606,7 +606,9 @@ University::MenuOption University::validationUserChoiceSortMenu() {
 
 void University::sortByPeselNumber() {
     if (!person_.empty()) {
-        std::sort(person_.begin(), person_.end());
+        std::sort(person_.begin(), person_.end(), [&](auto const& lhs, auto const& rhs) {
+            return lhs->getPeselNumber() < rhs->getPeselNumber();
+        });
         std::cout << "Database is sorted by PESEL number\n";
     } else {
         std::cout << "Database is empty\n";
@@ -616,7 +618,7 @@ void University::sortByPeselNumber() {
 // void University::sortBySurname() {
 //     if (!person_.empty()) {
 //         std::sort(person_.begin(), person_.end(), [&](auto const& lhs, auto const& rhs) {
-//             return lhs.getSurname() < rhs.getSurname();
+//             return lhs->getSurname() < rhs->getSurname();
 //         });
 //         std::cout << "Database is sorted by surname\n";
 //     } else {
