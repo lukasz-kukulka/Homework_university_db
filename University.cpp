@@ -615,16 +615,16 @@ void University::sortByPeselNumber() {
     }
 }
 
-// void University::sortBySurname() {
-//     if (!person_.empty()) {
-//         std::sort(person_.begin(), person_.end(), [&](auto const& lhs, auto const& rhs) {
-//             return lhs->getSurname() < rhs->getSurname();
-//         });
-//         std::cout << "Database is sorted by surname\n";
-//     } else {
-//         std::cout << "Database is empty\n";
-//     }
-// }
+void University::sortBySurname() {
+    if (!person_.empty()) {
+        std::sort(person_.begin(), person_.end(), [&](auto const& lhs, auto const& rhs) {
+            return lhs->getSurname() < rhs->getSurname();
+        });
+        std::cout << "Database is sorted by surname\n";
+    } else {
+        std::cout << "Database is empty\n";
+    }
+}
 
 // void University::deleteByIndexNumber(std::string indexNumber) {
 //     auto iterator = 0;
