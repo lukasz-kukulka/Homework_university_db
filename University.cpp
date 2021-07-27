@@ -563,13 +563,13 @@ void University::checkIfExistSurname(std::string surname) {
     }
 }
 
-// void University::printSortMenu() {
-//     std::cout << "SORT BY\n";
-//     std::cout << "1. PESEL number\n";
-//     std::cout << "2. Surname number\n";
-//     std::cout << "3. Back to main menu\n";
-//     std::cout << "Insert your choice: ";
-// }
+void University::printSortMenu() {
+    std::cout << "SORT BY\n";
+    std::cout << "1. PESEL number\n";
+    std::cout << "2. Surname number\n";
+    std::cout << "3. Back to main menu\n";
+    std::cout << "Insert your choice: ";
+}
 
 // void University::sortMenuEngine() {
 //     MenuOption sortChoose = MenuOption::BaseMenu;
