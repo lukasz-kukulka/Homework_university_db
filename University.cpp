@@ -112,14 +112,14 @@ void University::selectPerson() {
     size_t userChoicePerson {};
     do {
         std::cout << "Which person you wanna add to database?\n";
-        std::cout << "1.STUDENT\n";
-        std::cout << "2.PROFESSORS ";
+        std::cout << "1.STUDENT | 2.PROFESSOR :";
         std::cin >> userChoicePerson;
         std::cout << '\n';
     } while(validationSelectPerson(userChoicePerson) == false);
 }
 
 bool University::validationSelectPerson(size_t userChoicePerson) {
+    //to do valid with error
     if (userChoicePerson == 1 || userChoicePerson == 2) {
         assignmentPersonValue(userChoicePerson);
         return true;
@@ -301,13 +301,9 @@ bool University::peselValidWithWeight() {
 bool University::validatingPeselNumber() {
     bool corectPeselNumber = true;
     corectPeselNumber = peselValidDOBCheck();
-    std::cout << "After peselValidDOBCheck() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidGenderCheck();
-     std::cout << "After peselValidGenderCheck() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithCurrentlyDate();
-    std::cout << "After peselValidWithCurrentlyDate() = " << corectPeselNumber << '\n'; //TEST
     corectPeselNumber = peselValidWithWeight();
-     std::cout << "After peselValidWithWeight() = " << corectPeselNumber << '\n'; //TEST
     if (!corectPeselNumber) {
         std::cout << "Pesel number is incorrect\n";
     }
@@ -666,12 +662,12 @@ std::string University::convertPersonGender(const size_t gender) {
 }
 
 University::YesNoOption University::yesNoOption() {
-    char answer;
-    std::cin >> answer;
-    if (answer == 'Y' || answer == 'y') {
+    std::string answer;
+    std::getline (std::cin, answer);
+    if (answer == "Y" || answer == "y") {
         return YesNoOption::Yes;
     }
-    if (answer == 'N' || answer == 'n') {
+    if (answer == "N" || answer == "n") {
         return YesNoOption::No;
     }
     std::cout << "Wrong answer, you must choose Y or N\n";
