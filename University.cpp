@@ -114,16 +114,17 @@ void University::selectPerson() {
         std::cout << "Which person you wanna add to database?\n";
         std::cout << "1.STUDENT | 2.PROFESSOR :";
         std::cin >> userChoicePerson;
-        std::cout << '\n';
+        //std::cout << '\n';
     } while(validationSelectPerson(userChoicePerson) == false);
 }
 
 bool University::validationSelectPerson(size_t userChoicePerson) {
-    //to do valid with error
     if (userChoicePerson == 1 || userChoicePerson == 2) {
         assignmentPersonValue(userChoicePerson);
         return true;
     } 
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Wrong answer, insert 1 or 2\n";
     return false;
 }
