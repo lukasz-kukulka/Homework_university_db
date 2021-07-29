@@ -92,6 +92,7 @@ private:
     size_t choiceSetSalary();
     void salaryOptions(size_t userChoice);
     void changingSalary(std::string newSalary);
+    void printSaveLoadMenu();
 
     void sortStudents();
     void printSortMenu();
