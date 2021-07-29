@@ -676,3 +676,4 @@ void University::printSaveLoadMenu() {
     std::cout << ++optionNumber << ". Load from file and add records to existing file (delete duplicate)\n";
     std::cout << ++optionNumber << ". Back\n";
 }
+

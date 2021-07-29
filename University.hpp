@@ -39,6 +39,14 @@ public:
         Professor
     };
 
+    enum class LoadSaveOption {
+        NoChoice,
+        Save,
+        SaveNew,
+        ClearLoad,
+        LoadToExist
+    };   
+
     void applicationStart();
 
 private:
@@ -93,6 +101,7 @@ private:
     void salaryOptions(size_t userChoice);
     void changingSalary(std::string newSalary);
     void printSaveLoadMenu();
+    void menuLoadSaveEngine();
 
     void sortStudents();
     void printSortMenu();
@@ -127,4 +136,5 @@ private:
     std::shared_ptr<Person>currentlyPerson_;
     WhichPerson userChoicePerson_ { WhichPerson::Anyone };
     WhichPerson currentlyReadingRecord_ { WhichPerson::Anyone };
+    LoadSaveOption userChoiceLoadSave_ { LoadSaveOption::NoChoice };
 };
