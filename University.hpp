@@ -77,7 +77,7 @@ private:
     bool validatingGender();
 
     MenuOption menuEngine();
-    bool validatingMenuChoose(const int);
+    bool validatingMenuChoose(const int choosenValueToValid, const int sizeMenu);
     void showStudents();
     void saveToFile(size_t);
     void loadFromFile();

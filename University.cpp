@@ -86,11 +86,11 @@ University::MenuOption University::menuEngine() {
     return menuOption_;
 }
 
-bool University::validatingMenuChoose(const int choosenValueToValid) {
-    if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > 5) {
+bool University::validatingMenuChoose(const int choosenValueToValid, const int sizeMenu) {
+    if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > sizeMenu) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Incorrect value, please put number betwen 1 and 5\n";
+        std::cout << "Incorrect value, please put number betwen 1 and " << sizeMenu << '\n';
         return false;
     }
     return true;
