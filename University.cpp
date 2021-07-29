@@ -669,6 +669,12 @@ University::YesNoOption University::yesNoOption() {
     return YesNoOption::Error;
 }
 
+void University::loadSaveMenu() {
+    while (menuLoadSaveEngine(printSaveLoadMenu()) != LoadSaveOption::Back) {
+        
+    }
+}
+
 size_t University::printSaveLoadMenu() {
     size_t optionNumber = 0;
     std::cout << ++optionNumber << ". Save(add to currently file new records (delete duplicate)\n";
@@ -700,7 +706,7 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
         
     } break;
     case LoadSaveOption::Back : {
-        
+
     } break;
     default:
         break;

@@ -103,6 +103,7 @@ private:
     void changingSalary(std::string newSalary);
     size_t printSaveLoadMenu();
     LoadSaveOption menuLoadSaveEngine(size_t menuSize);
+    void loadSaveMenu();
 
     void sortStudents();
     void printSortMenu();
