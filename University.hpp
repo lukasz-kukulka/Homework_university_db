@@ -50,7 +50,7 @@ public:
     void applicationStart();
 
 private:
-    void printMenu();
+    size_t printMenu();
     void addNewStudent();
     void printInsertPersonData();
     void confirmAddRecord();
@@ -76,8 +76,8 @@ private:
     bool validatingPeselNumber();
     bool validatingGender();
 
-    MenuOption menuEngine();
-    bool validatingMenuChoose(const int choosenValueToValid, const int sizeMenu);
+    MenuOption menuEngine(size_t menuSize);
+    bool validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu);
     void showStudents();
     void saveToFile(size_t);
     void loadFromFile();

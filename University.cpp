@@ -32,12 +32,12 @@ University::University() {
 }
 
 void University::applicationStart() {
-    do {
-        printMenu();
-    } while (menuEngine() != MenuOption::Exit);
+    while (menuEngine(printMenu()) != MenuOption::Exit) {
+
+    }
 }
 
-void University::printMenu() {
+size_t University::printMenu() {
     size_t optionNumber = 0;
     std::cout << " --------------------- \n";
     std::cout << "|  STUDENTS DATABASE  |\n";
@@ -50,14 +50,15 @@ void University::printMenu() {
     std::cout << ++optionNumber << ". Generate data persons\n";
     std::cout << ++optionNumber << ". Delete record\n";
     std::cout << ++optionNumber << ". Exit\n\n";
+    return optionNumber;
 }
 
-University::MenuOption University::menuEngine() {
+University::MenuOption University::menuEngine(size_t menuSize) {
     int choice = 0;
     do {
         std::cout << "Please insert you choice: ";
         std::cin >> choice;
-    } while (validatingMenuChoose(choice) == false);
+    } while (validatingMenuChoose(choice, menuSize) == false);
     menuOption_ = static_cast<MenuOption>(choice);
     switch (menuOption_) {
     case MenuOption::AddStudents: {
@@ -86,7 +87,7 @@ University::MenuOption University::menuEngine() {
     return menuOption_;
 }
 
-bool University::validatingMenuChoose(const int choosenValueToValid, const int sizeMenu) {
+bool University::validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu) {
     if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > sizeMenu) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
