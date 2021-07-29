@@ -124,7 +124,15 @@ void University::selectPerson() {
 }
 
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
-    
+    return std::find_if(begin(person_), 
+                 end(person_), 
+                 [&](auto finding){ 
+                                   return (finding->getPeselNumber() == peselNumber_ || (finding->getIndexNumber() == indexNumber_ && (!indexNumber_.empty()))); });
+}
+
+bool University::isPeselNumberExist() {
+
+    return true;
 }
 
 bool University::validationSelectPerson(size_t userChoicePerson) {
