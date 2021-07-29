@@ -44,7 +44,8 @@ public:
         Save,
         SaveNew,
         ClearLoad,
-        LoadToExist
+        LoadToExist,
+        Back
     };   
 
     void applicationStart();
@@ -101,7 +102,7 @@ private:
     void salaryOptions(size_t userChoice);
     void changingSalary(std::string newSalary);
     size_t printSaveLoadMenu();
-    void menuLoadSaveEngine();
+    LoadSaveOption menuLoadSaveEngine(size_t menuSize);
 
     void sortStudents();
     void printSortMenu();

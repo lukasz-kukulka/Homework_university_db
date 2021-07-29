@@ -679,3 +679,31 @@ size_t University::printSaveLoadMenu() {
     return optionNumber;
 }
 
+University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
+    int choice = 0;
+    do {
+        std::cout << "Please insert you choice: ";
+        std::cin >> choice;
+    } while (validatingMenuChoose(choice, menuSize) == false);
+    userChoiceLoadSave_ = static_cast<LoadSaveOption>(choice);
+    switch (userChoiceLoadSave_) {
+    case LoadSaveOption::ClearLoad : {
+        
+    } break;
+    case LoadSaveOption::LoadToExist : {
+        
+    } break;
+    case LoadSaveOption::Save : {
+        
+    } break;
+    case LoadSaveOption::SaveNew : {
+        
+    } break;
+    case LoadSaveOption::Back : {
+        
+    } break;
+    default:
+        break;
+    }
+    return userChoiceLoadSave_;
+}
