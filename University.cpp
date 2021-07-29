@@ -10,6 +10,10 @@
 
 //to do
 // sprawdzic czy osoba z takim peselem juz istnieje przy dodawaniu
+// czy taki numer indexu istnieje
+//
+// generator danych
+// 
 
 constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 
@@ -34,16 +38,18 @@ void University::applicationStart() {
 }
 
 void University::printMenu() {
+    size_t optionNumber = 0;
     std::cout << " --------------------- \n";
     std::cout << "|  STUDENTS DATABASE  |\n";
     std::cout << " --------------------- \n";
-    std::cout << "1. Add student\n";
-    std::cout << "2. Show all students\n";
-    std::cout << "3. Search students \n";
-    std::cout << "4. Sort students \n";
-    std::cout << "5. Save/Load from file\n";
-    std::cout << "6. Delete record\n";
-    std::cout << "7. Exit\n\n";
+    std::cout << ++ optionNumber << ". Add student\n";
+    std::cout << ++ optionNumber << ". Show all students\n";
+    std::cout << ++ optionNumber << ". Search students \n";
+    std::cout << ++ optionNumber << ". Sort students \n";
+    std::cout << ++ optionNumber << ". Save/Load from file\n";
+    std::cout << ++ optionNumber << ". Generate data persons\n";
+    std::cout << ++ optionNumber << ". Delete record\n";
+    std::cout << ++ optionNumber << ". Exit\n\n";
 }
 
 University::MenuOption University::menuEngine() {
@@ -64,9 +70,12 @@ University::MenuOption University::menuEngine() {
             searchMenuEngine();
         } break;
         case MenuOption::SortStudents : {
-            //sortMenuEngine();
+            sortMenuEngine();
         } break;
         case MenuOption::SaveLoadFile : {
+
+        } break;
+        case MenuOption::GenerateData : {
 
         } break;
         case MenuOption::Delete : {

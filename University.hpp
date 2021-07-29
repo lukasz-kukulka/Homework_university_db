@@ -16,6 +16,7 @@ public:
         SearchStudents,
         SortStudents,
         SaveLoadFile,
+        GenerateData,
         Exit,
         SearchBySurname = 11,
         SearchByPESEL = 12,
