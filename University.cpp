@@ -123,6 +123,10 @@ void University::selectPerson() {
     } while (validationSelectPerson(userChoicePerson) == false);
 }
 
+std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
+    
+}
+
 bool University::validationSelectPerson(size_t userChoicePerson) {
     if (userChoicePerson == 1 || userChoicePerson == 2) {
         assignmentPersonValue(userChoicePerson);
@@ -671,7 +675,7 @@ University::YesNoOption University::yesNoOption() {
 
 void University::loadSaveMenu() {
     while (menuLoadSaveEngine(printSaveLoadMenu()) != LoadSaveOption::Back) {
-        
+
     }
 }
 
@@ -713,3 +717,4 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
     }
     return userChoiceLoadSave_;
 }
+
