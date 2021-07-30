@@ -133,6 +133,28 @@ size_t University::printMenuIfPersonExist() {
     return optionNumber; 
 }
 
+University::IfPersonExist University::ifPersonExist(size_t menuSize) {
+    int choice = 0;
+    userChoiceIfExist_ = static_cast<IfPersonExist>(choice);
+    switch (userChoiceIfExist_) {
+    case IfPersonExist::Compare : {
+        
+    } break;
+    case IfPersonExist::Update : {
+        
+    } break;
+    case IfPersonExist::Edit : {
+        
+    } break;
+    case IfPersonExist::Back {
+        
+    } break;
+    default:
+        break;
+    }
+    return userChoiceIfExist_;
+}
+
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
     return std::find_if(begin(person_), 
                  end(person_), 
