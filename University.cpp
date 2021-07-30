@@ -135,6 +135,10 @@ size_t University::printMenuIfPersonExist() {
 
 University::IfPersonExist University::ifPersonExist(size_t menuSize) {
     int choice = 0;
+    do {
+        std::cout << "Please insert you choice: ";
+        std::cin >> choice;
+    } while (validatingMenuChoose(choice, menuSize) == false);
     userChoiceIfExist_ = static_cast<IfPersonExist>(choice);
     switch (userChoiceIfExist_) {
     case IfPersonExist::Compare : {
