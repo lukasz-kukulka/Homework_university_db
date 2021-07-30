@@ -150,7 +150,7 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
     case IfPersonExist::Edit : {
         
     } break;
-    case IfPersonExist::Back {
+    case IfPersonExist::Back : {
         
     } break;
     default:
