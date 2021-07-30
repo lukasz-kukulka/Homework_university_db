@@ -115,7 +115,7 @@ private:
     std::vector<std::shared_ptr<Person>>::iterator isPersonExist();
     size_t printMenuIfPersonExist();
     IfPersonExist ifPersonExist(size_t menuSize);
-
+    void ifPersonExistMenu();
 
     void sortStudents();
     void printSortMenu();

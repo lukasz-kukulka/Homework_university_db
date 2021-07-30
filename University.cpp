@@ -123,6 +123,12 @@ void University::selectPerson() {
     } while (validationSelectPerson(userChoicePerson) == false);
 }
 
+void University::ifPersonExistMenu() {
+    while (ifPersonExist(printMenuIfPersonExist()) != IfPersonExist::Back) {
+
+    }
+}
+
 size_t University::printMenuIfPersonExist() {
     size_t optionNumber = 0;
     std::cout << "Person already exist, what you wanna do?\n";
@@ -142,16 +148,16 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
     userChoiceIfExist_ = static_cast<IfPersonExist>(choice);
     switch (userChoiceIfExist_) {
     case IfPersonExist::Compare : {
-        
+        //TO DO
     } break;
     case IfPersonExist::Update : {
-        
+        //TO DO
     } break;
     case IfPersonExist::Edit : {
-        
+        //TO DO
     } break;
     case IfPersonExist::Back : {
-        
+        //TO DO
     } break;
     default:
         break;
@@ -738,20 +744,20 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
     } while (validatingMenuChoose(choice, menuSize) == false);
     userChoiceLoadSave_ = static_cast<LoadSaveOption>(choice);
     switch (userChoiceLoadSave_) {
-    case LoadSaveOption::ClearLoad : {
-        
-    } break;
-    case LoadSaveOption::LoadToExist : {
-        
-    } break;
     case LoadSaveOption::Save : {
-        
+        //TO DO
     } break;
     case LoadSaveOption::SaveNew : {
-        
+        //TO DO
+    } break;
+    case LoadSaveOption::ClearLoad : {
+        //TO DO
+    } break;
+    case LoadSaveOption::LoadToExist : {
+        //TO DO
     } break;
     case LoadSaveOption::Back : {
-
+        //TO DO
     } break;
     default:
         break;
