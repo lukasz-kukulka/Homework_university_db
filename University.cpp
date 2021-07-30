@@ -123,16 +123,23 @@ void University::selectPerson() {
     } while (validationSelectPerson(userChoicePerson) == false);
 }
 
+size_t University::printMenuIfPersonExist() {
+    size_t optionNumber = 0;
+    std::cout << "Person already exist, what you wanna do?\n";
+    std::cout << ++optionNumber << ". Compare records\n";
+    std::cout << ++optionNumber << ". Update data\n";
+    std::cout << ++optionNumber << ". Insert data again\n";
+    std::cout << ++optionNumber << ". Exit\n\n";
+    return optionNumber;
+}
+
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
     return std::find_if(begin(person_), 
                  end(person_), 
                  [&](auto finding){ 
-                                   return (finding->getPeselNumber() == peselNumber_ || (finding->getIndexNumber() == indexNumber_ && (!indexNumber_.empty()))); });
-}
-
-bool University::isPeselNumberExist() {
-
-    return true;
+                                   return (finding->getPeselNumber() == peselNumber_ || 
+                                          (finding->getIndexNumber() == indexNumber_ && 
+                                          (!indexNumber_.empty()))); });
 }
 
 bool University::validationSelectPerson(size_t userChoicePerson) {

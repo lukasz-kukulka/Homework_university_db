@@ -105,7 +105,8 @@ private:
     LoadSaveOption menuLoadSaveEngine(size_t menuSize);
     void loadSaveMenu();
     std::vector<std::shared_ptr<Person>>::iterator isPersonExist();
-    bool isPeselNumberExist();
+    size_t printMenuIfPersonExist();
+
 
     void sortStudents();
     void printSortMenu();
