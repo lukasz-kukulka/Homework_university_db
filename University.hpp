@@ -48,6 +48,14 @@ public:
         Back
     };   
 
+    enum class IfPersonExist {
+        NoChoice,
+        Compare,
+        Update,
+        Edit,
+        Back
+    }; 
+
     void applicationStart();
 
 private:
@@ -142,4 +150,5 @@ private:
     WhichPerson userChoicePerson_ { WhichPerson::Anyone };
     WhichPerson currentlyReadingRecord_ { WhichPerson::Anyone };
     LoadSaveOption userChoiceLoadSave_ { LoadSaveOption::NoChoice };
+    IfPersonExist userChoiceIfExist_ { IfPersonExist::NoChoice };
 };

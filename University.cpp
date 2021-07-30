@@ -128,9 +128,9 @@ size_t University::printMenuIfPersonExist() {
     std::cout << "Person already exist, what you wanna do?\n";
     std::cout << ++optionNumber << ". Compare records\n";
     std::cout << ++optionNumber << ". Update data\n";
-    std::cout << ++optionNumber << ". Insert data again\n";
-    std::cout << ++optionNumber << ". Exit\n\n";
-    return optionNumber;
+    std::cout << ++optionNumber << ". Edit data\n";
+    std::cout << ++optionNumber << ". Back\n\n";
+    return optionNumber; 
 }
 
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
