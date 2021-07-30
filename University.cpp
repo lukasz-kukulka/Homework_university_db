@@ -32,6 +32,8 @@ University::University() {
 }
 
 void University::applicationStart() {
+
+    ifExistCompare();
     while (menuEngine(printMenu()) != MenuOption::Exit) {
 
     }
@@ -148,7 +150,7 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
     userChoiceIfExist_ = static_cast<IfPersonExist>(choice);
     switch (userChoiceIfExist_) {
     case IfPersonExist::Compare : {
-        //TO DO
+        
     } break;
     case IfPersonExist::Update : {
         //TO DO
@@ -163,6 +165,23 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
         break;
     }
     return userChoiceIfExist_;
+}
+
+void University::ifExistCompare() {
+    std::cout << "INPUT DATA:          Name: " << name_ 
+              << " | Surname: " << surname_ 
+              << " | Address: " << address_ 
+              << " | Index number: " << indexNumber_ 
+              << " | PESEL number: " << peselNumber_ 
+              << " | Salary: " << professorSalary_
+              << " | Gender: " << convertPersonGender(gender_) << '\n';
+    std::cout << "EXISTING DATA:       Name: " << name_ 
+              << " | Surname: " << surname_ 
+              << " | Address: " << address_ 
+              << " | Index number: " << indexNumber_ 
+              << " | PESEL number: " << peselNumber_ 
+              << " | Salary: " << professorSalary_
+              << " | Gender: " << convertPersonGender(gender_) << '\n';
 }
 
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {

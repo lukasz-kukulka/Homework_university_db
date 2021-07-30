@@ -124,6 +124,7 @@ private:
     void sortByPeselNumber();
     void sortBySurname();
     void sortBySalary();
+    void ifExistCompare();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
