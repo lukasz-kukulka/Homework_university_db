@@ -30,8 +30,6 @@ University::University() {
 }
 
 void University::applicationStart() {
-    confirmAddRecord();
-    ifExistCompare();
     while (menuEngine(printMenu()) != MenuOption::Exit) {
 
     }
@@ -173,13 +171,28 @@ void University::ifExistCompare() {
               << " | PESEL number: " << peselNumber_ 
               << " | Salary: " << professorSalary_
               << " | Gender: " << convertPersonGender(gender_) << '\n';
-    std::cout << "EXISTING DATA:       Name: " << name_ 
-              << " | Surname: " << checkedIfPersonExist_->get()->getName()
-              << " | Address: " << checkedIfPersonExist_->get()->getSurname()
+    std::cout << "EXISTING DATA:       Name: " << checkedIfPersonExist_->get()->getName()
+              << " | Surname: " << checkedIfPersonExist_->get()->getSurname()
+              << " | Address: " << checkedIfPersonExist_->get()->getAddress()
               << " | Index number: " << checkedIfPersonExist_->get()->getIndexNumber() 
               << " | PESEL number: " << checkedIfPersonExist_->get()->getPeselNumber()
               << " | Salary: " << checkedIfPersonExist_->get()->getSalary()
               << " | Gender: " << checkedIfPersonExist_->get()->getGender() << '\n';
+}
+
+void University::updateRecordIfPersonExist() {
+    if (userChoicePerson_ == WhichPerson::Student) {
+        person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+    }
+    if (userChoicePerson_ == WhichPerson::Professor) {
+        person_.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+    }
+
+    //checkedIfPersonExist_
+}
+
+void University::addStudentRecordToVector() {
+    person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
 }
 
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
@@ -221,7 +234,7 @@ void University::confirmAddRecord() {
         checkedIfPersonExist_ = isPersonExist();
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
-            if (checkedIfPersonExist_ == end(person_)) {
+            if (checkedIfPersonExist_ != end(person_)) {
                 ifPersonExistMenu();
                 break;
             }

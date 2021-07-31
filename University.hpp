@@ -87,6 +87,8 @@ private:
     bool validatingPeselNumber();
     bool validatingGender();
 
+    void addStudentRecordToVector();
+
     MenuOption menuEngine(size_t menuSize);
     bool validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu);
     void showStudents();
@@ -118,6 +120,7 @@ private:
     size_t printMenuIfPersonExist();
     IfPersonExist ifPersonExist(size_t menuSize);
     void ifPersonExistMenu();
+    void updateRecordIfPersonExist();
 
     void sortStudents();
     void printSortMenu();
