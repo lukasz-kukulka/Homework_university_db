@@ -5,6 +5,8 @@
 #include <memory>
 #include <vector>
 
+using PersonIt = std::vector<std::shared_ptr<Person>>::iterator;
+
 class University {
 public:
     University();
@@ -153,4 +155,5 @@ private:
     WhichPerson currentlyReadingRecord_ { WhichPerson::Anyone };
     LoadSaveOption userChoiceLoadSave_ { LoadSaveOption::NoChoice };
     IfPersonExist userChoiceIfExist_ { IfPersonExist::NoChoice };
+    PersonIt checkedIfPersonExist_ { };
 };

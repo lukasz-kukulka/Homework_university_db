@@ -9,8 +9,6 @@
 #include "Student.hpp"
 
 //to do
-// sprawdzic czy osoba z takim peselem juz istnieje przy dodawaniu
-// czy taki numer indexu istnieje
 //
 // generator danych
 //
@@ -32,7 +30,7 @@ University::University() {
 }
 
 void University::applicationStart() {
-
+    confirmAddRecord();
     ifExistCompare();
     while (menuEngine(printMenu()) != MenuOption::Exit) {
 
@@ -150,7 +148,7 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
     userChoiceIfExist_ = static_cast<IfPersonExist>(choice);
     switch (userChoiceIfExist_) {
     case IfPersonExist::Compare : {
-        
+        ifExistCompare();
     } break;
     case IfPersonExist::Update : {
         //TO DO
@@ -176,12 +174,12 @@ void University::ifExistCompare() {
               << " | Salary: " << professorSalary_
               << " | Gender: " << convertPersonGender(gender_) << '\n';
     std::cout << "EXISTING DATA:       Name: " << name_ 
-              << " | Surname: " << surname_ 
-              << " | Address: " << address_ 
-              << " | Index number: " << indexNumber_ 
-              << " | PESEL number: " << peselNumber_ 
-              << " | Salary: " << professorSalary_
-              << " | Gender: " << convertPersonGender(gender_) << '\n';
+              << " | Surname: " << checkedIfPersonExist_->get()->getName()
+              << " | Address: " << checkedIfPersonExist_->get()->getSurname()
+              << " | Index number: " << checkedIfPersonExist_->get()->getIndexNumber() 
+              << " | PESEL number: " << checkedIfPersonExist_->get()->getPeselNumber()
+              << " | Salary: " << checkedIfPersonExist_->get()->getSalary()
+              << " | Gender: " << checkedIfPersonExist_->get()->getGender() << '\n';
 }
 
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
@@ -220,9 +218,10 @@ void University::printInsertPersonData() {
 
 void University::confirmAddRecord() {
     while (true) {
+        checkedIfPersonExist_ = isPersonExist();
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
-            if (isPersonExist() == end(person_)) {
+            if (checkedIfPersonExist_ == end(person_)) {
                 ifPersonExistMenu();
                 break;
             }
