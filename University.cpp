@@ -195,6 +195,10 @@ void University::addStudentRecordToVector() {
     person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
 }
 
+void University::addProfesorRecordToVector() {
+    person_.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+}
+
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
     return std::find_if(begin(person_), 
                         end(person_), 

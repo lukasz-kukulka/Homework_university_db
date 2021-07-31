@@ -88,6 +88,7 @@ private:
     bool validatingGender();
 
     void addStudentRecordToVector();
+    void addProfesorRecordToVector();
 
     MenuOption menuEngine(size_t menuSize);
     bool validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu);
