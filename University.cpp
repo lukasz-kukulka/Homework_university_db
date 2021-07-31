@@ -126,9 +126,9 @@ void University::selectPerson() {
 }
 
 void University::ifPersonExistMenu() {
-    while (ifPersonExist(printMenuIfPersonExist()) != IfPersonExist::Back) {
+    do {
 
-    }
+    } while (ifPersonExist(printMenuIfPersonExist()) != IfPersonExist::Back);
 }
 
 size_t University::printMenuIfPersonExist() {
@@ -186,11 +186,11 @@ void University::ifExistCompare() {
 
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
     return std::find_if(begin(person_), 
-                 end(person_), 
-                 [&](auto finding){ 
-                                   return (finding->getPeselNumber() == peselNumber_ || 
-                                          (finding->getIndexNumber() == indexNumber_ && 
-                                          (!indexNumber_.empty()))); });
+                        end(person_), 
+                        [&](auto finding){ 
+                                        return (finding->getPeselNumber() == peselNumber_ || 
+                                                (finding->getIndexNumber() == indexNumber_ && 
+                                                (!indexNumber_.empty()))); });
 }
 
 bool University::validationSelectPerson(size_t userChoicePerson) {
@@ -222,6 +222,10 @@ void University::confirmAddRecord() {
     while (true) {
         std::cout << "Are you sure you wanna add this record to database? Y/N ";
         if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
+            if (isPersonExist() == end(person_)) {
+                ifPersonExistMenu();
+                break;
+            }
             person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
             break;
         }
