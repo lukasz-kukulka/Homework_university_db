@@ -182,10 +182,10 @@ void University::ifExistCompare() {
 
 void University::updateRecordIfPersonExist() {
     if (userChoicePerson_ == WhichPerson::Student) {
-        person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+        addStudentRecordToVector();
     }
     if (userChoicePerson_ == WhichPerson::Professor) {
-        person_.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+        addProfesorRecordToVector();
     }
 
     //checkedIfPersonExist_
@@ -242,11 +242,11 @@ void University::confirmAddRecord() {
                 ifPersonExistMenu();
                 break;
             }
-            person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+            addStudentRecordToVector();
             break;
         }
         if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Professor) {
-            person_.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+            addProfesorRecordToVector();
             break;
         }
         if (yesNoOption() == YesNoOption::No) {
@@ -471,9 +471,9 @@ void University::loadFromFile() {
         if (lineNo > 9) {
             lineNo = 1;
             if (indexNumber_.size() < 1) {
-                person_.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+                addProfesorRecordToVector();
             } else {
-                person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+                addStudentRecordToVector();
             }
         }
     }
