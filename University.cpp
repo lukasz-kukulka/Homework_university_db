@@ -187,8 +187,8 @@ void University::updateRecordIfPersonExist() {
     if (userChoicePerson_ == WhichPerson::Professor) {
         addProfesorRecordToVector();
     }
-
-    //checkedIfPersonExist_
+    (end(person_) - 1)->swap(*checkedIfPersonExist_);
+    person_.erase(end(person_) - 1);
 }
 
 void University::addStudentRecordToVector() {

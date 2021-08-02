@@ -137,13 +137,13 @@ private:
     YesNoOption yesNoOption();
 
     MenuOption menuOption_ { MenuOption::BaseMenu };
-    std::string name_ {};
-    std::string surname_ {};
-    std::string address_ {};
-    std::string indexNumber_ {};
-    std::string peselNumber_ {};
-    std::string professorSalary_ {};
-    size_t gender_ {};
+    std::string name_ { "test_name" };
+    std::string surname_ { "test_surname" };
+    std::string address_ { "test_address" };
+    std::string indexNumber_ { "1111111111" };
+    std::string peselNumber_ { "82040207834" };
+    std::string professorSalary_ { "4000" };
+    size_t gender_ { 1 };
 
     size_t sizeNameLimit_ { 16 };
     size_t sizeSurnameLimit_ { 30 };
