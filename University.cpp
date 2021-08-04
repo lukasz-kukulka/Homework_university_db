@@ -154,7 +154,7 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
         userChoiceIfExist_ = IfPersonExist::Back;
     } break;
     case IfPersonExist::KeepOriginal: {
-        
+        userChoiceIfExist_ = IfPersonExist::Back;
     } break;
     case IfPersonExist::Edit : {
         addNewPerson();
@@ -168,19 +168,15 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
     return userChoiceIfExist_;
 }
 
-void University::printIfKeepOnePersonAfterCompare() {
-    
-}
-
 void University::ifExistCompare() {
-    std::cout << "INPUT DATA:          Name: " << name_ 
+    std::cout << "INPUT DATA:                    Name: " << name_ 
               << " | Surname: " << surname_ 
               << " | Address: " << address_ 
               << " | Index number: " << indexNumber_ 
               << " | PESEL number: " << peselNumber_ 
               << " | Salary: " << professorSalary_
               << " | Gender: " << convertPersonGender(gender_) << '\n';
-    std::cout << "EXISTING DATA:       Name: " << checkedIfPersonExist_->get()->getName()
+    std::cout << "EXISTING DATA(ORIGINAL):       Name: " << checkedIfPersonExist_->get()->getName()
               << " | Surname: " << checkedIfPersonExist_->get()->getSurname()
               << " | Address: " << checkedIfPersonExist_->get()->getAddress()
               << " | Index number: " << checkedIfPersonExist_->get()->getIndexNumber() 
