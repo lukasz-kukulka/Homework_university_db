@@ -54,6 +54,7 @@ public:
         NoChoice,
         Compare,
         Update,
+        KeepOriginal,
         Edit,
         Back
     }; 
@@ -62,7 +63,7 @@ public:
 
 private:
     size_t printMenu();
-    void addNewStudent();
+    void addNewPerson();
     void printInsertPersonData();
     void confirmAddRecord();
     void selectPerson();
@@ -122,6 +123,7 @@ private:
     IfPersonExist ifPersonExist(size_t menuSize);
     void ifPersonExistMenu();
     void updateRecordIfPersonExist();
+    void printIfKeepOnePersonAfterCompare();
 
     void sortStudents();
     void printSortMenu();

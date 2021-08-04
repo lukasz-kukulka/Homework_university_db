@@ -60,7 +60,7 @@ University::MenuOption University::menuEngine(size_t menuSize) {
     menuOption_ = static_cast<MenuOption>(choice);
     switch (menuOption_) {
     case MenuOption::AddStudents: {
-        addNewStudent();
+        addNewPerson();
     } break;
     case MenuOption::ShowStudent: {
         showStudents();
@@ -95,7 +95,7 @@ bool University::validatingMenuChoose(const size_t choosenValueToValid, const si
     return true;
 }
 
-void University::addNewStudent() {
+void University::addNewPerson() {
     selectPerson();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     insertStudentName();
@@ -132,6 +132,7 @@ size_t University::printMenuIfPersonExist() {
     std::cout << "Person already exist, what you wanna do?\n";
     std::cout << ++optionNumber << ". Compare records\n";
     std::cout << ++optionNumber << ". Update data\n";
+    std::cout << ++optionNumber << ". Keep original\n";
     std::cout << ++optionNumber << ". Edit data\n";
     std::cout << ++optionNumber << ". Back\n\n";
     return optionNumber; 
@@ -149,10 +150,14 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
         ifExistCompare();
     } break;
     case IfPersonExist::Update : {
-        //TO DO
+        updateRecordIfPersonExist();
+        userChoiceIfExist_ = IfPersonExist::Back;
+    } break;
+    case IfPersonExist::KeepOriginal: {
+        
     } break;
     case IfPersonExist::Edit : {
-        //TO DO
+        addNewPerson();
     } break;
     case IfPersonExist::Back : {
         //TO DO
@@ -161,6 +166,10 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
         break;
     }
     return userChoiceIfExist_;
+}
+
+void University::printIfKeepOnePersonAfterCompare() {
+    
 }
 
 void University::ifExistCompare() {
