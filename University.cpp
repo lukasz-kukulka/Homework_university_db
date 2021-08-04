@@ -160,7 +160,7 @@ University::IfPersonExist University::ifPersonExist(size_t menuSize) {
         addNewPerson();
     } break;
     case IfPersonExist::Back : {
-        //TO DO
+        userChoiceIfExist_ = IfPersonExist::Back;
     } break;
     default:
         break;
