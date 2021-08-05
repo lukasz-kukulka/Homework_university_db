@@ -751,9 +751,8 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
 }
 
 void University::saveAllFile() {
-    auto iterator = 0;
-    for (const auto & ele : person_) {
-        addOneRecordToEndFile(iterator++);
+    for (size_t i = 0; i < person_.size(); i++) {
+        addOneRecordToEndFile(i);
     }
 }
 
