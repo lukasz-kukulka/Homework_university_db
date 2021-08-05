@@ -123,6 +123,7 @@ private:
     IfPersonExist ifPersonExist(size_t menuSize);
     void ifPersonExistMenu();
     void updateRecordIfPersonExist();
+    void saveAllFile();
 
     void sortStudents();
     void printSortMenu();

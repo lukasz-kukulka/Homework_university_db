@@ -750,7 +750,12 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
     return userChoiceLoadSave_;
 }
 
-
+void University::saveAllFile() {
+    auto iterator = 0;
+    for (const auto & ele : person_) {
+        addOneRecordToEndFile(iterator++);
+    }
+}
 
 void University::addOneRecordToEndFile(size_t personIndex) {
     //std::ofstream file("records.txt");
