@@ -94,7 +94,7 @@ private:
     MenuOption menuEngine(size_t menuSize);
     bool validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu);
     void showStudents();
-    void saveToFile(size_t);
+    void addOneRecordToEndFile(size_t);
     void loadFromFile();
     int countRecord();
 

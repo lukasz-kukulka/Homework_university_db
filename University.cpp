@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <typeinfo>
+#include <iterator>
 
 #include "Professor.hpp"
 #include "Student.hpp"
@@ -19,7 +20,7 @@ University::University() {
     // loadFromFile();
     // for (int i = 0; i < 10; i++) {
     //     person_.push_back(Student());
-    //     saveToFile(i);
+    //     addOneRecordToEndFile(i);
     // }
     // person_[0].printBorderTop();
     // for (auto stu : person_) {
@@ -72,6 +73,7 @@ University::MenuOption University::menuEngine(size_t menuSize) {
         sortMenuEngine();
     } break;
     case MenuOption::SaveLoadFile: {
+
     } break;
     case MenuOption::GenerateData: {
     } break;
@@ -424,67 +426,6 @@ void University::showStudents() {
     std::cout << "Database of students is empty please load form file or add new students\n";
 }
 
-void University::saveToFile(size_t personIndex) {
-    std::fstream file;
-    file.open("records.txt", std::ios::out | std::ios::app);
-    file << "[Person nr. : " << personIndex + 1 << "]\n";
-    file << person_[personIndex]->getName() << "\n";
-    file << person_[personIndex]->getSurname() << "\n";
-    file << person_[personIndex]->getAddress() << "\n";
-    file << person_[personIndex]->getPeselNumber() << "\n";
-    file << person_[personIndex]->getIndexNumber() << "\n";
-    file << person_[personIndex]->getSalary() << "\n\n";
-    file.close();
-}
-
-void University::loadFromFile() {
-    person_.reserve(countRecord());
-    int lineNo = 1;
-    std::string line;
-    std::fstream file;
-    file.open("records.txt", std::ios::in);
-    if (file.good() == false) {
-        std::cout << "File not exist\n";
-    }
-    while (getline(file, line)) {
-        switch (lineNo) {
-        case 2: {
-            name_ = line;
-        } break;
-        case 3: {
-            surname_ = line;
-        } break;
-        case 4: {
-            address_ = line;
-        } break;
-        case 5: {
-            peselNumber_ = line;
-        } break;
-        case 6: {
-            line.size() == 4 ? gender_ = 1 : gender_ = 0;
-        } break;
-        case 7: {
-            indexNumber_ = line;
-        } break;
-        case 8: {
-            professorSalary_ = line;
-        } break;
-        default: {
-        } break;
-        }
-        lineNo++;
-        if (lineNo > 9) {
-            lineNo = 1;
-            if (indexNumber_.size() < 1) {
-                addProfesorRecordToVector();
-            } else {
-                addStudentRecordToVector();
-            }
-        }
-    }
-    file.close();
-}
-
 int University::countRecord() {
     int lineNo = 0;
     std::string line;
@@ -809,3 +750,70 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
     return userChoiceLoadSave_;
 }
 
+
+
+void University::addOneRecordToEndFile(size_t personIndex) {
+    //std::ofstream file("records.txt");
+    //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file, " ")));
+    std::fstream file;
+    file.open("records.txt", std::ios::out | std::ios::app);
+    file << "[Person nr. : " << personIndex + 1 << "]\n";
+    file << person_[personIndex]->getName() << "\n";
+    file << person_[personIndex]->getSurname() << "\n";
+    file << person_[personIndex]->getAddress() << "\n";
+    file << person_[personIndex]->getPeselNumber() << "\n";
+    file << person_[personIndex]->getIndexNumber() << "\n";
+    file << person_[personIndex]->getSalary() << "\n\n";
+    file.close();
+}
+
+void University::loadFromFile() {
+    // std::ifstream file("records.txt");
+    // std::vector<uint16_t> vec;
+    // std::copy(std::istream_iterator<uint16_t>(file), std::istream_iterator<uint16_t>{}, std::back_inserter(vec));
+    person_.reserve(countRecord());
+    int lineNo = 1;
+    std::string line;
+    std::fstream file;
+    file.open("records.txt", std::ios::in);
+    if (file.good() == false) {
+        std::cout << "File not exist\n";
+    }
+    while (getline(file, line)) {
+        switch (lineNo) {
+        case 2: {
+            name_ = line;
+        } break;
+        case 3: {
+            surname_ = line;
+        } break;
+        case 4: {
+            address_ = line;
+        } break;
+        case 5: {
+            peselNumber_ = line;
+        } break;
+        case 6: {
+            line.size() == 4 ? gender_ = 1 : gender_ = 0;
+        } break;
+        case 7: {
+            indexNumber_ = line;
+        } break;
+        case 8: {
+            professorSalary_ = line;
+        } break;
+        default: {
+        } break;
+        }
+        lineNo++;
+        if (lineNo > 9) {
+            lineNo = 1;
+            if (indexNumber_.size() < 1) {
+                addProfesorRecordToVector();
+            } else {
+                addStudentRecordToVector();
+            }
+        }
+    }
+    file.close();
+}
