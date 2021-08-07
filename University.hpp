@@ -6,6 +6,7 @@
 #include <vector>
 
 using PersonIt = std::vector<std::shared_ptr<Person>>::iterator;
+constexpr char DEFAULT_FILE_NAME[] { "records.txt" };
 
 class University {
 public:
@@ -94,7 +95,7 @@ private:
     MenuOption menuEngine(size_t menuSize);
     bool validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu);
     void showStudents();
-    void addOneRecordToEndFile(size_t);
+    void addOneRecordToEndFile(size_t personIndex, std::string fileName = DEFAULT_FILE_NAME);
     void loadFromFile();
     int countRecord();
 
@@ -123,7 +124,7 @@ private:
     IfPersonExist ifPersonExist(size_t menuSize);
     void ifPersonExistMenu();
     void updateRecordIfPersonExist();
-    void saveAllFile();
+    void saveAllFile(std::string fileName = DEFAULT_FILE_NAME);
     void saveInNewFile();
     void printSaveInNewFile();
     void validationSaveInNewFile();
@@ -167,5 +168,5 @@ private:
     IfPersonExist userChoiceIfExist_ { IfPersonExist::NoChoice };
     PersonIt checkedIfPersonExist_ { };
 
-    std::string fileName_;
+    std::string fileName_ { };
 };

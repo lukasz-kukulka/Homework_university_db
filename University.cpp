@@ -750,9 +750,9 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
     return userChoiceLoadSave_;
 }
 
-void University::saveAllFile() {
+void University::saveAllFile(std::string fileName) {
     for (size_t i = 0; i < person_.size(); i++) {
-        addOneRecordToEndFile(i);
+        addOneRecordToEndFile(i, fileName);
     }
 }
 
@@ -768,18 +768,14 @@ void University::userInsertFileName() {
 }
 
 void University::saveInNewFile() {
-
+    saveAllFile(fileName_); 
 }
 
-void University::validationSaveInNewFile() {
-
-}
-
-void University::addOneRecordToEndFile(size_t personIndex) {
+void University::addOneRecordToEndFile(size_t personIndex, std::string fileName) {
     //std::ofstream file("records.txt");
     //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file, " ")));
     std::fstream file;
-    file.open("records.txt", std::ios::out | std::ios::app);
+    file.open(fileName, std::ios::out | std::ios::app);
     file << "[Person nr. : " << personIndex + 1 << "]\n";
     file << person_[personIndex]->getName() << "\n";
     file << person_[personIndex]->getSurname() << "\n";
