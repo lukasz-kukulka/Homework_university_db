@@ -715,7 +715,7 @@ size_t University::printSaveLoadMenu() {
     size_t optionNumber = 0;
     std::cout << ++optionNumber << ". Save(add to currently file new records (delete duplicate)\n";
     std::cout << ++optionNumber << ". Save to new file \n";
-    std::cout << ++optionNumber << ". Clear data and load new data from file \n";
+    std::cout << ++optionNumber << ". Clear existing data and load new data from file \n";
     std::cout << ++optionNumber << ". Load from file and add records to existing file (delete duplicate)\n";
     std::cout << ++optionNumber << ". Back\n";
     return optionNumber;
@@ -757,7 +757,13 @@ void University::saveAllFile() {
 }
 
 void University::printSaveInNewFile() {
+    std::cout << "Please insert file name\n";
+    std::cout << "All files will saving in .txt format\n";
+    std::cout << "You need put ONLY name, without format\n";
+}
 
+void University::userInsertFileName() {
+    
 }
 
 void University::saveInNewFile() {
@@ -765,7 +771,7 @@ void University::saveInNewFile() {
 }
 
 void University::validationSaveInNewFile() {
-    
+
 }
 
 void University::addOneRecordToEndFile(size_t personIndex) {
