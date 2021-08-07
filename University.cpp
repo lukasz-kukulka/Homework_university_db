@@ -730,7 +730,7 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
     userChoiceLoadSave_ = static_cast<LoadSaveOption>(choice);
     switch (userChoiceLoadSave_) {
     case LoadSaveOption::Save : {
-        //TO DO
+        saveAllFile();
     } break;
     case LoadSaveOption::SaveNew : {
         //TO DO
@@ -754,6 +754,14 @@ void University::saveAllFile() {
     for (size_t i = 0; i < person_.size(); i++) {
         addOneRecordToEndFile(i);
     }
+}
+
+void University::printSaveInNewFile() {
+    
+}
+
+void University::saveInNewFile() {
+
 }
 
 void University::addOneRecordToEndFile(size_t personIndex) {

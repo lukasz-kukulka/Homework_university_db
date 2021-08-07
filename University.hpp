@@ -124,6 +124,9 @@ private:
     void ifPersonExistMenu();
     void updateRecordIfPersonExist();
     void saveAllFile();
+    void saveInNewFile();
+    void printSaveInNewFile()
+    void validationSaveInNewFile();
 
     void sortStudents();
     void printSortMenu();
