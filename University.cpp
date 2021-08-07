@@ -733,7 +733,7 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
         saveAllFile();
     } break;
     case LoadSaveOption::SaveNew : {
-        //TO DO
+        saveNew();
     } break;
     case LoadSaveOption::ClearLoad : {
         //TO DO
@@ -750,6 +750,12 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
     return userChoiceLoadSave_;
 }
 
+void University::saveNew() {
+    printSaveInNewFile();
+    userInsertFileName();
+    saveInNewFile();
+}
+
 void University::saveAllFile(std::string fileName) {
     for (size_t i = 0; i < person_.size(); i++) {
         addOneRecordToEndFile(i, fileName);
@@ -760,6 +766,7 @@ void University::printSaveInNewFile() {
     std::cout << "Please insert file name\n";
     std::cout << "All files will saving in .txt format\n";
     std::cout << "You need put ONLY name, without format\n";
+
 }
 
 void University::userInsertFileName() {

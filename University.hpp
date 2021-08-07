@@ -129,6 +129,7 @@ private:
     void printSaveInNewFile();
     void validationSaveInNewFile();
     void userInsertFileName();
+    void saveNew();
 
     void sortStudents();
     void printSortMenu();
