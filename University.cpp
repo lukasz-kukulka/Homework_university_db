@@ -757,11 +757,15 @@ void University::saveAllFile() {
 }
 
 void University::printSaveInNewFile() {
-    
+
 }
 
 void University::saveInNewFile() {
 
+}
+
+void University::validationSaveInNewFile() {
+    
 }
 
 void University::addOneRecordToEndFile(size_t personIndex) {
