@@ -166,4 +166,6 @@ private:
     LoadSaveOption userChoiceLoadSave_ { LoadSaveOption::NoChoice };
     IfPersonExist userChoiceIfExist_ { IfPersonExist::NoChoice };
     PersonIt checkedIfPersonExist_ { };
+
+    std::string fileName_;
 };

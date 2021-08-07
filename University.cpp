@@ -521,7 +521,7 @@ size_t University::choiceSetSalary() {
 }
 
 void University::searchByPeselNumber() {
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
     if (checkIfExistPeselNumber(insertSearchPeselNumber()) == true && currentlyReadingRecord_ == University::WhichPerson::Professor) {
         printSetSalaryMenu();
         choiceSetSalary();
@@ -763,7 +763,8 @@ void University::printSaveInNewFile() {
 }
 
 void University::userInsertFileName() {
-    
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, fileName_);
 }
 
 void University::saveInNewFile() {
