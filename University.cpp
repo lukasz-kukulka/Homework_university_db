@@ -783,6 +783,9 @@ void University::addOneRecordToEndFile(size_t personIndex, std::string fileName)
     //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file, " ")));
     std::fstream file;
     file.open(fileName, std::ios::out | std::ios::app);
+    if (file.good() == false) {
+        std::cout << "File not exist\n";
+    }
     file << "[Person nr. : " << personIndex + 1 << "]\n";
     file << person_[personIndex]->getName() << "\n";
     file << person_[personIndex]->getSurname() << "\n";

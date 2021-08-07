@@ -130,6 +130,7 @@ private:
     void validationSaveInNewFile();
     void userInsertFileName();
     void saveNew();
+    void printIfFileExist();
 
     void sortStudents();
     void printSortMenu();
@@ -139,6 +140,7 @@ private:
     void sortBySurname();
     void sortBySalary();
     void ifExistCompare();
+    void userChoiceIfFileExist();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
@@ -169,5 +171,5 @@ private:
     IfPersonExist userChoiceIfExist_ { IfPersonExist::NoChoice };
     PersonIt checkedIfPersonExist_ { };
 
-    std::string fileName_ { };
+    std::string fileName_ { DEFAULT_FILE_NAME };
 };
