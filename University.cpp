@@ -786,8 +786,12 @@ void University::printIfFileExist() {
 }
 
 size_t University::userChoiceIfFileExist() {
-    int userChoice = 0;
+    size_t userChoice = 0;
     std::cout << "Your choice: ";
+    validationIfFileExist(userChoice);
+}
+
+void University::validationIfFileExist(size_t userChoice) {
     while (true) {
         std::cin >> userChoice;
         if (!std::cin.fail() && (userChoice == 1 || userChoice == 2)) {

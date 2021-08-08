@@ -138,6 +138,7 @@ private:
     void userInsertFileName();
     void saveNew();
     void printIfFileExist();
+    void validationIfFileExist(size_t userChoice);
 
     void sortStudents();
     void printSortMenu();
