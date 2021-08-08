@@ -778,13 +778,33 @@ void University::saveInNewFile() {
     saveAllFile(fileName_); 
 }
 
+void University::printIfFileExist() {
+    std::cout << "File exist\n";
+    std::cout << "What you wanna do:\n";
+    std::cout << "1. Add records to end file\n";
+    std::cout << "2. Replace file\n";
+}
+
+void University::userChoiceIfFileExist() {
+    int userChoice = 0;
+    std::cout << "Your choice: ";
+    while (true) {
+        std::cin >> userChoice;
+        if (!std::cin.fail() && (userChoice == 1 || userChoice == 2)) {
+            break;
+        }
+        std::cout << "Wrong value please insert again: ";
+    }
+}
+
 void University::addOneRecordToEndFile(size_t personIndex, std::string fileName) {
     //std::ofstream file("records.txt");
     //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file, " ")));
     std::fstream file;
     file.open(fileName, std::ios::out | std::ios::app);
-    if (file.good() == false) {
-        std::cout << "File not exist\n";
+    if (file.good() == true && fileName != DEFAULT_FILE_NAME) {
+        printIfFileExist();
+        
     }
     file << "[Person nr. : " << personIndex + 1 << "]\n";
     file << person_[personIndex]->getName() << "\n";
