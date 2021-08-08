@@ -785,7 +785,7 @@ void University::printIfFileExist() {
     std::cout << "2. Replace file\n";
 }
 
-void University::userChoiceIfFileExist() {
+size_t University::userChoiceIfFileExist() {
     int userChoice = 0;
     std::cout << "Your choice: ";
     while (true) {
