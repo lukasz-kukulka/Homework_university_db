@@ -60,13 +60,6 @@ public:
         Back
     }; 
 
-    enum class IfFileExist {
-        NoChoice,
-        UpdateFile,
-        ReplaceFile,
-        Cancel
-    }; 
-
     void applicationStart();
 
 private:
@@ -139,7 +132,6 @@ private:
     void saveNew();
     void printIfFileExist();
     void validationIfFileExist(size_t userChoice);
-    IfFileExist menuEngineIfFileExist(size_t menuSize);
 
     void sortStudents();
     void printSortMenu();
@@ -150,6 +142,7 @@ private:
     void sortBySalary();
     void ifExistCompare();
     size_t userChoiceIfFileExist();
+    size_t saveNewIfFileExist();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
@@ -179,7 +172,6 @@ private:
     LoadSaveOption userChoiceLoadSave_ { LoadSaveOption::NoChoice };
     IfPersonExist userChoiceIfExist_ { IfPersonExist::NoChoice };
     PersonIt checkedIfPersonExist_ { };
-    IfFileExist checkIfFileExist_ { IfFileExist::NoChoice };
 
     std::string fileName_ { DEFAULT_FILE_NAME };
 };

@@ -751,13 +751,9 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
 }
 
 void University::saveNew() {
-    // while (menuLoadSaveEngine(printSaveLoadMenu()) != LoadSaveOption::Back) {
-
-    // }
-}
-
-University::IfFileExist University::menuEngineIfFileExist(size_t menuSize) {
-
+    printSaveInNewFile();
+    userInsertFileName();
+    saveInNewFile();
 }
 
 void University::saveAllFile(std::string fileName) {
@@ -782,6 +778,12 @@ void University::saveInNewFile() {
     saveAllFile(fileName_); 
 }
 
+size_t University::saveNewIfFileExist() {
+    printIfFileExist();
+    size_t userChoice = userChoiceIfFileExist();
+    return userChoice;
+}
+
 void University::printIfFileExist() {
     std::cout << "File exist\n";
     std::cout << "What you wanna do:\n";
@@ -793,6 +795,7 @@ size_t University::userChoiceIfFileExist() {
     size_t userChoice = 0;
     std::cout << "Your choice: ";
     std::cin >> userChoice;
+    validationIfFileExist(userChoice);
     return userChoice;
 }
 
@@ -805,16 +808,16 @@ void University::validationIfFileExist(size_t userChoice) {
     }
 }
 
-
-
 void University::addOneRecordToEndFile(size_t personIndex, std::string fileName) {
     //std::ofstream file("records.txt");
     //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file, " ")));
     std::fstream file;
     file.open(fileName, std::ios::out | std::ios::app);
     if (file.good() == true && fileName != DEFAULT_FILE_NAME) {
-        printIfFileExist();
-        
+        if (saveNewIfFileExist() == 2) {
+            file.close();
+            file.open(fileName, std::ios::out | std::ios::trunc);
+        }
     }
     file << "[Person nr. : " << personIndex + 1 << "]\n";
     file << person_[personIndex]->getName() << "\n";
