@@ -143,6 +143,7 @@ private:
     void ifExistCompare();
     size_t userChoiceIfFileExist();
     size_t saveNewIfFileExist();
+    void clearLoad();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
