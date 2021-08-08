@@ -139,6 +139,7 @@ private:
     void saveNew();
     void printIfFileExist();
     void validationIfFileExist(size_t userChoice);
+    IfFileExist menuEngineIfFileExist(size_t menuSize);
 
     void sortStudents();
     void printSortMenu();

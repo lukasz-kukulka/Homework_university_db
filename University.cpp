@@ -751,9 +751,13 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
 }
 
 void University::saveNew() {
-    printSaveInNewFile();
-    userInsertFileName();
-    saveInNewFile();
+    // while (menuLoadSaveEngine(printSaveLoadMenu()) != LoadSaveOption::Back) {
+
+    // }
+}
+
+University::IfFileExist University::menuEngineIfFileExist(size_t menuSize) {
+
 }
 
 void University::saveAllFile(std::string fileName) {
@@ -788,18 +792,20 @@ void University::printIfFileExist() {
 size_t University::userChoiceIfFileExist() {
     size_t userChoice = 0;
     std::cout << "Your choice: ";
-    validationIfFileExist(userChoice);
+    std::cin >> userChoice;
+    return userChoice;
 }
 
 void University::validationIfFileExist(size_t userChoice) {
     while (true) {
-        std::cin >> userChoice;
         if (!std::cin.fail() && (userChoice == 1 || userChoice == 2)) {
             break;
         }
         std::cout << "Wrong value please insert again: ";
     }
 }
+
+
 
 void University::addOneRecordToEndFile(size_t personIndex, std::string fileName) {
     //std::ofstream file("records.txt");
