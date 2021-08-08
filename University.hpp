@@ -144,6 +144,7 @@ private:
     size_t userChoiceIfFileExist();
     size_t saveNewIfFileExist();
     void clearLoad();
+    void printClearLoadMenu();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);

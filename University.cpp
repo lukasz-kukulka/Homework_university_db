@@ -829,6 +829,14 @@ void University::addOneRecordToEndFile(size_t personIndex, std::string fileName)
     file.close();
 }
 
+void University::clearLoad() {
+
+}
+
+void University::printClearLoadMenu() {
+    std::cout << "Please insert file name to load: ";
+}
+
 void University::loadFromFile() {
     // std::ifstream file("records.txt");
     // std::vector<uint16_t> vec;
