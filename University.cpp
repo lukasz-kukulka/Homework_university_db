@@ -1,7 +1,7 @@
 #include "University.hpp"
 
 #include <algorithm>
-#include <fstream>
+
 #include <iostream>
 #include <typeinfo>
 #include <iterator>
@@ -429,16 +429,15 @@ void University::showStudents() {
 int University::countRecord() {
     int lineNo = 0;
     std::string line;
-    std::fstream file;
-    file.open("records.txt", std::ios::in);
-    if (file.good() == false) {
+    file_.open("records.txt", std::ios::in);
+    if (file_.good() == false) {
         std::cout << "Created new file\n";
-        file.open("records.txt", std::ios::out | std::ios::app);
+        file_.open("records.txt", std::ios::out | std::ios::app);
     }
-    while (getline(file, line)) {
+    while (getline(file_, line)) {
         lineNo++;
     }
-    file.close();
+    file_.close();
     return lineNo / 8;
 }
 
@@ -810,46 +809,51 @@ void University::validationIfFileExist(size_t userChoice) {
 
 void University::addOneRecordToEndFile(size_t personIndex, std::string fileName) {
     //std::ofstream file("records.txt");
-    //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file, " ")));
-    std::fstream file;
-    file.open(fileName, std::ios::out | std::ios::app);
-    if (file.good() == true && fileName != DEFAULT_FILE_NAME) {
+    //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file_, " ")));
+    file_.open(fileName, std::ios::out | std::ios::app);
+    if (file_.good() == true && fileName != DEFAULT_FILE_NAME) {
         if (saveNewIfFileExist() == 2) {
-            file.close();
-            file.open(fileName, std::ios::out | std::ios::trunc);
+            file_.close();
+            file_.open(fileName, std::ios::out | std::ios::trunc);
         }
     }
-    file << "[Person nr. : " << personIndex + 1 << "]\n";
-    file << person_[personIndex]->getName() << "\n";
-    file << person_[personIndex]->getSurname() << "\n";
-    file << person_[personIndex]->getAddress() << "\n";
-    file << person_[personIndex]->getPeselNumber() << "\n";
-    file << person_[personIndex]->getIndexNumber() << "\n";
-    file << person_[personIndex]->getSalary() << "\n\n";
-    file.close();
+    file_ << "[Person nr. : " << personIndex + 1 << "]\n";
+    file_ << person_[personIndex]->getName() << "\n";
+    file_ << person_[personIndex]->getSurname() << "\n";
+    file_ << person_[personIndex]->getAddress() << "\n";
+    file_ << person_[personIndex]->getPeselNumber() << "\n";
+    file_ << person_[personIndex]->getIndexNumber() << "\n";
+    file_ << person_[personIndex]->getSalary() << "\n\n";
+    file_.close();
+}
+
+void University::clearVector() {
+    person_.clear();
 }
 
 void University::clearLoad() {
-
+    printClearLoadMenu();
+    userInsertFileName();
+    loadFromFile(fileName_);
+    clearVector();
 }
 
 void University::printClearLoadMenu() {
     std::cout << "Please insert file name to load: ";
 }
 
-void University::loadFromFile() {
+void University::loadFromFile(std::string fileName) {
     // std::ifstream file("records.txt");
     // std::vector<uint16_t> vec;
-    // std::copy(std::istream_iterator<uint16_t>(file), std::istream_iterator<uint16_t>{}, std::back_inserter(vec));
+    // std::copy(std::istream_iterator<uint16_t>(file_), std::istream_iterator<uint16_t>{}, std::back_inserter(vec));
     person_.reserve(countRecord());
     int lineNo = 1;
     std::string line;
-    std::fstream file;
-    file.open("records.txt", std::ios::in);
-    if (file.good() == false) {
+    file_.open(fileName, std::ios::in);
+    if (file_.good() == false) {
         std::cout << "File not exist\n";
     }
-    while (getline(file, line)) {
+    while (getline(file_, line)) {
         switch (lineNo) {
         case 2: {
             name_ = line;
@@ -885,5 +889,5 @@ void University::loadFromFile() {
             }
         }
     }
-    file.close();
+    file_.close();
 }

@@ -4,6 +4,7 @@
 
 #include <memory>
 #include <vector>
+#include <fstream>
 
 using PersonIt = std::vector<std::shared_ptr<Person>>::iterator;
 constexpr char DEFAULT_FILE_NAME[] { "records.txt" };
@@ -96,7 +97,7 @@ private:
     bool validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu);
     void showStudents();
     void addOneRecordToEndFile(size_t personIndex, std::string fileName = DEFAULT_FILE_NAME);
-    void loadFromFile();
+    void loadFromFile(std::string fileName = DEFAULT_FILE_NAME);
     int countRecord();
 
     void printSearchMenu();
@@ -145,6 +146,7 @@ private:
     size_t saveNewIfFileExist();
     void clearLoad();
     void printClearLoadMenu();
+    void clearVector();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
@@ -176,4 +178,5 @@ private:
     PersonIt checkedIfPersonExist_ { };
 
     std::string fileName_ { DEFAULT_FILE_NAME };
+    std::fstream file_;
 };
