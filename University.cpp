@@ -426,13 +426,12 @@ void University::showStudents() {
     std::cout << "Database of students is empty please load form file or add new students\n";
 }
 
-int University::countRecord() {
+int University::countRecord(std::string fileMane) { 
     int lineNo = 0;
     std::string line;
-    file_.open("records.txt", std::ios::in);
+    file_.open(fileMane, std::ios::in);
     if (file_.good() == false) {
-        std::cout << "Created new file\n";
-        file_.open("records.txt", std::ios::out | std::ios::app);
+        std::cout << "File not exist\n";
     }
     while (getline(file_, line)) {
         lineNo++;
@@ -752,7 +751,12 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
 void University::loadToExist() {
     printLoadToExist();
     userInsertFileName();
+    //std::vector<
     loadFromFile(fileName_);
+}
+
+void University::copyDataToTempContanair() {
+    //std::copy
 }
 
 void University::printLoadToExist() {

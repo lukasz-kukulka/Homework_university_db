@@ -98,7 +98,7 @@ private:
     void showStudents();
     void addOneRecordToEndFile(size_t personIndex, std::string fileName = DEFAULT_FILE_NAME);
     void loadFromFile(std::string fileName = DEFAULT_FILE_NAME);
-    int countRecord();
+    int countRecord(std::string fileMane = DEFAULT_FILE_NAME);
 
     void printSearchMenu();
     MenuOption searchMenuStudent();
@@ -149,6 +149,7 @@ private:
     void clearVector();
     void loadToExist();
     void printLoadToExist();
+    void copyDataToTempContanair();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
