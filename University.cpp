@@ -735,7 +735,7 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
         saveNew();
     } break;
     case LoadSaveOption::ClearLoad : {
-        //TO DO
+        clearLoad();
     } break;
     case LoadSaveOption::LoadToExist : {
         //TO DO

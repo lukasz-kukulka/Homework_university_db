@@ -147,6 +147,7 @@ private:
     void clearLoad();
     void printClearLoadMenu();
     void clearVector();
+    void loadToExist();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
