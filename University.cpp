@@ -752,7 +752,13 @@ void University::loadToExist() {
     printLoadToExist();
     userInsertFileName();
     std::vector<std::shared_ptr<Person>>personCopy_;
+    copyDataToTempContanair(personCopy_);
     loadFromFile(fileName_);
+    
+}
+
+void University::compareTwoRedords() {
+
 }
 
 std::vector<std::shared_ptr<Person>> University::copyDataToTempContanair(std::vector<std::shared_ptr<Person>>& personCopy) {
