@@ -751,12 +751,13 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
 void University::loadToExist() {
     printLoadToExist();
     userInsertFileName();
-    //std::vector<
+    std::vector<std::shared_ptr<Person>>personCopy_;
     loadFromFile(fileName_);
 }
 
-void University::copyDataToTempContanair() {
-    //std::copy
+std::vector<std::shared_ptr<Person>> University::copyDataToTempContanair(std::vector<std::shared_ptr<Person>>& personCopy) {
+    std::copy(begin(person_), end(person_), std::back_inserter(personCopy));
+    return personCopy;
 }
 
 void University::printLoadToExist() {

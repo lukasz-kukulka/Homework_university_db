@@ -149,7 +149,7 @@ private:
     void clearVector();
     void loadToExist();
     void printLoadToExist();
-    void copyDataToTempContanair();
+    std::vector<std::shared_ptr<Person>> copyDataToTempContanair(std::vector<std::shared_ptr<Person>>& personCopy);
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
