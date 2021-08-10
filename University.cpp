@@ -751,6 +751,8 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
 
 void University::loadToExist() {
     printLoadToExist();
+    userInsertFileName();
+    loadFromFile(fileName_);
 }
 
 void University::printLoadToExist() {
@@ -764,6 +766,8 @@ void University::saveNew() {
     userInsertFileName();
     saveInNewFile();
 }
+
+
 
 void University::saveAllFile(std::string fileName) {
     for (size_t i = 0; i < person_.size(); i++) {
