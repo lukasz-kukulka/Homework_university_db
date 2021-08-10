@@ -738,7 +738,7 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
         clearLoad();
     } break;
     case LoadSaveOption::LoadToExist : {
-        //TO DO
+        
     } break;
     case LoadSaveOption::Back : {
         //TO DO
@@ -747,6 +747,16 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
         break;
     }
     return userChoiceLoadSave_;
+}
+
+void University::loadToExist() {
+    printLoadToExist();
+}
+
+void University::printLoadToExist() {
+    std::cout << "Please insert file name\n";
+    std::cout << "You will don't currently data\n";
+    std::cout << "All duplicate will delete\n";
 }
 
 void University::saveNew() {
