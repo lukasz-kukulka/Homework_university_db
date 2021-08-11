@@ -158,6 +158,7 @@ private:
     void addressGenerator();
     void indexNumberGenerator();
     void peselNumberGenerator();
+    void professorSalaryGenerator();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);

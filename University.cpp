@@ -935,3 +935,7 @@ void University::indexNumberGenerator() {
 void University::peselNumberGenerator() {
     //TO DO 
 }
+
+void University::professorSalaryGenerator() {
+    //TO DO 
+}
