@@ -151,6 +151,7 @@ private:
     void printLoadToExist();
     std::vector<std::shared_ptr<Person>> copyDataToTempContanair(std::vector<std::shared_ptr<Person>>& personCopy);
     void deleteDuplicate();
+    void dataGenerator(size_t dataAmout);
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);

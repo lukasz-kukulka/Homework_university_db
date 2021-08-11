@@ -9,11 +9,6 @@
 #include "Professor.hpp"
 #include "Student.hpp"
 
-//to do
-//
-// generator danych
-//
-
 constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 
 University::University() {
@@ -740,7 +735,6 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
         loadToExist();
     } break;
     case LoadSaveOption::Back : {
-        //TO DO
     } break;
     default:
         break;
@@ -755,7 +749,6 @@ void University::loadToExist() {
     copyDataToTempContanair(personCopy_);
     loadFromFile(fileName_);
     deleteDuplicate();
-    
 }
 
 void University::deleteDuplicate() {
@@ -917,4 +910,8 @@ void University::loadFromFile(std::string fileName) {
         }
     }
     file_.close();
+}
+
+void University::dataGenerator(size_t dataAmout) {
+    
 }
