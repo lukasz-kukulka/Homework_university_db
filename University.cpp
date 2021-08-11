@@ -917,6 +917,10 @@ void University::dataGeneratorInit() {
 
 void University::printInterfaceDataGenerator() {
    std::cout << "Please insert how many records you wanna generate";
+   std::cout << "Students ";
+   interfaceDataGeneratorStudent();
+   std::cout << "Professors ";
+   interfaceDataGeneratorProfessor();
 }
 
 void University::interfaceDataGeneratorStudent() {
