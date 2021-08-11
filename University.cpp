@@ -913,10 +913,17 @@ void University::loadFromFile(std::string fileName) {
 }
 
 void University::dataGenerator(size_t dataAmout) {
-    
+   //TO DO  
 }
 
 void University::nameGenerator() {
-    
+    //TO DO 
 }
 
+void University::surnameGenerator() {
+    //TO DO 
+}
+
+void University::addressGenerator() {
+    //TO DO 
+}
