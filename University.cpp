@@ -911,6 +911,9 @@ void University::loadFromFile(std::string fileName) {
     }
     file_.close();
 }
+void University::dataGeneratorInit() {
+   //TO DO  
+}
 
 void University::dataGenerator(size_t dataAmout) {
    //TO DO  

@@ -152,6 +152,7 @@ private:
     std::vector<std::shared_ptr<Person>> copyDataToTempContanair(std::vector<std::shared_ptr<Person>>& personCopy);
     void deleteDuplicate();
 
+    void dataGeneratorInit();
     void dataGenerator(size_t dataAmout);
     void nameGenerator();
     void surnameGenerator();
