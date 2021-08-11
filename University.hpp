@@ -157,6 +157,7 @@ private:
     void surnameGenerator();
     void addressGenerator();
     void indexNumberGenerator();
+    void peselNumberGenerator();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);

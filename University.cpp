@@ -931,3 +931,7 @@ void University::addressGenerator() {
 void University::indexNumberGenerator() {
     //TO DO 
 }
+
+void University::peselNumberGenerator() {
+    //TO DO 
+}
