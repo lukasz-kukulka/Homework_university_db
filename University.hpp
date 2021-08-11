@@ -154,6 +154,7 @@ private:
 
     void dataGenerator(size_t dataAmout);
     void nameGenerator();
+    void surnameGenerator();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
