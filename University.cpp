@@ -915,7 +915,11 @@ void University::dataGeneratorInit() {
    //TO DO  
 }
 
-void University::printInterfacedataGenerator() {
+void University::printInterfaceDataGenerator() {
+   //TO DO  
+}
+
+void University::interfaceDataGenerator() {
    //TO DO  
 }
 

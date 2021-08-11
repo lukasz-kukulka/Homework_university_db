@@ -153,7 +153,8 @@ private:
     void deleteDuplicate();
 
     void dataGeneratorInit();
-    void printInterfacedataGenerator();
+    void printInterfaceDataGenerator();
+    void interfaceDataGenerator();
     void dataGenerator(size_t dataAmout);
     void nameGenerator();
     void surnameGenerator();
