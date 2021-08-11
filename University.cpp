@@ -939,3 +939,7 @@ void University::peselNumberGenerator() {
 void University::professorSalaryGenerator() {
     //TO DO 
 }
+
+void University::genderGenerator() {
+    //TO DO 
+}

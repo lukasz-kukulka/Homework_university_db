@@ -159,6 +159,7 @@ private:
     void indexNumberGenerator();
     void peselNumberGenerator();
     void professorSalaryGenerator();
+    void genderGenerator();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
