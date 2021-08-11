@@ -925,6 +925,10 @@ void University::interfaceDataGenerator() {
    //TO DO  
 }
 
+void University::validatorInsertUserDataGenerator() {
+   //TO DO  
+}
+
 void University::dataGenerator(size_t dataAmout) {
    //TO DO  
 }
