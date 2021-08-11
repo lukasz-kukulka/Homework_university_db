@@ -927,3 +927,7 @@ void University::surnameGenerator() {
 void University::addressGenerator() {
     //TO DO 
 }
+
+void University::indexNumberGenerator() {
+    //TO DO 
+}
