@@ -912,16 +912,18 @@ void University::loadFromFile(std::string fileName) {
     file_.close();
 }
 void University::dataGeneratorInit() {
-     printInterfaceDataGenerator();
-     interfaceDataGenerator();
-     dataGenerator(5);
+   //TO DO 
 }
 
 void University::printInterfaceDataGenerator() {
+   std::cout << "Please insert how many records you wanna generate";
+}
+
+void University::interfaceDataGeneratorStudent() {
    //TO DO  
 }
 
-void University::interfaceDataGenerator() {
+void University::interfaceDataGeneratorProfessor() {
    //TO DO  
 }
 
