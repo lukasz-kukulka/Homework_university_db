@@ -915,6 +915,10 @@ void University::dataGeneratorInit() {
    //TO DO  
 }
 
+void University::printInterfacedataGenerator() {
+   //TO DO  
+}
+
 void University::dataGenerator(size_t dataAmout) {
    //TO DO  
 }

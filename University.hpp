@@ -153,6 +153,7 @@ private:
     void deleteDuplicate();
 
     void dataGeneratorInit();
+    void printInterfacedataGenerator();
     void dataGenerator(size_t dataAmout);
     void nameGenerator();
     void surnameGenerator();
@@ -161,6 +162,7 @@ private:
     void peselNumberGenerator();
     void professorSalaryGenerator();
     void genderGenerator();
+    
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
