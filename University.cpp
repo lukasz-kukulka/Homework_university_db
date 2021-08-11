@@ -912,7 +912,9 @@ void University::loadFromFile(std::string fileName) {
     file_.close();
 }
 void University::dataGeneratorInit() {
-   //TO DO  
+     printInterfaceDataGenerator();
+     interfaceDataGenerator();
+     dataGenerator(5);
 }
 
 void University::printInterfaceDataGenerator() {

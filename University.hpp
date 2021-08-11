@@ -155,6 +155,7 @@ private:
     void dataGeneratorInit();
     void printInterfaceDataGenerator();
     void interfaceDataGenerator();
+    void validatorInsertUserDataGenerator();
     void dataGenerator(size_t dataAmout);
     void nameGenerator();
     void surnameGenerator();
