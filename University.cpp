@@ -737,7 +737,7 @@ University::LoadSaveOption University::menuLoadSaveEngine(size_t menuSize) {
         clearLoad();
     } break;
     case LoadSaveOption::LoadToExist : {
-        
+        loadToExist();
     } break;
     case LoadSaveOption::Back : {
         //TO DO
@@ -754,11 +754,13 @@ void University::loadToExist() {
     std::vector<std::shared_ptr<Person>>personCopy_;
     copyDataToTempContanair(personCopy_);
     loadFromFile(fileName_);
+    deleteDuplicate();
     
 }
 
-void University::compareTwoRedords() {
-
+void University::deleteDuplicate() {
+    std::sort(begin(person_), end(person_), [](auto a, auto b){ return a->getPeselNumber() < b->getPeselNumber(); });
+    person_.erase(std::unique(begin(person_), end(person_), [](auto a, auto b){ return a->getPeselNumber() == b->getPeselNumber(); }), end(person_));
 }
 
 std::vector<std::shared_ptr<Person>> University::copyDataToTempContanair(std::vector<std::shared_ptr<Person>>& personCopy) {

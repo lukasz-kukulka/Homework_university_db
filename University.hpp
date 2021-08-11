@@ -150,7 +150,7 @@ private:
     void loadToExist();
     void printLoadToExist();
     std::vector<std::shared_ptr<Person>> copyDataToTempContanair(std::vector<std::shared_ptr<Person>>& personCopy);
-    void compareTwoRedords();
+    void deleteDuplicate();
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);
