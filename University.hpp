@@ -157,7 +157,8 @@ private:
     void interfaceDataGeneratorStudent();
     void interfaceDataGeneratorProfessor();
     void validatorInsertUserDataGenerator();
-    void dataGenerator(size_t dataAmout);
+    void dataGenerator();
+    void studentDataGenerator(size_t dataAmout);
     void nameGenerator();
     void surnameGenerator();
     void addressGenerator();
