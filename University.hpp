@@ -156,7 +156,6 @@ private:
     void printInterfaceDataGenerator();
     void interfaceDataGeneratorStudent();
     void interfaceDataGeneratorProfessor();
-    bool validatorInsertUserDataGenerator();
     void dataGenerator();
     void studentDataGenerator(size_t dataAmout);
     void professorDataGenerator(size_t dataAmout);
