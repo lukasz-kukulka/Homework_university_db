@@ -930,12 +930,17 @@ void University::interfaceDataGeneratorStudent() {
         if (validatorInsertUserDataGenerator(amount) ==  true){
             break;
         }
-        
     }
 }
 
 void University::interfaceDataGeneratorProfessor() {
-   //TO DO  
+    size_t amount = 0;
+    std::cin >> amount;
+    while (true) {
+        if (validatorInsertUserDataGenerator(amount) ==  true){
+            break;
+        }
+    } 
 }
 
 bool University::validatorInsertUserDataGenerator(size_t amount) {
