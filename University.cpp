@@ -932,6 +932,7 @@ void University::interfaceDataGeneratorStudent() {
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin >> amount;
     } while (std::cin.fail());
+    
 }
 
 void University::interfaceDataGeneratorProfessor() {
