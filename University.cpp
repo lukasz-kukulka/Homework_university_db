@@ -1,10 +1,11 @@
 #include "University.hpp"
 
 #include <algorithm>
-
+#include <cctype>
 #include <iostream>
 #include <typeinfo>
 #include <iterator>
+#include <limits>
 
 #include "Professor.hpp"
 #include "Student.hpp"
@@ -26,6 +27,7 @@ University::University() {
 }
 
 void University::applicationStart() {
+    interfaceDataGeneratorProfessor();
     while (menuEngine(printMenu()) != MenuOption::Exit) {
 
     }
@@ -924,40 +926,41 @@ void University::printInterfaceDataGenerator() {
 }
 
 void University::interfaceDataGeneratorStudent() {
-    size_t amount = 0;
-    std::cin >> amount;
-    while (true) {
-        if (validatorInsertUserDataGenerator(amount) ==  true){
-            break;
-        }
-    }
+    int amount = 0;
+    do { 
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin >> amount;
+    } while (std::cin.fail());
 }
 
 void University::interfaceDataGeneratorProfessor() {
-    size_t amount = 0;
-    std::cin >> amount;
-    while (true) {
-        if (validatorInsertUserDataGenerator(amount) ==  true){
-            break;
-        }
-    } 
+    int amount = 0;
+    do { 
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin >> amount;
+    } while (std::cin.fail());
 }
 
-bool University::validatorInsertUserDataGenerator(size_t amount) {
-   //TO DO  
+bool University::validatorInsertUserDataGenerator() {
+   if (std::cin.fail()) {
+       return false;
+   }
+   return true;
 }
 
 void University::dataGenerator() {
    //TO DO  
 }
 
-void University::studentDataGenerator(size_t dataAmout) {
-   //TO DO  
-}
+// void University::studentDataGenerator(size_t dataAmout) {
+//    //TO DO  
+// }
 
-void University::professorDataGenerator(size_t dataAmout) {
-   //TO DO  
-}
+// void University::professorDataGenerator(size_t dataAmout) {
+//    //TO DO  
+// }
 
 void University::nameGenerator() {
     //TO DO 
