@@ -924,14 +924,21 @@ void University::printInterfaceDataGenerator() {
 }
 
 void University::interfaceDataGeneratorStudent() {
-   std::cin 
+    size_t amount = 0;
+    std::cin >> amount;
+    while (true) {
+        if (validatorInsertUserDataGenerator(amount) ==  true){
+            break;
+        }
+        
+    }
 }
 
 void University::interfaceDataGeneratorProfessor() {
    //TO DO  
 }
 
-void University::validatorInsertUserDataGenerator() {
+bool University::validatorInsertUserDataGenerator(size_t amount) {
    //TO DO  
 }
 
