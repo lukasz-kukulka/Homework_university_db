@@ -926,22 +926,21 @@ void University::printInterfaceDataGenerator() {
 }
 
 void University::interfaceDataGeneratorStudent() {
-    int amount = 0;
-    do { 
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin >> amount;
-    } while (std::cin.fail());
-
+    interfaceDataGeneratorAll();
 }
 
 void University::interfaceDataGeneratorProfessor() {
-    int amount = 0;
+    interfaceDataGeneratorAll();
+}
+
+size_t University::interfaceDataGeneratorAll() {
+    size_t amount = 0;
     do { 
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin >> amount;
     } while (std::cin.fail());
+    return amount;
 }
 
 void University::dataGenerator() {
