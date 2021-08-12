@@ -924,7 +924,7 @@ void University::printInterfaceDataGenerator() {
 }
 
 void University::interfaceDataGeneratorStudent() {
-   //TO DO  
+   std::cin 
 }
 
 void University::interfaceDataGeneratorProfessor() {
@@ -935,7 +935,15 @@ void University::validatorInsertUserDataGenerator() {
    //TO DO  
 }
 
-void University::dataGenerator(size_t dataAmout) {
+void University::dataGenerator() {
+   //TO DO  
+}
+
+void University::studentDataGenerator(size_t dataAmout) {
+   //TO DO  
+}
+
+void University::professorDataGenerator(size_t dataAmout) {
    //TO DO  
 }
 

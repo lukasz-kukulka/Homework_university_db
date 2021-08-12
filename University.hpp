@@ -159,6 +159,7 @@ private:
     void validatorInsertUserDataGenerator();
     void dataGenerator();
     void studentDataGenerator(size_t dataAmout);
+    void professorDataGenerator(size_t dataAmout);
     void nameGenerator();
     void surnameGenerator();
     void addressGenerator();
