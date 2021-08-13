@@ -944,7 +944,13 @@ size_t University::interfaceDataGeneratorAll() {
 }
 
 void University::dataGenerator() {
-   //TO DO  
+    nameGenerator(); 
+    surnameGenerator();
+    addressGenerator();
+    indexNumberGenerator();
+    peselNumberGenerator();
+    professorSalaryGenerator();
+    genderGenerator();
 }
 
 void University::studentDataGenerator(size_t dataAmout) {
