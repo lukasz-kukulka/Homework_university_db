@@ -930,7 +930,7 @@ void University::interfaceDataGeneratorStudent() {
 }
 
 void University::interfaceDataGeneratorProfessor() {
-    size_t professorAmount = interfaceDataGeneratorAll();
+    professorDataGenerator(interfaceDataGeneratorAll());
 }
 
 size_t University::interfaceDataGeneratorAll() {
