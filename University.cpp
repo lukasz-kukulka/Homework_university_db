@@ -994,3 +994,7 @@ void University::professorSalaryGenerator() {
 void University::genderGenerator() {
     //TO DO 
 }
+
+void University::loadFromFileToGenerateData(std::string fileName) {
+    fileName = "0";
+}

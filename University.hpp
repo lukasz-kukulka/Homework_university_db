@@ -167,6 +167,7 @@ private:
     void peselNumberGenerator();
     void professorSalaryGenerator();
     void genderGenerator();
+    void loadFromFileToGenerateData(std::string fileName);
     
 
     void deleteByIndexNumber(std::string);
