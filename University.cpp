@@ -954,9 +954,12 @@ void University::studentDataGenerator(size_t dataAmout) {
     }
 }
 
-// void University::professorDataGenerator(size_t dataAmout) {
-//    //TO DO  
-// }
+void University::professorDataGenerator(size_t dataAmout) {
+    for (int i; i < dataAmout; i++){
+        dataGenerator();
+        addProfesorRecordToVector();
+    } 
+}
 
 void University::nameGenerator() {
     //TO DO 
