@@ -926,11 +926,11 @@ void University::printInterfaceDataGenerator() {
 }
 
 void University::interfaceDataGeneratorStudent() {
-    interfaceDataGeneratorAll();
+    int studentAmount = interfaceDataGeneratorAll();
 }
 
 void University::interfaceDataGeneratorProfessor() {
-    interfaceDataGeneratorAll();
+    int professorAmount = interfaceDataGeneratorAll();
 }
 
 size_t University::interfaceDataGeneratorAll() {
