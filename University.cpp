@@ -967,8 +967,12 @@ void University::professorDataGenerator(size_t dataAmout) {
     } 
 }
 
+void University::randomDataGenerator(std::string fileName) {
+
+}
+
 void University::nameGenerator() {
-    //TO DO 
+
 }
 
 void University::surnameGenerator() {
@@ -996,5 +1000,5 @@ void University::genderGenerator() {
 }
 
 void University::loadFromFileToGenerateData(std::string fileName) {
-    fileName = "0";
+
 }
