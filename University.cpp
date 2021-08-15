@@ -968,7 +968,15 @@ void University::professorDataGenerator(size_t dataAmout) {
 }
 
 void University::randomDataGenerator(std::string fileName) {
+    std::string line;
+    file_.open(fileName, std::ios::in);
+    if (file_.good() == false) {
+        std::cout << "File not exist\n";
+    }
+    while (getline(file_, line)) {
 
+    }
+    file_.close();
 }
 
 void University::nameGenerator() {
