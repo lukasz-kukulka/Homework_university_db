@@ -6,6 +6,7 @@
 #include <typeinfo>
 #include <iterator>
 #include <limits>
+#include <random>
 
 #include "Professor.hpp"
 #include "Student.hpp"
@@ -1007,6 +1008,13 @@ void University::genderGenerator() {
     //TO DO 
 }
 
-void University::loadFromFileToGenerateData(std::string fileName) {
-
+size_t University::randomDataGenerator(size_t maxElement) {
+    std::random_device seed;
+    std::mt19937 randomNumber{seed()}; 
+    std::uniform_int_distribution<size_t> range(1, maxElement);
+    return range(randomNumber);
 }
+
+// void University::loadFromFileToGenerateData(std::string fileName) {
+
+// }
