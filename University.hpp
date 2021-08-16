@@ -170,6 +170,7 @@ private:
     void loadFromFileToGenerateData(std::string fileName);
     void randomDataGenerator(std::string fileName);
     size_t randomDataGenerator(size_t maxElement);
+    size_t countRecordGenerateData(std::string fileMane);
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);

@@ -1015,6 +1015,8 @@ size_t University::randomDataGenerator(size_t maxElement) {
     return range(randomNumber);
 }
 
+
+
 // void University::loadFromFileToGenerateData(std::string fileName) {
 
 // }
