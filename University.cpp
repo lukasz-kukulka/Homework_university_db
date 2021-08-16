@@ -1015,7 +1015,22 @@ size_t University::randomDataGenerator(size_t maxElement) {
     return range(randomNumber);
 }
 
-
+size_t University::countRecordGenerateData(std::string fileMane) { 
+    int lineNo = 0;
+    std::string line;
+    file_.open(fileMane, std::ios::in);
+    if (file_.good() == false) {
+        std::cout << "File not exist\n";
+    }
+    while (getline(file_, line)) {
+        lineNo++;
+        if (line.size() == 0) {
+            lineNo--;
+        }
+    }
+    file_.close();
+    return lineNo;
+}
 
 // void University::loadFromFileToGenerateData(std::string fileName) {
 
