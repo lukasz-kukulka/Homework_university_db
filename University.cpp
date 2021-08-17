@@ -1001,11 +1001,10 @@ void University::addressGenerator() {
     fileName = "streetsSeconds.txt";
     address_ = address_ + " " + randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
     address_ = address_ + " " + std::to_string(randomDataGenerator(150));
-
 }
 
 void University::indexNumberGenerator() {
-    //TO DO
+    indexNumber_ = randomDataGenerator(1000000000, 9999999999);
 }
 
 void University::peselNumberGenerator() {
