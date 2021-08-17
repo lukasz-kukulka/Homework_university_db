@@ -1001,7 +1001,8 @@ void University::addressGenerator() {
 }
 
 void University::indexNumberGenerator() {
-    //TO DO 
+    std::string fileName = "indexes.txt";
+    randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
 }
 
 void University::peselNumberGenerator() {
