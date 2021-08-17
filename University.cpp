@@ -986,8 +986,8 @@ std::string University::randomDataLoader(std::string fileName, size_t recordNumb
 }
 
 void University::nameGenerator() {
-    // std::string fileName = "names.txt";
-    // randomDataGenerator(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
+    std::string fileName = "names.txt";
+    randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
 }
 
 void University::surnameGenerator() {
