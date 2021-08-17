@@ -996,7 +996,8 @@ void University::surnameGenerator() {
 }
 
 void University::addressGenerator() {
-    //TO DO 
+    std::string fileName = "address.txt";
+    randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
 }
 
 void University::indexNumberGenerator() {
