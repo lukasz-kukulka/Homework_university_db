@@ -968,20 +968,26 @@ void University::professorDataGenerator(size_t dataAmout) {
     } 
 }
 
-void University::randomDataGenerator(std::string fileName) {
+std::string University::randomDataLoader(std::string fileName, size_t recordNumber) {
     std::string line;
+    size_t lineNumber = 0;
     file_.open(fileName, std::ios::in);
     if (file_.good() == false) {
         std::cout << "File not exist\n";
     }
     while (getline(file_, line)) {
-
+        if (lineNumber == recordNumber) {
+            file_.close();
+            return line;
+        }
     }
     file_.close();
+    return "ERROR_NO_RECORD";
 }
 
 void University::nameGenerator() {
-
+    // std::string fileName = "names.txt";
+    // randomDataGenerator(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
 }
 
 void University::surnameGenerator() {
