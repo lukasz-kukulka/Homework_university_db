@@ -996,13 +996,15 @@ void University::surnameGenerator() {
 }
 
 void University::addressGenerator() {
-    std::string fileName = "address.txt";
+    std::string fileName = "streetsFirst.txt";
     randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
+    fileName = "streetsSeconds.txt";
+    randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
+
 }
 
 void University::indexNumberGenerator() {
-    std::string fileName = "indexes.txt";
-    randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
+    //TO DO
 }
 
 void University::peselNumberGenerator() {
@@ -1017,10 +1019,10 @@ void University::genderGenerator() {
     //TO DO 
 }
 
-size_t University::randomDataGenerator(size_t maxElement) {
+size_t University::randomDataGenerator(size_t maxElement, size_t minElement) {
     std::random_device seed;
     std::mt19937 randomNumber{seed()}; 
-    std::uniform_int_distribution<size_t> range(1, maxElement);
+    std::uniform_int_distribution<size_t> range(minElement, maxElement);
     return range(randomNumber);
 }
 
