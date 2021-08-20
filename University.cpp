@@ -1037,7 +1037,7 @@ void University::professorSalaryGenerator() {
 }
 
 void University::genderGenerator() {
-    
+    gender_ = peselNumber_[9] - '0';
 }
 
 size_t University::randomDataGenerator(size_t maxElement, size_t minElement) {
