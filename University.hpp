@@ -171,6 +171,7 @@ private:
     std::string randomDataLoader(std::string fileName, size_t recordNumber);
     size_t randomDataGenerator(size_t maxElement, size_t minElement = 1);
     size_t countRecordGenerateData(std::string fileMane);
+    std::string generateWeightPeselNumber(std::string pesel);
 
     void deleteByIndexNumber(std::string);
     std::string convertPersonGender(const size_t);

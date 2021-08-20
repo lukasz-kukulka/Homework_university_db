@@ -1008,7 +1008,22 @@ void University::indexNumberGenerator() {
 }
 
 void University::peselNumberGenerator() {
-    
+
+}
+
+std::string University::generateWeightPeselNumber(std::string pesel) {
+    std::string weightCheck = "13791379131";
+    size_t weightResult = 0;
+    for (int i = 0; i < 11; i++) {
+        weightResult = weightResult + (static_cast<size_t>(pesel[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
+    }
+    weightResult = weightResult % 10;
+    if (weightResult == 0) {
+        weightResult = 0;
+    } else {
+        weightResult = 10 - weightResult;
+    }
+    return std::to_string(weightResult);
 }
 
 void University::professorSalaryGenerator() {
