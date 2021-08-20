@@ -1008,7 +1008,13 @@ void University::indexNumberGenerator() {
 }
 
 void University::peselNumberGenerator() {
-
+    peselNumber_ = "";
+    peselNumber_ += randomDataGenerator(1, 9);
+    peselNumber_ += randomDataGenerator(1, 9);
+    peselNumber_ += randomDataGenerator(10, 12);
+    peselNumber_ += randomDataGenerator(10, 30);
+    peselNumber_ += randomDataGenerator(1111, 9999);
+    peselNumber_ += generateWeightPeselNumber(peselNumber_);
 }
 
 std::string University::generateWeightPeselNumber(std::string pesel) {
