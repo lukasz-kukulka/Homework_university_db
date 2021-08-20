@@ -1008,11 +1008,11 @@ void University::indexNumberGenerator() {
 }
 
 void University::peselNumberGenerator() {
-    //TO DO 
+    
 }
 
 void University::professorSalaryGenerator() {
-    //TO DO 
+    professorSalary_ = randomDataGenerator(3000, 10000);
 }
 
 void University::genderGenerator() {
