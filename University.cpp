@@ -1004,16 +1004,16 @@ void University::addressGenerator() {
 }
 
 void University::indexNumberGenerator() {
-    indexNumber_ = randomDataGenerator(1000000000, 9999999999);
+    indexNumber_ = std::to_string(randomDataGenerator(1000000000, 9999999999));
 }
 
 void University::peselNumberGenerator() {
     peselNumber_ = "";
-    peselNumber_ += randomDataGenerator(1, 9);
-    peselNumber_ += randomDataGenerator(1, 9);
-    peselNumber_ += randomDataGenerator(10, 12);
-    peselNumber_ += randomDataGenerator(10, 30);
-    peselNumber_ += randomDataGenerator(1111, 9999);
+    peselNumber_ += std::to_string(randomDataGenerator(1, 9));
+    peselNumber_ += std::to_string(randomDataGenerator(1, 9));
+    peselNumber_ += std::to_string(randomDataGenerator(10, 12));
+    peselNumber_ += std::to_string(randomDataGenerator(10, 30));
+    peselNumber_ += std::to_string(randomDataGenerator(1111, 9999));
     peselNumber_ += generateWeightPeselNumber(peselNumber_);
 }
 
@@ -1033,11 +1033,11 @@ std::string University::generateWeightPeselNumber(std::string pesel) {
 }
 
 void University::professorSalaryGenerator() {
-    professorSalary_ = randomDataGenerator(3000, 10000);
+    professorSalary_ = std::to_string(randomDataGenerator(3000, 10000));
 }
 
 void University::genderGenerator() {
-    //TO DO 
+    
 }
 
 size_t University::randomDataGenerator(size_t maxElement, size_t minElement) {
