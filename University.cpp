@@ -28,7 +28,6 @@ University::University() {
 }
 
 void University::applicationStart() {
-    interfaceDataGeneratorProfessor();
     while (menuEngine(printMenu()) != MenuOption::Exit) {
 
     }
@@ -71,7 +70,7 @@ University::MenuOption University::menuEngine(size_t menuSize) {
         sortMenuEngine();
     } break;
     case MenuOption::SaveLoadFile: {
-
+        loadSaveMenu();
     } break;
     case MenuOption::GenerateData: {
     } break;
