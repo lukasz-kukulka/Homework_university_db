@@ -76,7 +76,7 @@ University::MenuOption University::menuEngine(size_t menuSize) {
         printInterfaceDataGenerator();
     } break;
     case MenuOption::Delete: {
-
+        deleteRecordByIndexNumber();
     } break;
     case MenuOption::Exit: {
     } break;
