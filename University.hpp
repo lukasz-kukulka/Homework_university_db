@@ -77,6 +77,7 @@ private:
     void insertStudentPeselNumber();
     void insertStudentIndexNumber();
     void insertProfessorSalary();
+    std::string userInsertIndexNumberToDelete();
 
     bool validationSelectPerson(size_t userChoice);
     void assignmentPersonValue(size_t userChoice);

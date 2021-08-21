@@ -100,6 +100,10 @@ void University::printDeletePersonByIndexNumber() {
     std::cout << "Please insert index number what you wanna delete\n";
 }
 
+std::string University::userInsertIndexNumberToDelete() {
+
+}
+
 void University::addNewPerson() {
     selectPerson();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
