@@ -991,6 +991,7 @@ std::string University::randomDataLoader(std::string fileName, size_t recordNumb
             file_.close();
             return line;
         }
+        lineNumber++;
     }
     file_.close();
     return "ERROR_NO_RECORD";
