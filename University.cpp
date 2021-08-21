@@ -997,19 +997,19 @@ std::string University::randomDataLoader(std::string fileName, size_t recordNumb
 }
 
 void University::nameGenerator() {
-    std::string fileName = "names.txt";
+    std::string fileName = "DataGenerate/names.txt";
     name_ = randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
 }
 
 void University::surnameGenerator() {
-    std::string fileName = "surnames.txt";
+    std::string fileName = "DataGenerate/surnames.txt";
     surname_ = randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
 }
 
 void University::addressGenerator() {
-    std::string fileName = "streetsFirst.txt";
+    std::string fileName = "DataGenerate/streetsFirst.txt";
     address_ = randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
-    fileName = "streetsSeconds.txt";
+    fileName = "DataGenerate/streetsSeconds.txt";
     address_ = address_ + " " + randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
     address_ = address_ + " " + std::to_string(randomDataGenerator(150));
 }
