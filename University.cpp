@@ -97,7 +97,9 @@ bool University::validatingMenuChoose(const size_t choosenValueToValid, const si
 }
 
 void University::deleteRecordByIndexNumber() {
-
+    printDeletePersonByIndexNumber();
+    insertStudentIndexNumber();
+    deleteByIndexNumber(indexNumber_);
 }
 
 void University::printDeletePersonByIndexNumber() {
