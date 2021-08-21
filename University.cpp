@@ -97,7 +97,7 @@ bool University::validatingMenuChoose(const size_t choosenValueToValid, const si
 }
 
 void University::printDeletePersonByIndexNumber() {
-    
+    std::cout << "Please insert index number what you wanna delete\n";
 }
 
 void University::addNewPerson() {
