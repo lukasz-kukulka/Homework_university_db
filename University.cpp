@@ -73,8 +73,10 @@ University::MenuOption University::menuEngine(size_t menuSize) {
         loadSaveMenu();
     } break;
     case MenuOption::GenerateData: {
+        printInterfaceDataGenerator();
     } break;
     case MenuOption::Delete: {
+
     } break;
     case MenuOption::Exit: {
     } break;
@@ -92,6 +94,10 @@ bool University::validatingMenuChoose(const size_t choosenValueToValid, const si
         return false;
     }
     return true;
+}
+
+void University::printDeletePersonByIndexNumber() {
+    
 }
 
 void University::addNewPerson() {

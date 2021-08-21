@@ -101,6 +101,7 @@ private:
     int countRecord(std::string fileMane = DEFAULT_FILE_NAME);
 
     void printSearchMenu();
+    void printDeletePersonByIndexNumber();
     MenuOption searchMenuStudent();
     void searchMenuEngine();
     bool validatingSearchAndSortMenuChoose(const int);
