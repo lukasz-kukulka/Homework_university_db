@@ -49,6 +49,8 @@ void Professor::printPerson() {
               << '|' << std::setw(static_cast<int>(sizeSalaryLimit_ / 2 - salary_.size() / 2 + salary_.size()))
               << salary_ << std::setw(static_cast<int>(sizeSalaryLimit_ / 2 - salary_.size() / 2 + 1 - salary_.size() % 2))
               << '|' << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - peselNumber_.size() / 2 + peselNumber_.size()))
+              << indexNumber_ << std::setw(static_cast<int>(sizeSalaryLimit_ / 2 - salary_.size() / 2 + 1 - salary_.size() % 2))
+              << '|' << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - peselNumber_.size() / 2 + peselNumber_.size()))
               << peselNumber_ << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - peselNumber_.size() / 2 + 1 - peselNumber_.size() % 2))
               << '|' << std::setw(static_cast<int>(sizeGenderLimit_ / 2 - convertPersonGender(gender_).size() / 2 + convertPersonGender(gender_).size() % 2 + convertPersonGender(gender_).size()))
               << convertPersonGender(gender_) << std::setw(static_cast<int>(sizeGenderLimit_ / 2 - convertPersonGender(gender_).size() / 2 + 2)) << "|\n";
