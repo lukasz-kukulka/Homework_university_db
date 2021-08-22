@@ -24,10 +24,4 @@ public:
     std::string getIndexNumber() const { return indexNumber_; }
 
     size_t getSizeIndexNumberLimit() const { return sizeIndexNumberLimit_; }
-private:
-    //std::string convertStudentGender(const Gender);
-
-    std::string indexNumber_ { "8212343823" };
-
-    size_t sizeIndexNumberLimit_ { 12 };
 };

@@ -51,4 +51,5 @@ protected:
     size_t sizePeselNumberLimit_ { 14 };
     size_t sizeGenderLimit_ { 8 };
     size_t sizeSalaryLimit_ { 10 };
+    size_t sizeIndexNumberLimit_ { 12 };
 };
