@@ -1008,10 +1008,8 @@ void University::surnameGenerator() {
 }
 
 void University::addressGenerator() {
-    std::string fileName = "DataGenerate/streetsFirst.txt";
+    std::string fileName = "DataGenerate/streets.txt";
     address_ = randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
-    fileName = "DataGenerate/streetsSeconds.txt";
-    address_ = address_ + " " + randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
     address_ = address_ + " " + std::to_string(randomDataGenerator(150));
 }
 
