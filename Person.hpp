@@ -42,8 +42,8 @@ protected:
     std::string address_{ "adress 3 3" };
     std::string peselNumber_{ "82828280021" };
     Gender gender_ { Gender::female };
-    std::string salary_{ };
-    std::string indexNumber_ { };
+    std::string salary_{ "NO_SALARY" };
+    std::string indexNumber_ { "NO_INDEX" };
 
     size_t sizeNameLimit_ { 16 };
     size_t sizeSurnameLimit_ { 30 };
