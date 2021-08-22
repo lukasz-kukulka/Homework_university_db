@@ -50,4 +50,5 @@ protected:
     size_t sizeAddressLimit_ { 40 };
     size_t sizePeselNumberLimit_ { 14 };
     size_t sizeGenderLimit_ { 8 };
+    size_t sizeSalaryLimit_ { 10 };
 };

@@ -17,10 +17,4 @@ public:
     void printPerson() override;
     void printBorderBotton() override;
     size_t getBorderSize() override;
-
-private:
-    //std::string convertStudentGender(const Gender);
-
-    std::string salary_ { "1000" };
-    size_t sizeSalaryLimit_ { 6 };
 };
