@@ -47,6 +47,8 @@ void Student::printPerson() {
               << '|' << std::setw(static_cast<int>(sizeAddressLimit_ / 2 - address_.size() / 2 + address_.size()))
               << address_ << std::setw(static_cast<int>(sizeAddressLimit_ / 2 - address_.size() / 2 + 1  - address_.size() % 2))
               << '|' << std::setw(static_cast<int>(sizeIndexNumberLimit_ / 2 - indexNumber_.size() / 2 + indexNumber_.size()))
+              << salary_ << std::setw(static_cast<int>(sizeSalaryLimit_ / 2 - salary_.size() / 2 + 1 - salary_.size() % 2))
+              << '|' << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - peselNumber_.size() / 2 + peselNumber_.size()))
               << indexNumber_ << std::setw(static_cast<int>(sizeIndexNumberLimit_ / 2 - indexNumber_.size() / 2 + 1 - indexNumber_.size() % 2))
               << '|' << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - peselNumber_.size() / 2 + peselNumber_.size()))
               << peselNumber_ << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - peselNumber_.size() / 2 + 1 - peselNumber_.size() % 2))
