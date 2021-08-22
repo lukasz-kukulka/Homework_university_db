@@ -999,27 +999,27 @@ std::string University::randomDataLoader(std::string fileName, size_t recordNumb
 
 void University::nameGenerator() {
     std::string fileName = "DataGenerate/names.txt";
-    name_ = randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
+    name_ = randomDataLoader(fileName, randomDataGenerator(1, countRecordGenerateData(fileName)));
 }
 
 void University::surnameGenerator() {
     std::string fileName = "DataGenerate/surnames.txt";
-    surname_ = randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
+    surname_ = randomDataLoader(fileName, randomDataGenerator(1, countRecordGenerateData(fileName)));
 }
 
 void University::addressGenerator() {
     std::string fileName = "DataGenerate/streets.txt";
-    address_ = randomDataLoader(fileName, randomDataGenerator(countRecordGenerateData(fileName)));
-    address_ = address_ + " " + std::to_string(randomDataGenerator(150));
+    address_ = randomDataLoader(fileName, randomDataGenerator(1, countRecordGenerateData(fileName)));
+    address_ = address_ + " " + std::to_string(randomDataGenerator(1, 150));
 }
 
 void University::indexNumberGenerator() {
-    indexNumber_ = std::to_string(randomDataGenerator(1000000000, 9999999999));
+    indexNumber_ = std::to_string(randomDataGenerator(1000000000, 3333999999));
 }
 
 void University::peselNumberGenerator() {
     peselNumber_ = "";
-    peselNumber_ += std::to_string(randomDataGenerator(1, 9));
+    peselNumber_ = peselNumber_ + std::to_string(randomDataGenerator(1, 9));
     peselNumber_ += std::to_string(randomDataGenerator(1, 9));
     peselNumber_ += std::to_string(randomDataGenerator(10, 12));
     peselNumber_ += std::to_string(randomDataGenerator(10, 30));
@@ -1050,7 +1050,7 @@ void University::genderGenerator() {
     gender_ = peselNumber_[9] - '0';
 }
 
-size_t University::randomDataGenerator(size_t maxElement, size_t minElement) {
+size_t University::randomDataGenerator(size_t minElement, size_t maxElement) {
     std::random_device seed;
     std::mt19937 randomNumber{seed()}; 
     std::uniform_int_distribution<size_t> range(minElement, maxElement);
