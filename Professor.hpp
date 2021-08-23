@@ -17,4 +17,7 @@ public:
     void printPerson() override;
     void printBorderBotton() override;
     size_t getBorderSize() override;
+
+private:
+    std::string salary_ {};
 };

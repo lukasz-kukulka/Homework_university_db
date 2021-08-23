@@ -24,4 +24,7 @@ public:
     std::string getIndexNumber() const { return indexNumber_; }
 
     size_t getSizeIndexNumberLimit() const { return sizeIndexNumberLimit_; }
+
+private:
+    std::string indexNumber_ {};
 };
