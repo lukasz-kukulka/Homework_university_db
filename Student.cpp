@@ -4,8 +4,7 @@
 #include <iostream>
 
 Student::Student(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender, std::string indexNumber) 
-    : Person(name, surname, address, peselNumber, gender)
-    , indexNumber_(indexNumber)
+    : Person(name, surname, address, peselNumber, gender, indexNumber)
 {}
 
 size_t Student::getBorderSize() {

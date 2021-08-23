@@ -4,8 +4,7 @@
 #include <iostream>
 
 Professor::Professor(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender, std::string salary) 
-    : Person(name, surname, address, peselNumber, gender)
-    , salary_(salary)
+    : Person(name, surname, address, peselNumber, gender, salary)
 {}
 
 size_t Professor::getBorderSize() {

@@ -10,7 +10,7 @@ public:
     };
 
     Person() = default;
-    Person(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender);
+    Person(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender, std::string salary = "NO_SALARY", std::string indexNumber = "NO_INDEX");
     virtual ~Person();
 
     std::string getName() const { return name_; }
