@@ -12,8 +12,8 @@ public:
 
     // void printBorderTop() override;
     void printPerson() override;
-    void printBorderBotton() override;
-    size_t getBorderSize() override;
+    //void printBorderBotton() override;
+    //size_t getBorderSize();
 
     std::string getName() const { return name_; }
     std::string getSurname() const { return surname_; }

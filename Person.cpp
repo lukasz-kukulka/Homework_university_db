@@ -32,3 +32,11 @@ void Person::printBorderTop() {
               << generateCell("INDEX", sizeIndexNumberLimit_) << "|" 
               << generateCell("GENDER", sizeGenderLimit_) << "|\n";
 }
+
+size_t Person::getBorderSize() {
+    return (8 + sizeNameLimit_ + sizeSurnameLimit_ + sizeAddressLimit_ + sizeSalaryLimit_ + sizePeselNumberLimit_ + sizeGenderLimit_ + sizeIndexNumberLimit_);
+}
+
+void Person::printBorderLine() {
+    std::cout << std::string(getBorderSize(), '-') << '\n';
+}

@@ -24,7 +24,7 @@ University::University() {
 
     //     stu.printStudent();
     // }
-    // person_[0].printBorderBotton();
+    // person_[0].printBorderLine();
 }
 
 void University::applicationStart() {
@@ -430,7 +430,7 @@ void University::showStudents() {
         for (auto ele : person_) {
             ele->printPerson();
         }
-        person_[0]->printBorderBotton();
+        person_[0]->printBorderLine();
     }
     std::cout << "Database of students is empty please load form file or add new students\n";
 }
@@ -563,7 +563,7 @@ bool University::checkIfExistPeselNumber(std::string pesel) {
     for (auto& person : person_) {
         if (person->getPeselNumber() == pesel) {
             person->printPerson();
-            person->printBorderBotton();
+            person->printBorderLine();
             whichPersonIs(person.get());
             professorSalary_ = person->getSalary();
             return true;
@@ -587,7 +587,7 @@ void University::checkIfExistSurname(std::string surname) {
     for (auto& person : person_) {
         if (person->getSurname() == surname) {
             person->printPerson();
-            person->printBorderBotton();
+            person->printBorderLine();
             ifExistSurname = true;
             break;
         }
@@ -678,7 +678,7 @@ void University::deleteByIndexNumber(std::string indexNumber) {
         iterator++;
         if (person->getIndexNumber() == indexNumber) {
             person->printPerson();
-            person->printBorderBotton();
+            person->printBorderLine();
             break;
         }
     }

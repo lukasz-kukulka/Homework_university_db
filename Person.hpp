@@ -30,9 +30,9 @@ public:
     void setSalary(std::string salary) { salary_ = salary; }
 
     void printBorderTop();
+    size_t getBorderSize();
+    void printBorderLine();
     virtual void printPerson() = 0;
-    virtual void printBorderBotton() = 0;
-    virtual size_t getBorderSize() = 0;
 
     std::string generateCell(std::string cellBody, size_t cellSize);
 

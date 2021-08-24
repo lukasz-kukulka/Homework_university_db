@@ -8,34 +8,12 @@ Student::Student(std::string name, std::string surname, std::string address, std
     , indexNumber_(indexNumber)
 {}
 
-size_t Student::getBorderSize() {
-    return (6 + sizeNameLimit_ + sizeSurnameLimit_ + sizeAddressLimit_ + sizeIndexNumberLimit_ + sizePeselNumberLimit_ + sizeGenderLimit_);
-}
+// size_t Student::getBorderSize() {
+//     return (8 + sizeNameLimit_ + sizeSurnameLimit_ + sizeAddressLimit_ + sizeIndexNumberLimit_ + sizePeselNumberLimit_ + sizeGenderLimit_ + sa);
+// }
 
 // void Student::printBorderTop() {
-//     std::string temp = "STUDENTS DATABASE";
-//     std::cout << ' ' << std::setfill('-') << std::setw (static_cast<int>(getBorderSize())) << ' ' << "\n";
-//     std::cout << '|' << std::setfill(' ') << std::setw (static_cast<int>(getBorderSize() / 2 - temp.size() / 2 + temp.size())) 
-//               << temp << std::setw (static_cast<int>(getBorderSize() / 2 - temp.size() / 2 - temp.size() % 2)) << '|' << "\n";
-//     std::cout << ' ' << std::setfill('-') << std::setw (static_cast<int>(getBorderSize())) << ' ' << "\n";
-//     temp = "NAME";
-//     std::cout << std::setfill(' ') << '|' << std::setw(static_cast<int>(sizeNameLimit_ / 2 - temp.size() / 2 + temp.size())) 
-//               << temp << std::setw(static_cast<int>(sizeNameLimit_ / 2 - temp.size() / 2 + 1)); 
-//     temp = " SURNAME";
-//     std::cout << '|' << std::setw(static_cast<int>(sizeSurnameLimit_ / 2 - temp.size() / 2 + temp.size())) 
-//               << temp << std::setw(static_cast<int>(sizeSurnameLimit_ / 2 - temp.size() / 2 + 1)); 
-//     temp = " ADDRESS";
-//     std::cout << '|' << std::setw(static_cast<int>(sizeAddressLimit_ / 2 - temp.size() / 2 + temp.size())) 
-//               << temp << std::setw(static_cast<int>(sizeAddressLimit_ / 2 - temp.size() / 2 + 1)); 
-//     temp = " INDEX";
-//     std::cout << '|' << std::setw(static_cast<int>(sizeIndexNumberLimit_ / 2 - temp.size() / 2 + temp.size())) 
-//               << temp << std::setw(static_cast<int>(sizeIndexNumberLimit_ / 2 - temp.size() / 2 + 1)); 
-//     temp = " PESEL";
-//     std::cout << '|' << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - temp.size() / 2 + temp.size())) 
-//               << temp << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - temp.size() / 2 + 1)); 
-//     temp = "GENDER";
-//     std::cout << '|' << std::setw(static_cast<int>(sizeGenderLimit_ / 2 - temp.size() / 2 + temp.size())) 
-//               << temp << std::setw(static_cast<int>(sizeGenderLimit_ / 2 - temp.size() / 2 + 2)) << "|\n"; 
+
 // }
 
 void Student::printPerson() {
@@ -56,6 +34,6 @@ void Student::printPerson() {
               << convertPersonGender(gender_) << std::setw(static_cast<int>(sizeGenderLimit_ / 2 - convertPersonGender(gender_).size() / 2 + 2)) << "|\n";
 }
 
-void Student::printBorderBotton() {
-    std::cout << ' ' << std::setfill('-') << std::setw (static_cast<int>(getBorderSize())) << ' ' << "\n\n";
-}
+// void Student::printBorderBotton() {
+//     std::cout << ' ' << std::setfill('-') << std::setw (static_cast<int>(getBorderSize())) << ' ' << "\n\n";
+// }
