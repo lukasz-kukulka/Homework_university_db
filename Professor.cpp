@@ -13,6 +13,7 @@ size_t Professor::getBorderSize() {
 }
 
 void Professor::printBorderTop() {
+    std::cout << generateCell("std::string cellBody", 100);
     std::string temp = "STUDENTS DATABASE";
     std::cout << ' ' << std::setfill('-') << std::setw (static_cast<int>(getBorderSize())) << ' ' << "\n";
     std::cout << '|' << std::setfill(' ') << std::setw (static_cast<int>(getBorderSize() / 2 - temp.size() / 2 + temp.size())) 
