@@ -39,10 +39,10 @@ public:
 protected:
     std::string convertPersonGender(const Gender);
 
-    std::string name_ {"testtt"};
-    std::string surname_ { "cos aaaa aaaaaaaaaaaaaaa" };
-    std::string address_{ "adress 3 3" };
-    std::string peselNumber_{ "82828280021" };
+    std::string name_ {"NO_NAME"};
+    std::string surname_ { "NO_SURNAME" };
+    std::string address_{ "NO_ADDRESS" };
+    std::string peselNumber_{ "00000000000" };
     Gender gender_ { Gender::female };
     std::string salary_{ "NO_SALARY" };
     std::string indexNumber_ { "NO_INDEX" };
