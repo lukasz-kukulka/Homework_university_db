@@ -1,4 +1,5 @@
 #include "Person.hpp"
+#include <iostream>
 
 Person::Person(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender) 
     : name_(name)
@@ -20,4 +21,14 @@ std::string Person::generateCell(std::string cellBody, size_t cellSize) {
     result.insert(end(result), cellBody.size() % 2, ' ');
     result.insert(end(result), cellSize / 2 - cellBody.size() / 2, ' ');    
     return result;
+}
+
+void Person::printBorderTop() {
+    std::cout << "|" << generateCell("NAME", sizeNameLimit_) << "|" 
+              << generateCell("SURNAME", sizeSurnameLimit_) << "|" 
+              << generateCell("ADDRESS", sizeAddressLimit_) << "|" 
+              << generateCell("PESEL", sizePeselNumberLimit_) << "|" 
+              << generateCell("SALARY", sizeSalaryLimit_) << "|" 
+              << generateCell("INDEX", sizeIndexNumberLimit_) << "|" 
+              << generateCell("GENDER", sizeGenderLimit_) << "|\n";
 }

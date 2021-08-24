@@ -29,7 +29,7 @@ public:
 
     void setSalary(std::string salary) { salary_ = salary; }
 
-    virtual void printBorderTop() = 0;
+    void printBorderTop();
     virtual void printPerson() = 0;
     virtual void printBorderBotton() = 0;
     virtual size_t getBorderSize() = 0;

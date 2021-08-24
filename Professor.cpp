@@ -12,34 +12,12 @@ size_t Professor::getBorderSize() {
     return (6 + sizeNameLimit_ + sizeSurnameLimit_ + sizeAddressLimit_ + sizeSalaryLimit_ + sizePeselNumberLimit_ + sizeGenderLimit_);
 }
 
-void Professor::printBorderTop() {
-    std::cout << generateCell("std::string cellBody", 100);
-    std::string temp = "STUDENTS DATABASE";
-    std::cout << ' ' << std::setfill('-') << std::setw (static_cast<int>(getBorderSize())) << ' ' << "\n";
-    std::cout << '|' << std::setfill(' ') << std::setw (static_cast<int>(getBorderSize() / 2 - temp.size() / 2 + temp.size())) 
-              << temp << std::setw (static_cast<int>(getBorderSize() / 2 - temp.size() / 2 - temp.size() % 2)) << '|' << "\n";
-    std::cout << ' ' << std::setfill('-') << std::setw (static_cast<int>(getBorderSize())) << ' ' << "\n";
-    temp = "NAME";
-    std::cout << std::setfill(' ') << '|' << std::setw(static_cast<int>(sizeNameLimit_ / 2 - temp.size() / 2 + temp.size())) 
-              << temp << std::setw(static_cast<int>(sizeNameLimit_ / 2 - temp.size() / 2 + 1)); 
-    temp = " SURNAME";
-    std::cout << '|' << std::setw(static_cast<int>(sizeSurnameLimit_ / 2 - temp.size() / 2 + temp.size())) 
-              << temp << std::setw(static_cast<int>(sizeSurnameLimit_ / 2 - temp.size() / 2 + 1)); 
-    temp = " ADDRESS";
-    std::cout << '|' << std::setw(static_cast<int>(sizeAddressLimit_ / 2 - temp.size() / 2 + temp.size())) 
-              << temp << std::setw(static_cast<int>(sizeAddressLimit_ / 2 - temp.size() / 2 + 1)); 
-    temp = " SALARY";
-    std::cout << '|' << std::setw(static_cast<int>(sizeSalaryLimit_ / 2 - temp.size() / 2 + temp.size())) 
-              << temp << std::setw(static_cast<int>(sizeSalaryLimit_ / 2 - temp.size() / 2 + 1)); 
-    temp = " PESEL";
-    std::cout << '|' << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - temp.size() / 2 + temp.size())) 
-              << temp << std::setw(static_cast<int>(sizePeselNumberLimit_ / 2 - temp.size() / 2 + 1)); 
-    temp = "GENDER";
-    std::cout << '|' << std::setw(static_cast<int>(sizeGenderLimit_ / 2 - temp.size() / 2 + temp.size())) 
-              << temp << std::setw(static_cast<int>(sizeGenderLimit_ / 2 - temp.size() / 2 + 2)) << "|\n"; 
-}
+// void Professor::printBorderTop() {
+//     //std::cout << generateCell("NAME", 30) << "|" << generateCell("SURNAME", 30)
+// }
 
 void Professor::printPerson() {
+    Person::printBorderTop();
     std::cout << ' ' << std::setfill('-') << std::setw (static_cast<int>(getBorderSize())) <<  ' ' << '\n';
     std::cout << std::setfill(' ') << '|' << std::setw(static_cast<int>(sizeNameLimit_ / 2 - name_.size() / 2 + name_.size()))
               << name_ << std::setw(static_cast<int>(sizeNameLimit_ / 2 - name_.size() / 2 + 1 - name_.size() % 2)) 

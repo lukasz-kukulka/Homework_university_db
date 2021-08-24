@@ -10,7 +10,7 @@ public:
     Student(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender, std::string indexNumber);
     ~Student(){};
 
-    void printBorderTop() override;
+    // void printBorderTop() override;
     void printPerson() override;
     void printBorderBotton() override;
     size_t getBorderSize() override;
