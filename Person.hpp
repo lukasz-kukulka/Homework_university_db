@@ -34,6 +34,8 @@ public:
     virtual void printBorderBotton() = 0;
     virtual size_t getBorderSize() = 0;
 
+    std::string generateCell(std::string cellBody, size_t cellSize);
+
 protected:
     std::string convertPersonGender(const Gender);
 
