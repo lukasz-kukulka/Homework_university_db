@@ -154,7 +154,6 @@ private:
     std::vector<std::shared_ptr<Person>> copyDataToTempContanair(std::vector<std::shared_ptr<Person>>& personCopy);
     void deleteDuplicate();
 
-    void dataGeneratorInit();
     void printInterfaceDataGenerator();
     void interfaceDataGeneratorStudent();
     void interfaceDataGeneratorProfessor();

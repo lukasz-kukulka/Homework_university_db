@@ -379,7 +379,7 @@ bool University::peselValidWithCurrentlyDate() {
 bool University::peselValidWithWeight() {
     std::string weightCheck = "13791379131";
     size_t weightResult = 0;
-    for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < 10; i++) {
         weightResult = weightResult + (static_cast<size_t>(peselNumber_[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
     }
     weightResult = weightResult % 10;
@@ -396,10 +396,15 @@ bool University::peselValidWithWeight() {
 
 bool University::validatingPeselNumber() {
     bool corectPeselNumber = true;
+    // to fix
     corectPeselNumber = peselValidDOBCheck();
-    corectPeselNumber = peselValidGenderCheck();
+    std::cout << corectPeselNumber << "DOB\n";
+    // corectPeselNumber = peselValidGenderCheck();
+    // std::cout << corectPeselNumber << "gen\n";
     corectPeselNumber = peselValidWithCurrentlyDate();
+    std::cout << corectPeselNumber << "cur date\n";
     corectPeselNumber = peselValidWithWeight();
+    std::cout << corectPeselNumber << "weight\n";
     if (!corectPeselNumber) {
         std::cout << "Pesel number is incorrect\n";
     }
@@ -917,12 +922,9 @@ void University::loadFromFile(std::string fileName) {
     }
     file_.close();
 }
-void University::dataGeneratorInit() {
-   //TO DO 
-}
 
 void University::printInterfaceDataGenerator() {
-   std::cout << "Please insert how many records you wanna generate";
+   std::cout << "Please insert how many records you wanna generate\n";
    std::cout << "Students ";
    interfaceDataGeneratorStudent();
    std::cout << "Professors ";
@@ -1022,7 +1024,7 @@ void University::peselNumberGenerator() {
 std::string University::generateWeightPeselNumber(std::string pesel) {
     std::string weightCheck = "13791379131";
     size_t weightResult = 0;
-    for (int i = 0; i < 11; i++) {
+    for (size_t i = 0; i < pesel.size(); i++) {
         weightResult = weightResult + (static_cast<size_t>(pesel[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
     }
     weightResult = weightResult % 10;
@@ -1039,7 +1041,7 @@ void University::professorSalaryGenerator() {
 }
 
 void University::genderGenerator() {
-    gender_ = peselNumber_[9] - '0';
+    gender_ = static_cast<size_t>(peselNumber_[9] - '0') % 2;
 }
 
 size_t University::randomDataGenerator(size_t minElement, size_t maxElement) {
@@ -1065,7 +1067,3 @@ size_t University::countRecordGenerateData(std::string fileMane) {
     file_.close();
     return lineNo;
 }
-
-// void University::loadFromFileToGenerateData(std::string fileName) {
-
-// }
