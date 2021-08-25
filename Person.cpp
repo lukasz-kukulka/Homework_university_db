@@ -1,4 +1,5 @@
 #include "Person.hpp"
+#include <math.h>
 #include <iostream>
 
 Person::Person(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender) 
@@ -16,10 +17,9 @@ std::string Person::convertPersonGender(const Gender gender) {
 }
 
 std::string Person::generateCell(std::string cellBody, size_t cellSize) {
-    std::string result(cellSize / 2 - cellBody.size() / 2, ' ');
+    std::string result((cellSize - cellBody.size()) / 2, ' ');
     result += cellBody;
-    result.insert(end(result), cellBody.size() % 2, ' ');
-    result.insert(end(result), cellSize / 2 - cellBody.size() / 2, ' ');    
+    result.insert(end(result), (cellSize - cellBody.size()) / 2 + (std::labs(cellBody.size() % 2)), ' ');    
     return result;
 }
 
