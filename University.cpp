@@ -14,17 +14,7 @@
 constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 
 University::University() {
-    // loadFromFile();
-    // for (int i = 0; i < 10; i++) {
-    //     person_.push_back(Student());
-    //     addOneRecordToEndFile(i);
-    // }
-    // person_[0].printBorderTop();
-    // for (auto stu : person_) {
 
-    //     stu.printStudent();
-    // }
-    // person_[0].printBorderLine();
 }
 
 void University::applicationStart() {
@@ -426,8 +416,10 @@ bool University::validatingGender() {
 
 void University::showStudents() {
     if (!person_.empty()) {
-        person_[0]->getAddress();
+        person_[0]->printBorderLine();
+        person_[0]->printBorderTop();
         for (auto ele : person_) {
+            person_[0]->printBorderLine();
             ele->printPerson();
         }
         person_[0]->printBorderLine();
