@@ -12,11 +12,7 @@ public:
 
     std::string getSalary() const override { return salary_; }
     size_t getSizeSalaryLimit() const { return sizeSalaryLimit_; }
-
-    //void printBorderTop() override;
     void printPerson() override;
-    //void printBorderBotton() override;
-    //size_t getBorderSize();
 
 private:
     std::string salary_ {};
