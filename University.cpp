@@ -784,13 +784,11 @@ void University::saveNew() {
     saveInNewFile();
 }
 
-
-
 void University::saveAllFile(std::string fileName) {
     for (size_t i = 0; i < person_.size(); i++) {
         addOneRecordToEndFile(i, fileName);
     }
-    std::cout << "File saved in file\n";
+    std::cout << "Data saved in file\n";
 }
 
 void University::printSaveInNewFile() {
@@ -836,18 +834,24 @@ void University::validationIfFileExist(size_t userChoice) {
             break;
         }
         std::cout << "Wrong value please insert again: ";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 }
 
 void University::addOneRecordToEndFile(size_t personIndex, std::string fileName) {
+    std::string file = fileName;
+    if (fileName != DEFAULT_FILE_NAME && personIndex == 0) {
+        file += ".txt";
+        file_.open(file, std::ios::out | std::ios::trunc);
+    } else {
+        file_.open(file, std::ios::out | std::ios::app);
+    }
     //std::ofstream file("records.txt");
     //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file_, " ")));
-    file_.open(fileName, std::ios::out | std::ios::app);
-    if (file_.good() == true && fileName != DEFAULT_FILE_NAME) {
-        if (saveNewIfFileExist() == 2) {
-            file_.close();
-            file_.open(fileName, std::ios::out | std::ios::trunc);
-        }
+    
+    if (!file_.good()) {
+        std::cout << "ERROR IN addOneRecordToEndFile() function\n";
     }
     file_ << "[Person nr. : " << personIndex + 1 << "]\n";
     file_ << person_[personIndex]->getName() << "\n";
@@ -914,6 +918,7 @@ void University::loadFromFile(std::string fileName) {
         lineNo++;
         if (lineNo > 9) {
             lineNo = 1;
+            
             if (indexNumber_.size() < 1) {
                 addProfesorRecordToVector();
             } else {

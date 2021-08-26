@@ -1,80 +1,176 @@
-[Student nr. : 1]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 1]
+Ferdynanda
+Domagalski
+Zielona 9
+83121441817
+2758097425
+NO_SALARY
 
-[Student nr. : 2]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 2]
+Farida
+Cielecki
+Kolorowa 109
+49122769534
+1248883322
+NO_SALARY
 
-[Student nr. : 3]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 3]
+Hipolit
+Grochowski
+Koscielna 34
+22102163896
+3241740336
+NO_SALARY
 
-[Student nr. : 4]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 4]
+Angela
+Czyszek
+Koszarowa 125
+42101265009
+1999879915
+NO_SALARY
 
-[Student nr. : 5]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 5]
+Andrea
+De Nisau
+Parkowa 24
+47111997142
+2297448438
+NO_SALARY
 
-[Student nr. : 6]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 6]
+Alana
+Chmiel
+Sosnowa 147
+52102550109
+2009398793
+NO_SALARY
 
-[Student nr. : 7]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 7]
+Anastazja
+Dobiecki
+Koscielna 65
+39112733027
+3100773587
+NO_SALARY
 
-[Student nr. : 8]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 8]
+Faustyna
+Gnoinski
+Zielona 119
+55111972115
+2472368168
+NO_SALARY
 
-[Student nr. : 9]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 9]
+Anastazja
+Dragowski
+Kilinskiego 12
+79102418051
+1038216310
+NO_SALARY
 
-[Student nr. : 10]
-testtt
-cos aaaa aaaaaaaaaaaaaaa
-adress 3 3
-8212343823
-8282828002
-female
+[Person nr. : 10]
+Adria
+Grochowiak
+Kwiatowa 67
+76111147646
+2644626652
+NO_SALARY
+
+[Person nr. : 11]
+Alberta
+Dragowski
+Lipowa 3
+21102475673
+2456158467
+NO_SALARY
+
+[Person nr. : 12]
+Ilona
+Ciesla
+Konopnickiej 150
+84102780462
+NO_INDEX
+4536
+
+[Person nr. : 13]
+Filip
+Czyszek
+Ks.Lissowskiego 18
+53111147067
+NO_INDEX
+8950
+
+[Person nr. : 14]
+Filipina
+Golka
+Krotka 150
+13102042258
+NO_INDEX
+9227
+
+[Person nr. : 15]
+Filipa
+Gogolewski
+Lipowa 137
+28122344868
+NO_INDEX
+9495
+
+[Person nr. : 16]
+Anika
+Gryga
+Zielona 134
+97112646712
+NO_INDEX
+9418
+
+[Person nr. : 17]
+Anatolia
+Dobrucki
+Ogrodowa 141
+85102025443
+NO_INDEX
+8685
+
+[Person nr. : 18]
+Fera
+Cichowski
+Brzozowa 97
+31122183544
+NO_INDEX
+7429
+
+[Person nr. : 19]
+Irina
+Dolega-Zakrzewski
+Ks.Lissowskiego 33
+19121878360
+NO_INDEX
+6636
+
+[Person nr. : 20]
+Filipa
+Dragowski
+Zielona 34
+54112768826
+NO_INDEX
+3833
+
+[Person nr. : 21]
+Ilga
+Dobrzanski
+Lipowa 25
+23102224196
+NO_INDEX
+8042
+
+[Person nr. : 22]
+Hipolit
+Grabski
+Parkowa 108
+35121248895
+NO_INDEX
+7498
 
