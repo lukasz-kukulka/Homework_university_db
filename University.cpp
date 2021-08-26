@@ -785,10 +785,23 @@ void University::saveNew() {
 }
 
 void University::saveAllFile(std::string fileName) {
+    std::string file = fileName;
+    if (fileName != DEFAULT_FILE_NAME) {
+        file += ".txt";
+        file_.open(file, std::ios::out | std::ios::trunc);
+    } else {
+        file_.open(file, std::ios::out | std::ios::app);
+    }
+    //std::ofstream file("records.txt");
+    //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file_, " ")));
+    if (!file_.good()) {
+        std::cout << "ERROR IN addOneRecordToEndFile() function\n";
+    }
     for (size_t i = 0; i < person_.size(); i++) {
-        addOneRecordToEndFile(i, fileName);
+        addOneRecordToEndFile(i, file_);
     }
     std::cout << "Data saved in file\n";
+    file_.close();
 }
 
 void University::printSaveInNewFile() {
@@ -839,28 +852,14 @@ void University::validationIfFileExist(size_t userChoice) {
     }
 }
 
-void University::addOneRecordToEndFile(size_t personIndex, std::string fileName) {
-    std::string file = fileName;
-    if (fileName != DEFAULT_FILE_NAME && personIndex == 0) {
-        file += ".txt";
-        file_.open(file, std::ios::out | std::ios::trunc);
-    } else {
-        file_.open(file, std::ios::out | std::ios::app);
-    }
-    //std::ofstream file("records.txt");
-    //std::copy(begin(person_), end(person_), std::ostream_iterator<std::string>(file_, " ")));
-    
-    if (!file_.good()) {
-        std::cout << "ERROR IN addOneRecordToEndFile() function\n";
-    }
-    file_ << "[Person nr. : " << personIndex + 1 << "]\n";
-    file_ << person_[personIndex]->getName() << "\n";
-    file_ << person_[personIndex]->getSurname() << "\n";
-    file_ << person_[personIndex]->getAddress() << "\n";
-    file_ << person_[personIndex]->getPeselNumber() << "\n";
-    file_ << person_[personIndex]->getIndexNumber() << "\n";
-    file_ << person_[personIndex]->getSalary() << "\n\n";
-    file_.close();
+void University::addOneRecordToEndFile(size_t personIndex, std::fstream & file) {
+    file << "[Person nr. : " << personIndex + 1 << "]\n";
+    file << person_[personIndex]->getName() << "\n";
+    file << person_[personIndex]->getSurname() << "\n";
+    file << person_[personIndex]->getAddress() << "\n";
+    file << person_[personIndex]->getPeselNumber() << "\n";
+    file << person_[personIndex]->getIndexNumber() << "\n";
+    file << person_[personIndex]->getSalary() << "\n\n";
 }
 
 void University::clearVector() {

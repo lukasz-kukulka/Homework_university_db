@@ -97,7 +97,7 @@ private:
     MenuOption menuEngine(size_t menuSize);
     bool validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu);
     void showStudents();
-    void addOneRecordToEndFile(size_t personIndex, std::string fileName = DEFAULT_FILE_NAME);
+    void addOneRecordToEndFile(size_t personIndex, std::fstream & fileName);
     void loadFromFile(std::string fileName = DEFAULT_FILE_NAME);
     int countRecord(std::string fileMane = DEFAULT_FILE_NAME);
 
