@@ -790,6 +790,7 @@ void University::saveAllFile(std::string fileName) {
     for (size_t i = 0; i < person_.size(); i++) {
         addOneRecordToEndFile(i, fileName);
     }
+    std::cout << "File saved in file\n";
 }
 
 void University::printSaveInNewFile() {
