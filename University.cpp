@@ -28,7 +28,7 @@ size_t University::printMenu() {
     std::cout << " --------------------- \n";
     std::cout << "|  STUDENTS DATABASE  |\n";
     std::cout << " --------------------- \n";
-    std::cout << ++optionNumber << ". Add student\n";
+    std::cout << ++optionNumber << ". Add studentTEST\n";
     std::cout << ++optionNumber << ". Show all students\n";
     std::cout << ++optionNumber << ". Search students \n";
     std::cout << ++optionNumber << ". Sort students \n";
@@ -396,15 +396,9 @@ bool University::peselValidWithWeight() {
 
 bool University::validatingPeselNumber() {
     bool corectPeselNumber = true;
-    // to fix
     corectPeselNumber = peselValidDOBCheck();
-    std::cout << corectPeselNumber << "DOB\n";
-    // corectPeselNumber = peselValidGenderCheck();
-    // std::cout << corectPeselNumber << "gen\n";
     corectPeselNumber = peselValidWithCurrentlyDate();
-    std::cout << corectPeselNumber << "cur date\n";
     corectPeselNumber = peselValidWithWeight();
-    std::cout << corectPeselNumber << "weight\n";
     if (!corectPeselNumber) {
         std::cout << "Pesel number is incorrect\n";
     }
@@ -697,7 +691,8 @@ std::string University::convertPersonGender(const size_t gender) {
 }
 
 University::YesNoOption University::yesNoOption() {
-    std::string answer;
+    std::string answer { };
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, answer);
     if (answer == "Y" || answer == "y") {
         return YesNoOption::Yes;
