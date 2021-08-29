@@ -219,9 +219,9 @@ bool University::validationSelectPerson(size_t userChoicePerson) {
         assignmentPersonValue(userChoicePerson);
         return true;
     }
+    std::cout << "Wrong answer, insert 1 or 2\n";
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cout << "Wrong answer, insert 1 or 2\n";
     return false;
 }
 
@@ -242,7 +242,7 @@ void University::printInsertPersonData() {
 void University::confirmAddRecord() {
     while (true) {
         checkedIfPersonExist_ = isPersonExist();
-        std::cout << "Are you sure you wanna add this record to database? Y/N ";
+        std::cout << "Are you sure you wanna add this record to database? Y/N:";
         if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
             if (checkedIfPersonExist_ != end(person_)) {
                 ifPersonExistMenu();
@@ -692,7 +692,7 @@ std::string University::convertPersonGender(const size_t gender) {
 
 University::YesNoOption University::yesNoOption() {
     std::string answer { };
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.clear();
     std::getline(std::cin, answer);
     if (answer == "Y" || answer == "y") {
         return YesNoOption::Yes;
