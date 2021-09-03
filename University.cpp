@@ -407,6 +407,8 @@ bool University::validatingPeselNumber() {
 
 bool University::validatingGender() {
     if (gender_ != 0 && gender_ != 1) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Wrong value, please choose 0 or 1\n";
         return false;
     }
