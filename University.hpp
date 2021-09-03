@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Person.hpp"
+#include "Command.hpp"
 
 #include <memory>
 #include <vector>
@@ -9,9 +10,11 @@
 using PersonIt = std::vector<std::shared_ptr<Person>>::iterator;
 constexpr char DEFAULT_FILE_NAME[] { "records.txt" };
 
-class University {
+class University : public Command {
 public:
-    University();
+    //University();
+    ~University() = default;
+    void operator()(std::vector<Person>* person) const override;
     //~University();
     enum class MenuOption {
         BaseMenu = 0,

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(Univesity)
 
 
-set(FILES 
+set(FILES
     Person.cpp
     Professor.cpp
     Student.cpp
