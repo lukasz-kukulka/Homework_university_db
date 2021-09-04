@@ -28,6 +28,7 @@ void University::applicationStart() {
     }
 }
 
+///////////////////////////////////////
 size_t University::printMenu() {
     size_t optionNumber = 0;
     std::cout << " --------------------- \n";
@@ -43,6 +44,7 @@ size_t University::printMenu() {
     std::cout << ++optionNumber << ". Exit\n\n";
     return optionNumber;
 }
+/////////////////////////////////////////
 
 University::MenuOption University::menuEngine(size_t menuSize) {
     int choice = 0;
