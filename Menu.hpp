@@ -1,11 +1,11 @@
+#pragma once
 #include "Person.hpp"
 #include "Command.hpp"
 #include <vector>
+#include <memory>
 
-class Menu :public Command {
+class Menu {
 public:
-    ~Menu() = default;
-    void operator()(std::vector<Person>*person) const override;
 
     enum class MenuOptions {
         AddPerson,
@@ -17,9 +17,12 @@ public:
         DeletePerson,
         Exit
     };
-
+    
+    void startApp();
 private:
+    
     void printMenu() const;
-    void switchMenu();
+    void switchMenu() const;
+    std::unique_ptr<Command>command_;
 };
 

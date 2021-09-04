@@ -16,16 +16,15 @@ constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 // University::University() {
 
 // }
-void University::operator()(std::vector<Person>* person) const {
-    if (person) {
-        
-    }
+void University::operator()(std::vector<Person>& person) const {
+    person.size();
 }
 
 void University::applicationStart() {
-    while (menuEngine(printMenu()) != MenuOption::Exit) {
+    
+    // while (menuEngine(printMenu()) != MenuOption::Exit) {
 
-    }
+    // }
 }
 
 ///////////////////////////////////////
@@ -46,6 +45,7 @@ size_t University::printMenu() {
 }
 /////////////////////////////////////////
 
+/////////////////////////////////////////////////////
 University::MenuOption University::menuEngine(size_t menuSize) {
     int choice = 0;
     do {
@@ -82,6 +82,7 @@ University::MenuOption University::menuEngine(size_t menuSize) {
     }
     return menuOption_;
 }
+////////////////////////////////////////////////////////////////
 
 bool University::validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu) {
     if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > sizeMenu) {

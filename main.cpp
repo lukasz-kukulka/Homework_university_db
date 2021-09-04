@@ -1,8 +1,12 @@
 #include "University.hpp"
+#include "Menu.hpp"
 
 int main() {
-    University university;
-    university.applicationStart();
+    Menu menu;
+    menu.startApp();
+    // University university;
+    // university.applicationStart();
+
     return 0;
     
 }

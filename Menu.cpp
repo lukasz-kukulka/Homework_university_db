@@ -1,10 +1,11 @@
 #include "Menu.hpp"
+#include "Student.hpp"
 
 #include <iostream>
 
-void Menu::operator()(std::vector<Person>* person) const {
-    if (person) {
-    }
+void Menu::startApp() {
+    printMenu();
+    switchMenu();
 }
 
 void Menu::printMenu() const {
@@ -22,12 +23,13 @@ void Menu::printMenu() const {
     std::cout << ++optionNumber << ". Exit\n\n";
 }
 
-void Menu::switchMenu() {
+void Menu::switchMenu() const {
+    MenuOptions menuOption { };
     while (true) {
         int choice = 0;
         std::cout << "Please insert you choice: ";
         std::cin >> choice;
-        MenuOptions menuOption = static_cast<MenuOptions>(choice);
+        menuOption = static_cast<MenuOptions>(choice);
         switch (menuOption) {
         case MenuOptions::AddPerson: {
         } break;
