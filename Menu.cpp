@@ -1,5 +1,6 @@
 #include "Menu.hpp"
 #include "Student.hpp"
+#include "AddPerson.hpp"
 
 #include <iostream>
 
@@ -23,7 +24,7 @@ void Menu::printMenu() const {
     std::cout << ++optionNumber << ". Exit\n\n";
 }
 
-void Menu::switchMenu() const {
+void Menu::switchMenu() {
     MenuOptions menuOption { };
     while (true) {
         int choice = 0;
@@ -32,6 +33,8 @@ void Menu::switchMenu() const {
         menuOption = static_cast<MenuOptions>(choice);
         switch (menuOption) {
         case MenuOptions::AddPerson: {
+            std::cout << "Add: ";
+            command_ = std::make_unique<AddPerson>();
         } break;
         case MenuOptions::ShowStudent: {
         } break;
@@ -50,6 +53,11 @@ void Menu::switchMenu() const {
         default:{
             std::cout << "ERROR ... Wrong value\n";
         } break;
+        }
+        if (command_) {
+            (*command_)(person_);
+            std::cout << "Addaaaaaa: ";
+            command_ = nullptr;
         }
     }
 }

@@ -8,7 +8,7 @@ class Menu {
 public:
 
     enum class MenuOptions {
-        AddPerson,
+        AddPerson = 1,
         ShowStudent,
         SearchPerson,
         SortPerson,
@@ -22,7 +22,8 @@ public:
 private:
     
     void printMenu() const;
-    void switchMenu() const;
+    void switchMenu();
+    std::vector<std::shared_ptr<Person>>person_;
     std::unique_ptr<Command>command_;
 };
 
