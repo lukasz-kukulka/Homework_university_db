@@ -2,14 +2,13 @@
 
 #include <iostream>
 
-void Menu::operator()(std::vector<Person>*person) const {
+void Menu::operator()(std::vector<Person>* person) const {
     if (person) {
-
-    }    
+    }
 }
 
 void Menu::printMenu() const {
-    size_t optionNumber = { };
+    size_t optionNumber = {};
     std::cout << " --------------------- \n";
     std::cout << "|  STUDENTS DATABASE  |\n";
     std::cout << " --------------------- \n";
@@ -21,4 +20,34 @@ void Menu::printMenu() const {
     std::cout << ++optionNumber << ". Generate data persons\n";
     std::cout << ++optionNumber << ". Delete record\n";
     std::cout << ++optionNumber << ". Exit\n\n";
+}
+
+void Menu::switchMenu() {
+    while (true) {
+        int choice = 0;
+        std::cout << "Please insert you choice: ";
+        std::cin >> choice;
+        MenuOptions menuOption = static_cast<MenuOptions>(choice);
+        switch (menuOption) {
+        case MenuOptions::AddPerson: {
+        } break;
+        case MenuOptions::ShowStudent: {
+        } break;
+        case MenuOptions::SearchPerson: {
+        } break;
+        case MenuOptions::SortPerson: {
+        } break;
+        case MenuOptions::SaveLoadFile: {
+        } break;
+        case MenuOptions::GenerateData: {
+        } break;
+        case MenuOptions::DeletePerson: {
+        } break;
+        case MenuOptions::Exit: {
+        } break;
+        default:{
+            std::cout << "ERROR ... Wrong value\n";
+        } break;
+        }
+    }
 }
