@@ -13,15 +13,6 @@
 
 constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 
-// University::University() {
-
-// }
-void University::operator()(std::vector<Person>* person) const {
-    if (person) {
-        
-    }
-}
-
 void University::applicationStart() {
     while (menuEngine(printMenu()) != MenuOption::Exit) {
 
