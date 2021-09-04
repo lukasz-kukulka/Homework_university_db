@@ -3,6 +3,7 @@ project(Univesity)
 
 
 set(FILES
+    Menu.cpp
     Person.cpp
     Professor.cpp
     Student.cpp

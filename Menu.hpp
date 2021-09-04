@@ -7,3 +7,4 @@ public:
     ~Menu() = default;
     void operator()(std::vector<Person>*person) const override;
 };
+
