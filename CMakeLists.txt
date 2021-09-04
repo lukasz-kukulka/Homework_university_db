@@ -5,6 +5,7 @@ project(Univesity)
 set(FILES
     Menu.cpp
     AddPerson.cpp
+    ShowPersons.cpp
     Person.cpp
     Professor.cpp
     Student.cpp
