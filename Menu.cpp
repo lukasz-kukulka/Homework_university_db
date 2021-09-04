@@ -1,6 +1,7 @@
 #include "Menu.hpp"
 #include "Student.hpp"
 #include "AddPerson.hpp"
+#include "ShowPersons.hpp"
 
 #include <iostream>
 
@@ -36,6 +37,7 @@ void Menu::switchMenu() {
             command_ = std::make_unique<AddPerson>();
         } break;
         case MenuOptions::ShowPersons: {
+            command_ = std::make_unique<ShowPersons>();
         } break;
         case MenuOptions::SearchPerson: {
         } break;
