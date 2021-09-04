@@ -6,5 +6,8 @@ class Menu :public Command {
 public:
     ~Menu() = default;
     void operator()(std::vector<Person>*person) const override;
+
+private:
+    void printMenu() const;
 };
 
