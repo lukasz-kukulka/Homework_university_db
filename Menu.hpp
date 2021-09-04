@@ -9,7 +9,7 @@ public:
 
     enum class MenuOptions {
         AddPerson = 1,
-        ShowStudent,
+        ShowPersons,
         SearchPerson,
         SortPerson,
         SaveLoadFile,

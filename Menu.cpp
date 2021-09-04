@@ -33,10 +33,9 @@ void Menu::switchMenu() {
         menuOption = static_cast<MenuOptions>(choice);
         switch (menuOption) {
         case MenuOptions::AddPerson: {
-            std::cout << "Add: ";
             command_ = std::make_unique<AddPerson>();
         } break;
-        case MenuOptions::ShowStudent: {
+        case MenuOptions::ShowPersons: {
         } break;
         case MenuOptions::SearchPerson: {
         } break;
@@ -56,7 +55,6 @@ void Menu::switchMenu() {
         }
         if (command_) {
             (*command_)(person_);
-            std::cout << "Addaaaaaa: ";
             command_ = nullptr;
         }
     }
