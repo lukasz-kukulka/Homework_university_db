@@ -3,6 +3,7 @@
 #include "AddPerson.hpp"
 #include "ShowPersons.hpp"
 #include "SearchPerson.hpp"
+#include "SortPerson.hpp"
 
 #include <iostream>
 
@@ -44,18 +45,19 @@ void Menu::switchMenu() {
             command_ = std::make_unique<SearchPerson>();
         } break;
         case MenuOptions::SortPerson: {
-
+            command_ = std::make_unique<SortPerson>();
         } break;
         case MenuOptions::SaveLoadFile: {
-
+            command_ = std::make_unique<SearchPerson>();
         } break;
         case MenuOptions::GenerateData: {
-
+            command_ = std::make_unique<SearchPerson>();
         } break;
         case MenuOptions::DeletePerson: {
-
+            command_ = std::make_unique<SearchPerson>();
         } break;
         case MenuOptions::Exit: {
+
         } break;
         default:{
             std::cout << "ERROR ... Wrong value\n";
