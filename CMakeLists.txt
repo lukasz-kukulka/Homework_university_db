@@ -12,6 +12,7 @@ set(FILES
     GenerateData.cpp
     DeletePerson.cpp
     ExitApp.cpp
+    ValidationData.cpp
     Person.cpp
     Professor.cpp
     Student.cpp
