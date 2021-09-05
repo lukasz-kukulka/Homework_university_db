@@ -5,6 +5,7 @@
 #include "SearchPerson.hpp"
 #include "SortPerson.hpp"
 #include "SaveLoadFile.hpp"
+#include "GenerateData.hpp"
 
 #include <iostream>
 
@@ -52,7 +53,7 @@ void Menu::switchMenu() {
             command_ = std::make_unique<SaveLoadFile>();
         } break;
         case MenuOptions::GenerateData: {
-            command_ = std::make_unique<SearchPerson>();
+            command_ = std::make_unique<GenerateData>();
         } break;
         case MenuOptions::DeletePerson: {
             command_ = std::make_unique<SearchPerson>();
