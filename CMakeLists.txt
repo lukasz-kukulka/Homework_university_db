@@ -11,6 +11,7 @@ set(FILES
     SaveLoadFile.cpp
     GenerateData.cpp
     DeletePerson.cpp
+    ExitApp.cpp
     Person.cpp
     Professor.cpp
     Student.cpp
