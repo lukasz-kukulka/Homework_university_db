@@ -10,6 +10,7 @@ set(FILES
     SortPerson.cpp
     SaveLoadFile.cpp
     GenerateData.cpp
+    DeletePerson.cpp
     Person.cpp
     Professor.cpp
     Student.cpp
