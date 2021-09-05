@@ -8,8 +8,14 @@
 #include "GenerateData.hpp"
 #include "DeletePerson.hpp"
 #include "ExitApp.hpp"
+#include <memory>
+
 
 #include <iostream>
+
+Menu::Menu() {
+    valid_ = std::make_shared<ValidationData>();
+}
 
 void Menu::startApp() {
     printMenu();
