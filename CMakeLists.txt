@@ -7,6 +7,7 @@ set(FILES
     AddPerson.cpp
     ShowPersons.cpp
     SearchPerson.cpp
+    SortPerson.cpp
     Person.cpp
     Professor.cpp
     Student.cpp
