@@ -9,6 +9,7 @@ set(FILES
     SearchPerson.cpp
     SortPerson.cpp
     SaveLoadFile.cpp
+    GenerateData.cpp
     Person.cpp
     Professor.cpp
     Student.cpp
