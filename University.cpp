@@ -22,9 +22,9 @@ void University::operator()(std::vector<std::shared_ptr<Person>> person) const {
 
 void University::applicationStart() {
     
-    // while (menuEngine(printMenu()) != MenuOption::Exit) {
+    while (menuEngine(printMenu()) != MenuOption::Exit) {
 
-    // }
+    }
 }
 
 ///////////////////////////////////////

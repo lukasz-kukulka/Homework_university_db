@@ -1,0 +1,7 @@
+
+class ValidationData {
+public:
+
+private:
+
+};
