@@ -7,6 +7,7 @@
 #include "SaveLoadFile.hpp"
 #include "GenerateData.hpp"
 #include "DeletePerson.hpp"
+#include "ExitApp.hpp"
 
 #include <iostream>
 
@@ -60,7 +61,7 @@ void Menu::switchMenu() {
             command_ = std::make_unique<DeletePerson>();
         } break;
         case MenuOptions::Exit: {
-
+            command_ = std::make_unique<ExitApp>();
         } break;
         default:{
             std::cout << "ERROR ... Wrong value\n";
