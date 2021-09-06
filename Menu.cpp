@@ -45,12 +45,10 @@ void Menu::switchMenu() {
             std::cout << "Please insert you choice: ";
             std::cin >> choice;
         } while (valid_->isCorrectMenuChoice(choice, menuSize_) == false);
-        
-
         menuOption = static_cast<MenuOptions>(choice);
         switch (menuOption) {
         case MenuOptions::AddPerson: {
-            command_ = std::make_unique<AddPerson>();
+            command_ = std::make_unique<AddPerson>(valid_);
         } break;
         case MenuOptions::ShowPersons: {
             command_ = std::make_unique<ShowPersons>();
