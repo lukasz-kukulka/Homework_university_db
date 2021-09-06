@@ -1,15 +1,18 @@
 #include "AddPerson.hpp"
+#include "Student.hpp"
 
 #include <iostream>
 
-AddPerson::AddPerson(std::shared_ptr<ValidationData> validation) {
-    validation.get();
+AddPerson::AddPerson(std::shared_ptr<ValidationData> validation) 
+    : validation_(validation)
+{
 }
 
 void AddPerson::operator()(std::vector<std::shared_ptr<Person>> person) const {
     person.size();
     std::cout << "ADD PERSON HERE\n";
     selectPerson();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 void AddPerson::selectPerson() const {
@@ -18,5 +21,5 @@ void AddPerson::selectPerson() const {
         std::cout << "Which person you wanna add to database?\n";
         std::cout << "1.STUDENT | 2.PROFESSOR :";
         std::cin >> userChoicePerson;
-    } while (true);
+    } while (validation_->isCorrectMenuChoice(userChoicePerson, 2));
 }
