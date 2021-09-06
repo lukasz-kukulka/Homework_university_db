@@ -22,27 +22,31 @@ void Menu::startApp() {
     switchMenu();
 }
 
-void Menu::printMenu() const {
-    size_t optionNumber = {};
+void Menu::printMenu() {
+    menuSize_ = 0;
     std::cout << " --------------------- \n";
     std::cout << "|  STUDENTS DATABASE  |\n";
     std::cout << " --------------------- \n";
-    std::cout << ++optionNumber << ". Add studentTEST\n";
-    std::cout << ++optionNumber << ". Show all students\n";
-    std::cout << ++optionNumber << ". Search students \n";
-    std::cout << ++optionNumber << ". Sort students \n";
-    std::cout << ++optionNumber << ". Save/Load from file\n";
-    std::cout << ++optionNumber << ". Generate data persons\n";
-    std::cout << ++optionNumber << ". Delete record\n";
-    std::cout << ++optionNumber << ". Exit\n\n";
+    std::cout << ++menuSize_ << ". Add studentTEST\n";
+    std::cout << ++menuSize_ << ". Show all students\n";
+    std::cout << ++menuSize_ << ". Search students \n";
+    std::cout << ++menuSize_ << ". Sort students \n";
+    std::cout << ++menuSize_ << ". Save/Load from file\n";
+    std::cout << ++menuSize_ << ". Generate data persons\n";
+    std::cout << ++menuSize_ << ". Delete record\n";
+    std::cout << ++menuSize_ << ". Exit\n\n";
 }
 
 void Menu::switchMenu() {
     MenuOptions menuOption { };
     while (true) {
         int choice = 0;
-        std::cout << "Please insert you choice: ";
-        std::cin >> choice;
+        do {
+            std::cout << "Please insert you choice: ";
+            std::cin >> choice;
+        } while (valid_->isCorrectMenuChoice(choice, menuSize_) == false);
+        
+
         menuOption = static_cast<MenuOptions>(choice);
         switch (menuOption) {
         case MenuOptions::AddPerson: {
