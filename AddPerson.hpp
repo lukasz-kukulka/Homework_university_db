@@ -2,6 +2,7 @@
 #include "Command.hpp"
 #include "ValidationData.hpp"
 #include <memory>
+#include <string>
 #include <limits> //for numeric_limits
 #include <ios> // for std::streamsize
 
@@ -13,5 +14,6 @@ public:
 
 private:
     void selectPerson() const ;
+    std::string insertStudentName();
     std::shared_ptr<ValidationData>validation_;
 };
