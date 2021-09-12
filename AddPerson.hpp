@@ -16,6 +16,7 @@ private:
     void selectPerson() const ;
     std::string insertPersonName();
     std::string insertPersonSurname();
+    std::string insertPersonAddress();
 
     std::shared_ptr<ValidationData>validation_;
 };
