@@ -45,7 +45,7 @@ std::string AddPerson::insertPersonSurname() {
 std::string AddPerson::insertPersonAddress() {
     std::string address { };
     do {
-        std::cout << "Please insert person surname: ";
+        std::cout << "Please insert person address: ";
         std::getline(std::cin, address);
     } while (true);
     return address;
@@ -54,8 +54,16 @@ std::string AddPerson::insertPersonAddress() {
 std::string AddPerson::insertPersonPesel() {
     std::string pesel { };
     do {
-        std::cout << "Please insert person surname: ";
+        std::cout << "Please insert person PESEL number: ";
         std::getline(std::cin, pesel);
     } while (true);
     return pesel;
+}
+
+std::string AddPerson::insertPersonGender() {
+    char gender;
+    do {
+        std::cout << "Please choose gender: m = Male , f = Female: ";
+        std::cin >> gender;
+    } while (true);
 }
