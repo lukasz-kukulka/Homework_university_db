@@ -50,3 +50,12 @@ std::string AddPerson::insertPersonAddress() {
     } while (true);
     return address;
 }
+
+std::string AddPerson::insertPersonPesel() {
+    std::string pesel { };
+    do {
+        std::cout << "Please insert person surname: ";
+        std::getline(std::cin, pesel);
+    } while (true);
+    return pesel;
+}
