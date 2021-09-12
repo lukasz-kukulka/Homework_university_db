@@ -19,6 +19,7 @@ private:
     std::string insertPersonAddress();
     std::string insertPersonPesel();
     std::string insertPersonGender();
+    std::string insertStudentIndexNumber();
 
     std::shared_ptr<ValidationData>validation_;
 };

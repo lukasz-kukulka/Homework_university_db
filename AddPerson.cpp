@@ -67,3 +67,11 @@ std::string AddPerson::insertPersonGender() {
         std::cin >> gender;
     } while (true);
 }
+
+std::string AddPerson::insertStudentIndexNumber() {
+    char indexNumber;
+    do {
+        std::cout << "Please insert student index number: ";
+        std::cin >> indexNumber;
+    } while (true);
+}
