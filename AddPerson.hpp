@@ -20,6 +20,7 @@ private:
     std::string insertPersonPesel();
     std::string insertPersonGender();
     std::string insertStudentIndexNumber();
+    std::string insertProfessorSalary();
 
     std::shared_ptr<ValidationData>validation_;
 };

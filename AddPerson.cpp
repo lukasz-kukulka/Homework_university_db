@@ -75,3 +75,11 @@ std::string AddPerson::insertStudentIndexNumber() {
         std::cin >> indexNumber;
     } while (true);
 }
+
+std::string AddPerson::insertProfessorSalary() {
+    char salary;
+    do {
+        std::cout << "Please insert professor salary: ";
+        std::cin >> salary;
+    } while (true);
+}
