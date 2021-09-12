@@ -19,7 +19,7 @@ public:
     };
 
 private:
-    void selectPerson() const ;
+    WhichPerson selectPerson() const ;
     std::string insertPersonName();
     std::string insertPersonSurname();
     std::string insertPersonAddress();
@@ -27,6 +27,7 @@ private:
     std::string insertPersonGender();
     std::string insertStudentIndexNumber();
     std::string insertProfessorSalary();
+    void addingPerson();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
