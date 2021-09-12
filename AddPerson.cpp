@@ -24,11 +24,20 @@ void AddPerson::selectPerson() const {
     } while (validation_->isCorrectMenuChoice(userChoicePerson, 2));
 }
 
-std::string AddPerson::insertStudentName() {
+std::string AddPerson::insertPersonName() {
     std::string name { };
     do {
         std::cout << "Please insert person name: ";
         std::getline(std::cin, name);
     } while (true);
     return name;
+}
+
+std::string AddPerson::insertPersonSurname() {
+    std::string surname { };
+    do {
+        std::cout << "Please insert person surname: ";
+        std::getline(std::cin, name);
+    } while (true);
+    return surname;
 }
