@@ -13,3 +13,4 @@ bool ValidationData::isCorrectMenuChoice(const size_t choosenValueToValid, const
     }
     return true;
 }
+

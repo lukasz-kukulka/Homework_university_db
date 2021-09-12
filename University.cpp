@@ -28,60 +28,60 @@ void University::applicationStart() {
 }
 
 ///////////////////////////////////////
-size_t University::printMenu() {
-    size_t optionNumber = 0;
-    std::cout << " --------------------- \n";
-    std::cout << "|  STUDENTS DATABASE  |\n";
-    std::cout << " --------------------- \n";
-    std::cout << ++optionNumber << ". Add studentTEST\n";
-    std::cout << ++optionNumber << ". Show all students\n";
-    std::cout << ++optionNumber << ". Search students \n";
-    std::cout << ++optionNumber << ". Sort students \n";
-    std::cout << ++optionNumber << ". Save/Load from file\n";
-    std::cout << ++optionNumber << ". Generate data persons\n";
-    std::cout << ++optionNumber << ". Delete record\n";
-    std::cout << ++optionNumber << ". Exit\n\n";
-    return optionNumber;
-}
+// size_t University::printMenu() {
+//     size_t optionNumber = 0;
+//     std::cout << " --------------------- \n";
+//     std::cout << "|  STUDENTS DATABASE  |\n";
+//     std::cout << " --------------------- \n";
+//     std::cout << ++optionNumber << ". Add studentTEST\n";
+//     std::cout << ++optionNumber << ". Show all students\n";
+//     std::cout << ++optionNumber << ". Search students \n";
+//     std::cout << ++optionNumber << ". Sort students \n";
+//     std::cout << ++optionNumber << ". Save/Load from file\n";
+//     std::cout << ++optionNumber << ". Generate data persons\n";
+//     std::cout << ++optionNumber << ". Delete record\n";
+//     std::cout << ++optionNumber << ". Exit\n\n";
+//     return optionNumber;
+// }
 /////////////////////////////////////////
 
 /////////////////////////////////////////////////////
-University::MenuOption University::menuEngine(size_t menuSize) {
-    int choice = 0;
-    do {
-        std::cout << "Please insert you choice: ";
-        std::cin >> choice;
-    } while (validatingMenuChoose(choice, menuSize) == false);
-    menuOption_ = static_cast<MenuOption>(choice);
-    switch (menuOption_) {
-    case MenuOption::AddStudents: {
-        addNewPerson();
-    } break;
-    case MenuOption::ShowStudent: {
-        showStudents();
-    } break;
-    case MenuOption::SearchStudents: {
-        searchMenuEngine();
-    } break;
-    case MenuOption::SortStudents: {
-        sortMenuEngine();
-    } break;
-    case MenuOption::SaveLoadFile: {
-        loadSaveMenu();
-    } break;
-    case MenuOption::GenerateData: {
-        printInterfaceDataGenerator();
-    } break;
-    case MenuOption::Delete: {
-        deleteRecordByIndexNumber();
-    } break;
-    case MenuOption::Exit: {
-    } break;
-    default:
-        break;
-    }
-    return menuOption_;
-}
+// University::MenuOption University::menuEngine(size_t menuSize) {
+//     int choice = 0;
+//     do {
+//         std::cout << "Please insert you choice: ";
+//         std::cin >> choice;
+//     } while (validatingMenuChoose(choice, menuSize) == false);
+//     menuOption_ = static_cast<MenuOption>(choice);
+//     switch (menuOption_) {
+//     case MenuOption::AddStudents: {
+//         addNewPerson();
+//     } break;
+//     case MenuOption::ShowStudent: {
+//         showStudents();
+//     } break;
+//     case MenuOption::SearchStudents: {
+//         searchMenuEngine();
+//     } break;
+//     case MenuOption::SortStudents: {
+//         sortMenuEngine();
+//     } break;
+//     case MenuOption::SaveLoadFile: {
+//         loadSaveMenu();
+//     } break;
+//     case MenuOption::GenerateData: {
+//         printInterfaceDataGenerator();
+//     } break;
+//     case MenuOption::Delete: {
+//         deleteRecordByIndexNumber();
+//     } break;
+//     case MenuOption::Exit: {
+//     } break;
+//     default:
+//         break;
+//     }
+//     return menuOption_;
+// }
 ////////////////////////////////////////////////////////////////
 
 bool University::validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu) {

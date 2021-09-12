@@ -12,6 +12,12 @@ public:
     ~AddPerson() = default;
     void operator()(std::vector<std::shared_ptr<Person>> person) const override;
 
+    enum class WhichPerson {
+        NoPerson = 0,
+        Student,
+        Professor
+    };
+
 private:
     void selectPerson() const ;
     std::string insertPersonName();
@@ -23,4 +29,5 @@ private:
     std::string insertProfessorSalary();
 
     std::shared_ptr<ValidationData>validation_;
+    WhichPerson whichPerson_ { WhichPerson::NoPerson };
 };
