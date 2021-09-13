@@ -1,6 +1,7 @@
 #pragma once
 #include "Command.hpp"
 #include "ValidationData.hpp"
+#include "Person.hpp"
 #include <memory>
 #include <string>
 #include <limits> //for numeric_limits
@@ -15,7 +16,8 @@ public:
     enum class WhichPerson {
         NoPerson = 0,
         Student,
-        Professor
+        Professor,
+        Back
     };
 
 private:
@@ -32,6 +34,7 @@ private:
     void addStudentToDatabase();
     void addProfessorToDatabase();
 
+    std::vector<std::shared_ptr<Person>>person_;
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
 };

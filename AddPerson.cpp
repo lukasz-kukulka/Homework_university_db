@@ -11,17 +11,22 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 void AddPerson::operator()(std::vector<std::shared_ptr<Person>> person) const {
     person.size();
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
+
     selectPerson();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 AddPerson::WhichPerson AddPerson::selectPerson() const {
     size_t userChoicePerson{};
+    int optionNumber { };
     do {
+        optionNumber = 0;
         std::cout << "Which person you wanna add to database?\n";
-        std::cout << "1.STUDENT | 2.PROFESSOR :";
+        std::cout << ++optionNumber << ". STUDENT\n";
+        std::cout << ++optionNumber << ". PROFESSOR\n";
+        std::cout << ++optionNumber << ". BACK\n";
         std::cin >> userChoicePerson;
-    } while (validation_->isCorrectMenuChoice(userChoicePerson, 2));
+    } while (validation_->isCorrectMenuChoice(userChoicePerson, optionNumber));
     return static_cast<WhichPerson>(userChoicePerson);
 }
 
