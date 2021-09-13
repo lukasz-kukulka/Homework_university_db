@@ -11,7 +11,7 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 void AddPerson::operator()(std::vector<std::shared_ptr<Person>> person) const {
     person.size();
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
-
+    addingPerson(person);
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
@@ -89,7 +89,7 @@ std::string AddPerson::insertProfessorSalary() {
     } while (true);
 }
 
-void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>person) {
+void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>person) const {
     WhichPerson userChoice = selectPerson();
     if (userChoice == WhichPerson::Student) {
         addStudentToDatabase(person);
@@ -100,10 +100,10 @@ void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>person) {
     }
 }
 
-void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>person) {
+void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>person) const {
 
 }
 
-void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>person) {
+void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>person) const {
 
 }
