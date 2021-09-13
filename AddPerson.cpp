@@ -86,5 +86,9 @@ std::string AddPerson::insertProfessorSalary() {
 }
 
 void AddPerson::addingPerson() {
+    
+}
+
+void AddPerson::addStudentToDatabase() {
 
 }

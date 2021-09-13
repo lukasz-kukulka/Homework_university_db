@@ -27,7 +27,9 @@ private:
     std::string insertPersonGender();
     std::string insertStudentIndexNumber();
     std::string insertProfessorSalary();
+    
     void addingPerson();
+    void addStudentToDatabase();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
