@@ -1,5 +1,7 @@
 #include "AddPerson.hpp"
 #include "Student.hpp"
+#include "Professor.hpp"
+#include "Student.hpp"
 
 #include <iostream>
 
@@ -8,7 +10,7 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 {
 }
 
-void AddPerson::operator()(std::vector<std::shared_ptr<Person>> person) const {
+void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person) const {
     person.size();
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
     addingPerson(person);
@@ -89,7 +91,7 @@ std::string AddPerson::insertProfessorSalary() {
     } while (true);
 }
 
-void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>person) const {
+void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person) const {
     WhichPerson userChoice = selectPerson();
     if (userChoice == WhichPerson::Student) {
         addStudentToDatabase(person);
@@ -100,10 +102,10 @@ void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>person) const {
     }
 }
 
-void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>person) const {
-
+void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person) const {
+    person.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
 }
 
-void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>person) const {
+void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person) const {
 
 }
