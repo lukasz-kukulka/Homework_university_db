@@ -30,6 +30,7 @@ private:
     
     void addingPerson();
     void addStudentToDatabase();
+    void addProfessorToDatabase();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };

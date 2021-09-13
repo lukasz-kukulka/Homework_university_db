@@ -92,3 +92,7 @@ void AddPerson::addingPerson() {
 void AddPerson::addStudentToDatabase() {
 
 }
+
+void AddPerson::addProfessorToDatabase() {
+
+}
