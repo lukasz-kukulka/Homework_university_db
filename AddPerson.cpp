@@ -22,7 +22,7 @@ AddPerson::WhichPerson AddPerson::selectPerson() const {
         std::cout << "1.STUDENT | 2.PROFESSOR :";
         std::cin >> userChoicePerson;
     } while (validation_->isCorrectMenuChoice(userChoicePerson, 2));
-    return userChoicePerson == 1 ? WhichPerson::Student : WhichPerson::Professor;
+    return static_cast<WhichPerson>(userChoicePerson);
 }
 
 std::string AddPerson::insertPersonName() {
@@ -86,7 +86,13 @@ std::string AddPerson::insertProfessorSalary() {
 }
 
 void AddPerson::addingPerson() {
-    
+    if (selectPerson() == WhichPerson::Student) {
+        addStudentToDatabase();
+    } else if (selectPerson() == WhichPerson::Professor) {
+       addProfessorToDatabase();
+    } else {
+        std::cout << "ERROR ... NO ADDED PERSON\n";
+    }
 }
 
 void AddPerson::addStudentToDatabase() {
