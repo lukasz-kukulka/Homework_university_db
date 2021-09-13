@@ -30,11 +30,10 @@ private:
     std::string insertStudentIndexNumber();
     std::string insertProfessorSalary();
     
-    void addingPerson();
-    void addStudentToDatabase();
-    void addProfessorToDatabase();
+    void addingPerson(std::vector<std::shared_ptr<Person>>person);
+    void addStudentToDatabase(std::vector<std::shared_ptr<Person>>person);
+    void addProfessorToDatabase(std::vector<std::shared_ptr<Person>>person);
 
-    std::vector<std::shared_ptr<Person>>person_;
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
 };

@@ -12,7 +12,6 @@ void AddPerson::operator()(std::vector<std::shared_ptr<Person>> person) const {
     person.size();
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
 
-    selectPerson();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
@@ -90,20 +89,21 @@ std::string AddPerson::insertProfessorSalary() {
     } while (true);
 }
 
-void AddPerson::addingPerson() {
-    if (selectPerson() == WhichPerson::Student) {
-        addStudentToDatabase();
-    } else if (selectPerson() == WhichPerson::Professor) {
-       addProfessorToDatabase();
+void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>person) {
+    WhichPerson userChoice = selectPerson();
+    if (userChoice == WhichPerson::Student) {
+        addStudentToDatabase(person);
+    } else if (userChoice == WhichPerson::Professor) {
+       addProfessorToDatabase(person);
     } else {
-        std::cout << "ERROR ... NO ADDED PERSON\n";
+        std::cout << "Back to main menu ...\n";
     }
 }
 
-void AddPerson::addStudentToDatabase() {
+void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>person) {
 
 }
 
-void AddPerson::addProfessorToDatabase() {
+void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>person) {
 
 }
