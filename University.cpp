@@ -367,12 +367,12 @@ void University::insertStudentGender() {
 //     return true;
 // }
 
-bool University::peselValidGenderCheck() {
-    if (static_cast<size_t>(peselNumber_[9]) % 2 != static_cast<size_t>(gender_)) {
-        return false;
-    }
-    return true;
-}
+// bool University::peselValidGenderCheck() {
+//     if (static_cast<size_t>(peselNumber_[9]) % 2 != static_cast<size_t>(gender_)) {
+//         return false;
+//     }
+//     return true;
+// }
 
 bool University::peselValidWithCurrentlyDate() {
     if (currentlyDate[5] == '0' && (peselNumber_[2] == '4' || peselNumber_[2] == '5' || peselNumber_[2] == '6' || peselNumber_[2] == '7')) {

@@ -1,6 +1,11 @@
 #pragma once
 #include <stdlib.h> // for size_t
 #include <string>
+
+namespace {
+    constexpr char CURRENTLY_DATE[] = "13082021";  // FORMAT DATE DDMMYYYY
+}
+
 class ValidationData {
 public:
     bool isCorrectMenuChoice(const size_t choosenValueToValid, const size_t sizeMenu);
