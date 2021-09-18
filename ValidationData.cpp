@@ -69,3 +69,13 @@ bool ValidationData::peselValidGenderCheck(char charGender, std::string gender) 
     }
     return true;
 }
+
+bool ValidationData::peselValidWithCurrentlyDate(std::string peselNumber) {
+    if (CURRENTLY_DATE[5] == '0' && (peselNumber[2] == '4' || peselNumber[2] == '5' || peselNumber[2] == '6' || peselNumber[2] == '7')) {
+        return false;
+    }
+    if (CURRENTLY_DATE[5] == '1' && (peselNumber[2] == '6' || peselNumber[2] == '7')) {
+        return false;
+    }
+    return true;
+}

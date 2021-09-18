@@ -16,6 +16,7 @@ public:
 
     bool peselValidDOBCheck(std::string dayOfBirth);
     bool peselValidGenderCheck(char charGender, std::string gender);
+    bool peselValidWithCurrentlyDate(std::string peselNumber);
 private:
 
 };
