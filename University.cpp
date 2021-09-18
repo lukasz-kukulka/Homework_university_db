@@ -121,14 +121,14 @@ void University::addNewPerson() {
     confirmAddRecord();
 }
 
-void University::selectPerson() {
-    size_t userChoicePerson{};
-    do {
-        std::cout << "Which person you wanna add to database?\n";
-        std::cout << "1.STUDENT | 2.PROFESSOR :";
-        std::cin >> userChoicePerson;
-    } while (validationSelectPerson(userChoicePerson) == false);
-}
+// void University::selectPerson() {
+//     size_t userChoicePerson{};
+//     do {
+//         std::cout << "Which person you wanna add to database?\n";
+//         std::cout << "1.STUDENT | 2.PROFESSOR :";
+//         std::cin >> userChoicePerson;
+//     } while (validationSelectPerson(userChoicePerson) == false);
+// }
 
 void University::ifPersonExistMenu() {
     do {
@@ -269,54 +269,54 @@ void University::confirmAddRecord() {
     }
 }
 
-void University::insertStudentName() {
-    do {
-        std::cout << "Please insert person name: ";
-        std::getline(std::cin, name_);
-    } while (validationStringSize(name_, sizeNameLimit_) == false || validationIsAlpabet(name_) == false);
-}
+// void University::insertStudentName() {
+//     do {
+//         std::cout << "Please insert person name: ";
+//         std::getline(std::cin, name_);
+//     } while (validationStringSize(name_, sizeNameLimit_) == false || validationIsAlpabet(name_) == false);
+// }
 
-void University::insertStudentSurname() {
-    do {
-        std::cout << "Please insert person surname: ";
-        std::getline(std::cin, surname_);
-    } while (validationStringSize(surname_, sizeSurnameLimit_) == false || validationIsAlpabet(surname_) == false);
-}
+// void University::insertStudentSurname() {
+//     do {
+//         std::cout << "Please insert person surname: ";
+//         std::getline(std::cin, surname_);
+//     } while (validationStringSize(surname_, sizeSurnameLimit_) == false || validationIsAlpabet(surname_) == false);
+// }
 
-void University::insertAddress() {
-    do {
-        std::cout << "Please insert person address: ";
-        std::getline(std::cin, address_);
-    } while (validationStringSize(address_, sizeAddressLimit_) == false);
-}
+// void University::insertAddress() {
+//     do {
+//         std::cout << "Please insert person address: ";
+//         std::getline(std::cin, address_);
+//     } while (validationStringSize(address_, sizeAddressLimit_) == false);
+// }
 
-void University::insertStudentIndexNumber() {
-    do {
-        std::cout << "Please insert student index number(10 digits): ";
-        std::getline(std::cin, indexNumber_);
-    } while (validationStringSize(indexNumber_, sizeIndexNumberLimit_, true) == false || validationIsDigit(indexNumber_) == false);
-}
+// void University::insertStudentIndexNumber() {
+//     do {
+//         std::cout << "Please insert student index number(10 digits): ";
+//         std::getline(std::cin, indexNumber_);
+//     } while (validationStringSize(indexNumber_, sizeIndexNumberLimit_, true) == false || validationIsDigit(indexNumber_) == false);
+// }
 
-void University::insertProfessorSalary() {
-    do {
-        std::cout << "Please insert professor salary(max 5 digits): ";
-        std::getline(std::cin, professorSalary_);
-    } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false || validationIsDigit(professorSalary_) == false);
-}
+// void University::insertProfessorSalary() {
+//     do {
+//         std::cout << "Please insert professor salary(max 5 digits): ";
+//         std::getline(std::cin, professorSalary_);
+//     } while (validationStringSize(professorSalary_, sizeSalaryLimit_) == false || validationIsDigit(professorSalary_) == false);
+// }
 
-void University::insertStudentPeselNumber() {
-    do {
-        std::cout << "Please insert person PESEL number: ";
-        std::getline(std::cin, peselNumber_);
-    } while (validatingPeselNumber() == false || validationIsDigit(peselNumber_) == false || validationStringSize(peselNumber_, sizePeselNumberLimit_, true) == false);
-}
+// void University::insertStudentPeselNumber() {
+//     do {
+//         std::cout << "Please insert person PESEL number: ";
+//         std::getline(std::cin, peselNumber_);
+//     } while (validatingPeselNumber() == false || validationIsDigit(peselNumber_) == false || validationStringSize(peselNumber_, sizePeselNumberLimit_, true) == false);
+// }
 
-void University::insertStudentGender() {
-    do {
-        std::cout << "Please choose gender: 1 - Male , 0 - Female: ";
-        std::cin >> gender_;
-    } while (validatingGender() == false);
-}
+// void University::insertStudentGender() {
+//     do {
+//         std::cout << "Please choose gender: 1 - Male , 0 - Female: ";
+//         std::cin >> gender_;
+//     } while (validatingGender() == false);
+// }
 
 // bool University::validationIsAlpabet(std::string stringToCheck) {
 //     auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
@@ -374,33 +374,33 @@ void University::insertStudentGender() {
 //     return true;
 // }
 
-bool University::peselValidWithCurrentlyDate() {
-    if (currentlyDate[5] == '0' && (peselNumber_[2] == '4' || peselNumber_[2] == '5' || peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
-        return false;
-    }
-    if (currentlyDate[5] == '1' && (peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
-        return false;
-    }
-    return true;
-}
+// bool University::peselValidWithCurrentlyDate() {
+//     if (currentlyDate[5] == '0' && (peselNumber_[2] == '4' || peselNumber_[2] == '5' || peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
+//         return false;
+//     }
+//     if (currentlyDate[5] == '1' && (peselNumber_[2] == '6' || peselNumber_[2] == '7')) {
+//         return false;
+//     }
+//     return true;
+// }
 
-bool University::peselValidWithWeight() {
-    std::string weightCheck = "13791379131";
-    size_t weightResult = 0;
-    for (int i = 0; i < 10; i++) {
-        weightResult = weightResult + (static_cast<size_t>(peselNumber_[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
-    }
-    weightResult = weightResult % 10;
-    if (weightResult == 0) {
-        weightResult = 0;
-    } else {
-        weightResult = 10 - weightResult;
-    }
-    if (static_cast<size_t>(peselNumber_[10] - '0') != weightResult) {
-        return false;
-    }
-    return true;
-}
+// bool University::peselValidWithWeight() {
+//     std::string weightCheck = "13791379131";
+//     size_t weightResult = 0;
+//     for (int i = 0; i < 10; i++) {
+//         weightResult = weightResult + (static_cast<size_t>(peselNumber_[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
+//     }
+//     weightResult = weightResult % 10;
+//     if (weightResult == 0) {
+//         weightResult = 0;
+//     } else {
+//         weightResult = 10 - weightResult;
+//     }
+//     if (static_cast<size_t>(peselNumber_[10] - '0') != weightResult) {
+//         return false;
+//     }
+//     return true;
+// }
 
 bool University::validatingPeselNumber() {
     bool corectPeselNumber = true;

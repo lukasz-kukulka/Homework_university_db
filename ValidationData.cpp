@@ -79,3 +79,21 @@ bool ValidationData::peselValidWithCurrentlyDate(std::string peselNumber) {
     }
     return true;
 }
+
+bool ValidationData::peselValidWithWeight(std::string peselNumber) {
+    std::string weightCheck = "13791379131";
+    size_t weightResult = 0;
+    for (int i = 0; i < 10; i++) {
+        weightResult = weightResult + (static_cast<size_t>(peselNumber[i] - '0') * (static_cast<size_t>(weightCheck[i] - '0')));
+    }
+    weightResult = weightResult % 10;
+    if (weightResult == 0) {
+        weightResult = 0;
+    } else {
+        weightResult = 10 - weightResult;
+    }
+    if (static_cast<size_t>(peselNumber[10] - '0') != weightResult) {
+        return false;
+    }
+    return true;
+}
