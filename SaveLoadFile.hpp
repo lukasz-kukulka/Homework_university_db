@@ -5,7 +5,7 @@
 class SaveLoadFile : public Command {
 public:
     ~SaveLoadFile() = default;
-    void operator()(std::vector<std::shared_ptr<Person>> person) const override;
+    void operator()(std::vector<std::shared_ptr<Person>>& person) const override;
 
 private:
 };

@@ -16,7 +16,7 @@ constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 // University::University() {
 
 // }
-void University::operator()(std::vector<std::shared_ptr<Person>> person) const {
+void University::operator()(std::vector<std::shared_ptr<Person>>& person) const {
     person.size();
 }
 
@@ -84,15 +84,15 @@ void University::applicationStart() {
 // }
 ////////////////////////////////////////////////////////////////
 
-bool University::validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu) {
-    if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > sizeMenu) {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Incorrect value, please put number betwen 1 and " << sizeMenu << '\n';
-        return false;
-    }
-    return true;
-}
+// bool University::validatingMenuChoose(const size_t choosenValueToValid, const size_t sizeMenu) {
+//     if (std::cin.fail() || choosenValueToValid < 1 || choosenValueToValid > sizeMenu) {
+//         std::cin.clear();
+//         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//         std::cout << "Incorrect value, please put number betwen 1 and " << sizeMenu << '\n';
+//         return false;
+//     }
+//     return true;
+// }
 
 void University::deleteRecordByIndexNumber() {
     printDeletePersonByIndexNumber();
@@ -205,13 +205,13 @@ void University::updateRecordIfPersonExist() {
     person_.erase(end(person_) - 1);
 }
 
-void University::addStudentRecordToVector() {
-    person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
-}
+// void University::addStudentRecordToVector() {
+//     //person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
+// }
 
-void University::addProfesorRecordToVector() {
-    person_.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
-}
+// void University::addProfesorRecordToVector() {
+//     //person_.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+// }
 
 std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
     return std::find_if(begin(person_), 
@@ -222,16 +222,16 @@ std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
                                                 (!indexNumber_.empty()))); });
 }
 
-bool University::validationSelectPerson(size_t userChoicePerson) {
-    if (userChoicePerson == 1 || userChoicePerson == 2) {
-        assignmentPersonValue(userChoicePerson);
-        return true;
-    }
-    std::cout << "Wrong answer, insert 1 or 2\n";
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    return false;
-}
+// bool University::validationSelectPerson(size_t userChoicePerson) {
+//     if (userChoicePerson == 1 || userChoicePerson == 2) {
+//         assignmentPersonValue(userChoicePerson);
+//         return true;
+//     }
+//     std::cout << "Wrong answer, insert 1 or 2\n";
+//     std::cin.clear();
+//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//     return false;
+// }
 
 void University::assignmentPersonValue(size_t userChoicePerson) {
     userChoicePerson_ = static_cast<University::WhichPerson>(userChoicePerson);

@@ -103,9 +103,11 @@ void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person) const
 }
 
 void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person) const {
-    person.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
+    //auto persona(std::make_shared<Professor>(Professor("insertPersonName()", "insert", "AA", "AA", 'f', "1111");
+    //person.push_back(std::make_shared<Professor>(Student("insertP", "insert", "AA", "AA", 'f', "1111111111")));
+    person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
 }
 
 void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person) const {
-
+    person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
 }

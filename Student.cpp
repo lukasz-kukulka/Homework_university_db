@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <iostream>
 
-Student::Student(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender, std::string indexNumber) 
+Student::Student(std::string name, std::string surname, std::string address, std::string peselNumber, char gender, std::string indexNumber) 
     : Person(name, surname, address, peselNumber, gender)
     , indexNumber_(indexNumber)
 {}

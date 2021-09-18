@@ -15,8 +15,7 @@ set(FILES
     ValidationData.cpp
     Person.cpp
     Professor.cpp
-    Student.cpp
-    University.cpp)
+    Student.cpp)
 
 add_library(${PROJECT_NAME}-lib ${FILES})
 add_executable(${PROJECT_NAME} main.cpp)

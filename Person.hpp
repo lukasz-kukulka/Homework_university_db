@@ -4,13 +4,8 @@
 
 class Person {
 public:
-    enum class Gender : uint8_t {
-        female,
-        male
-    };
-
     Person() = default;
-    Person(std::string name, std::string surname, std::string address, std::string peselNumber, Gender gender);
+    Person(std::string name, std::string surname, std::string address, std::string peselNumber, char gender);
     virtual ~Person();
 
     std::string getName() const { return name_; }
@@ -37,13 +32,13 @@ public:
     std::string generateCell(std::string cellBody, size_t cellSize);
 
 protected:
-    std::string convertPersonGender(const Gender);
+    std::string convertPersonGender(const char gender);
 
     std::string name_ {"NO_NAME"};
     std::string surname_ { "NO_SURNAME" };
     std::string address_{ "NO_ADDRESS" };
     std::string peselNumber_{ "00000000000" };
-    Gender gender_ { Gender::female };
+    char gender_ { 'f' };
     std::string salary_{ "NO_SALARY" };
     std::string indexNumber_ { "NO_INDEX" };
 
