@@ -340,32 +340,32 @@ void University::insertStudentGender() {
 //     return false;
 // }
 
-bool University::validationStringSize(std::string userStringData, size_t maxSize, bool isEqual) {
-    if (isEqual == false && userStringData.size() <= maxSize) {
-        return true;
-    }
-    if (isEqual == true && userStringData.size() == maxSize) {
-        return true;
-    }
-    if (isEqual == true) {
-        std::cout << "Wrong length, value must have " << maxSize << " characters\n";
-    }
-    std::cout << "Length is to long, maximum length is " << maxSize << '\n';
-    return false;
-}
+// bool University::validationStringSize(std::string userStringData, size_t maxSize, bool isEqual) {
+//     if (isEqual == false && userStringData.size() <= maxSize) {
+//         return true;
+//     }
+//     if (isEqual == true && userStringData.size() == maxSize) {
+//         return true;
+//     }
+//     if (isEqual == true) {
+//         std::cout << "Wrong length, value must have " << maxSize << " characters\n";
+//     }
+//     std::cout << "Length is to long, maximum length is " << maxSize << '\n';
+//     return false;
+// }
 
-bool University::peselValidDOBCheck() {
-    if ((peselNumber_[2] == '1' || peselNumber_[2] == '3' || peselNumber_[2] == '5' || peselNumber_[2] == '7' || peselNumber_[2] == '9') && peselNumber_[2] != '0' && peselNumber_[2] != '1' && peselNumber_[2] != '2') {
-        return false;
-    }
-    if (peselNumber_[4] != '0' && peselNumber_[4] != '1' && peselNumber_[4] != '2' && peselNumber_[4] != '3') {
-        return false;
-    }
-    if (peselNumber_[4] == '3' && peselNumber_[5] != '0' && peselNumber_[5] != '1' && peselNumber_[5] != '2') {
-        return false;
-    }
-    return true;
-}
+// bool University::peselValidDOBCheck() {
+//     if ((peselNumber_[2] == '1' || peselNumber_[2] == '3' || peselNumber_[2] == '5' || peselNumber_[2] == '7' || peselNumber_[2] == '9') && peselNumber_[2] != '0' && peselNumber_[2] != '1' && peselNumber_[2] != '2') {
+//         return false;
+//     }
+//     if (peselNumber_[4] != '0' && peselNumber_[4] != '1' && peselNumber_[4] != '2' && peselNumber_[4] != '3') {
+//         return false;
+//     }
+//     if (peselNumber_[4] == '3' && peselNumber_[5] != '0' && peselNumber_[5] != '1' && peselNumber_[5] != '2') {
+//         return false;
+//     }
+//     return true;
+// }
 
 bool University::peselValidGenderCheck() {
     if (static_cast<size_t>(peselNumber_[9]) % 2 != static_cast<size_t>(gender_)) {

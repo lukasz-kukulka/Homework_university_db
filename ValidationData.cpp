@@ -62,3 +62,10 @@ bool ValidationData::peselValidDOBCheck(std::string dayOfBirth) {
     }
     return true;
 }
+
+bool ValidationData::peselValidGenderCheck(char charGender, std::string gender) {
+    if (static_cast<size_t>(gender[9]) % 2 != std::stol(gender)) {
+        return false;
+    }
+    return true;
+}
