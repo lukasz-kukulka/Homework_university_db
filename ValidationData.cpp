@@ -35,3 +35,17 @@ bool ValidationData::validationIsDigit(std::string stringToCheck) {
     std::cout << "Insert data can be only digit\n"; 
     return false;
 }
+
+bool ValidationData::validationStringSize(std::string userStringData, size_t maxSize, bool isEqual) {
+    if (isEqual == false && userStringData.size() <= maxSize) {
+        return true;
+    }
+    if (isEqual == true && userStringData.size() == maxSize) {
+        return true;
+    }
+    if (isEqual == true) {
+        std::cout << "Wrong length, value must have " << maxSize << " characters\n";
+    }
+    std::cout << "Length is to long, maximum length is " << maxSize << '\n';
+    return false;
+}

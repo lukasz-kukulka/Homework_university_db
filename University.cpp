@@ -329,16 +329,16 @@ void University::insertStudentGender() {
 //     return false;
 // }
 
-bool University::validationIsDigit(std::string stringToCheck) {
-    auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
-        return std::isdigit(character);
-    });
-    if (result) {
-        return true;
-    }
-    std::cout << "Insert data can be only digit\n";
-    return false;
-}
+// bool University::validationIsDigit(std::string stringToCheck) {
+//     auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
+//         return std::isdigit(character);
+//     });
+//     if (result) {
+//         return true;
+//     }
+//     std::cout << "Insert data can be only digit\n";
+//     return false;
+// }
 
 bool University::validationStringSize(std::string userStringData, size_t maxSize, bool isEqual) {
     if (isEqual == false && userStringData.size() <= maxSize) {
