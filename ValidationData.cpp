@@ -49,3 +49,16 @@ bool ValidationData::validationStringSize(std::string userStringData, size_t max
     std::cout << "Length is to long, maximum length is " << maxSize << '\n';
     return false;
 }
+
+bool ValidationData::peselValidDOBCheck(std::string dayOfBirth) {
+    if ((dayOfBirth[2] == '1' || dayOfBirth[2] == '3' || dayOfBirth[2] == '5' || dayOfBirth[2] == '7' || dayOfBirth[2] == '9') && dayOfBirth[2] != '0' && dayOfBirth[2] != '1' && dayOfBirth[2] != '2') {
+        return false;
+    }
+    if (dayOfBirth[4] != '0' && dayOfBirth[4] != '1' && dayOfBirth[4] != '2' && dayOfBirth[4] != '3') {
+        return false;
+    }
+    if (dayOfBirth[4] == '3' && dayOfBirth[5] != '0' && dayOfBirth[5] != '1' && dayOfBirth[5] != '2') {
+        return false;
+    }
+    return true;
+}
