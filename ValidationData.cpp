@@ -24,3 +24,14 @@ bool ValidationData::validationIsAlpabet(std::string stringToCheck) {
     std::cout << "Insert data can be only alphabet\n";
     return false;
 }
+
+bool ValidationData::validationIsDigit(std::string stringToCheck) {
+    auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
+        return std::isdigit(character);
+    });
+    if (result) {
+        return true;
+    }
+    std::cout << "Insert data can be only digit\n"; 
+    return false;
+}

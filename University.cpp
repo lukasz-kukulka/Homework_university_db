@@ -318,16 +318,16 @@ void University::insertStudentGender() {
     } while (validatingGender() == false);
 }
 
-bool University::validationIsAlpabet(std::string stringToCheck) {
-    auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
-        return std::isalpha(character);
-    });
-    if (result) {
-        return true;
-    }
-    std::cout << "Insert data can be only alphabet\n";
-    return false;
-}
+// bool University::validationIsAlpabet(std::string stringToCheck) {
+//     auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
+//         return std::isalpha(character);
+//     });
+//     if (result) {
+//         return true;
+//     }
+//     std::cout << "Insert data can be only alphabet\n";
+//     return false;
+// }
 
 bool University::validationIsDigit(std::string stringToCheck) {
     auto result = std::all_of(stringToCheck.begin(), stringToCheck.end(), [](auto character) {
