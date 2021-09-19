@@ -18,6 +18,7 @@ public:
     bool peselValidGenderCheck(char charGender, std::string gender);
     bool peselValidWithCurrentlyDate(std::string peselNumber);
     bool peselValidWithWeight(std::string peseNumber);
+    bool validatingPeselNumber();
 private:
 
 };

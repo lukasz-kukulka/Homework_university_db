@@ -97,3 +97,14 @@ bool ValidationData::peselValidWithWeight(std::string peselNumber) {
     }
     return true;
 }
+
+bool ValidationData::validatingPeselNumber() {
+    bool corectPeselNumber = true;
+    corectPeselNumber = peselValidDOBCheck();
+    corectPeselNumber = peselValidWithCurrentlyDate();
+    corectPeselNumber = peselValidWithWeight();
+    if (!corectPeselNumber) {
+        std::cout << "Pesel number is incorrect\n";
+    }
+    return corectPeselNumber;
+}
