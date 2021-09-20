@@ -15,10 +15,10 @@ public:
     bool validationStringSize(std::string userStringData, size_t maxSize, bool isEqual = false);
 
     bool peselValidDOBCheck(std::string dayOfBirth);
-    bool peselValidGenderCheck(char charGender, std::string gender);
+    bool peselValidGenderCheck(char charGender, std::string peselNumber);
     bool peselValidWithCurrentlyDate(std::string peselNumber);
     bool peselValidWithWeight(std::string peseNumber);
-    bool validatingPeselNumber();
+    bool validatingPeselNumber(std::string peselNumber);
 private:
 
 };

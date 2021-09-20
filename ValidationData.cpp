@@ -2,6 +2,7 @@
 
 #include <limits> //for numeric_limits
 #include <ios> // for std::streamsize
+#include <cctype> // tolover
 #include <iostream>
 
 bool ValidationData::isCorrectMenuChoice(const size_t choosenValueToValid, const size_t sizeMenu) {
@@ -63,11 +64,15 @@ bool ValidationData::peselValidDOBCheck(std::string dayOfBirth) {
     return true;
 }
 
-bool ValidationData::peselValidGenderCheck(char charGender, std::string gender) {
-    if (static_cast<size_t>(gender[9]) % 2 != std::stol(gender)) {
-        return false;
+bool ValidationData::peselValidGenderCheck(char charGender, std::string peselNumber) {
+    int genderNumber = (peselNumber[9] - '0') % 2;
+    if (std::tolower(charGender) == 'f' && genderNumber == 0) {
+        return true;
     }
-    return true;
+    if (std::tolower(charGender) == 'm' && genderNumber == 1) {
+        return true;
+    }
+    return false;
 }
 
 bool ValidationData::peselValidWithCurrentlyDate(std::string peselNumber) {
@@ -98,13 +103,23 @@ bool ValidationData::peselValidWithWeight(std::string peselNumber) {
     return true;
 }
 
-bool ValidationData::validatingPeselNumber() {
+bool ValidationData::validatingPeselNumber(std::string peselNumber) {
     bool corectPeselNumber = true;
-    corectPeselNumber = peselValidDOBCheck();
-    corectPeselNumber = peselValidWithCurrentlyDate();
-    corectPeselNumber = peselValidWithWeight();
+    corectPeselNumber = peselValidDOBCheck(peselNumber);
+    corectPeselNumber = peselValidWithCurrentlyDate(peselNumber);
+    corectPeselNumber = peselValidWithWeight(peselNumber);
     if (!corectPeselNumber) {
         std::cout << "Pesel number is incorrect\n";
     }
     return corectPeselNumber;
 }
+
+// bool Validation::validatingGender(char userChoice) {
+//     if (gender_ != 0 && gender_ != 1) {
+//         std::cin.clear();
+//         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//         std::cout << "Wrong value, please choose 0 or 1\n";
+//         return false;
+//     }
+//     return true;
+// }

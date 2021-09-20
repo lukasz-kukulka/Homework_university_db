@@ -402,16 +402,16 @@ void University::confirmAddRecord() {
 //     return true;
 // }
 
-bool University::validatingPeselNumber() {
-    bool corectPeselNumber = true;
-    corectPeselNumber = peselValidDOBCheck();
-    corectPeselNumber = peselValidWithCurrentlyDate();
-    corectPeselNumber = peselValidWithWeight();
-    if (!corectPeselNumber) {
-        std::cout << "Pesel number is incorrect\n";
-    }
-    return corectPeselNumber;
-}
+// bool University::validatingPeselNumber() {
+//     bool corectPeselNumber = true;
+//     corectPeselNumber = peselValidDOBCheck();
+//     corectPeselNumber = peselValidWithCurrentlyDate();
+//     corectPeselNumber = peselValidWithWeight();
+//     if (!corectPeselNumber) {
+//         std::cout << "Pesel number is incorrect\n";
+//     }
+//     return corectPeselNumber;
+// }
 
 bool University::validatingGender() {
     if (gender_ != 0 && gender_ != 1) {
