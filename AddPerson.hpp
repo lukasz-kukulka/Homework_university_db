@@ -36,4 +36,12 @@ private:
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
+
+    std::string name_ { };
+    std::string surname_ { };
+    std::string address_ { };
+    std::string peselNumber_ { };
+    std::string gender_ { };
+    std::string indexNumber_ { };
+    std::string salary_ { };
 };
