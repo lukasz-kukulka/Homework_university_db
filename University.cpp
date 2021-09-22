@@ -413,15 +413,15 @@ void University::confirmAddRecord() {
 //     return corectPeselNumber;
 // }
 
-bool University::validatingGender() {
-    if (gender_ != 0 && gender_ != 1) {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Wrong value, please choose 0 or 1\n";
-        return false;
-    }
-    return true;
-}
+// bool University::validatingGender() {
+//     if (gender_ != 0 && gender_ != 1) {
+//         std::cin.clear();
+//         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//         std::cout << "Wrong value, please choose 0 or 1\n";
+//         return false;
+//     }
+//     return true;
+// }
 
 void University::showStudents() {
     if (!person_.empty()) {

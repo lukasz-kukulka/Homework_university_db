@@ -27,10 +27,10 @@ void Menu::printMenu() {
     std::cout << " --------------------- \n";
     std::cout << "|  STUDENTS DATABASE  |\n";
     std::cout << " --------------------- \n";
-    std::cout << ++menuSize_ << ". Add studentTEST\n";
-    std::cout << ++menuSize_ << ". Show all students\n";
-    std::cout << ++menuSize_ << ". Search students \n";
-    std::cout << ++menuSize_ << ". Sort students \n";
+    std::cout << ++menuSize_ << ". Add personTEST\n";
+    std::cout << ++menuSize_ << ". Show all persons\n";
+    std::cout << ++menuSize_ << ". Search persons \n";
+    std::cout << ++menuSize_ << ". Sort persons \n";
     std::cout << ++menuSize_ << ". Save/Load from file\n";
     std::cout << ++menuSize_ << ". Generate data persons\n";
     std::cout << ++menuSize_ << ". Delete record\n";
