@@ -114,12 +114,12 @@ bool ValidationData::validatingPeselNumber(std::string peselNumber) {
     return corectPeselNumber;
 }
 
-// bool Validation::validatingGender(char userChoice) {
-//     if (gender_ != 0 && gender_ != 1) {
-//         std::cin.clear();
-//         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-//         std::cout << "Wrong value, please choose 0 or 1\n";
-//         return false;
-//     }
-//     return true;
-// }
+bool ValidationData::validatingGender(char userChoice) {
+    if (std::tolower(userChoice) != 'f' && std::tolower(userChoice) != 'm') {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Wrong value, please choose f or m\n";
+        return false;
+    }
+    return true;
+}

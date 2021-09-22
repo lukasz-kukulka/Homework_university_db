@@ -19,6 +19,8 @@ public:
     bool peselValidWithCurrentlyDate(std::string peselNumber);
     bool peselValidWithWeight(std::string peseNumber);
     bool validatingPeselNumber(std::string peselNumber);
+
+    bool validatingGender(char userChoice);
 private:
 
 };
