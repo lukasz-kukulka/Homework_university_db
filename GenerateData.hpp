@@ -5,7 +5,7 @@
 class GenerateData : public Command {
 public:
     ~GenerateData() = default;
-    void operator()(std::vector<std::shared_ptr<Person>>& person) const override;
+    void operator()(std::vector<std::shared_ptr<Person>>& person)  override;
 
 private:
 };

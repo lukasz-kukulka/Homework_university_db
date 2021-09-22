@@ -5,7 +5,7 @@
 class SearchPerson : public Command {
 public:
     ~SearchPerson() = default;
-    void operator()(std::vector<std::shared_ptr<Person>>& person) const override;
+    void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
 private:
 };

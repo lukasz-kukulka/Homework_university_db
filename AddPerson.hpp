@@ -11,7 +11,7 @@ class AddPerson : public Command {
 public:
     AddPerson(std::shared_ptr<ValidationData> validation);
     ~AddPerson() = default;
-    void operator()(std::vector<std::shared_ptr<Person>>& person) const override;
+    void operator()(std::vector<std::shared_ptr<Person>>& person)  override;
 
     enum class WhichPerson {
         NoPerson = 0,
@@ -21,7 +21,7 @@ public:
     };
 
 private:
-    WhichPerson selectPerson() const ;
+    WhichPerson selectPerson()  ;
     std::string insertPersonName();
     std::string insertPersonSurname();
     std::string insertPersonAddress();
@@ -30,9 +30,10 @@ private:
     std::string insertStudentIndexNumber();
     std::string insertProfessorSalary();
     
-    void addingPerson(std::vector<std::shared_ptr<Person>>& person) const ;
-    void addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person) const ;
-    void addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person) const ;
+    void generateData(WhichPerson userChoice);
+    void addingPerson(std::vector<std::shared_ptr<Person>>& person)  ;
+    void addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person)  ;
+    void addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  ;
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };

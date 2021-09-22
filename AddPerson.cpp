@@ -10,14 +10,14 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 {
 }
 
-void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person) const {
+void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
     person.size();
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
     addingPerson(person);
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-AddPerson::WhichPerson AddPerson::selectPerson() const {
+AddPerson::WhichPerson AddPerson::selectPerson()  {
     size_t userChoicePerson{};
     int optionNumber { };
     do {
@@ -91,7 +91,7 @@ std::string AddPerson::insertProfessorSalary() {
     } while (true);
 }
 
-void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person) const {
+void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person)  {
     WhichPerson userChoice = selectPerson();
     if (userChoice == WhichPerson::Student) {
         addStudentToDatabase(person);
@@ -102,12 +102,27 @@ void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person) const
     }
 }
 
-void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person) const {
+void AddPerson::generateData(WhichPerson userChoice) {
+    name_ = insertPersonName();
+    surname_ = insertPersonSurname();
+    address_ = insertPersonAddress();
+    peselNumber_ = insertPersonPesel();
+    gender_ = insertPersonGender();
+    if (userChoice == WhichPerson::Student) {
+        indexNumber_ = insertStudentIndexNumber();
+    }
+}
+
+void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
+    //generateData();
+    
     //auto persona(std::make_shared<Professor>(Professor("insertPersonName()", "insert", "AA", "AA", 'f', "1111");
     //person.push_back(std::make_shared<Professor>(Student("insertP", "insert", "AA", "AA", 'f', "1111111111")));
     person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
 }
 
-void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person) const {
+void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
+    //generateData()
+    salary_ = insertProfessorSalary();
     person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
 }

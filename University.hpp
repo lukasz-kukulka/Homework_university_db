@@ -14,7 +14,7 @@ class University : public Command {
 public:
     //University();
     ~University() = default;
-    void operator()(std::vector<std::shared_ptr<Person>>& person) const override;
+    void operator()(std::vector<std::shared_ptr<Person>>& person) override;
     //~University();
     enum class MenuOption {
         BaseMenu = 0,

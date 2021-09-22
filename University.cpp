@@ -16,7 +16,7 @@ constexpr char currentlyDate[] = "13082021";  // FORMAT DATE DDMMYYYY
 // University::University() {
 
 // }
-void University::operator()(std::vector<std::shared_ptr<Person>>& person) const {
+void University::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
 }
 
