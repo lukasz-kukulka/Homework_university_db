@@ -116,15 +116,11 @@ void AddPerson::generateData(WhichPerson userChoice) {
 }
 
 void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
-    //generateData();
-    
-    //auto persona(std::make_shared<Professor>(Professor("insertPersonName()", "insert", "AA", "AA", 'f', "1111");
-    //person.push_back(std::make_shared<Professor>(Student("insertP", "insert", "AA", "AA", 'f', "1111111111")));
+    generateData();
     person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
 }
 
 void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
-    //generateData()
-    
+    generateData();
     person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
 }
