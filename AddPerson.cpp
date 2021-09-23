@@ -110,6 +110,8 @@ void AddPerson::generateData(WhichPerson userChoice) {
     gender_ = insertPersonGender();
     if (userChoice == WhichPerson::Student) {
         indexNumber_ = insertStudentIndexNumber();
+    } else if (userChoice == WhichPerson::Professor) {
+        salary_ = insertProfessorSalary();
     }
 }
 
@@ -123,6 +125,6 @@ void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& perso
 
 void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
     //generateData()
-    salary_ = insertProfessorSalary();
+    
     person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
 }
