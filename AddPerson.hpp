@@ -26,7 +26,7 @@ private:
     std::string insertPersonSurname();
     std::string insertPersonAddress();
     std::string insertPersonPesel();
-    std::string insertPersonGender();
+    char insertPersonGender();
     std::string insertStudentIndexNumber();
     std::string insertProfessorSalary();
     
@@ -42,7 +42,7 @@ private:
     std::string surname_ { };
     std::string address_ { };
     std::string peselNumber_ { };
-    std::string gender_ { };
+    char gender_ { };
     std::string indexNumber_ { };
     std::string salary_ { };
 };

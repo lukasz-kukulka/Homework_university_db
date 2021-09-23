@@ -67,7 +67,7 @@ std::string AddPerson::insertPersonPesel() {
     return pesel;
 }
 
-std::string AddPerson::insertPersonGender() {
+char AddPerson::insertPersonGender() {
     char gender;
     do {
         std::cout << "Please choose gender: m = Male , f = Female: ";
@@ -117,7 +117,7 @@ void AddPerson::generateData(WhichPerson userChoice) {
 
 void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
     generateData();
-    person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
+    person.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, gender_, salary_)));
 }
 
 void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
