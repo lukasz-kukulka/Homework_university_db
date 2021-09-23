@@ -117,10 +117,10 @@ void AddPerson::generateData(WhichPerson userChoice) {
 
 void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
     generateData();
-    person.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, gender_, salary_)));
+    person.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, gender_, indexNumber_)));
 }
 
 void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
     generateData();
-    person.push_back(std::make_shared<Professor>(Professor("insertP", "insert", "AA", "AA", 'f', "1111")));
+    person.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, gender_, salary_)));
 }
