@@ -31,9 +31,10 @@ private:
     std::string insertProfessorSalary();
     
     void generateData(WhichPerson userChoice);
-    void addingPerson(std::vector<std::shared_ptr<Person>>& person)  ;
-    void addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person)  ;
-    void addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  ;
+    void addingPerson(std::vector<std::shared_ptr<Person>>& person);
+    void addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person);
+    void addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person);
+    void confirmAddRecord();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };

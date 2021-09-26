@@ -116,11 +116,33 @@ void AddPerson::generateData(WhichPerson userChoice) {
 }
 
 void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
-    generateData();
+    generateData(WhichPerson::Student);
     person.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, gender_, indexNumber_)));
 }
 
 void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
-    generateData();
+    generateData(WhichPerson::Professor);
     person.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, gender_, salary_)));
+}
+
+void AddPerson::confirmAddRecord() {
+    while (true) {
+        // checkedIfPersonExist_ = isPersonExist();
+        // std::cout << "Are you sure you wanna add this record to database? Y/N:";
+        // if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
+        //     if (checkedIfPersonExist_ != end(person_)) {
+        //         ifPersonExistMenu();
+        //         break;
+        //     }
+        //     addStudentRecordToVector();
+        //     break;
+        // }
+        // if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Professor) {
+        //     addProfesorRecordToVector();
+        //     break;
+        // }
+        // if (yesNoOption() == YesNoOption::No) {
+        //     break;
+        // }
+    }
 }
