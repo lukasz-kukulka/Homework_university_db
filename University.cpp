@@ -104,22 +104,22 @@ void University::printDeletePersonByIndexNumber() {
     std::cout << "Please insert index number what you wanna delete\n";
 }
 
-void University::addNewPerson() {
-    selectPerson();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    insertStudentName();
-    insertStudentSurname();
-    insertStudentGender();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    insertAddress();
-    insertStudentPeselNumber();
-    if (userChoicePerson_ == WhichPerson::Student) {
-        insertStudentIndexNumber();
-    } else {
-        insertProfessorSalary();
-    }
-    confirmAddRecord();
-}
+// void University::addNewPerson() {
+//     selectPerson();
+//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//     insertStudentName();
+//     insertStudentSurname();
+//     insertStudentGender();
+//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//     insertAddress();
+//     insertStudentPeselNumber();
+//     if (userChoicePerson_ == WhichPerson::Student) {
+//         insertStudentIndexNumber();
+//     } else {
+//         insertProfessorSalary();
+//     }
+//     confirmAddRecord();
+// }
 
 // void University::selectPerson() {
 //     size_t userChoicePerson{};
