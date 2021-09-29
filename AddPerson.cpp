@@ -150,7 +150,7 @@ void AddPerson::confirmAddRecord() {
 std::vector<std::shared_ptr<Person>>::iterator AddPerson::isPersonExist(std::vector<std::shared_ptr<Person>>& person) {
     return std::find_if(begin(person), 
                         end(person), 
-                        [&](auto finding){ return (finding->getPeselNumber() == peselNumber_ || 
-                                                  (finding->getIndexNumber() == indexNumber_ && 
-                                                  (!indexNumber_.empty()))); });
+                        [&](auto finding){ return (finding->getPeselNumber() == peselNumber_ ||
+                                                  (finding->getIndexNumber() == indexNumber_ && indexNumber_ != "NO_INDEX") ||
+                                                  (finding->getName() == name_ && finding->getSurname() == surname_)); });
 }
