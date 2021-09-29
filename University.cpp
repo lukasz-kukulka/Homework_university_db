@@ -700,19 +700,19 @@ std::string University::convertPersonGender(const size_t gender) {
     return gender == 0 ? "female" : "male";
 }
 
-University::YesNoOption University::yesNoOption() {
-    std::string answer { };
-    std::cin.clear();
-    std::getline(std::cin, answer);
-    if (answer == "Y" || answer == "y") {
-        return YesNoOption::Yes;
-    }
-    if (answer == "N" || answer == "n") {
-        return YesNoOption::No;
-    }
-    std::cout << "Wrong answer, you must choose Y or N\n";
-    return YesNoOption::Error;
-}
+// University::YesNoOption University::yesNoOption() {
+//     std::string answer { };
+//     std::cin.clear();
+//     std::getline(std::cin, answer);
+//     if (answer == "Y" || answer == "y") {
+//         return YesNoOption::Yes;
+//     }
+//     if (answer == "N" || answer == "n") {
+//         return YesNoOption::No;
+//     }
+//     std::cout << "Wrong answer, you must choose Y or N\n";
+//     return YesNoOption::Error;
+// }
 
 void University::loadSaveMenu() {
     while (menuLoadSaveEngine(printSaveLoadMenu()) != LoadSaveOption::Back) {

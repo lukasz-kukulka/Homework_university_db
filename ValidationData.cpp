@@ -125,5 +125,25 @@ bool ValidationData::validatingGender(char userChoice) {
 }
 
 ValidationData::YesNoConfirm ValidationData::confirmDataYesNo(std::string question) {
-    
+    std::string answer { };
+    YesNoConfirm confirmation { YesNoConfirm::NoConfirm };
+    std::cout << question << '\n';
+    std::cout << "Yes(y)\n";
+    std::cout << "No(n)\n";
+    std::cout << "Back(b)\n";
+    while (confirmation == YesNoConfirm::NoConfirm || confirmation == YesNoConfirm::Error) {    
+        std::cin.clear();
+        std::getline(std::cin, answer);
+        if (answer == "Y" || answer == "y") {
+            confirmation = YesNoConfirm::Yes;
+        } else if (answer == "N" || answer == "n") {
+            confirmation = YesNoConfirm::No;
+        } else if (answer == "B" || answer == "b") {
+            confirmation = YesNoConfirm::Back;
+        } else {
+            std::cout << "Wrong answer, you must choose Y, N or B\n";
+            confirmation = YesNoConfirm::Error;
+        }
+    }
+    return confirmation;
 }
