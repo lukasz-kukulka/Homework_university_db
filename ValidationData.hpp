@@ -8,6 +8,12 @@ namespace {
 
 class ValidationData {
 public:
+    enum class YesNoConfirm{
+        NoConfirm,
+        Yes,
+        No
+    };
+
     bool isCorrectMenuChoice(const size_t choosenValueToValid, const size_t sizeMenu);
 
     bool validationIsAlpabet(std::string stringToCheck);
