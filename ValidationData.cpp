@@ -123,3 +123,7 @@ bool ValidationData::validatingGender(char userChoice) {
     }
     return true;
 }
+
+ValidationData::YesNoConfirm ValidationData::confirmDataYesNo(std::string question) {
+    
+}

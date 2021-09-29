@@ -11,7 +11,9 @@ public:
     enum class YesNoConfirm{
         NoConfirm,
         Yes,
-        No
+        No,
+        Error,
+        Back
     };
 
     bool isCorrectMenuChoice(const size_t choosenValueToValid, const size_t sizeMenu);
@@ -27,6 +29,8 @@ public:
     bool validatingPeselNumber(std::string peselNumber);
 
     bool validatingGender(char userChoice);
+
+    YesNoConfirm confirmDataYesNo(std::string question);
 private:
 
 };
