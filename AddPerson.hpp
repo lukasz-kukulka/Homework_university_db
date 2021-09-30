@@ -39,6 +39,7 @@ private:
     void confirmAddRecord(std::vector<std::shared_ptr<Person>>& person);
     std::vector<std::shared_ptr<Person>>::iterator isPersonExist(std::vector<std::shared_ptr<Person>>& person);
     void printAddingPerson();
+    void printExistingPerson(std::shared_ptr<Person>& person);
     void existingPerson(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData>validation_;

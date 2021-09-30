@@ -134,6 +134,7 @@ void AddPerson::confirmAddRecord(std::vector<std::shared_ptr<Person>>& person) {
         yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
         if (yesNoAnsver_ == ansvers::Yes) {
             addingPerson(person);
+            existingPerson(person);
         }
         break;
     }
@@ -157,9 +158,13 @@ void AddPerson::printAddingPerson() {
     std::cout << "SALARY: " << salary_ << " | \n";
 }
 
+void AddPerson::printExistingPerson(std::shared_ptr<Person>& person) {
+    
+}
+
 void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
     if (end(person) != isPersonExist(person)) {
-
+        
     }
 }
 
