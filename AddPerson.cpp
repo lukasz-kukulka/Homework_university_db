@@ -157,7 +157,9 @@ void AddPerson::printAddingPerson() {
     std::cout << "SALARY: " << salary_ << " | \n";
 }
 
-void AddPerson::existingPerson() {
-    
+void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
+    if (end(person) != isPersonExist(person)) {
+
+    }
 }
 
