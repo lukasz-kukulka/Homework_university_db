@@ -156,3 +156,8 @@ void AddPerson::printAddingPerson() {
     std::cout << "INDEX NUMBER: " << indexNumber_ << " | ";
     std::cout << "SALARY: " << salary_ << " | \n";
 }
+
+void AddPerson::existingPerson() {
+    
+}
+
