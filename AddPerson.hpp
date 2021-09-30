@@ -36,6 +36,7 @@ private:
     void addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person);
     void confirmAddRecord();
     std::vector<std::shared_ptr<Person>>::iterator isPersonExist(std::vector<std::shared_ptr<Person>>& person);
+    void printAddingPerson();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };

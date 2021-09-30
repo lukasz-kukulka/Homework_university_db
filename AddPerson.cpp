@@ -133,7 +133,7 @@ void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& per
 
 void AddPerson::confirmAddRecord() {
     while (true) {
-        validation_->confirmDataYesNo("Are you sure you wanna add this record to database?\n")
+        validation_->confirmDataYesNo("Are you sure you wanna add this record to database?\n");
         // checkedIfPersonExist_ = isPersonExist();
         // std::cout << "Are you sure you wanna add this record to database? Y/N:";
         // if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
@@ -160,4 +160,14 @@ std::vector<std::shared_ptr<Person>>::iterator AddPerson::isPersonExist(std::vec
                         [&](auto finding){ return (finding->getPeselNumber() == peselNumber_ ||
                                                   (finding->getIndexNumber() == indexNumber_ && indexNumber_ != "NO_INDEX") ||
                                                   (finding->getName() == name_ && finding->getSurname() == surname_)); });
+}
+
+void AddPerson::printAddingPerson() {
+    std::cout << "| NAME: " << name_ << " | ";
+    std::cout << "SURNAME: " << surname_ << " | ";
+    std::cout << "ADDRESS: " << address_ << " | ";
+    std::cout << "PESEL NUMBER: " << peselNumber_ << " | ";
+    std::cout << "GENDER: " << name_ << " | ";
+    std::cout << "INDEX NUMBER: " << indexNumber_ << " | ";
+    std::cout << "SALARY: " << salary_ << " | \n";
 }
