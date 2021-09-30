@@ -13,6 +13,12 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
     person.size();
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
+    
+    
+    //zmienić share na const
+
+
+
     addingPerson(person);
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -127,6 +133,7 @@ void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& per
 
 void AddPerson::confirmAddRecord() {
     while (true) {
+        validation_->confirmDataYesNo("Are you sure you wanna add this record to database?\n")
         // checkedIfPersonExist_ = isPersonExist();
         // std::cout << "Are you sure you wanna add this record to database? Y/N:";
         // if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
