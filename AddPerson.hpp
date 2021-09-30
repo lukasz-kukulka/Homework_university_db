@@ -7,6 +7,8 @@
 #include <limits> //for numeric_limits
 #include <ios> // for std::streamsize
 
+using ansvers = ValidationData::YesNoConfirm;
+
 class AddPerson : public Command {
 public:
     AddPerson(std::shared_ptr<ValidationData> validation);
@@ -34,7 +36,7 @@ private:
     void addingPerson(std::vector<std::shared_ptr<Person>>& person);
     void addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person);
     void addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person);
-    void confirmAddRecord();
+    void confirmAddRecord(std::vector<std::shared_ptr<Person>>& person);
     std::vector<std::shared_ptr<Person>>::iterator isPersonExist(std::vector<std::shared_ptr<Person>>& person);
     void printAddingPerson();
 
@@ -48,4 +50,6 @@ private:
     char gender_ { };
     std::string indexNumber_ { };
     std::string salary_ { };
+
+    ansvers yesNoAnsver_ { ansvers::NoConfirm };
 };

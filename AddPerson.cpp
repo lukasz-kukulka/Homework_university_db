@@ -2,6 +2,7 @@
 #include "Student.hpp"
 #include "Professor.hpp"
 #include "Student.hpp"
+#include <exception>
 
 #include <iostream>
 
@@ -19,7 +20,7 @@ void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
 
 
 
-    addingPerson(person);
+    confirmAddRecord(person);
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
@@ -131,26 +132,14 @@ void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& per
     person.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, gender_, salary_)));
 }
 
-void AddPerson::confirmAddRecord() {
+void AddPerson::confirmAddRecord(std::vector<std::shared_ptr<Person>>& person) {
     while (true) {
-        validation_->confirmDataYesNo("Are you sure you wanna add this record to database?\n");
-        // checkedIfPersonExist_ = isPersonExist();
-        // std::cout << "Are you sure you wanna add this record to database? Y/N:";
-        // if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
-        //     if (checkedIfPersonExist_ != end(person_)) {
-        //         ifPersonExistMenu();
-        //         break;
-        //     }
-        //     addStudentRecordToVector();
-        //     break;
-        // }
-        // if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Professor) {
-        //     addProfesorRecordToVector();
-        //     break;
-        // }
-        // if (yesNoOption() == YesNoOption::No) {
-        //     break;
-        // }
+        printAddingPerson();
+        yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
+        if (yesNoAnsver_ == ansvers::Yes) {
+            addingPerson(person);
+            break;
+        }
     }
 }
 
