@@ -175,7 +175,9 @@ void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
     }
 }
 
-void printMenuIfPersonExist() {
-    
+void AddPerson::printMenuIfPersonExist() {
+    std::cout << "What you wanna do\n";
+    std::cout << "Save new\n";
+    std::cout << "What you wanna do\n";
 }
 
