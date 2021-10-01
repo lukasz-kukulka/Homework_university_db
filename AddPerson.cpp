@@ -149,6 +149,7 @@ std::vector<std::shared_ptr<Person>>::iterator AddPerson::isPersonExist(std::vec
 }
 
 void AddPerson::printAddingPerson() {
+    std::cout << "--------------  ADDING PERSON  -------------\n";
     std::cout << "| NAME: " << name_ << " | ";
     std::cout << "SURNAME: " << surname_ << " | ";
     std::cout << "ADDRESS: " << address_ << " | ";
@@ -159,7 +160,14 @@ void AddPerson::printAddingPerson() {
 }
 
 void AddPerson::printExistingPerson(std::shared_ptr<Person>& person) {
-    
+    std::cout << "--------------  EXISTING PERSON  -------------\n";
+    std::cout << "| NAME: " << person->getName() << " | ";
+    std::cout << "SURNAME: " << person->getSurname() << " | ";
+    std::cout << "ADDRESS: " << person->getAddress() << " | ";
+    std::cout << "PESEL NUMBER: " << person->getPeselNumber() << " | ";
+    std::cout << "GENDER: " << person->getGender() << " | ";
+    std::cout << "INDEX NUMBER: " << person->getIndexNumber() << " | ";
+    std::cout << "SALARY: " << person->getSalary() << " | \n";
 }
 
 void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
