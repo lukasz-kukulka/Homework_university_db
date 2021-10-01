@@ -22,6 +22,13 @@ public:
         Back
     };
 
+    enum class ExistingPerson {
+        SaveNew,
+        LeaveExist,
+        Edit,
+        Cancel
+    }; 
+
 private:
     WhichPerson selectPerson()  ;
     std::string insertPersonName();
