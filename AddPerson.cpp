@@ -172,7 +172,10 @@ void AddPerson::printExistingPerson(std::shared_ptr<Person>& person) {
 
 void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
     if (end(person) != isPersonExist(person)) {
-        
     }
+}
+
+void printMenuIfPersonExist() {
+    
 }
 

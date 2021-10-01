@@ -48,6 +48,7 @@ private:
     void printAddingPerson();
     void printExistingPerson(std::shared_ptr<Person>& person);
     void existingPerson(std::vector<std::shared_ptr<Person>>& person);
+    void printMenuIfPersonExist();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
