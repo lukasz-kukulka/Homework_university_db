@@ -186,4 +186,21 @@ void AddPerson::printMenuIfPersonExist() {
     std::cout << "Cancel\n\n";
 }
 
+void AddPerson::isPersonExistMenu(std::vector<std::shared_ptr<Person>>& person) {
 
+    switch (existingPersonMenu_) {
+        case ExistingPersonMenu::SaveNew : {
+
+        } break;
+        case ExistingPersonMenu::LeaveExist : {
+
+        } break;
+        case ExistingPersonMenu::Edit : {
+
+        } break;
+        case ExistingPersonMenu::Cancel : {
+
+        } break;        
+        default : break;
+    }
+}

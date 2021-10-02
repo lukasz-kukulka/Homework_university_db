@@ -22,7 +22,8 @@ public:
         Back
     };
 
-    enum class ExistingPerson {
+    enum class ExistingPersonMenu {
+        NoChoice,
         SaveNew,
         LeaveExist,
         Edit,
@@ -63,4 +64,5 @@ private:
     std::string salary_ { };
 
     ansvers yesNoAnsver_ { ansvers::NoConfirm };
+    ExistingPersonMenu existingPersonMenu_ { ExistingPersonMenu::NoChoice };
 };
