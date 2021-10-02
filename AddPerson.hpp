@@ -50,7 +50,7 @@ private:
     void printExistingPerson(std::shared_ptr<Person>& person);
     void existingPerson(std::vector<std::shared_ptr<Person>>& person);
     void printMenuIfPersonExist();
-    void isPersonExistMenu(std::vector<std::shared_ptr<Person>>& person);
+    void isPersonExistMenu(int userChoice);
     int isPersonExistMenuUserChoice();
 
     std::shared_ptr<ValidationData>validation_;

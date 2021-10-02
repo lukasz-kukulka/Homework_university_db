@@ -185,10 +185,11 @@ void AddPerson::printMenuIfPersonExist() {
     std::cout << ++menuOptionNumber << "Leave existing person\n";
     std::cout << ++menuOptionNumber << "Edit record\n";
     std::cout << ++menuOptionNumber << "Cancel\n\n";
+    isPersonExistMenuUserChoice();
 }
 
-void AddPerson::isPersonExistMenu(std::vector<std::shared_ptr<Person>>& person) {
-
+void AddPerson::isPersonExistMenu(int userChoice) {
+    existingPersonMenu_ = static_cast<ExistingPersonMenu>(userChoice);
     switch (existingPersonMenu_) {
         case ExistingPersonMenu::SaveNew : {
 
