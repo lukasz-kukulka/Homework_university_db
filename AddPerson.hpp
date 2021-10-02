@@ -51,7 +51,7 @@ private:
     void existingPerson(std::vector<std::shared_ptr<Person>>& person);
     void printMenuIfPersonExist();
     void isPersonExistMenu(int userChoice);
-    int isPersonExistMenuUserChoice();
+    int isPersonExistMenuUserChoice(int optionNumber);
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
