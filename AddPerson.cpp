@@ -179,11 +179,12 @@ void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
 }
 
 void AddPerson::printMenuIfPersonExist() {
-    std::cout << "Person exist. What you wanna do?\n";
-    std::cout << "Save new\n";
-    std::cout << "Leave existing person\n";
-    std::cout << "Edit record\n";
-    std::cout << "Cancel\n\n";
+    int menuOptionNumber { };
+    std::cout << ++menuOptionNumber << "Person exist. What you wanna do?\n";
+    std::cout << ++menuOptionNumber << "Save new\n";
+    std::cout << ++menuOptionNumber << "Leave existing person\n";
+    std::cout << ++menuOptionNumber << "Edit record\n";
+    std::cout << ++menuOptionNumber << "Cancel\n\n";
 }
 
 void AddPerson::isPersonExistMenu(std::vector<std::shared_ptr<Person>>& person) {
@@ -203,4 +204,8 @@ void AddPerson::isPersonExistMenu(std::vector<std::shared_ptr<Person>>& person) 
         } break;        
         default : break;
     }
+}
+
+int AddPerson::isPersonExistMenuUserChoice() {
+
 }
