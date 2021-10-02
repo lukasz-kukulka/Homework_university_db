@@ -99,7 +99,7 @@ void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person)  {
     if (userChoice == WhichPerson::Student) {
         addStudentToDatabase(person);
     } else if (userChoice == WhichPerson::Professor) {
-       addProfessorToDatabase(person);
+        addProfessorToDatabase(person);
     } else {
         std::cout << "Back to main menu ...\n";
     }
@@ -172,12 +172,18 @@ void AddPerson::printExistingPerson(std::shared_ptr<Person>& person) {
 
 void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
     if (end(person) != isPersonExist(person)) {
+        confirmAddRecord(person);
+    } else {
+        printMenuIfPersonExist();
     }
 }
 
 void AddPerson::printMenuIfPersonExist() {
-    std::cout << "What you wanna do\n";
+    std::cout << "Person exist. What you wanna do?\n";
     std::cout << "Save new\n";
-    std::cout << "What you wanna do\n";
+    std::cout << "Leave existing person\n";
+    std::cout << "Edit record\n";
+    std::cout << "Cancel\n\n";
 }
+
 
