@@ -185,7 +185,7 @@ void AddPerson::printMenuIfPersonExist() {
     std::cout << ++menuOptionNumber << "Leave existing person\n";
     std::cout << ++menuOptionNumber << "Edit record\n";
     std::cout << ++menuOptionNumber << "Cancel\n\n";
-    isPersonExistMenuUserChoice(menuOptionNumber);
+    isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber));
 }
 
 void AddPerson::isPersonExistMenu(int userChoice) {
