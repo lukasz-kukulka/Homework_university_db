@@ -17,6 +17,8 @@ void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
     while (yesNoAnsver_ != ansvers::Back) {
         confirmAddRecord(person);
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        // add condition if answer if yesNoAnsver_ == ansvers::No
+        // add conditions in all insert data
     }
 }
 
@@ -137,6 +139,7 @@ void AddPerson::confirmAddRecord(std::vector<std::shared_ptr<Person>>& person) {
             existingPerson(person);
         }
         break;
+
     }
 }
 
@@ -198,7 +201,7 @@ void AddPerson::isPersonExistMenu(int userChoice) {
             leaveExistIsPersonExist();
         } break;
         case ExistingPersonMenu::Edit : {
-
+            editIsPersonExist();
         } break;
         case ExistingPersonMenu::Cancel : {
 
@@ -225,5 +228,9 @@ void AddPerson::leaveExistIsPersonExist() {
 }
 
 void AddPerson::editIsPersonExist() {
+
+}
+
+void AddPerson::cancelIsPersonExist() {
 
 }

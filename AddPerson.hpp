@@ -56,6 +56,7 @@ private:
     void saveNewIsPersonExist();
     void leaveExistIsPersonExist();
     void editIsPersonExist();
+    void cancelIsPersonExist();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
