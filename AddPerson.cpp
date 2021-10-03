@@ -174,10 +174,13 @@ void AddPerson::printExistingPerson(std::shared_ptr<Person>& person) {
 }
 
 void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
-    if (end(person) != isPersonExist(person)) {
+    while (true) {
+        if (end(person) != isPersonExist(person)) {
         confirmAddRecord(person);
-    } else {
-        printMenuIfPersonExist();
+        break;
+        } else {
+            printMenuIfPersonExist();
+        }
     }
 }
 
@@ -191,7 +194,7 @@ void AddPerson::printMenuIfPersonExist() {
     isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber));
 }
 
-void AddPerson::isPersonExistMenu(int userChoice) {
+void AddPerson::isPersonExistMenu(size_t userChoice) {
     existingPersonMenu_ = static_cast<ExistingPersonMenu>(userChoice);
     switch (existingPersonMenu_) {
         case ExistingPersonMenu::SaveNew : {
@@ -210,7 +213,7 @@ void AddPerson::isPersonExistMenu(int userChoice) {
     }
 }
 
-int AddPerson::isPersonExistMenuUserChoice(int optionNumber) {
+size_t AddPerson::isPersonExistMenuUserChoice(int optionNumber) {
     std::cout << "What is your choice? ";
     size_t userChoice { };
     std::cin >> userChoice;
