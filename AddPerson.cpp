@@ -192,7 +192,7 @@ void AddPerson::isPersonExistMenu(int userChoice) {
     existingPersonMenu_ = static_cast<ExistingPersonMenu>(userChoice);
     switch (existingPersonMenu_) {
         case ExistingPersonMenu::SaveNew : {
-
+            saveNewIsPersonExist();
         } break;
         case ExistingPersonMenu::LeaveExist : {
 
@@ -217,5 +217,9 @@ int AddPerson::isPersonExistMenuUserChoice(int optionNumber) {
 }
 
 void AddPerson::saveNewIsPersonExist() {
+
+}
+
+void AddPerson::leaveExistIsPersonExist() {
 
 }
