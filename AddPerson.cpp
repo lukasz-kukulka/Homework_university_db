@@ -215,3 +215,7 @@ int AddPerson::isPersonExistMenuUserChoice(int optionNumber) {
     }
     return userChoice;
 }
+
+void AddPerson::saveNewIsPersonExist() {
+
+}

@@ -52,6 +52,8 @@ private:
     void printMenuIfPersonExist();
     void isPersonExistMenu(int userChoice);
     int isPersonExistMenuUserChoice(int optionNumber);
+    
+    void saveNewIsPersonExist();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
