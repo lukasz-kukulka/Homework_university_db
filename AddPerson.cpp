@@ -204,7 +204,7 @@ void AddPerson::isPersonExistMenu(int userChoice) {
             editIsPersonExist();
         } break;
         case ExistingPersonMenu::Cancel : {
-
+            cancelIsPersonExist();
         } break;        
         default : break;
     }
