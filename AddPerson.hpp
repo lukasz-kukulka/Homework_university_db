@@ -49,17 +49,18 @@ private:
     void printAddingPerson();
     void printExistingPerson(std::shared_ptr<Person>& person);
     void existingPerson(std::vector<std::shared_ptr<Person>>& person);
-    void printMenuIfPersonExist();
-    void isPersonExistMenu(size_t userChoice);
+    void printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& person);
+    void isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person);
     size_t isPersonExistMenuUserChoice(int optionNumber);
 
-    void saveNewIsPersonExist();
+    void saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person);
     void leaveExistIsPersonExist();
     void editIsPersonExist();
     void cancelIsPersonExist();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
+    std::vector<std::shared_ptr<Person>>::iterator existPerson_ { nullptr };
 
     std::string name_ { };
     std::string surname_ { };

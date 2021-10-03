@@ -139,7 +139,6 @@ void AddPerson::confirmAddRecord(std::vector<std::shared_ptr<Person>>& person) {
             existingPerson(person);
         }
         break;
-
     }
 }
 
@@ -174,31 +173,32 @@ void AddPerson::printExistingPerson(std::shared_ptr<Person>& person) {
 }
 
 void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
+    existPerson_ = isPersonExist(person);
     while (true) {
-        if (end(person) != isPersonExist(person)) {
+        if (end(person) != existPerson_) {
         confirmAddRecord(person);
         break;
         } else {
-            printMenuIfPersonExist();
+            printMenuIfPersonExist(person);
         }
     }
 }
 
-void AddPerson::printMenuIfPersonExist() {
+void AddPerson::printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& person) {
     int menuOptionNumber { };
     std::cout << ++menuOptionNumber << "Person exist. What you wanna do?\n";
     std::cout << ++menuOptionNumber << "Save new\n";
     std::cout << ++menuOptionNumber << "Leave existing person\n";
     std::cout << ++menuOptionNumber << "Edit record\n";
     std::cout << ++menuOptionNumber << "Cancel\n\n";
-    isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber));
+    isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber), person);
 }
 
-void AddPerson::isPersonExistMenu(size_t userChoice) {
+void AddPerson::isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person) {
     existingPersonMenu_ = static_cast<ExistingPersonMenu>(userChoice);
     switch (existingPersonMenu_) {
         case ExistingPersonMenu::SaveNew : {
-            saveNewIsPersonExist();
+            saveNewIsPersonExist(person);
         } break;
         case ExistingPersonMenu::LeaveExist : {
             leaveExistIsPersonExist();
@@ -222,8 +222,15 @@ size_t AddPerson::isPersonExistMenuUserChoice(int optionNumber) {
     return userChoice;
 }
 
-void AddPerson::saveNewIsPersonExist() {
-
+void AddPerson::saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person) {
+    while (true) {
+        printAddingPerson();
+        yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
+        if (yesNoAnsver_ == ansvers::Yes) {
+            addingPerson(person);
+        }
+        break;
+    }
 }
 
 void AddPerson::leaveExistIsPersonExist() {
