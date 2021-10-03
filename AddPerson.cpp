@@ -195,7 +195,7 @@ void AddPerson::isPersonExistMenu(int userChoice) {
             saveNewIsPersonExist();
         } break;
         case ExistingPersonMenu::LeaveExist : {
-
+            leaveExistIsPersonExist();
         } break;
         case ExistingPersonMenu::Edit : {
 
@@ -221,5 +221,9 @@ void AddPerson::saveNewIsPersonExist() {
 }
 
 void AddPerson::leaveExistIsPersonExist() {
+
+}
+
+void AddPerson::editIsPersonExist() {
 
 }
