@@ -196,22 +196,20 @@ void AddPerson::printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& per
 
 void AddPerson::isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person) {
     existingPersonMenu_ = static_cast<ExistingPersonMenu>(userChoice);
-    while (existingPersonMenu_ == ExistingPersonMenu::Back) {
-        switch (existingPersonMenu_) {
-            case ExistingPersonMenu::SaveNew : {
-                saveNewIsPersonExist(person);
-            } break;
-            case ExistingPersonMenu::LeaveExist : {
-                leaveExistIsPersonExist();
-            } break;
-            case ExistingPersonMenu::Edit : {
-                editIsPersonExist();
-            } break;
-            case ExistingPersonMenu::Cancel : {
-                cancelIsPersonExist();
-            } break;        
-            default : break;
-        }
+    switch (existingPersonMenu_) {
+        case ExistingPersonMenu::SaveNew : {
+            saveNewIsPersonExist(person);
+        } break;
+        case ExistingPersonMenu::LeaveExist : {
+            leaveExistIsPersonExist();
+        } break;
+        case ExistingPersonMenu::Edit : {
+            editIsPersonExist();
+        } break;
+        case ExistingPersonMenu::Cancel : {
+            cancelIsPersonExist();
+        } break;        
+        default : break;
     }
 
 }
@@ -237,7 +235,14 @@ void AddPerson::saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& perso
 }
 
 void AddPerson::leaveExistIsPersonExist() {
-
+    while (true) {
+        printExistingPerson(*existPerson_);
+        yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
+        if (yesNoAnsver_ == ansvers::Yes) {
+            
+        }
+        break;
+    }
 }
 
 void AddPerson::editIsPersonExist() {
