@@ -191,26 +191,29 @@ void AddPerson::printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& per
     std::cout << ++menuOptionNumber << "Leave existing person\n";
     std::cout << ++menuOptionNumber << "Edit record\n";
     std::cout << ++menuOptionNumber << "Cancel\n\n";
-    isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber), person, menuOptionNumber);
+    isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber), person);
 }
 
-void AddPerson::isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person, int menuOptionsValue) {
+void AddPerson::isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person) {
     existingPersonMenu_ = static_cast<ExistingPersonMenu>(userChoice);
-    switch (existingPersonMenu_) {
-        case ExistingPersonMenu::SaveNew : {
-            saveNewIsPersonExist(person);
-        } break;
-        case ExistingPersonMenu::LeaveExist : {
-            leaveExistIsPersonExist();
-        } break;
-        case ExistingPersonMenu::Edit : {
-            editIsPersonExist();
-        } break;
-        case ExistingPersonMenu::Cancel : {
-            cancelIsPersonExist();
-        } break;        
-        default : break;
+    while (existingPersonMenu_ == ExistingPersonMenu::Back) {
+        switch (existingPersonMenu_) {
+            case ExistingPersonMenu::SaveNew : {
+                saveNewIsPersonExist(person);
+            } break;
+            case ExistingPersonMenu::LeaveExist : {
+                leaveExistIsPersonExist();
+            } break;
+            case ExistingPersonMenu::Edit : {
+                editIsPersonExist();
+            } break;
+            case ExistingPersonMenu::Cancel : {
+                cancelIsPersonExist();
+            } break;        
+            default : break;
+        }
     }
+
 }
 
 size_t AddPerson::isPersonExistMenuUserChoice(int optionNumber) {

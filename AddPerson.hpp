@@ -27,7 +27,8 @@ public:
         SaveNew,
         LeaveExist,
         Edit,
-        Cancel
+        Cancel,
+        Back
     }; 
 
 private:
@@ -50,7 +51,7 @@ private:
     void printExistingPerson(std::shared_ptr<Person>& person);
     void existingPerson(std::vector<std::shared_ptr<Person>>& person);
     void printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& person);
-    void isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person, int menuOptionsValue);
+    void isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person);
     size_t isPersonExistMenuUserChoice(int optionNumber);
 
     void saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person);
