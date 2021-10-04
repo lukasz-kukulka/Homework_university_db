@@ -230,6 +230,7 @@ void AddPerson::saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& perso
         if (yesNoAnsver_ == ansvers::Yes) {
             addingPerson(person);
         }
+        // add another option answer
         break;
     }
 }
@@ -237,10 +238,11 @@ void AddPerson::saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& perso
 void AddPerson::leaveExistIsPersonExist() {
     while (true) {
         printExistingPerson(*existPerson_);
-        yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
+        yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna leave old record?\n");
         if (yesNoAnsver_ == ansvers::Yes) {
             
         }
+        // add another option answer
         break;
     }
 }
@@ -250,5 +252,9 @@ void AddPerson::editIsPersonExist() {
 }
 
 void AddPerson::cancelIsPersonExist() {
+
+}
+
+void AddPerson::clearTemporaryData() {
 
 }
