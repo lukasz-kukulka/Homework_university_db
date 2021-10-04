@@ -256,5 +256,11 @@ void AddPerson::cancelIsPersonExist() {
 }
 
 void AddPerson::clearTemporaryData() {
-
+    name_ = "";
+    surname_ = "";
+    address_ = "";
+    peselNumber_ = "";
+    gender_ = ' ';
+    indexNumber_ = "";
+    salary_ = "";
 }
