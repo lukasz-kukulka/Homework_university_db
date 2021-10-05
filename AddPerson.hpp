@@ -59,6 +59,7 @@ private:
 
     void editIsPersonExist();
     void editName();
+    void editSurname();
 
     void cancelIsPersonExist();
     void clearTemporaryData();
