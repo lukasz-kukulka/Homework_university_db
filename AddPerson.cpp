@@ -275,6 +275,10 @@ void AddPerson::editIndexNumber() {
     
 }
 
+void AddPerson::editSalary() {
+    
+}
+
 void AddPerson::cancelIsPersonExist() {
 
 }

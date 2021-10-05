@@ -64,6 +64,7 @@ private:
     void editPeselNumber();
     void editGender();
     void editIndexNumber();
+    void editSalary();
 
     void cancelIsPersonExist();
     void clearTemporaryData();
