@@ -61,6 +61,7 @@ private:
     void editName();
     void editSurname();
     void editAddress();
+    void editPeselNumber();
 
     void cancelIsPersonExist();
     void clearTemporaryData();

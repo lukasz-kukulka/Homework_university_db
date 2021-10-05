@@ -263,6 +263,10 @@ void AddPerson::editAddress() {
 
 }
 
+void AddPerson::editPeselNumber() {
+
+}
+
 void AddPerson::cancelIsPersonExist() {
 
 }
