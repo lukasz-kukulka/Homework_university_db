@@ -63,6 +63,7 @@ private:
     void editAddress();
     void editPeselNumber();
     void editGender();
+    void editIndexNumber();
 
     void cancelIsPersonExist();
     void clearTemporaryData();

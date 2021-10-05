@@ -268,6 +268,10 @@ void AddPerson::editPeselNumber() {
 }
 
 void AddPerson::editGender() {
+
+}
+
+void AddPerson::editIndexNumber() {
     
 }
 
