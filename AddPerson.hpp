@@ -60,6 +60,7 @@ private:
     void editIsPersonExist();
     void editName();
     void editSurname();
+    void editAddress();
 
     void cancelIsPersonExist();
     void clearTemporaryData();
