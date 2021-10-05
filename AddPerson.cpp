@@ -259,6 +259,10 @@ void AddPerson::editSurname() {
 
 }
 
+void AddPerson::editAddress() {
+
+}
+
 void AddPerson::cancelIsPersonExist() {
 
 }
