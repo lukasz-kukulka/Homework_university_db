@@ -251,6 +251,10 @@ void AddPerson::editIsPersonExist() {
 
 }
 
+void AddPerson::editName() {
+
+}
+
 void AddPerson::cancelIsPersonExist() {
 
 }

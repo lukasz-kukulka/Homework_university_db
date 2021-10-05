@@ -56,7 +56,10 @@ private:
 
     void saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person);
     void leaveExistIsPersonExist();
+
     void editIsPersonExist();
+    void editName();
+
     void cancelIsPersonExist();
     void clearTemporaryData();
 
