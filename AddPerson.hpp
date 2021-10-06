@@ -76,6 +76,7 @@ private:
 
     void cancelIsPersonExist();
     void clearTemporaryData();
+    std::string confirmEditPerson(std::string valueOne, std::string valueTwo);
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };

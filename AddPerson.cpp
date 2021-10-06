@@ -292,3 +292,7 @@ void AddPerson::clearTemporaryData() {
     indexNumber_ = "";
     salary_ = "";
 }
+
+std::string AddPerson::confirmEditPerson(std::string valueOne, std::string valueTwo) {
+
+}
