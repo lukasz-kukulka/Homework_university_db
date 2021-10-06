@@ -31,6 +31,14 @@ public:
         Back
     }; 
 
+    enum class EditPerson {
+        NoChoice,
+        LiveOld,
+        AddNew,
+        Edit,
+        Cancel
+    }; 
+
 private:
     WhichPerson selectPerson()  ;
     std::string insertPersonName();
