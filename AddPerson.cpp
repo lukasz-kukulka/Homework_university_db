@@ -296,3 +296,7 @@ void AddPerson::clearTemporaryData() {
 std::string AddPerson::confirmEditPerson(std::string valueOne, std::string valueTwo) {
 
 }
+
+void AddPerson::printMenuConfirmEditPerson() {
+    
+}

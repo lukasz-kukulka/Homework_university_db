@@ -33,7 +33,7 @@ public:
 
     enum class EditPerson {
         NoChoice,
-        LiveOld,
+        LeaveOld,
         AddNew,
         Edit,
         Cancel
@@ -77,6 +77,7 @@ private:
     void cancelIsPersonExist();
     void clearTemporaryData();
     std::string confirmEditPerson(std::string valueOne, std::string valueTwo);
+    void printMenuConfirmEditPerson();
 
     std::shared_ptr<ValidationData>validation_;
     WhichPerson whichPerson_ { WhichPerson::NoPerson };
