@@ -293,7 +293,7 @@ void AddPerson::clearTemporaryData() {
     salary_ = "";
 }
 
-std::string AddPerson::confirmEditPerson(std::string valueOne, std::string valueTwo) {
+std::string AddPerson::confirmEditPerson(std::string oldRecord, std::string newRecord) {
 
 }
 

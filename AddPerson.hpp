@@ -76,7 +76,7 @@ private:
 
     void cancelIsPersonExist();
     void clearTemporaryData();
-    std::string confirmEditPerson(std::string valueOne, std::string valueTwo);
+    std::string confirmEditPerson(std::string oldRecord, std::string newRecord);
     void printMenuConfirmEditPerson();
 
     std::shared_ptr<ValidationData>validation_;
