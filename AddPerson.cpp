@@ -298,5 +298,11 @@ std::string AddPerson::confirmEditPerson(std::string valueOne, std::string value
 }
 
 void AddPerson::printMenuConfirmEditPerson() {
-    
+    int menuOptionNumber { };
+    std::cout << ++menuOptionNumber << "You editing record, what you wanna do?\n";
+    std::cout << ++menuOptionNumber << "Leave old\n";
+    std::cout << ++menuOptionNumber << "Add new\n";
+    std::cout << ++menuOptionNumber << "Edit\n";
+    std::cout << ++menuOptionNumber << "Cancel\n\n";
 }
+
