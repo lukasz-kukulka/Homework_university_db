@@ -248,7 +248,7 @@ void AddPerson::leaveExistIsPersonExist() {
 }
 
 void AddPerson::editIsPersonExist() {
-
+    
 }
 
 void AddPerson::editName() {
@@ -294,15 +294,24 @@ void AddPerson::clearTemporaryData() {
 }
 
 std::string AddPerson::confirmEditPerson(std::string oldRecord, std::string newRecord) {
+    // std::cout << "OLD RECORD: " << oldRecord << '\n';
+    // std::cout << "NEW RECORD: " << newRecord << '\n';
+    // if () {
+        
+    // }
 
 }
 
 void AddPerson::printMenuConfirmEditPerson() {
     int menuOptionNumber { };
-    std::cout << ++menuOptionNumber << "You editing record, what you wanna do?\n";
-    std::cout << ++menuOptionNumber << "Leave old\n";
-    std::cout << ++menuOptionNumber << "Add new\n";
-    std::cout << ++menuOptionNumber << "Edit\n";
-    std::cout << ++menuOptionNumber << "Cancel\n\n";
+    std::cout << ++menuOptionNumber << ". You editing record, what you wanna do?\n";
+    std::cout << ++menuOptionNumber << ". Leave old\n";
+    std::cout << ++menuOptionNumber << ". Add new\n";
+    std::cout << ++menuOptionNumber << ". Edit\n";
+    std::cout << ++menuOptionNumber << ". Cancel\n\n";
+}
+
+AddPerson::EditPerson AddPerson::userChoiceConfirmEditPerson() {
+    
 }
 
