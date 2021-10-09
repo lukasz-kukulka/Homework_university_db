@@ -302,16 +302,21 @@ std::string AddPerson::confirmEditPerson(std::string oldRecord, std::string newR
 
 }
 
-void AddPerson::printMenuConfirmEditPerson() {
+int AddPerson::printMenuConfirmEditPerson() {
     int menuOptionNumber { };
     std::cout << ++menuOptionNumber << ". You editing record, what you wanna do?\n";
     std::cout << ++menuOptionNumber << ". Leave old\n";
     std::cout << ++menuOptionNumber << ". Add new\n";
     std::cout << ++menuOptionNumber << ". Edit\n";
     std::cout << ++menuOptionNumber << ". Cancel\n\n";
+    return menuOptionNumber;
 }
 
 AddPerson::EditPerson AddPerson::userChoiceConfirmEditPerson() {
-    
+    int userChoice { };
+    do {
+        std::cin >> userChoice;
+    } while (validation_->isCorrectMenuChoice(userChoice, printMenuConfirmEditPerson()) == false);
+    return static_cast<EditPerson>(userChoice);
 }
 
