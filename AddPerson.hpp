@@ -76,7 +76,7 @@ private:
 
     void cancelIsPersonExist();
     void clearTemporaryData();
-    std::string confirmEditPerson(std::string oldRecord, std::string newRecord);
+    std::string confirmEditPerson(std::string oldRecord, std::string newRecord, EditPerson userAnswer);
     int printMenuConfirmEditPerson();
     EditPerson userChoiceConfirmEditPerson();
 
