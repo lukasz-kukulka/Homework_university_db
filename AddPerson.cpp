@@ -298,22 +298,21 @@ std::string AddPerson::confirmEditPerson(std::string oldRecord, std::string newR
     switch (userAnswer)
     {
         case AddPerson::EditPerson::LeaveOld : {
-            
+            return oldRecord;
         } break;
         case AddPerson::EditPerson::AddNew : {
-            
+            return newRecord;
         } break;
         case AddPerson::EditPerson::Edit : {
-            
+            //return 
         } break;
         case AddPerson::EditPerson::Cancel : {
-            
+            return "";
         } break;
         default : {
-
+            return "ERROR ---------------------- change to exception";
         } break;
     }
-
 }
 
 int AddPerson::printMenuConfirmEditPerson() {
