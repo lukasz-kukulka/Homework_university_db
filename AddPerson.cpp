@@ -293,7 +293,7 @@ void AddPerson::clearTemporaryData() {
     salary_ = "";
 }
 
-std::string AddPerson::confirmEditPerson(std::string oldRecord, std::string newRecord, EditPerson userAnswer) {
+std::string AddPerson::confirmEditPerson(std::string oldRecord, std::string newRecord, EditPerson userAnswer, std::string editAnswer) {
     std::cout << "OLD RECORD: " << oldRecord << " | NEW RECORD: " << newRecord << '\n';
     switch (userAnswer)
     {
@@ -304,13 +304,13 @@ std::string AddPerson::confirmEditPerson(std::string oldRecord, std::string newR
             return newRecord;
         } break;
         case AddPerson::EditPerson::Edit : {
-            //return 
+            return editAnswer;
         } break;
         case AddPerson::EditPerson::Cancel : {
             return "";
         } break;
         default : {
-            return "ERROR ---------------------- change to exception";
+            return "ERROR ---------------------- change to exception"; ///////////////////////////////////////////////////
         } break;
     }
 }
