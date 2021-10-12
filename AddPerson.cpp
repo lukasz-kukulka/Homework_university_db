@@ -248,6 +248,12 @@ void AddPerson::leaveExistIsPersonExist() {
 }
 
 void AddPerson::editIsPersonExist() {
+    printMenuConfirmEditPerson();
+    auto userAnswer = userChoiceConfirmEditPerson();
+    if (userAnswer == AddPerson::EditPerson::Edit) {
+        confirmEditPerson(existPerson_->get()->getName() , name_, userAnswer, insertPersonName());
+    }
+    confirmEditPerson(existPerson_->get()->getName() , name_, userAnswer);
     
 }
 
