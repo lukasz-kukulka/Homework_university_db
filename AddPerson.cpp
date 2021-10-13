@@ -270,7 +270,12 @@ void AddPerson::editSurname() {
 }
 
 void AddPerson::editAddress() {
-
+    printMenuConfirmEditPerson();
+    auto userAnswer = userChoiceConfirmEditPerson();
+    if (userAnswer == AddPerson::EditPerson::Edit) {
+        confirmEditPerson(existPerson_->get()->getAddress() , address_, userAnswer, insertPersonAddress());
+    }
+    confirmEditPerson(existPerson_->get()->getAddress() , address_ , userAnswer);
 }
 
 void AddPerson::editPeselNumber() {
