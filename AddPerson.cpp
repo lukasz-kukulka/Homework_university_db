@@ -288,7 +288,12 @@ void AddPerson::editPeselNumber() {
 }
 
 void AddPerson::editGender() {
-
+    printMenuConfirmEditPerson();
+    auto userAnswer = userChoiceConfirmEditPerson();
+    if (userAnswer == AddPerson::EditPerson::Edit) {
+        confirmEditPerson(existPerson_->get()->getGender() , std::to_string(gender_), userAnswer, std::to_string(insertPersonGender()));
+    }
+    confirmEditPerson(existPerson_->get()->getGender() , std::to_string(gender_) , userAnswer);
 }
 
 void AddPerson::editIndexNumber() {
