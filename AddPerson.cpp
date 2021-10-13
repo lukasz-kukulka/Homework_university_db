@@ -297,15 +297,15 @@ void AddPerson::editGender() {
 }
 
 void AddPerson::editIndexNumber() {
-    
+    //TO DO
 }
 
 void AddPerson::editSalary() {
-    
+    //TO DO
 }
 
 void AddPerson::cancelIsPersonExist() {
-
+    //TO DO
 }
 
 void AddPerson::clearTemporaryData() {
@@ -335,7 +335,7 @@ std::string AddPerson::confirmEditPerson(std::string oldRecord, std::string newR
             return "";
         } break;
         default : {
-            return "ERROR ---------------------- change to exception"; ///////////////////////////////////////////////////
+            throw std::range_error { "Wrong option menu in confirm Edit Person class" };
         } break;
     }
 }
