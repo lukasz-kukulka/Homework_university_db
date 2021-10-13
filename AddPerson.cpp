@@ -279,7 +279,12 @@ void AddPerson::editAddress() {
 }
 
 void AddPerson::editPeselNumber() {
-
+    printMenuConfirmEditPerson();
+    auto userAnswer = userChoiceConfirmEditPerson();
+    if (userAnswer == AddPerson::EditPerson::Edit) {
+        confirmEditPerson(existPerson_->get()->getPeselNumber() , peselNumber_, userAnswer, insertPersonPesel());
+    }
+    confirmEditPerson(existPerson_->get()->getPeselNumber() , peselNumber_ , userAnswer);
 }
 
 void AddPerson::editGender() {
