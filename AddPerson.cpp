@@ -261,7 +261,12 @@ void AddPerson::editName() {
 }
 
 void AddPerson::editSurname() {
-
+    printMenuConfirmEditPerson();
+    auto userAnswer = userChoiceConfirmEditPerson();
+    if (userAnswer == AddPerson::EditPerson::Edit) {
+        confirmEditPerson(existPerson_->get()->getName() , surname_, userAnswer, insertPersonSurname());
+    }
+    confirmEditPerson(existPerson_->get()->getSurname() , surname_, userAnswer);
 }
 
 void AddPerson::editAddress() {
