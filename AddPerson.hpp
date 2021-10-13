@@ -62,7 +62,7 @@ private:
     void isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person);
     size_t isPersonExistMenuUserChoice(int optionNumber);
 
-    void saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person);
+    bool saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person);
     void leaveExistIsPersonExist();
 
     void editIsPersonExist();

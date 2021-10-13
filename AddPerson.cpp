@@ -186,12 +186,15 @@ void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
 
 void AddPerson::printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& person) {
     int menuOptionNumber { };
-    std::cout << ++menuOptionNumber << "Person exist. What you wanna do?\n";
-    std::cout << ++menuOptionNumber << "Save new\n";
-    std::cout << ++menuOptionNumber << "Leave existing person\n";
-    std::cout << ++menuOptionNumber << "Edit record\n";
-    std::cout << ++menuOptionNumber << "Cancel\n\n";
-    isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber), person);
+    do {
+        std::cout << ++menuOptionNumber << "Person exist. What you wanna do?\n";
+        std::cout << ++menuOptionNumber << "Save new\n";
+        std::cout << ++menuOptionNumber << "Leave existing person\n";
+        std::cout << ++menuOptionNumber << "Edit record\n";
+        std::cout << ++menuOptionNumber << "Cancel\n\n";
+        isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber), person);
+    } while (true); // to do
+
 }
 
 void AddPerson::isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person) {
@@ -223,15 +226,20 @@ size_t AddPerson::isPersonExistMenuUserChoice(int optionNumber) {
     return userChoice;
 }
 
-void AddPerson::saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person) {
+bool AddPerson::saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person) {
     while (true) {
         printAddingPerson();
         yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
         if (yesNoAnsver_ == ansvers::Yes) {
             addingPerson(person);
+            std::cout << "Save new person complete\n";
+            return true;
         }
-        // add another option answer
-        break;
+        if (yesNoAnsver_ == ansvers::Back) {
+            std::cout << "Cancel process\n";
+            return true;
+        }
+        return false;
     }
 }
 
