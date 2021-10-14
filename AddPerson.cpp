@@ -305,7 +305,12 @@ void AddPerson::editGender() {
 }
 
 void AddPerson::editIndexNumber() {
-    //TO DO
+    printMenuConfirmEditPerson();
+    auto userAnswer = userChoiceConfirmEditPerson();
+    if (userAnswer == AddPerson::EditPerson::Edit) {
+        confirmEditPerson(existPerson_->get()->getIndexNumber() , indexNumber_, userAnswer, insertStudentIndexNumber());
+    }
+    confirmEditPerson(existPerson_->get()->getIndexNumber(), indexNumber_ , userAnswer);
 }
 
 void AddPerson::editSalary() {
