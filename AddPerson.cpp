@@ -314,8 +314,14 @@ void AddPerson::editIndexNumber() {
 }
 
 void AddPerson::editSalary() {
-    //TO DO
+    printMenuConfirmEditPerson();
+    auto userAnswer = userChoiceConfirmEditPerson();
+    if (userAnswer == AddPerson::EditPerson::Edit) {
+        confirmEditPerson(existPerson_->get()->getSalary() , salary_, userAnswer, insertProfessorSalary());
+    }
+    confirmEditPerson(existPerson_->get()->getSalary(), salary_ , userAnswer);
 }
+
 
 void AddPerson::cancelIsPersonExist() {
     //TO DO
