@@ -256,7 +256,18 @@ void AddPerson::leaveExistIsPersonExist() {
 }
 
 void AddPerson::editIsPersonExist() {
-
+    editName();
+    editSurname();
+    editAddress();
+    editPeselNumber();
+    editGender();
+    if (whichPerson_ == WhichPerson::Student) {
+        editIndexNumber();
+    } else if (whichPerson_ == WhichPerson::Professor) {
+        editSalary();
+    } else {
+        throw std::range_error { "Wrong person in editIsPersonExist" };
+    }
 }
 
 void AddPerson::editName() {
