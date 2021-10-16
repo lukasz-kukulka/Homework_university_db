@@ -63,7 +63,7 @@ private:
     AddPerson::ExistingPersonMenu isPersonExistMenuUserChoice(int optionNumber);
 
     ExistingPersonMenu saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person);
-    void leaveExistIsPersonExist();
+    AddPerson::ExistingPersonMenu leaveExistIsPersonExist();
 
     void editIsPersonExist();
     void editName();

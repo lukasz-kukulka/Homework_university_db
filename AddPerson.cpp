@@ -237,26 +237,33 @@ AddPerson::ExistingPersonMenu AddPerson::saveNewIsPersonExist(std::vector<std::s
             std::cout << "Save new person complete\n";
             return AddPerson::ExistingPersonMenu::Back;
         }
-        if (yesNoAnsver_ == ansvers::Back) {
-            std::cout << "Cancel process\n";
+        if (yesNoAnsver_ == ansvers::No) {
+            std::cout << "Back to menu\n";
             return AddPerson::ExistingPersonMenu::NoChoice;
         }
-        return AddPerson::ExistingPersonMenu::Cancel;
+        if (yesNoAnsver_ == ansvers::Back) {
+            std::cout << "Cancel process\n";
+            return AddPerson::ExistingPersonMenu::Back;
+        }
     }
 }
 
-void AddPerson::leaveExistIsPersonExist() {
+AddPerson::ExistingPersonMenu AddPerson::leaveExistIsPersonExist() {
     while (true) {
         printExistingPerson(*existPerson_);
         yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna leave old record?\n");
         if (yesNoAnsver_ == ansvers::Yes) {
-            
+            std::cout << "Old record saved\n";
+            return AddPerson::ExistingPersonMenu::Back;
+        }
+        if (yesNoAnsver_ == ansvers::No) {
+            std::cout << "Back to menu\n";
+            return AddPerson::ExistingPersonMenu::NoChoice;
         }
         if (yesNoAnsver_ == ansvers::Back) {
             std::cout << "Cancel process\n";
-            
+            return AddPerson::ExistingPersonMenu::Back;
         }
-        
     }
 }
 
