@@ -195,16 +195,15 @@ void AddPerson::printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& per
         std::cout << ++menuOptionNumber << "Cancel\n\n";
         userAnswer = isPersonExistMenuUserChoice(menuOptionNumber);
         isPersonExistMenu(userAnswer, person);
-    } while (userAnswer == menuOptionNumber);
+    } while (userAnswer <= menuOptionNumber);
 
 }
 
-void AddPerson::isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr<Person>>& person) {
-    existingPersonMenu_ = static_cast<ExistingPersonMenu>(userChoice);
-    switch (existingPersonMenu_) {
+AddPerson::ExistingPersonMenu AddPerson::isPersonExistMenu(AddPerson::ExistingPersonMenu userChoice, std::vector<std::shared_ptr<Person>>& person) {
+    switch (userChoice) {
         case ExistingPersonMenu::SaveNew : {
-            saveNewIsPersonExist(person);
-        } break;
+            return saveNewIsPersonExist(person);
+        }
         case ExistingPersonMenu::LeaveExist : {
             leaveExistIsPersonExist();
         } break;
@@ -218,26 +217,25 @@ void AddPerson::isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr
             throw std::range_error { "Wrong answer in PersonExistMenu()" };
         } break;
     }
-
 }
 
-size_t AddPerson::isPersonExistMenuUserChoice(int optionNumber) {
+AddPerson::ExistingPersonMenu AddPerson::isPersonExistMenuUserChoice(int optionNumber) {
     std::cout << "What is your choice? ";
     size_t userChoice { };
     std::cin >> userChoice;
     while (validation_->isCorrectMenuChoice(userChoice, optionNumber) == false) {
     }
-    return userChoice;
+    return static_cast<ExistingPersonMenu>(userChoice);
 }
 
-bool AddPerson::saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person) {
+AddPerson::ExistingPersonMenu AddPerson::saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person) {
     while (true) {
         printAddingPerson();
         yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
         if (yesNoAnsver_ == ansvers::Yes) {
             addingPerson(person);
             std::cout << "Save new person complete\n";
-            return true;
+            return AddPerson::ExistingPersonMenu::;
         }
         if (yesNoAnsver_ == ansvers::Back) {
             std::cout << "Cancel process\n";
