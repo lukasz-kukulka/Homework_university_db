@@ -186,14 +186,16 @@ void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
 
 void AddPerson::printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& person) {
     int menuOptionNumber { };
+    size_t userAnswer { };
     do {
         std::cout << ++menuOptionNumber << "Person exist. What you wanna do?\n";
         std::cout << ++menuOptionNumber << "Save new\n";
         std::cout << ++menuOptionNumber << "Leave existing person\n";
         std::cout << ++menuOptionNumber << "Edit record\n";
         std::cout << ++menuOptionNumber << "Cancel\n\n";
-        isPersonExistMenu(isPersonExistMenuUserChoice(menuOptionNumber), person);
-    } while (true); // to do
+        userAnswer = isPersonExistMenuUserChoice(menuOptionNumber);
+        isPersonExistMenu(userAnswer, person);
+    } while (userAnswer == menuOptionNumber);
 
 }
 
