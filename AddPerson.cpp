@@ -214,7 +214,9 @@ void AddPerson::isPersonExistMenu(size_t userChoice, std::vector<std::shared_ptr
         case ExistingPersonMenu::Cancel : {
             cancelIsPersonExist();
         } break;        
-        default : break;
+        default : {
+            throw std::range_error { "Wrong answer in PersonExistMenu()" };
+        } break;
     }
 
 }
@@ -252,8 +254,11 @@ void AddPerson::leaveExistIsPersonExist() {
         if (yesNoAnsver_ == ansvers::Yes) {
             
         }
-        // add another option answer
-        break;
+        if (yesNoAnsver_ == ansvers::Back) {
+            std::cout << "Cancel process\n";
+            
+        }
+        
     }
 }
 
