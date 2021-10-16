@@ -186,7 +186,7 @@ void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
 
 void AddPerson::printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& person) {
     int menuOptionNumber { };
-    size_t userAnswer { };
+    AddPerson::ExistingPersonMenu userAnswer { };
     do {
         std::cout << ++menuOptionNumber << "Person exist. What you wanna do?\n";
         std::cout << ++menuOptionNumber << "Save new\n";
@@ -195,7 +195,7 @@ void AddPerson::printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& per
         std::cout << ++menuOptionNumber << "Cancel\n\n";
         userAnswer = isPersonExistMenuUserChoice(menuOptionNumber);
         isPersonExistMenu(userAnswer, person);
-    } while (userAnswer <= menuOptionNumber);
+    } while (userAnswer == AddPerson::ExistingPersonMenu::Back || userAnswer == AddPerson::ExistingPersonMenu::Cancel);
 
 }
 
@@ -235,13 +235,13 @@ AddPerson::ExistingPersonMenu AddPerson::saveNewIsPersonExist(std::vector<std::s
         if (yesNoAnsver_ == ansvers::Yes) {
             addingPerson(person);
             std::cout << "Save new person complete\n";
-            return AddPerson::ExistingPersonMenu::;
+            return AddPerson::ExistingPersonMenu::Back;
         }
         if (yesNoAnsver_ == ansvers::Back) {
             std::cout << "Cancel process\n";
-            return true;
+            return AddPerson::ExistingPersonMenu::NoChoice;
         }
-        return false;
+        return AddPerson::ExistingPersonMenu::Cancel;
     }
 }
 
