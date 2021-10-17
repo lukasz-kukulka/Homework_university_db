@@ -37,7 +37,7 @@ bool ValidationData::validationIsDigit(std::string stringToCheck) {
     return false;
 }
 
-bool ValidationData::validationStringSize(std::string userStringData, size_t maxSize, bool isEqual) {
+bool ValidationData::validationStringSize(std::string userStringData, uint8_t maxSize, bool isEqual) {
     if (isEqual == false && userStringData.size() <= maxSize) {
         return true;
     }

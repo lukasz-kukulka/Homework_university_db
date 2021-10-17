@@ -348,7 +348,7 @@ void AddPerson::editSalary() {
 AddPerson::ExistingPersonMenu AddPerson::cancelIsPersonExist() {
     std::cout << "All records is cleaned\n";
     clearTemporaryData();
-    return AddPerson::ExistingPersonMenu::Cancel
+    return AddPerson::ExistingPersonMenu::Cancel;
 }
 
 void AddPerson::clearTemporaryData() {

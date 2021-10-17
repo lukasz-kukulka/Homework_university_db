@@ -20,7 +20,7 @@ public:
 
     bool validationIsAlpabet(std::string stringToCheck);
     bool validationIsDigit(std::string stringToCheck);
-    bool validationStringSize(std::string userStringData, size_t maxSize, bool isEqual = false);
+    bool validationStringSize(std::string userStringData, uint8_t maxSize, bool isEqual = false);
 
     bool peselValidDOBCheck(std::string dayOfBirth);
     bool peselValidGenderCheck(char charGender, std::string peselNumber);
@@ -31,6 +31,8 @@ public:
     bool validatingGender(char userChoice);
 
     YesNoConfirm confirmDataYesNo(std::string question);
+
+    uint8_t getNameSize() const { return nameSize_; }
 private:
     uint8_t nameSize_ { };
     uint8_t surnameSize_ { };
