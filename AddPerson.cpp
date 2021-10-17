@@ -57,7 +57,7 @@ std::string AddPerson::insertPersonAddress() {
     do {
         std::cout << "Please insert person address: ";
         std::getline(std::cin, address);
-    } while (true);
+    } while (validation_->validationIsAlpabet(address) == true && validation_->validationStringSize(address, validation_->getAddressSize()) == true);
     return address;
 }
 
