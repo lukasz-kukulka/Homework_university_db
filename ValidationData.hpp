@@ -4,6 +4,13 @@
 
 namespace {
     constexpr char CURRENTLY_DATE[] = "13082021";  // FORMAT DATE DDMMYYYY
+    constexpr uint8_t NAMESIZE { 20 };
+    constexpr uint8_t SURNAMESIZE { 30 };
+    constexpr uint8_t ADDRESSSIZE { 50 };
+    constexpr uint8_t PESELNUMBERSIZE { 11 };
+    constexpr uint8_t GENDERSIZE { 6 };
+    constexpr uint8_t INDEXNUMBERSIZE { 10 };
+    constexpr uint8_t SALARYSIZE { 5 };
 }
 
 class ValidationData {
@@ -34,11 +41,4 @@ public:
 
     uint8_t getNameSize() const { return nameSize_; }
 private:
-    uint8_t nameSize_ { };
-    uint8_t surnameSize_ { };
-    uint8_t addressSize_ { };
-    uint8_t peselNumberSize_ { };
-    uint8_t genderSize_ { };
-    uint8_t indexNumberSize_ { };
-    uint8_t salarySize_ { };
 };
