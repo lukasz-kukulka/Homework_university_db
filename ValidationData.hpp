@@ -39,6 +39,6 @@ public:
 
     YesNoConfirm confirmDataYesNo(std::string question);
 
-    uint8_t getNameSize() const { return nameSize_; }
+    uint8_t getNameSize() const { return NAMESIZE; }
 private:
 };
