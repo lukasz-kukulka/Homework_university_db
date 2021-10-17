@@ -66,7 +66,7 @@ std::string AddPerson::insertPersonPesel() {
     do {
         std::cout << "Please insert person PESEL number: ";
         std::getline(std::cin, pesel);
-    } while (true);
+    } while (validation_->validatingPeselNumber(pesel) == true && validation_->validationStringSize(pesel, validation_->getPeselNumberSize()) == true);
     return pesel;
 }
 

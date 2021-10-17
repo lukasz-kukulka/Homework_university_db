@@ -49,5 +49,8 @@
         "compare": "cpp",
         "concepts": "cpp",
         "ranges": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "pesel"
+    ]
 }
