@@ -206,13 +206,13 @@ AddPerson::ExistingPersonMenu AddPerson::isPersonExistMenu(AddPerson::ExistingPe
         }
         case ExistingPersonMenu::LeaveExist : {
             return leaveExistIsPersonExist();
-        } break;
+        }
         case ExistingPersonMenu::Edit : {
-            editIsPersonExist();
-        } break;
+            return editIsPersonExist();
+        }
         case ExistingPersonMenu::Cancel : {
-            cancelIsPersonExist();
-        } break;        
+            return cancelIsPersonExist();
+        }       
         default : {
             throw std::range_error { "Wrong answer in PersonExistMenu()" };
         } break;
@@ -347,9 +347,10 @@ void AddPerson::editSalary() {
 }
 
 
-void AddPerson::cancelIsPersonExist() {
+AddPerson::ExistingPersonMenu AddPerson::cancelIsPersonExist() {
     std::cout << "All records is cleaned\n";
     clearTemporaryData();
+    return AddPerson::ExistingPersonMenu::Cancel
 }
 
 void AddPerson::clearTemporaryData() {

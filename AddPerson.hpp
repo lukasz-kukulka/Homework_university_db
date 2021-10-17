@@ -65,6 +65,7 @@ private:
     ExistingPersonMenu saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person);
     ExistingPersonMenu leaveExistIsPersonExist();
     ExistingPersonMenu editIsPersonExist();
+    ExistingPersonMenu cancelIsPersonExist();
     
     void editName();
     void editSurname();
@@ -74,7 +75,7 @@ private:
     void editIndexNumber();
     void editSalary();
 
-    void cancelIsPersonExist();
+    
     void clearTemporaryData();
     std::string confirmEditPerson(std::string oldRecord, std::string newRecord, EditPerson userAnswer, std::string editAnswer = "");
     int printMenuConfirmEditPerson();
