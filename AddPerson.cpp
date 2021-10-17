@@ -205,7 +205,7 @@ AddPerson::ExistingPersonMenu AddPerson::isPersonExistMenu(AddPerson::ExistingPe
             return saveNewIsPersonExist(person);
         }
         case ExistingPersonMenu::LeaveExist : {
-            leaveExistIsPersonExist();
+            return leaveExistIsPersonExist();
         } break;
         case ExistingPersonMenu::Edit : {
             editIsPersonExist();
@@ -267,7 +267,7 @@ AddPerson::ExistingPersonMenu AddPerson::leaveExistIsPersonExist() {
     }
 }
 
-void AddPerson::editIsPersonExist() {
+AddPerson::ExistingPersonMenu AddPerson::editIsPersonExist() {
     editName();
     editSurname();
     editAddress();
@@ -280,6 +280,7 @@ void AddPerson::editIsPersonExist() {
     } else {
         throw std::range_error { "Wrong person in editIsPersonExist" };
     }
+    return AddPerson::ExistingPersonMenu::Back;
 }
 
 void AddPerson::editName() {

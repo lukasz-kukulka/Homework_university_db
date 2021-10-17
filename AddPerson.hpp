@@ -59,13 +59,13 @@ private:
     void printExistingPerson(std::shared_ptr<Person>& person);
     void existingPerson(std::vector<std::shared_ptr<Person>>& person);
     void printMenuIfPersonExist(std::vector<std::shared_ptr<Person>>& person);
-    AddPerson::ExistingPersonMenu isPersonExistMenu(AddPerson::ExistingPersonMenu userChoice, std::vector<std::shared_ptr<Person>>& person);
-    AddPerson::ExistingPersonMenu isPersonExistMenuUserChoice(int optionNumber);
+    ExistingPersonMenu isPersonExistMenu(AddPerson::ExistingPersonMenu userChoice, std::vector<std::shared_ptr<Person>>& person);
+    ExistingPersonMenu isPersonExistMenuUserChoice(int optionNumber);
 
     ExistingPersonMenu saveNewIsPersonExist(std::vector<std::shared_ptr<Person>>& person);
-    AddPerson::ExistingPersonMenu leaveExistIsPersonExist();
-
-    void editIsPersonExist();
+    ExistingPersonMenu leaveExistIsPersonExist();
+    ExistingPersonMenu editIsPersonExist();
+    
     void editName();
     void editSurname();
     void editAddress();
