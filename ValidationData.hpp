@@ -32,5 +32,11 @@ public:
 
     YesNoConfirm confirmDataYesNo(std::string question);
 private:
-
+    uint8_t nameSize_ { };
+    uint8_t surnameSize_ { };
+    uint8_t addressSize_ { };
+    uint8_t peselNumberSize_ { };
+    uint8_t genderSize_ { };
+    uint8_t indexNumberSize_ { };
+    uint8_t salarySize_ { };
 };

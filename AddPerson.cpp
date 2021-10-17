@@ -13,11 +13,9 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 
 void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
-    //zmienić share ptr na const
     while (yesNoAnsver_ != ansvers::Back) {
         confirmAddRecord(person);
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        // add condition if answer if yesNoAnsver_ == ansvers::No
         // add conditions in all insert data
     }
 }
