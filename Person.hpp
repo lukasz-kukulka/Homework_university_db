@@ -5,14 +5,14 @@
 class Person {
 public:
     Person() = default;
-    Person(std::string name, std::string surname, std::string address, std::string peselNumber, char gender);
+    Person(std::string name, std::string surname, std::string address, std::string peselNumber, std::string gender);
     virtual ~Person();
 
     std::string getName() const { return name_; }
     std::string getSurname() const { return surname_; }
     std::string getAddress() const { return address_; }
     std::string getPeselNumber() const { return peselNumber_; }
-    std::string getGender() { return convertPersonGender(gender_); };
+    std::string getGender() { return gender_; }
     virtual std::string getSalary() const { return salary_; }
     virtual std::string getIndexNumber() const { return indexNumber_; }
     
@@ -32,13 +32,11 @@ public:
     std::string generateCell(std::string cellBody, size_t cellSize);
 
 protected:
-    std::string convertPersonGender(const char gender);
-
     std::string name_ {"NO_NAME"};
     std::string surname_ { "NO_SURNAME" };
     std::string address_{ "NO_ADDRESS" };
     std::string peselNumber_{ "00000000000" };
-    char gender_ { 'f' };
+    std::string gender_ { "" };
     std::string salary_{ "NO_SALARY" };
     std::string indexNumber_ { "NO_INDEX" };
 

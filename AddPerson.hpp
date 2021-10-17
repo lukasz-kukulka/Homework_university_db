@@ -45,7 +45,7 @@ private:
     std::string insertPersonSurname();
     std::string insertPersonAddress();
     std::string insertPersonPesel();
-    char insertPersonGender();
+    std::string insertPersonGender();
     std::string insertStudentIndexNumber();
     std::string insertProfessorSalary();
     
@@ -66,7 +66,7 @@ private:
     ExistingPersonMenu leaveExistIsPersonExist();
     ExistingPersonMenu editIsPersonExist();
     ExistingPersonMenu cancelIsPersonExist();
-    
+
     void editName();
     void editSurname();
     void editAddress();
@@ -89,7 +89,7 @@ private:
     std::string surname_ { };
     std::string address_ { };
     std::string peselNumber_ { };
-    char gender_ { };
+    std::string gender_ { };
     std::string indexNumber_ { };
     std::string salary_ { };
 

@@ -7,7 +7,7 @@
 class Student : public Person {
 public:
     Student() = default;
-    Student(std::string name, std::string surname, std::string address, std::string peselNumber, char gender, std::string indexNumber);
+    Student(std::string name, std::string surname, std::string address, std::string peselNumber, std::string gender, std::string indexNumber);
     ~Student(){};
 
     // void printBorderTop() override;

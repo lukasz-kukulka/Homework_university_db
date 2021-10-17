@@ -7,7 +7,7 @@
 class Professor : public Person{
 public:
     Professor() = default;
-    Professor(std::string name, std::string surname, std::string address, std::string peselNumber, char gender, std::string salary);
+    Professor(std::string name, std::string surname, std::string address, std::string peselNumber, std::string gender, std::string salary);
     ~Professor(){};
 
     std::string getSalary() const override { return salary_; }

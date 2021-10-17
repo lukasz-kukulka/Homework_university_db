@@ -2,7 +2,7 @@
 #include <math.h>
 #include <iostream>
 
-Person::Person(std::string name, std::string surname, std::string address, std::string peselNumber, char gender) 
+Person::Person(std::string name, std::string surname, std::string address, std::string peselNumber, std::string gender) 
     : name_(name)
     , surname_(surname)
     , address_(address)
@@ -11,10 +11,6 @@ Person::Person(std::string name, std::string surname, std::string address, std::
 {}
 
 Person::~Person() {}
-
-std::string Person::convertPersonGender(const char gender) {
-    return gender == 'f' ? "female" : "male";
-}
 
 std::string Person::generateCell(std::string cellBody, size_t cellSize) {
     std::string result((cellSize - cellBody.size()) / 2, ' ');

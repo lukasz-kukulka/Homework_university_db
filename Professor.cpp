@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <iostream>
 
-Professor::Professor(std::string name, std::string surname, std::string address, std::string peselNumber, char gender, std::string salary) 
+Professor::Professor(std::string name, std::string surname, std::string address, std::string peselNumber, std::string gender, std::string salary) 
     : Person(name, surname, address, peselNumber, gender)
     , salary_(salary)
 {}
@@ -15,5 +15,5 @@ void Professor::printPerson() {
               << generateCell(peselNumber_, sizePeselNumberLimit_) << "|" 
               << generateCell(salary_, sizeSalaryLimit_) << "|" 
               << generateCell(indexNumber_, sizeIndexNumberLimit_) << "|" 
-              << generateCell(convertPersonGender(gender_), sizeGenderLimit_) << "|\n";
+              << generateCell(gender_, sizeGenderLimit_) << "|\n";
 }

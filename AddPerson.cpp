@@ -70,24 +70,32 @@ std::string AddPerson::insertPersonPesel() {
     return pesel;
 }
 
-char AddPerson::insertPersonGender() {
+std::string AddPerson::insertPersonGender() {
     char gender;
     do {
         std::cout << "Please choose gender: m = Male , f = Female: ";
         std::cin >> gender;
-    } while (true);
+    } while (validation_->validatingGender(gender));
+    if (gender == 'f') {
+        return "Female";
+    }
+    if (gender == 'm') {
+        return "Male";
+    }
+    return "ERROR";
 }
 
 std::string AddPerson::insertStudentIndexNumber() {
-    char indexNumber;
+    std::string indexNumber;
     do {
         std::cout << "Please insert student index number: ";
         std::cin >> indexNumber;
-    } while (true);
+    } while (validation_->validationIsDigit(indexNumber) && validation_->validationStringSize(indexNumber, validation_->getIndexNumberSize()));
+    return indexNumber;
 }
 
 std::string AddPerson::insertProfessorSalary() {
-    char salary;
+    std::string salary;
     do {
         std::cout << "Please insert professor salary: ";
         std::cin >> salary;
@@ -321,9 +329,9 @@ void AddPerson::editGender() {
     printMenuConfirmEditPerson();
     auto userAnswer = userChoiceConfirmEditPerson();
     if (userAnswer == AddPerson::EditPerson::Edit) {
-        confirmEditPerson(existPerson_->get()->getGender() , std::to_string(gender_), userAnswer, std::to_string(insertPersonGender()));
+        confirmEditPerson(existPerson_->get()->getGender() , gender_, userAnswer, insertPersonGender());
     }
-    confirmEditPerson(existPerson_->get()->getGender() , std::to_string(gender_) , userAnswer);
+    confirmEditPerson(existPerson_->get()->getGender() , gender_ , userAnswer);
 }
 
 void AddPerson::editIndexNumber() {
