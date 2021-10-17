@@ -99,7 +99,8 @@ std::string AddPerson::insertProfessorSalary() {
     do {
         std::cout << "Please insert professor salary: ";
         std::cin >> salary;
-    } while (true);
+    } while (validation_->validationIsDigit(salary) && validation_->validationStringSize(salary, validation_->getSalarySize()));
+    return salary;
 }
 
 void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person)  {
