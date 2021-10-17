@@ -48,7 +48,7 @@ std::string AddPerson::insertPersonSurname() {
     do {
         std::cout << "Please insert person surname: ";
         std::getline(std::cin, surname);
-    } while (true);
+    } while (validation_->validationIsAlpabet(surname) == true && validation_->validationStringSize(surname, validation_->getSurnameSize()) == true);
     return surname;
 }
 
