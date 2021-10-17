@@ -39,7 +39,7 @@ std::string AddPerson::insertPersonName() {
     do {
         std::cout << "Please insert person name: ";
         std::getline(std::cin, name);
-    } while (true);
+    } while (validation_->validationIsAlpabet(name) == true && validation_->validationStringSize(name, validation_->getNameSize()) == true);
     return name;
 }
 
