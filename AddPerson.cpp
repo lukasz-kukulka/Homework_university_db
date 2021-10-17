@@ -16,7 +16,6 @@ void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
     while (yesNoAnsver_ != ansvers::Back) {
         confirmAddRecord(person);
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        // add conditions in all insert data
     }
 }
 
