@@ -18,7 +18,6 @@ Menu::Menu() {
 }
 
 void Menu::startApp() {
-    printMenu();
     switchMenu();
 }
 
@@ -40,6 +39,7 @@ void Menu::printMenu() {
 void Menu::switchMenu() {
     MenuOptions menuOption { };
     while (true) {
+        printMenu();
         int choice = 0;
         do {
             std::cout << "Please insert you choice: ";

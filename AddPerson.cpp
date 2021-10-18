@@ -13,8 +13,9 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 
 void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
-    while (yesNoAnsver_ != ansvers::Back) {
-        confirmAddRecord(person);
+    while (whichPerson_ != WhichPerson::Back) {
+        addingPerson(person);
+        //confirmAddRecord(person);
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 }
@@ -29,7 +30,8 @@ AddPerson::WhichPerson AddPerson::selectPerson()  {
         std::cout << ++optionNumber << ". PROFESSOR\n";
         std::cout << ++optionNumber << ". BACK\n";
         std::cin >> userChoicePerson;
-    } while (validation_->isCorrectMenuChoice(userChoicePerson, optionNumber));
+    } while (validation_->isCorrectMenuChoice(userChoicePerson, optionNumber) == false);
+    //std::cout << "tests\n";
     return static_cast<WhichPerson>(userChoicePerson);
 }
 
@@ -38,7 +40,7 @@ std::string AddPerson::insertPersonName() {
     do {
         std::cout << "Please insert person name: ";
         std::getline(std::cin, name);
-    } while (validation_->validationIsAlpabet(name) == true && validation_->validationStringSize(name, validation_->getNameSize()) == true);
+    } while (validation_->validationIsAlpabet(name) == false || validation_->validationStringSize(name, validation_->getNameSize()) == false);
     return name;
 }
 
@@ -47,7 +49,7 @@ std::string AddPerson::insertPersonSurname() {
     do {
         std::cout << "Please insert person surname: ";
         std::getline(std::cin, surname);
-    } while (validation_->validationIsAlpabet(surname) == true && validation_->validationStringSize(surname, validation_->getSurnameSize()) == true);
+    } while (validation_->validationIsAlpabet(surname) == false || validation_->validationStringSize(surname, validation_->getSurnameSize()) == false);
     return surname;
 }
 
@@ -56,7 +58,7 @@ std::string AddPerson::insertPersonAddress() {
     do {
         std::cout << "Please insert person address: ";
         std::getline(std::cin, address);
-    } while (validation_->validationIsAlpabet(address) == true && validation_->validationStringSize(address, validation_->getAddressSize()) == true);
+    } while (validation_->validationIsAlpabet(address) == false || validation_->validationStringSize(address, validation_->getAddressSize()) == false);
     return address;
 }
 
@@ -65,7 +67,7 @@ std::string AddPerson::insertPersonPesel() {
     do {
         std::cout << "Please insert person PESEL number: ";
         std::getline(std::cin, pesel);
-    } while (validation_->validatingPeselNumber(pesel) == true && validation_->validationStringSize(pesel, validation_->getPeselNumberSize()) == true);
+    } while (validation_->validatingPeselNumber(pesel) == false || validation_->validationStringSize(pesel, validation_->getPeselNumberSize()) == false);
     return pesel;
 }
 
@@ -89,7 +91,7 @@ std::string AddPerson::insertStudentIndexNumber() {
     do {
         std::cout << "Please insert student index number: ";
         std::cin >> indexNumber;
-    } while (validation_->validationIsDigit(indexNumber) && validation_->validationStringSize(indexNumber, validation_->getIndexNumberSize()));
+    } while (validation_->validationIsDigit(indexNumber) == false && validation_->validationStringSize(indexNumber, validation_->getIndexNumberSize()) == false);
     return indexNumber;
 }
 
@@ -98,15 +100,16 @@ std::string AddPerson::insertProfessorSalary() {
     do {
         std::cout << "Please insert professor salary: ";
         std::cin >> salary;
-    } while (validation_->validationIsDigit(salary) && validation_->validationStringSize(salary, validation_->getSalarySize()));
+    } while (validation_->validationIsDigit(salary) == false || validation_->validationStringSize(salary, validation_->getSalarySize() == false));
     return salary;
 }
 
 void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person)  {
-    WhichPerson userChoice = selectPerson();
-    if (userChoice == WhichPerson::Student) {
+    
+    whichPerson_ = selectPerson();
+    if (whichPerson_ == WhichPerson::Student) {
         addStudentToDatabase(person);
-    } else if (userChoice == WhichPerson::Professor) {
+    } else if (whichPerson_ == WhichPerson::Professor) {
         addProfessorToDatabase(person);
     } else {
         std::cout << "Back to main menu ...\n";
