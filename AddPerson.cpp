@@ -2,9 +2,11 @@
 #include "Student.hpp"
 #include "Professor.hpp"
 #include "Student.hpp"
-#include <exception>
 
+#include <exception>
+#include <ios> // streamsize
 #include <iostream>
+#include <limits> // numeric limits
 
 AddPerson::AddPerson(std::shared_ptr<ValidationData> validation) 
     : validation_(validation)
@@ -58,7 +60,7 @@ std::string AddPerson::insertPersonAddress() {
     do {
         std::cout << "Please insert person address: ";
         std::getline(std::cin, address);
-    } while (validation_->validationIsAlpabet(address) == false || validation_->validationStringSize(address, validation_->getAddressSize()) == false);
+    } while (validation_->validationStringSize(address, validation_->getAddressSize()) == false);
     return address;
 }
 
@@ -76,7 +78,7 @@ std::string AddPerson::insertPersonGender() {
     do {
         std::cout << "Please choose gender: m = Male , f = Female: ";
         std::cin >> gender;
-    } while (validation_->validatingGender(gender));
+    } while (validation_->validatingGender(gender) == false);
     if (gender == 'f') {
         return "Female";
     }
@@ -91,7 +93,7 @@ std::string AddPerson::insertStudentIndexNumber() {
     do {
         std::cout << "Please insert student index number: ";
         std::cin >> indexNumber;
-    } while (validation_->validationIsDigit(indexNumber) == false && validation_->validationStringSize(indexNumber, validation_->getIndexNumberSize(), true) == false);
+    } while (validation_->validationIsDigit(indexNumber) == false || validation_->validationStringSize(indexNumber, validation_->getIndexNumberSize(), true) == false);
     return indexNumber;
 }
 
@@ -117,6 +119,7 @@ void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person)  {
 }
 
 void AddPerson::generateData(WhichPerson userChoice) {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     name_ = insertPersonName();
     surname_ = insertPersonSurname();
     address_ = insertPersonAddress();
