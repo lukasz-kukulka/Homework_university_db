@@ -45,9 +45,9 @@ bool ValidationData::validationStringSize(std::string userStringData, uint8_t ma
         return true;
     }
     if (isEqual == true) {
-        std::cout << "Wrong length, value must have " << maxSize << " characters\n";
+        std::cout << "Wrong length, value must have " << +maxSize << " characters\n";
     }
-    std::cout << "Length is to long, maximum length is " << maxSize << '\n';
+    std::cout << "Length is to long, maximum length is " << +maxSize << '\n';
     return false;
 }
 

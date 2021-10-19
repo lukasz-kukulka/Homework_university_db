@@ -67,7 +67,7 @@ std::string AddPerson::insertPersonPesel() {
     do {
         std::cout << "Please insert person PESEL number: ";
         std::getline(std::cin, pesel);
-    } while (validation_->validatingPeselNumber(pesel) == false || validation_->validationStringSize(pesel, validation_->getPeselNumberSize()) == false);
+    } while (validation_->validatingPeselNumber(pesel) == false || validation_->validationStringSize(pesel, validation_->getPeselNumberSize(), true) == false);
     return pesel;
 }
 
@@ -91,7 +91,7 @@ std::string AddPerson::insertStudentIndexNumber() {
     do {
         std::cout << "Please insert student index number: ";
         std::cin >> indexNumber;
-    } while (validation_->validationIsDigit(indexNumber) == false && validation_->validationStringSize(indexNumber, validation_->getIndexNumberSize()) == false);
+    } while (validation_->validationIsDigit(indexNumber) == false && validation_->validationStringSize(indexNumber, validation_->getIndexNumberSize(), true) == false);
     return indexNumber;
 }
 
