@@ -12,8 +12,14 @@ void ShowPersons::operator()(std::vector<std::shared_ptr<Person>>& person) {
     std::cout << "SHOW PERSON HERE\n";
 }
 
-void ShowPersons::printSingleRecord(const std::shared_ptr<Person>& singlePerson) {
-    if (singlePerson) { // only for compile
+std::string ShowPersons::generateSingleRecord(const std::string& singleRecord) {
+    std::string output { };
+    output.insert(singleRecord.size() / 2, " ");
+    output += singleRecord;
+    output.insert((singleRecord.size() / 2) + (singleRecord.size() % 2), " ");
+    return output;
+}
 
-    }
+void ShowPersons::printSeparateLine(uint8_t size) {
+    size += 1;  // only for compilation
 }

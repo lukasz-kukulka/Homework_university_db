@@ -3,6 +3,7 @@
 #include "ValidationData.hpp"
 
 #include <memory>
+#include <string>
 
 class ShowPersons : public Command {
 public:
@@ -11,7 +12,8 @@ public:
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
 private:
-    void printSingleRecord(const std::shared_ptr<Person>& singlePerson);
+    std::string generateSingleRecord(const std::string& singleRecord);
+    void printSeparateLine(uint8_t size);
 
     std::shared_ptr<ValidationData>validation_;
 };
