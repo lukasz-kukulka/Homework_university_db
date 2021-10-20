@@ -16,8 +16,10 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
     while (whichPerson_ != WhichPerson::Back) {
+        whichPerson_ = selectPerson();
+        generateData();
+        confirmAddRecord(person);
         addingPerson(person);
-        //confirmAddRecord(person);
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 }
@@ -107,50 +109,43 @@ std::string AddPerson::insertProfessorSalary() {
 }
 
 void AddPerson::addingPerson(std::vector<std::shared_ptr<Person>>& person)  {
-    
-    whichPerson_ = selectPerson();
     if (whichPerson_ == WhichPerson::Student) {
         addStudentToDatabase(person);
     } else if (whichPerson_ == WhichPerson::Professor) {
         addProfessorToDatabase(person);
     } else {
         std::cout << "Back to main menu ...\n";
+        return;
     }
 }
 
-void AddPerson::generateData(WhichPerson userChoice) {
+void AddPerson::generateData() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     name_ = insertPersonName();
     surname_ = insertPersonSurname();
     address_ = insertPersonAddress();
     peselNumber_ = insertPersonPesel();
     gender_ = insertPersonGender();
-    if (userChoice == WhichPerson::Student) {
+    if (whichPerson_ == WhichPerson::Student) {
         indexNumber_ = insertStudentIndexNumber();
-    } else if (userChoice == WhichPerson::Professor) {
+    } else if (whichPerson_ == WhichPerson::Professor) {
         salary_ = insertProfessorSalary();
     }
 }
 
 void AddPerson::addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
-    generateData(WhichPerson::Student);
     person.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, gender_, indexNumber_)));
 }
 
 void AddPerson::addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person)  {
-    generateData(WhichPerson::Professor);
     person.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, gender_, salary_)));
 }
 
 void AddPerson::confirmAddRecord(std::vector<std::shared_ptr<Person>>& person) {
-    while (true) {
-        printAddingPerson();
-        yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
-        if (yesNoAnsver_ == ansvers::Yes) {
-            addingPerson(person);
-            existingPerson(person);
-        }
-        break;
+    printAddingPerson();
+    yesNoAnsver_ = validation_->confirmDataYesNo("Are you sure,do you wanna add this record to database?\n");
+    if (yesNoAnsver_ == ansvers::Yes) {
+        existingPerson(person);
     }
 }
 
@@ -187,7 +182,7 @@ void AddPerson::printExistingPerson(std::shared_ptr<Person>& person) {
 void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
     existPerson_ = isPersonExist(person);
     while (true) {
-        if (end(person) != existPerson_) {
+        if (end(person) == existPerson_) {
             confirmAddRecord(person);
             break;
         } else {

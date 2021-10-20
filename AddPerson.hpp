@@ -49,7 +49,7 @@ private:
     std::string insertStudentIndexNumber();
     std::string insertProfessorSalary();
     
-    void generateData(WhichPerson userChoice);
+    void generateData();
     void addingPerson(std::vector<std::shared_ptr<Person>>& person);
     void addStudentToDatabase(std::vector<std::shared_ptr<Person>>& person);
     void addProfessorToDatabase(std::vector<std::shared_ptr<Person>>& person);

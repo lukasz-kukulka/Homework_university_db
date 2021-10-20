@@ -131,6 +131,7 @@ ValidationData::YesNoConfirm ValidationData::confirmDataYesNo(std::string questi
     std::cout << "Yes(y)\n";
     std::cout << "No(n)\n";
     std::cout << "Back(b)\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     while (confirmation == YesNoConfirm::NoConfirm || confirmation == YesNoConfirm::Error) {    
         std::cin.clear();
         std::getline(std::cin, answer);
