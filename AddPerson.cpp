@@ -15,13 +15,14 @@ AddPerson::AddPerson(std::shared_ptr<ValidationData> validation)
 
 void AddPerson::operator()(std::vector<std::shared_ptr<Person>>& person)  {
     std::cout << "ADD PERSON HERE\n"; //TO DELETE 
-    while (whichPerson_ != WhichPerson::Back) {
+    do {
         whichPerson_ = selectPerson();
+        if (whichPerson_ == WhichPerson::Back) {
+            break;
+        }
         generateData();
         confirmAddRecord(person);
-        addingPerson(person);
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
+    } while (true);
 }
 
 AddPerson::WhichPerson AddPerson::selectPerson()  {
@@ -183,7 +184,7 @@ void AddPerson::existingPerson(std::vector<std::shared_ptr<Person>>& person) {
     existPerson_ = isPersonExist(person);
     while (true) {
         if (end(person) == existPerson_) {
-            confirmAddRecord(person);
+            addingPerson(person);
             break;
         } else {
             printMenuIfPersonExist(person);
