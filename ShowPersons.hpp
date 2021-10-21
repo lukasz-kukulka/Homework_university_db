@@ -13,6 +13,7 @@ public:
 
 private:
     std::string generateSingleRecord(const std::string& singleRecord);
+    std::string generateSingleRecordLine(const std::vector<std::unique_ptr<Person>>::iterator& singlePerson);
     void printSeparateLine(uint8_t size);
 
     std::shared_ptr<ValidationData>validation_;

@@ -20,6 +20,18 @@ std::string ShowPersons::generateSingleRecord(const std::string& singleRecord) {
     return output;
 }
 
+std::string ShowPersons::generateSingleRecordLine(const std::vector<std::unique_ptr<Person>>::iterator& singlePerson) {
+    std::string output { };
+    output = generateSingleRecord(singlePerson->get()->getName()) + " | ";
+    output = generateSingleRecord(singlePerson->get()->getSurname()) + " | ";
+    output = generateSingleRecord(singlePerson->get()->getAddress()) + " | ";
+    output = generateSingleRecord(singlePerson->get()->getPeselNumber()) + " | ";
+    output = generateSingleRecord(singlePerson->get()->getGender()) + " | ";
+    output = generateSingleRecord(singlePerson->get()->getIndexNumber()) + " | ";
+    output = generateSingleRecord(singlePerson->get()->getSalary()) + " |\n";
+    return output;
+}
+
 void ShowPersons::printSeparateLine(uint8_t size) {
     size += 1;  // only for compilation
 }
