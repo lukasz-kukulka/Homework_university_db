@@ -22,7 +22,7 @@ std::string ShowPersons::generateSingleRecord(const std::string& singleRecord) {
 
 std::string ShowPersons::generateSingleRecordLine(const std::vector<std::unique_ptr<Person>>::iterator& singlePerson) {
     std::string output { };
-    output = generateSingleRecord(singlePerson->get()->getName()) + " | ";
+    output = "| " + generateSingleRecord(singlePerson->get()->getName()) + " | ";
     output = generateSingleRecord(singlePerson->get()->getSurname()) + " | ";
     output = generateSingleRecord(singlePerson->get()->getAddress()) + " | ";
     output = generateSingleRecord(singlePerson->get()->getPeselNumber()) + " | ";
@@ -32,6 +32,10 @@ std::string ShowPersons::generateSingleRecordLine(const std::vector<std::unique_
     return output;
 }
 
-void ShowPersons::printSeparateLine(uint8_t size) {
-    size += 1;  // only for compilation
+void ShowPersons::printSeparateLine() {
+    int lineSize = validation_->getNameSize() + validation_->getSurnameSize() +
+                       validation_->getAddressSize() + validation_->getPeselNumberSize() + 
+                       validation_->getIndexNumberSize() + validation_->getSalarySize() + 10;
+    std::string line { };
+    line.insert(lineSize, "-");
 }
