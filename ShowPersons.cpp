@@ -20,15 +20,15 @@ std::string ShowPersons::generateSingleRecord(const std::string& singleRecord) {
     return output;
 }
 
-std::string ShowPersons::generateSingleRecordLine(const std::vector<std::unique_ptr<Person>>::iterator& singlePerson) {
+std::string ShowPersons::generateSingleRecordLine(Person* singlePerson) {
     std::string output { };
-    output = "| " + generateSingleRecord(singlePerson->get()->getName()) + " | ";
-    output = generateSingleRecord(singlePerson->get()->getSurname()) + " | ";
-    output = generateSingleRecord(singlePerson->get()->getAddress()) + " | ";
-    output = generateSingleRecord(singlePerson->get()->getPeselNumber()) + " | ";
-    output = generateSingleRecord(singlePerson->get()->getGender()) + " | ";
-    output = generateSingleRecord(singlePerson->get()->getIndexNumber()) + " | ";
-    output = generateSingleRecord(singlePerson->get()->getSalary()) + " |\n";
+    output = "| " + generateSingleRecord(singlePerson->getName()) + " | ";
+    output = generateSingleRecord(singlePerson->getSurname()) + " | ";
+    output = generateSingleRecord(singlePerson->getAddress()) + " | ";
+    output = generateSingleRecord(singlePerson->getPeselNumber()) + " | ";
+    output = generateSingleRecord(singlePerson->getGender()) + " | ";
+    output = generateSingleRecord(singlePerson->getIndexNumber()) + " | ";
+    output = generateSingleRecord(singlePerson->getSalary()) + " |\n";
     return output;
 }
 
@@ -38,4 +38,13 @@ void ShowPersons::printSeparateLine() {
                        validation_->getIndexNumberSize() + validation_->getSalarySize() + 10;
     std::string line { };
     line.insert(lineSize, "-");
+}
+
+void ShowPersons::generateAllRecord(std::vector<std::shared_ptr<Person>>& person) {
+    printSeparateLine();
+    for (const auto & ele : person) {
+        generateSingleRecordLine(ele.get());
+        printSeparateLine();
+    }
+    std::cout << '\n';
 }

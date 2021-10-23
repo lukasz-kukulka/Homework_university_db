@@ -13,8 +13,9 @@ public:
 
 private:
     std::string generateSingleRecord(const std::string& singleRecord);
-    std::string generateSingleRecordLine(const std::vector<std::unique_ptr<Person>>::iterator& singlePerson);
+    std::string generateSingleRecordLine(Person* singlePerson);
     void printSeparateLine();
+    void generateAllRecord(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData>validation_;
 };
