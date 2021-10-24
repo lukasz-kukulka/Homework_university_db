@@ -21,3 +21,4 @@ int SearchPerson::printSearchMenu() {
     std::cout << "Insert your choice: ";
     return optionNumber;
 }
+
