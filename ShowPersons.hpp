@@ -13,7 +13,7 @@ public:
 
 private:
     std::string generateSingleRecord(const std::string& singleRecord);
-    std::string generateSingleRecordLine(Person* singlePerson);
+    void generateSingleRecordLine(Person* singlePerson);
     void printSeparateLine();
     void generateAllRecord(std::vector<std::shared_ptr<Person>>& person);
 

@@ -51,6 +51,7 @@
         "ranges": "cpp"
     },
     "cSpell.words": [
-        "pesel"
+        "pesel",
+        "PESELNUMBERSIZE"
     ]
 }
