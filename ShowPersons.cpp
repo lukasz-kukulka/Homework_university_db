@@ -20,9 +20,9 @@ void ShowPersons::operator()(std::vector<std::shared_ptr<Person>>& person) {
 
 std::string ShowPersons::generateSingleRecord(const std::string& singleRecord) {
     std::string output { };
-    output.insert(singleRecord.size() / 2, " ");
+    output.append(singleRecord.size() / 2, ' ');
     output += singleRecord;
-    output.insert((singleRecord.size() / 2) + (singleRecord.size() % 2), " ");
+    output.append((singleRecord.size() / 2) + (singleRecord.size() % 2), ' ');
     return output;
 }
 
@@ -36,7 +36,6 @@ std::string ShowPersons::generateSingleRecordLine(Person* singlePerson) {
     output += generateSingleRecord(singlePerson->getGender()) + " | ";
     output += generateSingleRecord(singlePerson->getIndexNumber()) + " | ";
     output += generateSingleRecord(singlePerson->getSalary()) + " |\n";
-    //std::cout << "----------------------\n";
     return output;
 }
 
@@ -45,7 +44,7 @@ void ShowPersons::printSeparateLine() {
                        validation_->getAddressSize() + validation_->getPeselNumberSize() + 
                        validation_->getGenderSize() + validation_->getIndexNumberSize() + validation_->getSalarySize() + 10;
     std::string line { };
-    line.insert(lineSize, "-");
+    line.append(lineSize, '-');
 }
 
 void ShowPersons::generateAllRecord(std::vector<std::shared_ptr<Person>>& person) {
