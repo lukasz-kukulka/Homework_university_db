@@ -22,3 +22,6 @@ int SearchPerson::printSearchMenu() {
     return optionNumber;
 }
 
+SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
+    return static_cast<SearchMenu>(userChoice);
+}
