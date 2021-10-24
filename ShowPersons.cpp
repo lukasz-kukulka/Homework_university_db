@@ -7,6 +7,11 @@ ShowPersons::ShowPersons(std::shared_ptr<ValidationData> validation)
 {
 }
 
+ShowPersons::ShowPersons(std::vector<std::shared_ptr<Person>>& person)
+    : persons_(person)
+{
+}
+
 void ShowPersons::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
     std::cout << "SHOW PERSON HERE\n";

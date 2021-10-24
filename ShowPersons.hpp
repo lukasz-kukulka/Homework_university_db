@@ -8,6 +8,7 @@
 class ShowPersons : public Command {
 public:
     ShowPersons(std::shared_ptr<ValidationData> validation);
+    ShowPersons(std::vector<std::shared_ptr<Person>>& person);
     ~ShowPersons() = default;
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
@@ -18,4 +19,5 @@ private:
     void generateAllRecord(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData>validation_;
+    std::vector<std::shared_ptr<Person>> persons_;
 };
