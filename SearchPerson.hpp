@@ -19,5 +19,8 @@ public:
 
 private:
     int printSearchMenu();
+    int validationUserInsertDataMenu(int userAnswer);
+    SearchMenu searchMenu(int userChoice);
+
     SearchMenu currentlyChoice_ { SearchMenu::NoChoice };
 };

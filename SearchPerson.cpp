@@ -22,6 +22,12 @@ int SearchPerson::printSearchMenu() {
     return optionNumber;
 }
 
+int SearchPerson::validationUserInsertDataMenu(int userAnswer) {
+    //TO DO
+    return userAnswer;
+}
+
 SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
+    //TO DO
     return static_cast<SearchMenu>(userChoice);
 }
