@@ -130,80 +130,80 @@ void University::printDeletePersonByIndexNumber() {
 //     } while (validationSelectPerson(userChoicePerson) == false);
 // }
 
-void University::ifPersonExistMenu() {
-    do {
+// void University::ifPersonExistMenu() {
+//     do {
 
-    } while (ifPersonExist(printMenuIfPersonExist()) != IfPersonExist::Back);
-}
+//     } while (ifPersonExist(printMenuIfPersonExist()) != IfPersonExist::Back);
+// }
 
-size_t University::printMenuIfPersonExist() {
-    size_t optionNumber = 0;
-    std::cout << "Person already exist, what you wanna do?\n";
-    std::cout << ++optionNumber << ". Compare records\n";
-    std::cout << ++optionNumber << ". Update data\n";
-    std::cout << ++optionNumber << ". Keep original\n";
-    std::cout << ++optionNumber << ". Edit data\n";
-    std::cout << ++optionNumber << ". Back\n\n";
-    return optionNumber; 
-}
+// size_t University::printMenuIfPersonExist() {
+//     size_t optionNumber = 0;
+//     std::cout << "Person already exist, what you wanna do?\n";
+//     std::cout << ++optionNumber << ". Compare records\n";
+//     std::cout << ++optionNumber << ". Update data\n";
+//     std::cout << ++optionNumber << ". Keep original\n";
+//     std::cout << ++optionNumber << ". Edit data\n";
+//     std::cout << ++optionNumber << ". Back\n\n";
+//     return optionNumber; 
+// }
 
-University::IfPersonExist University::ifPersonExist(size_t menuSize) {
-    int choice = 0;
-    do {
-        std::cout << "Please insert you choice: ";
-        std::cin >> choice;
-    } while (validatingMenuChoose(choice, menuSize) == false);
-    userChoiceIfExist_ = static_cast<IfPersonExist>(choice);
-    switch (userChoiceIfExist_) {
-    case IfPersonExist::Compare : {
-        ifExistCompare();
-    } break;
-    case IfPersonExist::Update : {
-        updateRecordIfPersonExist();
-        userChoiceIfExist_ = IfPersonExist::Back;
-    } break;
-    case IfPersonExist::KeepOriginal: {
-        userChoiceIfExist_ = IfPersonExist::Back;
-    } break;
-    case IfPersonExist::Edit : {
-        addNewPerson();
-    } break;
-    case IfPersonExist::Back : {
-        userChoiceIfExist_ = IfPersonExist::Back;
-    } break;
-    default:
-        break;
-    }
-    return userChoiceIfExist_;
-}
+// University::IfPersonExist University::ifPersonExist(size_t menuSize) {
+//     int choice = 0;
+//     do {
+//         std::cout << "Please insert you choice: ";
+//         std::cin >> choice;
+//     } while (validatingMenuChoose(choice, menuSize) == false);
+//     userChoiceIfExist_ = static_cast<IfPersonExist>(choice);
+//     switch (userChoiceIfExist_) {
+//     case IfPersonExist::Compare : {
+//         ifExistCompare();
+//     } break;
+//     case IfPersonExist::Update : {
+//         updateRecordIfPersonExist();
+//         userChoiceIfExist_ = IfPersonExist::Back;
+//     } break;
+//     case IfPersonExist::KeepOriginal: {
+//         userChoiceIfExist_ = IfPersonExist::Back;
+//     } break;
+//     case IfPersonExist::Edit : {
+//         addNewPerson();
+//     } break;
+//     case IfPersonExist::Back : {
+//         userChoiceIfExist_ = IfPersonExist::Back;
+//     } break;
+//     default:
+//         break;
+//     }
+//     return userChoiceIfExist_;
+// }
 
-void University::ifExistCompare() {
-    std::cout << "INPUT DATA:                    Name: " << name_ 
-              << " | Surname: " << surname_ 
-              << " | Address: " << address_ 
-              << " | Index number: " << indexNumber_ 
-              << " | PESEL number: " << peselNumber_ 
-              << " | Salary: " << professorSalary_
-              << " | Gender: " << convertPersonGender(gender_) << '\n';
-    std::cout << "EXISTING DATA(ORIGINAL):       Name: " << checkedIfPersonExist_->get()->getName()
-              << " | Surname: " << checkedIfPersonExist_->get()->getSurname()
-              << " | Address: " << checkedIfPersonExist_->get()->getAddress()
-              << " | Index number: " << checkedIfPersonExist_->get()->getIndexNumber() 
-              << " | PESEL number: " << checkedIfPersonExist_->get()->getPeselNumber()
-              << " | Salary: " << checkedIfPersonExist_->get()->getSalary()
-              << " | Gender: " << checkedIfPersonExist_->get()->getGender() << '\n';
-}
+// void University::ifExistCompare() {
+//     std::cout << "INPUT DATA:                    Name: " << name_ 
+//               << " | Surname: " << surname_ 
+//               << " | Address: " << address_ 
+//               << " | Index number: " << indexNumber_ 
+//               << " | PESEL number: " << peselNumber_ 
+//               << " | Salary: " << professorSalary_
+//               << " | Gender: " << convertPersonGender(gender_) << '\n';
+//     std::cout << "EXISTING DATA(ORIGINAL):       Name: " << checkedIfPersonExist_->get()->getName()
+//               << " | Surname: " << checkedIfPersonExist_->get()->getSurname()
+//               << " | Address: " << checkedIfPersonExist_->get()->getAddress()
+//               << " | Index number: " << checkedIfPersonExist_->get()->getIndexNumber() 
+//               << " | PESEL number: " << checkedIfPersonExist_->get()->getPeselNumber()
+//               << " | Salary: " << checkedIfPersonExist_->get()->getSalary()
+//               << " | Gender: " << checkedIfPersonExist_->get()->getGender() << '\n';
+// }
 
-void University::updateRecordIfPersonExist() {
-    if (userChoicePerson_ == WhichPerson::Student) {
-        addStudentRecordToVector();
-    }
-    if (userChoicePerson_ == WhichPerson::Professor) {
-        addProfesorRecordToVector();
-    }
-    (end(person_) - 1)->swap(*checkedIfPersonExist_);
-    person_.erase(end(person_) - 1);
-}
+// void University::updateRecordIfPersonExist() {
+//     if (userChoicePerson_ == WhichPerson::Student) {
+//         addStudentRecordToVector();
+//     }
+//     if (userChoicePerson_ == WhichPerson::Professor) {
+//         addProfesorRecordToVector();
+//     }
+//     (end(person_) - 1)->swap(*checkedIfPersonExist_);
+//     person_.erase(end(person_) - 1);
+// }
 
 // void University::addStudentRecordToVector() {
 //     //person_.push_back(std::make_shared<Student>(Student(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), indexNumber_)));
@@ -213,14 +213,14 @@ void University::updateRecordIfPersonExist() {
 //     //person_.push_back(std::make_shared<Professor>(Professor(name_, surname_, address_, peselNumber_, static_cast<Student::Gender>(gender_), professorSalary_)));
 // }
 
-std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
-    return std::find_if(begin(person_), 
-                        end(person_), 
-                        [&](auto finding){ 
-                                        return (finding->getPeselNumber() == peselNumber_ || 
-                                                (finding->getIndexNumber() == indexNumber_ && 
-                                                (!indexNumber_.empty()))); });
-}
+// std::vector<std::shared_ptr<Person>>::iterator University::isPersonExist() {
+//     return std::find_if(begin(person_), 
+//                         end(person_), 
+//                         [&](auto finding){ 
+//                                         return (finding->getPeselNumber() == peselNumber_ || 
+//                                                 (finding->getIndexNumber() == indexNumber_ && 
+//                                                 (!indexNumber_.empty()))); });
+// }
 
 // bool University::validationSelectPerson(size_t userChoicePerson) {
 //     if (userChoicePerson == 1 || userChoicePerson == 2) {
@@ -237,37 +237,37 @@ void University::assignmentPersonValue(size_t userChoicePerson) {
     userChoicePerson_ = static_cast<University::WhichPerson>(userChoicePerson);
 }
 
-void University::printInsertPersonData() {
-    std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " << convertPersonGender(gender_)
-              << " | Address: " << address_ << " | PESEL: " << peselNumber_;
-    if (userChoicePerson_ == WhichPerson::Student) {
-        std::cout << " Student index Number: " << indexNumber_ << '\n';
-    } else if (userChoicePerson_ == WhichPerson::Professor) {
-        std::cout << " Professor salary: " << professorSalary_ << '\n';
-    }
-}
+// void University::printInsertPersonData() {
+//     std::cout << "Name: " << name_ << " | Surname: " << surname_ << " | Gender: " << convertPersonGender(gender_)
+//               << " | Address: " << address_ << " | PESEL: " << peselNumber_;
+//     if (userChoicePerson_ == WhichPerson::Student) {
+//         std::cout << " Student index Number: " << indexNumber_ << '\n';
+//     } else if (userChoicePerson_ == WhichPerson::Professor) {
+//         std::cout << " Professor salary: " << professorSalary_ << '\n';
+//     }
+// }
 
-void University::confirmAddRecord() {
-    while (true) {
-        checkedIfPersonExist_ = isPersonExist();
-        std::cout << "Are you sure you wanna add this record to database? Y/N:";
-        if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
-            if (checkedIfPersonExist_ != end(person_)) {
-                ifPersonExistMenu();
-                break;
-            }
-            addStudentRecordToVector();
-            break;
-        }
-        if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Professor) {
-            addProfesorRecordToVector();
-            break;
-        }
-        if (yesNoOption() == YesNoOption::No) {
-            break;
-        }
-    }
-}
+// void University::confirmAddRecord() {
+//     while (true) {
+//         checkedIfPersonExist_ = isPersonExist();
+//         std::cout << "Are you sure you wanna add this record to database? Y/N:";
+//         if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Student) {
+//             if (checkedIfPersonExist_ != end(person_)) {
+//                 ifPersonExistMenu();
+//                 break;
+//             }
+//             addStudentRecordToVector();
+//             break;
+//         }
+//         if (yesNoOption() == YesNoOption::Yes && userChoicePerson_ == WhichPerson::Professor) {
+//             addProfesorRecordToVector();
+//             break;
+//         }
+//         if (yesNoOption() == YesNoOption::No) {
+//             break;
+//         }
+//     }
+// }
 
 // void University::insertStudentName() {
 //     do {
@@ -423,18 +423,18 @@ void University::confirmAddRecord() {
 //     return true;
 // }
 
-void University::showStudents() {
-    if (!person_.empty()) {
-        person_[0]->printBorderLine();
-        person_[0]->printBorderTop();
-        for (auto ele : person_) {
-            person_[0]->printBorderLine();
-            ele->printPerson();
-        }
-        person_[0]->printBorderLine();
-    }
-    std::cout << "Database of students is empty please load form file or add new students\n";
-}
+// void University::showStudents() {
+//     if (!person_.empty()) {
+//         person_[0]->printBorderLine();
+//         person_[0]->printBorderTop();
+//         for (auto ele : person_) {
+//             person_[0]->printBorderLine();
+//             ele->printPerson();
+//         }
+//         person_[0]->printBorderLine();
+//     }
+//     std::cout << "Database of students is empty please load form file or add new students\n";
+// }
 
 int University::countRecord(std::string fileMane) { 
     int lineNo = 0;
@@ -696,9 +696,9 @@ void University::deleteByIndexNumber(std::string indexNumber) {
     }
 }
 
-std::string University::convertPersonGender(const size_t gender) {
-    return gender == 0 ? "female" : "male";
-}
+// std::string University::convertPersonGender(const size_t gender) {
+//     return gender == 0 ? "female" : "male";
+// }
 
 // University::YesNoOption University::yesNoOption() {
 //     std::string answer { };
