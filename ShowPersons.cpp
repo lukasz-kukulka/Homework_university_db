@@ -18,31 +18,31 @@ void ShowPersons::operator()(std::vector<std::shared_ptr<Person>>& person) {
     
 }
 
-std::string ShowPersons::generateSingleRecord(const std::string& singleRecord) {
+std::string ShowPersons::generateSingleRecord(const std::string& singleRecord, int cellSize) {
     std::string output { };
-    output.append(singleRecord.size() / 2, ' ');
+    output.append(cellSize / 2 - singleRecord.size() / 2, ' ');
     output += singleRecord;
-    output.append((singleRecord.size() / 2) + (singleRecord.size() % 2), ' ');
+    output.append(cellSize / 2 - (singleRecord.size() / 2) + (cellSize % 2) - (singleRecord.size() % 2), ' ');
     return output;
 }
 
-void ShowPersons::generateSingleRecordLine(Person* singlePerson) {
+std::string ShowPersons::generateSingleRecordLine(Person* singlePerson) {
     std::string output { };
-    output = "| " + generateSingleRecord(singlePerson->getName()) + " | ";
-    output += generateSingleRecord(singlePerson->getSurname()) + " | ";
-    output += generateSingleRecord(singlePerson->getAddress()) + " | ";
-    output += generateSingleRecord(singlePerson->getPeselNumber()) + " | ";
-    output += generateSingleRecord(singlePerson->getGender()) + " | ";
-    output += generateSingleRecord(singlePerson->getGender()) + " | ";
-    output += generateSingleRecord(singlePerson->getIndexNumber()) + " | ";
-    output += generateSingleRecord(singlePerson->getSalary()) + " |\n";
-    std::cout << output;
+    output = "| " + generateSingleRecord(singlePerson->getName(), validation_->getNameSize()) + " | ";
+    output += generateSingleRecord(singlePerson->getSurname(), validation_->getSurnameSize()) + " | ";
+    output += generateSingleRecord(singlePerson->getAddress(), validation_->getAddressSize()) + " | ";
+    output += generateSingleRecord(singlePerson->getPeselNumber(), validation_->getPeselNumberSize()) + " | ";
+    output += generateSingleRecord(singlePerson->getGender(), validation_->getGenderSize()) + " | ";
+    output += generateSingleRecord(singlePerson->getIndexNumber(), validation_->getIndexNumberSize()) + " | ";
+    output += generateSingleRecord(singlePerson->getSalary(), validation_->getSalarySize()) + " |\n";
+    return output;
 }
 
 void ShowPersons::printSeparateLine() {
+    int borderAndSeparatorSize { 22 };
     int lineSize = validation_->getNameSize() + validation_->getSurnameSize() +
                        validation_->getAddressSize() + validation_->getPeselNumberSize() + 
-                       validation_->getGenderSize() + validation_->getIndexNumberSize() + validation_->getSalarySize() + 10;
+                       validation_->getGenderSize() + validation_->getIndexNumberSize() + validation_->getSalarySize() + borderAndSeparatorSize;
     std::string line { };
     line.append(lineSize, '-');
     std::cout << line << '\n';
@@ -50,8 +50,10 @@ void ShowPersons::printSeparateLine() {
 
 void ShowPersons::generateAllRecord(std::vector<std::shared_ptr<Person>>& person) {
     printSeparateLine();
+    std::string singleStringLine { };
     for (const auto & ele : person) {
-        generateSingleRecordLine(ele.get());
+        singleStringLine = generateSingleRecordLine(ele.get());
+        std::cout << singleStringLine;
         printSeparateLine();
     }
     std::cout << '\n';

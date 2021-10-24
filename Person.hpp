@@ -37,8 +37,8 @@ protected:
     std::string address_{ "NO_ADDRESS" };
     std::string peselNumber_{ "00000000000" };
     std::string gender_ { "" };
-    std::string salary_{ "NO_SALARY" };
-    std::string indexNumber_ { "NO_INDEX" };
+    std::string salary_{ "EMPTY" };
+    std::string indexNumber_ { "EMPTY" };
 
     size_t sizeNameLimit_ { 16 };
     size_t sizeSurnameLimit_ { 30 };

@@ -12,8 +12,8 @@ public:
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
 private:
-    std::string generateSingleRecord(const std::string& singleRecord);
-    void generateSingleRecordLine(Person* singlePerson);
+    std::string generateSingleRecord(const std::string& singleRecord, int cellSize);
+    std::string generateSingleRecordLine(Person* singlePerson);
     void printSeparateLine();
     void generateAllRecord(std::vector<std::shared_ptr<Person>>& person);
 
