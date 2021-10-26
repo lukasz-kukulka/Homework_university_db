@@ -38,7 +38,7 @@ void SearchPerson::searchByName(std::string nameToSearch) {
     foundPersons_.clear();
 }
 
-void SearchPerson::searchBySurname(std::string ) {
+void SearchPerson::searchBySurname(std::string surnameToSearch) {
     //TO DO
 }
 

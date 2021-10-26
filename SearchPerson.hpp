@@ -25,7 +25,7 @@ private:
     SearchMenu searchMenu(int userChoice);
 
     void searchByName(std::string nameToSearch);
-    void searchBySurname();
+    void searchBySurname(std::string surnameToSearch);
     void searchByAddress();
     void searchByPeselNumber();
 
