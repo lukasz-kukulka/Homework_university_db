@@ -4,6 +4,7 @@
 
 void SearchPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
+    auto* ptr = person->
     std::cout << "SEARCH PERSON HERE\n";
 }
 
@@ -30,4 +31,8 @@ int SearchPerson::validationUserInsertDataMenu(int userAnswer) {
 SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
     //TO DO
     return static_cast<SearchMenu>(userChoice);
+}
+
+void SearchPerson::searchByName() {
+    //TO DO
 }

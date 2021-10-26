@@ -450,42 +450,42 @@ int University::countRecord(std::string fileMane) {
     return lineNo / 8;
 }
 
-void University::printSearchMenu() {
-    std::cout << "SEARCH BY\n";
-    std::cout << "1. Surname\n";
-    std::cout << "2. PESEL number\n";
-    std::cout << "3. Back to main menu\n";
-    std::cout << "Insert your choice: ";
-}
+// void University::printSearchMenu() {
+//     std::cout << "SEARCH BY\n";
+//     std::cout << "1. Surname\n";
+//     std::cout << "2. PESEL number\n";
+//     std::cout << "3. Back to main menu\n";
+//     std::cout << "Insert your choice: ";
+// }
 
-University::MenuOption University::searchMenuStudent() {
-    int choice = 0;
-    do {
-        std::cin >> choice;
-    } while (validatingSearchAndSortMenuChoose(choice) == false);
-    if (choice == 3) {
-        return MenuOption::Back;
-    }
-    return static_cast<MenuOption>(choice + 10);
-}
+// University::MenuOption University::searchMenuStudent() {
+//     int choice = 0;
+//     do {
+//         std::cin >> choice;
+//     } while (validatingSearchAndSortMenuChoose(choice) == false);
+//     if (choice == 3) {
+//         return MenuOption::Back;
+//     }
+//     return static_cast<MenuOption>(choice + 10);
+// }
 
-void University::searchMenuEngine() {
-    MenuOption searchChoose = MenuOption::BaseMenu;
-    while (searchChoose != MenuOption::Back) {
-        printSearchMenu();
-        searchChoose = searchMenuStudent();
-        switch (searchChoose) {
-        case MenuOption::SearchBySurname: {
-            searchBySurname();
-        } break;
-        case MenuOption::SearchByPESEL: {
-            searchByPeselNumber();
-        } break;
-        default:
-            break;
-        }
-    }
-}
+// void University::searchMenuEngine() {
+//     MenuOption searchChoose = MenuOption::BaseMenu;
+//     while (searchChoose != MenuOption::Back) {
+//         printSearchMenu();
+//         searchChoose = searchMenuStudent();
+//         switch (searchChoose) {
+//         case MenuOption::SearchBySurname: {
+//             searchBySurname();
+//         } break;
+//         case MenuOption::SearchByPESEL: {
+//             searchByPeselNumber();
+//         } break;
+//         default:
+//             break;
+//         }
+//     }
+// }
 
 void University::whichPersonIs(Person* person) {
     std::shared_ptr<Person> currentlyPerson_(person);

@@ -1,5 +1,7 @@
 #pragma once
+
 #include "Command.hpp"
+
 #include <memory>
 
 class SearchPerson : public Command {
@@ -22,5 +24,9 @@ private:
     int validationUserInsertDataMenu(int userAnswer);
     SearchMenu searchMenu(int userChoice);
 
+    void searchByName();
+
+    
+    std::vector<std::shared_ptr<Person>>& foundPersons_;
     SearchMenu currentlyChoice_ { SearchMenu::NoChoice };
 };
