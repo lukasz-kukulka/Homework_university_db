@@ -1,10 +1,11 @@
 #include "SearchPerson.hpp"
 
+#include <algorithm>
 #include <iostream>
+#include <iterator>
 
 void SearchPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
-    auto* ptr = person->
     std::cout << "SEARCH PERSON HERE\n";
 }
 
@@ -33,13 +34,15 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
     return static_cast<SearchMenu>(userChoice);
 }
 
-void SearchPerson::searchByName(std::string nameToSearch) {
+void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person) {
     //TO DO
     foundPersons_.clear();
+    std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == nameToSearch; });
 }
 
 void SearchPerson::searchBySurname(std::string surnameToSearch) {
     //TO DO
+    surnameToSearch.size();
 }
 
 void SearchPerson::searchByAddress() {

@@ -24,12 +24,11 @@ private:
     int validationUserInsertDataMenu(int userAnswer);
     SearchMenu searchMenu(int userChoice);
 
-    void searchByName(std::string nameToSearch);
+    void searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchBySurname(std::string surnameToSearch);
     void searchByAddress();
     void searchByPeselNumber();
 
-    
-    std::vector<std::shared_ptr<Person>>& foundPersons_;
+    std::vector<std::shared_ptr<Person>> foundPersons_;
     SearchMenu currentlyChoice_ { SearchMenu::NoChoice };
 };
