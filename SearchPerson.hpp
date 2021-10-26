@@ -25,6 +25,7 @@ private:
     SearchMenu searchMenu(int userChoice);
 
     void searchByName();
+    void searchBySurname();
 
     
     std::vector<std::shared_ptr<Person>>& foundPersons_;

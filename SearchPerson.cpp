@@ -36,3 +36,7 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
 void SearchPerson::searchByName() {
     //TO DO
 }
+
+void SearchPerson::searchBySurname() {
+    //TO DO
+}
