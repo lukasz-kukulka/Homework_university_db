@@ -24,7 +24,7 @@ private:
     int validationUserInsertDataMenu(int userAnswer);
     SearchMenu searchMenu(int userChoice);
 
-    void searchByName();
+    void searchByName(std::string nameToSearch);
     void searchBySurname();
     void searchByAddress();
     void searchByPeselNumber();

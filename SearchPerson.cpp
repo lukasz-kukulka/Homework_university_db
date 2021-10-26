@@ -33,11 +33,12 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
     return static_cast<SearchMenu>(userChoice);
 }
 
-void SearchPerson::searchByName() {
+void SearchPerson::searchByName(std::string nameToSearch) {
     //TO DO
+    foundPersons_.clear();
 }
 
-void SearchPerson::searchBySurname() {
+void SearchPerson::searchBySurname(std::string ) {
     //TO DO
 }
 
