@@ -40,3 +40,7 @@ void SearchPerson::searchByName() {
 void SearchPerson::searchBySurname() {
     //TO DO
 }
+
+void SearchPerson::searchByAddress() {
+    //TO DO
+}
