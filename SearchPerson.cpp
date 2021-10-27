@@ -46,7 +46,8 @@ void SearchPerson::searchBySurname(std::string surnameToSearch, std::vector<std:
 }
 
 void SearchPerson::searchByAddress(std::string addressToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    //TO DO
+    foundPersons_.clear();
+    std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == addressToSearch; });
 }
 
 void SearchPerson::searchByPeselNumber() {
