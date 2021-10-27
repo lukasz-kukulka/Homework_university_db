@@ -26,7 +26,7 @@ private:
 
     void searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person);
-    void searchByAddress();
+    void searchByAddress(std::string addressToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchByPeselNumber();
     void searchByGender();
     void searchByIndexNumber();
