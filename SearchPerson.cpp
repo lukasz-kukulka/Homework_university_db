@@ -50,8 +50,9 @@ void SearchPerson::searchByAddress(std::string addressToSearch, std::vector<std:
     std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == addressToSearch; });
 }
 
-void SearchPerson::searchByPeselNumber() {
-    //TO DO
+void SearchPerson::searchByPeselNumber(std::string peselToSearch, std::vector<std::shared_ptr<Person>>& person) {
+    foundPersons_.clear();
+    std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == peselToSearch; });
 }
 
 void SearchPerson::searchByGender() {
