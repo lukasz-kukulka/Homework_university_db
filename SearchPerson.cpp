@@ -60,3 +60,7 @@ void SearchPerson::searchByGender() {
 void SearchPerson::searchByIndexNumber() {
     //TO DO
 }
+
+void SearchPerson::searchBySalary() {
+    //TO DO
+}
