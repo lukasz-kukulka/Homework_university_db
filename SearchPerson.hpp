@@ -28,6 +28,7 @@ private:
     void searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchByAddress();
     void searchByPeselNumber();
+    void searchByGender();
 
     std::vector<std::shared_ptr<Person>> foundPersons_;
     SearchMenu currentlyChoice_ { SearchMenu::NoChoice };

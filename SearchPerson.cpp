@@ -52,3 +52,7 @@ void SearchPerson::searchByAddress() {
 void SearchPerson::searchByPeselNumber() {
     //TO DO
 }
+
+void SearchPerson::searchByGender() {
+    //TO DO
+}
