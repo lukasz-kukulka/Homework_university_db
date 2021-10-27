@@ -40,9 +40,9 @@ void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::share
     std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == nameToSearch; });
 }
 
-void SearchPerson::searchBySurname(std::string surnameToSearch) {
-    //TO DO
-    surnameToSearch.size();
+void SearchPerson::searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person) {
+    foundPersons_.clear();
+    std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == surnameToSearch; });
 }
 
 void SearchPerson::searchByAddress() {
