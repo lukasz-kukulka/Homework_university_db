@@ -31,6 +31,36 @@ int SearchPerson::validationUserInsertDataMenu(int userAnswer) {
 
 SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
     //TO DO
+    ;
+    switch (static_cast<SearchMenu>(userChoice)) {
+        case SearchMenu::SearchByName : {
+            //TO DO
+        } break;
+        case SearchMenu::SearchBySurname : {
+            //TO DO
+        } break;       
+        case SearchMenu::SearchByAddress : {
+            //TO DO
+        } break; 
+        case SearchMenu::SearchByPeselNumber : {
+            //TO DO
+        } break; 
+        case SearchMenu::SearchByGender : {
+            //TO DO
+        } break; 
+        case SearchMenu::SearchByIndex : {
+            //TO DO
+        } break;         
+        case SearchMenu::SearchBySalary : {
+            //TO DO
+        } break;  
+        case SearchMenu::Back : {
+            //TO DO
+        } break; 
+        default : {
+            //TO DO
+        } break;
+    }
     return static_cast<SearchMenu>(userChoice);
 }
 

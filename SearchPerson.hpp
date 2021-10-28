@@ -14,7 +14,8 @@ public:
         SearchByPeselNumber,
         SearchByGender,
         SearchByIndex,
-        SearchBySalary
+        SearchBySalary,
+        Back
     };
     ~SearchPerson() = default;
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
