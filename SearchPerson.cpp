@@ -60,8 +60,9 @@ void SearchPerson::searchByGender(std::string genderToSearch, std::vector<std::s
     std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == genderToSearch; });
 }
 
-void SearchPerson::searchByIndexNumber() {
-    //TO DO
+void SearchPerson::searchByIndexNumber(std::string indexNumberToSearch, std::vector<std::shared_ptr<Person>>& person) {
+    foundPersons_.clear();
+    std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == indexNumberToSearch; });
 }
 
 void SearchPerson::searchBySalary() {
