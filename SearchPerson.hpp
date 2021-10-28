@@ -30,7 +30,7 @@ private:
     void searchByPeselNumber(std::string peselToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchByGender(std::string genderToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchByIndexNumber(std::string indexNumberToSearch, std::vector<std::shared_ptr<Person>>& person);
-    void searchBySalary();
+    void searchBySalary(std::string salaryToSearch, std::vector<std::shared_ptr<Person>>& person);
 
     std::vector<std::shared_ptr<Person>> foundPersons_;
     SearchMenu currentlyChoice_ { SearchMenu::NoChoice };
