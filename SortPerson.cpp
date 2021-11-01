@@ -39,25 +39,25 @@ SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     switch (userChoice) {
         case SortMenu::SortByName : {
-            // to do
+            sortByName(person);
         } break;
         case SortMenu::SortBySurname : {
-            // to do
+            sortBySurname(person);
         } break;       
         case SortMenu::SortByAddress : {
-            // to do
+            sortByAddress(person);
         } break; 
         case SortMenu::SortByPeselNumber : {
-            // to do
+            sortByPeselNumber(person);
         } break; 
         case SortMenu::SortByGender : {
-            // to do
+            sortByGender(person);
         } break; 
         case SortMenu::SortByIndex : {
-            // to do
+            sortByIndexNumber(person);
         } break;         
         case SortMenu::SortBySalary : {
-            // to do
+            sortBySalary(person);
         } break;  
         case SortMenu::Back : {
             std::cout << "BACK TO MAIN MENU\n";
