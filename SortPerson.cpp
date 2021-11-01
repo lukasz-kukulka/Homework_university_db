@@ -87,8 +87,7 @@ void SortPerson::sortByPeselNumber(std::vector<std::shared_ptr<Person>>& person)
 }
 
 void SortPerson::sortByGender(std::vector<std::shared_ptr<Person>>& person) {
-    person.size(); // delete
-    // to do
+    std::sort(begin(person), end(person), [&person](std::shared_ptr<Person> ele1, auto ele2){ return ele1->getGender() < ele2->getGender();});
 }
 
 void SortPerson::sortByIndexNumber(std::vector<std::shared_ptr<Person>>& person) {
