@@ -30,7 +30,9 @@ private:
     SaveLoadOptions userChoice();
     SaveLoadOptions saveLoadMenu(SaveLoadOptions userChoice, std::vector<std::shared_ptr<Person>>& person);
 
-    void saveToCurrentlyFile();
+    void saveToCurrentlyFile(std::vector<std::shared_ptr<Person>>& person);
+
+    void saveToNewFile(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData>validation_;
     SaveLoadOptions SaveLoadOptions_ { SaveLoadOptions::NoChoice };

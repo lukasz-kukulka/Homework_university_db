@@ -37,7 +37,7 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userCho
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     switch (userChoice) {
         case SaveLoadOptions::SaveToExist : {
-            // TO DO
+            saveToCurrentlyFile(person);
         } break;
         case SaveLoadOptions::SaveNew : {
             // TO DO
@@ -58,6 +58,10 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userCho
     return static_cast<SaveLoadOptions>(userChoice);
 }
 
-void SaveLoadFile::saveToCurrentlyFile() {
-    
+void SaveLoadFile::saveToCurrentlyFile(std::vector<std::shared_ptr<Person>>& person) {
+    person.size(); // delete
+}
+
+void SaveLoadFile::saveToNewFile(std::vector<std::shared_ptr<Person>>& person) {
+    person.size(); // delete
 }
