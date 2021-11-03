@@ -40,7 +40,7 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userCho
             saveToCurrentlyFile(person);
         } break;
         case SaveLoadOptions::SaveNew : {
-            // TO DO
+            saveToNewFile(person);
         } break;       
         case SaveLoadOptions::LoadNew : {
             // TO DO
