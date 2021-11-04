@@ -34,6 +34,8 @@ private:
 
     void saveToNewFile(std::vector<std::shared_ptr<Person>>& person);
 
+    void loadToNewVector(std::vector<std::shared_ptr<Person>>& person);
+
     std::shared_ptr<ValidationData>validation_;
     SaveLoadOptions SaveLoadOptions_ { SaveLoadOptions::NoChoice };
 };
