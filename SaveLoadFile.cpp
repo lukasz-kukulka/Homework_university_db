@@ -43,7 +43,7 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userCho
             saveToNewFile(person);
         } break;       
         case SaveLoadOptions::LoadNew : {
-            // TO DO
+            loadToNewVector(person);
         } break; 
         case SaveLoadOptions::LoadToExist : {
             // TO DO
