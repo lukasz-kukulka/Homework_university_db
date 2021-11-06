@@ -2,6 +2,10 @@
 
 #include <iostream>
 
+ShowPersons::ShowPersons()
+{
+}
+
 ShowPersons::ShowPersons(std::shared_ptr<ValidationData> validation) 
     : validation_(validation)
 {

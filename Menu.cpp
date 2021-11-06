@@ -26,7 +26,7 @@ void Menu::printMenu() {
     std::cout << " --------------------- \n";
     std::cout << "|  STUDENTS DATABASE  |\n";
     std::cout << " --------------------- \n";
-    std::cout << ++menuSize_ << ". Add personTEST\n";
+    std::cout << ++menuSize_ << ". Add person\n";
     std::cout << ++menuSize_ << ". Show all persons\n";
     std::cout << ++menuSize_ << ". Search persons \n";
     std::cout << ++menuSize_ << ". Sort persons \n";

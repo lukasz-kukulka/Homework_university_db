@@ -22,6 +22,7 @@ public:
 
 private:
     int printSearchMenu();
+    void printSearchResult();
     int validationUserInsertDataMenu(int userAnswer);
     SearchMenu searchMenu(int userChoice);
 

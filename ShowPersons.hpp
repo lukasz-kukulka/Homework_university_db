@@ -7,6 +7,7 @@
 
 class ShowPersons : public Command {
 public:
+    ShowPersons();
     ShowPersons(std::shared_ptr<ValidationData> validation);
     ShowPersons(std::vector<std::shared_ptr<Person>>& person);
     ~ShowPersons() = default;

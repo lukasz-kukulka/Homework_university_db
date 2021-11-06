@@ -30,8 +30,6 @@ int SearchPerson::validationUserInsertDataMenu(int userAnswer) {
 }
 
 SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
-    //TO DO
-    ;
     switch (static_cast<SearchMenu>(userChoice)) {
         case SearchMenu::SearchByName : {
             //TO DO
