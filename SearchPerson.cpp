@@ -40,7 +40,7 @@ std::string SearchPerson::insertSearchData(std::string searchChoice) {
     do {
         std::cout << "Please insert " << searchChoice << " to search.\n";
         std::getline(std::cin, userAnswer);
-    } while (true); //TO DO
+    } while (validation_->validationIsAlpabet(userAnswer) == false);
     return userAnswer;
 }
 
