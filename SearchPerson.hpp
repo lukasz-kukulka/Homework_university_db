@@ -22,9 +22,10 @@ public:
 
 private:
     int printSearchMenu();
-    void printSearchResult();
     int validationUserInsertDataMenu(int userAnswer);
+    std::string insertSearchData(std::string searchChoice);
     SearchMenu searchMenu(int userChoice);
+    void printSearchResult();
 
     void searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person);

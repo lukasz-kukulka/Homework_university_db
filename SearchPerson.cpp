@@ -30,6 +30,11 @@ int SearchPerson::validationUserInsertDataMenu(int userAnswer) {
     return userAnswer;
 }
 
+std::string SearchPerson::insertSearchData(std::string searchChoice) {
+    //TO DO
+    return "";
+}
+
 SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
     switch (static_cast<SearchMenu>(userChoice)) {
         case SearchMenu::SearchByName : {
