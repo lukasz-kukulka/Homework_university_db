@@ -26,7 +26,7 @@ private:
     int printSearchMenu();
     int validationUserInsertDataMenu(int userAnswer);
     std::string insertSearchData(std::string searchChoice);
-    SearchMenu searchMenu(int userChoice);
+    SearchMenu searchMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person);
     void printSearchResult();
 
     void searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person);

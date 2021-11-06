@@ -44,10 +44,10 @@ std::string SearchPerson::insertSearchData(std::string searchChoice) {
     return userAnswer;
 }
 
-SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
+SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person) {
     switch (static_cast<SearchMenu>(userChoice)) {
         case SearchMenu::SearchByName : {
-            //TO DO
+            searchByName(insertSearchData("name"), person);
         } break;
         case SearchMenu::SearchBySurname : {
             //TO DO
