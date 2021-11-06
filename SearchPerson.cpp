@@ -68,7 +68,7 @@ void SearchPerson::printSearchResult() {
     if (foundPersons_.size() == 0) {
         std::cout << "Record not found\n";
     } else {
-        //showPerson.operator();
+        showPerson.operator()(foundPersons_);
     }
 }
 
