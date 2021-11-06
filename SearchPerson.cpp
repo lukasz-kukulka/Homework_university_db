@@ -31,8 +31,12 @@ int SearchPerson::validationUserInsertDataMenu(int userAnswer) {
 }
 
 std::string SearchPerson::insertSearchData(std::string searchChoice) {
-    //TO DO
-    return "";
+    std::string userAnswer;
+    do {
+        std::cout << "Please insert " << searchChoice << " to search.\n";
+        std::getline(std::cin, userAnswer);
+    } while (true); //TO DO
+    return userAnswer;
 }
 
 SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
