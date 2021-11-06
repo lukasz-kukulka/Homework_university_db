@@ -1,4 +1,5 @@
 #include "SearchPerson.hpp"
+#include "ShowPersons.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -62,8 +63,16 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice) {
     return static_cast<SearchMenu>(userChoice);
 }
 
+void SearchPerson::printSearchResult() {
+    ShowPersons showPerson;
+    if (foundPersons_.size() == 0) {
+        std::cout << "Record not found\n";
+    } else {
+        //showPerson.operator();
+    }
+}
+
 void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    //TO DO
     foundPersons_.clear();
     std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == nameToSearch; });
 }
