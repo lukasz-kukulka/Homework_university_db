@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Command.hpp"
+#include "ValidationData.hpp"
 
 #include <memory>
 
@@ -17,6 +18,7 @@ public:
         SearchBySalary,
         Back
     };
+    SearchPerson(std::shared_ptr<ValidationData> validation);
     ~SearchPerson() = default;
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
@@ -35,6 +37,7 @@ private:
     void searchByIndexNumber(std::string indexNumberToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchBySalary(std::string salaryToSearch, std::vector<std::shared_ptr<Person>>& person);
 
+    std::shared_ptr<ValidationData>validation_;
     std::vector<std::shared_ptr<Person>> foundPersons_;
     SearchMenu currentlyChoice_ { SearchMenu::NoChoice };
 };

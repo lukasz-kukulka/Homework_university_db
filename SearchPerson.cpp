@@ -5,6 +5,11 @@
 #include <iostream>
 #include <iterator>
 
+SearchPerson::SearchPerson(std::shared_ptr<ValidationData> validation)
+    : validation_(validation)
+{
+}
+
 void SearchPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
     std::cout << "SEARCH PERSON HERE\n";

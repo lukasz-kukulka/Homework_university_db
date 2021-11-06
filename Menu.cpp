@@ -57,7 +57,7 @@ void Menu::switchMenu() {
             command_ = std::make_unique<ShowPersons>(valid_);
         } break;
         case MenuOptions::SearchPerson: {
-            command_ = std::make_unique<SearchPerson>();
+            command_ = std::make_unique<SearchPerson>(valid_);
         } break;
         case MenuOptions::SortPerson: {
             command_ = std::make_unique<SortPerson>();
