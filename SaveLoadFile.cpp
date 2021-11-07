@@ -69,3 +69,7 @@ void SaveLoadFile::saveToNewFile(std::vector<std::shared_ptr<Person>>& person) {
 void SaveLoadFile::loadToNewVector(std::vector<std::shared_ptr<Person>>& person) {
     person.size(); // delete
 }
+
+void SaveLoadFile::loadToExistVector(std::vector<std::shared_ptr<Person>>& person) {
+    person.size(); // delete
+}
