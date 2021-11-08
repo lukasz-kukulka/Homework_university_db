@@ -68,10 +68,10 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<st
             searchBySalary(insertSearchData("salary"), person);
         } break;  
         case SearchMenu::Back : {
-            //TO DO
+            std::cout << "BACK TO MAIN MENU\n";
         } break; 
         default : {
-            //TO DO
+            std::cout << "ERROR ... WRONG ANSWER(SWITCH)\n";
         } break;
     }
     return static_cast<SearchMenu>(userChoice);
