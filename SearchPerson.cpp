@@ -65,7 +65,7 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<st
             searchByIndexNumber(insertSearchData("index"), person);
         } break;         
         case SearchMenu::SearchBySalary : {
-            //TO DO
+            searchBySalary(insertSearchData("salary"), person);
         } break;  
         case SearchMenu::Back : {
             //TO DO
