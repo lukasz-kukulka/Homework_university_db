@@ -50,7 +50,7 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<st
             searchByName(insertSearchData("name"), person);
         } break;
         case SearchMenu::SearchBySurname : {
-            //TO DO
+            searchBySurname(insertSearchData("surname"), person);
         } break;       
         case SearchMenu::SearchByAddress : {
             //TO DO
