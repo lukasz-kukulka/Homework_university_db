@@ -59,7 +59,7 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<st
             searchByPeselNumber(insertSearchData("PESEL number"), person);
         } break; 
         case SearchMenu::SearchByGender : {
-            //TO DO
+            searchByGender(insertSearchData("gender"), person);
         } break; 
         case SearchMenu::SearchByIndex : {
             //TO DO
