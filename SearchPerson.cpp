@@ -62,7 +62,7 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<st
             searchByGender(insertSearchData("gender"), person);
         } break; 
         case SearchMenu::SearchByIndex : {
-            //TO DO
+            searchByIndexNumber(insertSearchData("index"), person);
         } break;         
         case SearchMenu::SearchBySalary : {
             //TO DO
