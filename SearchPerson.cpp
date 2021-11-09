@@ -81,6 +81,7 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<st
 
 void SearchPerson::printSearchResult() {
     ShowPersons showPerson;
+    
     if (foundPersons_.size() == 0) {
         std::cout << "Record not found\n";
     } else {
