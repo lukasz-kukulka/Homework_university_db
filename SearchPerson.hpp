@@ -1,9 +1,11 @@
 #pragma once
 
 #include "Command.hpp"
+#include "Person.hpp"
 #include "ValidationData.hpp"
 
 #include <memory>
+#include <utility>
 
 class SearchPerson : public Command {
 public:
@@ -28,6 +30,7 @@ private:
     std::string insertSearchData(std::string searchChoice);
     SearchMenu searchMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person);
     void printSearchResult();
+    void deleteRecord();
 
     void searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person);
@@ -38,6 +41,6 @@ private:
     void searchBySalary(std::string salaryToSearch, std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData>validation_;
-    std::vector<std::shared_ptr<Person>> foundPersons_;
+    std::vector<std::pair<std::shared_ptr<Person>>, std::unique_ptr<Person>> foundPersons_;
     SearchMenu currentlyChoice_ { SearchMenu::NoChoice };
 };

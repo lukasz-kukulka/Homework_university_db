@@ -13,6 +13,8 @@ SearchPerson::SearchPerson(std::shared_ptr<ValidationData> validation)
 void SearchPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
     std::cout << "SEARCH PERSON HERE\n";
+    // add validation
+    // add delete records
 }
 
 int SearchPerson::printSearchMenu() {
