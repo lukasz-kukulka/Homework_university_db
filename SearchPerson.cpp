@@ -91,18 +91,25 @@ void SearchPerson::printSearchResult() {
 }
 
 void SearchPerson::deleteRecord() {
-    
+    printDeleteInterface();
+    auto userAnswer = deleteInterfaceUserAnswer();
+    if (userAnswer == "D" || userAnswer == "d") {
+        // to do
+    } else {
+        // to do
+    }
 }
 
 void SearchPerson::printDeleteInterface() {
     printSearchResult();
     std::cout << "If you wanna delete some record press D, to back press B\n";
-
 } 
 
 std::string SearchPerson::deleteInterfaceUserAnswer() {
     std::string userAnswer { };
-    std::cin >> userAnswer;
+    do {
+        std::cin >> userAnswer;
+    } while (validationDeleteInterfaceUserAnswer(userAnswer) == false);
     return userAnswer;
 }
 
