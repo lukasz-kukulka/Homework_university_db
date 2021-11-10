@@ -32,7 +32,8 @@ private:
     void printSearchResult();
     void deleteRecord();
     void printDeleteInterface();
-    int deleteInterfaceUserAnswer();
+    std::string deleteInterfaceUserAnswer();
+    bool validationDeleteInterfaceUserAnswer();
 
     void searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person);

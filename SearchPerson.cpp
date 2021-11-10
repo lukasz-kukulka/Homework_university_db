@@ -91,7 +91,7 @@ void SearchPerson::printSearchResult() {
 }
 
 void SearchPerson::deleteRecord() {
-
+    
 }
 
 void SearchPerson::printDeleteInterface() {
@@ -100,8 +100,14 @@ void SearchPerson::printDeleteInterface() {
 
 } 
 
-int SearchPerson::deleteInterfaceUserAnswer() {
-    
+std::string SearchPerson::deleteInterfaceUserAnswer() {
+    std::string userAnswer { };
+    std::cin >> userAnswer;
+    return userAnswer;
+}
+
+bool SearchPerson::validationDeleteInterfaceUserAnswer() {
+
 }
 
 void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person) {
