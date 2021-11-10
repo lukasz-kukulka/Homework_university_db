@@ -13,7 +13,6 @@ SearchPerson::SearchPerson(std::shared_ptr<ValidationData> validation)
 void SearchPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
     std::cout << "SEARCH PERSON HERE\n";
-    // add validation
     // add delete records
 }
 
@@ -33,7 +32,10 @@ int SearchPerson::printSearchMenu() {
 }
 
 int SearchPerson::validationUserInsertDataMenu(int userAnswer) {
-    //TO DO
+    auto menuSize = printSearchMenu();
+    while (validation_->isCorrectMenuChoice(userAnswer, menuSize) == false) {
+        std::cout << "Wrong answer please put number between 1 and " << menuSize << '\n';
+    }
     return userAnswer;
 }
 
@@ -81,7 +83,6 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<st
 
 void SearchPerson::printSearchResult() {
     ShowPersons showPerson;
-    
     if (foundPersons_.size() == 0) {
         std::cout << "Record not found\n";
     } else {
