@@ -149,6 +149,10 @@ void SearchPerson::searchByIndexNumber(std::string indexNumberToSearch, std::vec
 }
 
 void SearchPerson::searchBySalary(std::string salaryToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersons_.clear();
-    std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == salaryToSearch; });
+    foundPersonsPlusPoiter_.clear();
+    for (size_t i = 0; i < person.size(); i++) {
+        if (person[i]->getSalary() == salaryToSearch) {
+            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+        }
+    }
 }
