@@ -113,8 +113,12 @@ void SearchPerson::searchBySurname(std::string surnameToSearch, std::vector<std:
 }
 
 void SearchPerson::searchByAddress(std::string addressToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersons_.clear();
-    std::copy_if(begin(person), end(person), std::back_inserter(foundPersons_), [&](auto ele){ return ele->getName() == addressToSearch; });
+    foundPersonsPlusPoiter_.clear();
+    for (size_t i = 0; i < person.size(); i++) {
+        if (person[i]->getAddress() == addressToSearch) {
+            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+        }
+    }
 }
 
 void SearchPerson::searchByPeselNumber(std::string peselToSearch, std::vector<std::shared_ptr<Person>>& person) {
