@@ -96,7 +96,7 @@ void SearchPerson::deleteRecord() {
 
 void SearchPerson::printDeleteInterface() {
     printSearchResult();
-    std::cout << "If you wanna delete some record press D\n";
+    std::cout << "If you wanna delete some record press D, to back press B\n";
 
 } 
 
@@ -106,8 +106,12 @@ std::string SearchPerson::deleteInterfaceUserAnswer() {
     return userAnswer;
 }
 
-bool SearchPerson::validationDeleteInterfaceUserAnswer() {
-
+bool SearchPerson::validationDeleteInterfaceUserAnswer(std::string userAnswer) {
+    if (userAnswer == "D" || userAnswer == "d" || userAnswer == "B" || userAnswer == "b") {
+        return true;
+    }
+    std::cout << "Wrong answer please insert (B)ack or (D)elete\n";
+    return false
 }
 
 void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person) {
