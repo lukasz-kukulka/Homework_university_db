@@ -97,8 +97,12 @@ void SearchPerson::deleteRecord() {
 void SearchPerson::printDeleteInterface() {
     printSearchResult();
     std::cout << "If you wanna delete some record press D\n";
-    
+
 } 
+
+int SearchPerson::deleteInterfaceUserAnswer() {
+    
+}
 
 void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person) {
     foundPersonsPlusPoiter_.clear();
