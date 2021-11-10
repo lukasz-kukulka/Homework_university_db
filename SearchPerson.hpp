@@ -31,6 +31,7 @@ private:
     SearchMenu searchMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person);
     void printSearchResult();
     void deleteRecord();
+    void printDeleteInterface();
 
     void searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person);
