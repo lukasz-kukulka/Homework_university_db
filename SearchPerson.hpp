@@ -42,6 +42,6 @@ private:
 
     std::shared_ptr<ValidationData>validation_;
     std::vector<std::shared_ptr<Person>>foundPersons_;
-    std::vector<std::pair<std::shared_ptr<Person>, std::unique_ptr<Person>>> foundPersonsPlusPoiter_;
+    std::vector<std::pair<std::shared_ptr<Person>, size_t>> foundPersonsPlusPoiter_;
     SearchMenu currentlyChoice_ { SearchMenu::NoChoice };
 };
