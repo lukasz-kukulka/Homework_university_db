@@ -101,7 +101,7 @@ void SearchPerson::deleteRecords() {
 }
 
 void SearchPerson::deleteSingleRecord() {
-
+    
 }
 
 void SearchPerson::printDeleteInterface() {
