@@ -90,14 +90,18 @@ void SearchPerson::printSearchResult() {
     }
 }
 
-void SearchPerson::deleteRecord() {
+void SearchPerson::deleteRecords() {
     printDeleteInterface();
     auto userAnswer = deleteInterfaceUserAnswer();
     if (userAnswer == "D" || userAnswer == "d") {
-        // to do
+        deleteSingleRecord();
     } else {
         // to do
     }
+}
+
+void SearchPerson::deleteSingleRecord() {
+
 }
 
 void SearchPerson::printDeleteInterface() {

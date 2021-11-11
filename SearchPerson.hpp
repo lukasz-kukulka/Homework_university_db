@@ -30,7 +30,8 @@ private:
     std::string insertSearchData(std::string searchChoice);
     SearchMenu searchMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person);
     void printSearchResult();
-    void deleteRecord();
+    void deleteRecords();
+    void deleteSingleRecord();
     void printDeleteInterface();
     std::string deleteInterfaceUserAnswer();
     bool validationDeleteInterfaceUserAnswer(std::string userAnswer );
