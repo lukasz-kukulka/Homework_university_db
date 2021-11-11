@@ -90,18 +90,18 @@ void SearchPerson::printSearchResult() {
     }
 }
 
-void SearchPerson::deleteRecords() {
+void SearchPerson::deleteRecords(std::vector<std::shared_ptr<Person>>& person) {
     printDeleteInterface();
     auto userAnswer = deleteInterfaceUserAnswer();
     if (userAnswer == "D" || userAnswer == "d") {
-        deleteSingleRecord();
+        deleteSingleRecord(person);
     } else {
         // to do
     }
 }
 
-void SearchPerson::deleteSingleRecord() {
-    
+void SearchPerson::deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person) {
+
 }
 
 void SearchPerson::printDeleteInterface() {
