@@ -94,14 +94,14 @@ void SearchPerson::deleteRecords(std::vector<std::shared_ptr<Person>>& person) {
     printDeleteInterface();
     auto userAnswer = deleteInterfaceUserAnswer();
     if (userAnswer == "D" || userAnswer == "d") {
-        deleteSingleRecord(person);
+        //deleteSingleRecord(person, foundPersons_.);
     } else {
         // to do
     }
 }
 
-void SearchPerson::deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person) {
-
+void SearchPerson::deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person, int indexNumber) {
+    std::swap(person[indexNumber], person.back());
 }
 
 void SearchPerson::printDeleteInterface() {
@@ -122,7 +122,7 @@ bool SearchPerson::validationDeleteInterfaceUserAnswer(std::string userAnswer) {
         return true;
     }
     std::cout << "Wrong answer please insert (B)ack or (D)elete\n";
-    return false
+    return false;
 }
 
 void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person) {
