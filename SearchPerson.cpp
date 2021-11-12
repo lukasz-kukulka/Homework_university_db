@@ -126,68 +126,73 @@ bool SearchPerson::validationDeleteInterfaceUserAnswer(std::string userAnswer) {
 }
 
 int SearchPerson::insertIndexNumberToDelete() {
-    
+    std::cout << "Please insert index number to delete\n";
+    int userAnswer { };
+    do {
+        std::cin >> userAnswer;
+    } while (validation_->isCorrectMenuChoice(userAnswer, foundPersonsPlusIndexNumber_.size()));
+    return userAnswer;
 }
 
 void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersonsPlusPoiter_.clear();
+    foundPersonsPlusIndexNumber_.clear();
     for (size_t i = 0; i < person.size(); i++) {
         if (person[i]->getName() == nameToSearch) {
-            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+            foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
 }
 
 void SearchPerson::searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersonsPlusPoiter_.clear();
+    foundPersonsPlusIndexNumber_.clear();
     for (size_t i = 0; i < person.size(); i++) {
         if (person[i]->getSurname() == surnameToSearch) {
-            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+            foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
 }
 
 void SearchPerson::searchByAddress(std::string addressToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersonsPlusPoiter_.clear();
+    foundPersonsPlusIndexNumber_.clear();
     for (size_t i = 0; i < person.size(); i++) {
         if (person[i]->getAddress() == addressToSearch) {
-            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+            foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
 }
 
 void SearchPerson::searchByPeselNumber(std::string peselToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersonsPlusPoiter_.clear();
+    foundPersonsPlusIndexNumber_.clear();
     for (size_t i = 0; i < person.size(); i++) {
         if (person[i]->getPeselNumber() == peselToSearch) {
-            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+            foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
 }
 
 void SearchPerson::searchByGender(std::string genderToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersonsPlusPoiter_.clear();
+    foundPersonsPlusIndexNumber_.clear();
     for (size_t i = 0; i < person.size(); i++) {
         if (person[i]->getGender() == genderToSearch) {
-            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+            foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
 }
 
 void SearchPerson::searchByIndexNumber(std::string indexNumberToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersonsPlusPoiter_.clear();
+    foundPersonsPlusIndexNumber_.clear();
     for (size_t i = 0; i < person.size(); i++) {
         if (person[i]->getIndexNumber() == indexNumberToSearch) {
-            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+            foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
 }
 
 void SearchPerson::searchBySalary(std::string salaryToSearch, std::vector<std::shared_ptr<Person>>& person) {
-    foundPersonsPlusPoiter_.clear();
+    foundPersonsPlusIndexNumber_.clear();
     for (size_t i = 0; i < person.size(); i++) {
         if (person[i]->getSalary() == salaryToSearch) {
-            foundPersonsPlusPoiter_.push_back(std::make_pair(person[i], i));
+            foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
 }
