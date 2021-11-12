@@ -125,6 +125,10 @@ bool SearchPerson::validationDeleteInterfaceUserAnswer(std::string userAnswer) {
     return false;
 }
 
+int SearchPerson::insertIndexNumberToDelete() {
+    
+}
+
 void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person) {
     foundPersonsPlusPoiter_.clear();
     for (size_t i = 0; i < person.size(); i++) {
