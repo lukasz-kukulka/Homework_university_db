@@ -31,7 +31,7 @@ private:
     SearchMenu searchMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person);
     void printSearchResult();
     void deleteRecords(std::vector<std::shared_ptr<Person>>& person);
-    void deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person, int indexNumber);
+    void deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person, size_t indexNumber);
     void printDeleteInterface();
     std::string deleteInterfaceUserAnswer();
     bool validationDeleteInterfaceUserAnswer(std::string userAnswer);

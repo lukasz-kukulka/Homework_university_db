@@ -1,4 +1,5 @@
 #include "SearchPerson.hpp"
+
 #include "ShowPersons.hpp"
 
 #include <algorithm>
@@ -103,8 +104,9 @@ void SearchPerson::deleteRecords(std::vector<std::shared_ptr<Person>>& person) {
 
 }
 
-void SearchPerson::deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person, int indexNumber) {
+void SearchPerson::deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person, size_t indexNumber) {
     std::swap(person[indexNumber], person.back());
+    person.erase(person.end() - 1);
 }
 
 void SearchPerson::printDeleteInterface() {
