@@ -39,10 +39,11 @@ int SearchPerson::userMenuOptionChoice() {
     return userAnswer;
 }
 
-int SearchPerson::validationUserInsertDataMenu(int userAnswer) {
+int SearchPerson::validationUserInsertDataMenu() {
+    int userAnswer { };
     auto menuSize = printSearchMenu();
     do {
-        userMenuOptionChoice();
+        userAnswer = userMenuOptionChoice();
     } while (validation_->isCorrectMenuChoice(userAnswer, menuSize) == false);
     return userAnswer;
 }
