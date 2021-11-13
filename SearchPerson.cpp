@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iostream>
 #include <iterator>
+#include <limits>
 
 SearchPerson::SearchPerson(std::shared_ptr<ValidationData> validation)
     : validation_(validation)
@@ -57,6 +58,7 @@ std::string SearchPerson::insertSearchData(std::string searchChoice) {
 }
 
 SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person) {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     switch (static_cast<SearchMenu>(userChoice)) {
         case SearchMenu::SearchByName : {
             searchByName(insertSearchData("name"), person);
@@ -89,9 +91,19 @@ SearchPerson::SearchMenu SearchPerson::searchMenu(int userChoice, std::vector<st
     return static_cast<SearchMenu>(userChoice);
 }
 
+void SearchPerson::copyFoundPersonsForPrint() {
+    foundPersons_.clear();
+    if (foundPersonsPlusIndexNumber_.size() > foundPersons_.capacity()) {
+       foundPersons_.reserve(foundPersonsPlusIndexNumber_.size() - foundPersons_.capacity()); 
+    }
+    for (const auto & ele : foundPersonsPlusIndexNumber_) {
+        foundPersons_.push_back(ele.first);
+    }
+}
+
 void SearchPerson::printSearchResult() {
     ShowPersons showPerson;
-    if (foundPersons_.size() == 0) {
+    if (foundPersonsPlusIndexNumber_.size() == 0) {
         std::cout << "Record not found\n";
     } else {
         showPerson.operator()(foundPersons_);

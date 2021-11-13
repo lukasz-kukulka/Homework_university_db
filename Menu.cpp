@@ -39,8 +39,8 @@ void Menu::printMenu() {
 void Menu::switchMenu() {
     MenuOptions menuOption { };
     person_.push_back(std::make_shared<Student>(Student("TEST NAME", "TEST SURNAME", "TEST ADDRESS 22", "92041966814", "male", "1111111111")));// only for tests
-    person_.push_back(std::make_shared<Student>(Student("name_", "surname_", "address_", "61012648927", "gend", "2323234543"))); // only for tests
-    person_.push_back(std::make_shared<Student>(Student("namer_", "surrname_", "addrettss_", "96072048497", "female", "2323237543"))); // only for tests
+    person_.push_back(std::make_shared<Student>(Student("name", "surname", "address", "61012648927", "gend", "2323234543"))); // only for tests
+    person_.push_back(std::make_shared<Student>(Student("namer", "surrname", "addrettss_", "96072048497", "female", "2323237543"))); // only for tests
     while (true) {
         printMenu();
         int choice = 0;
