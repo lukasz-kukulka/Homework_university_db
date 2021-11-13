@@ -49,24 +49,24 @@ std::string ShowPersons::generateSingleRecordLine(Person* singlePerson, size_t p
     return output;
 }
 
-void ShowPersons::printSeparateLine() {
-    int borderAndSeparatorSize { 22 };
+void ShowPersons::printSeparateLine(int tableSize) {
+    int bordersAndSeparatorsSize { 23 };
     int lineSize = validation_->getNameSize() + validation_->getSurnameSize() +
                        validation_->getAddressSize() + validation_->getPeselNumberSize() + 
-                       validation_->getGenderSize() + validation_->getIndexNumberSize() + validation_->getSalarySize() + borderAndSeparatorSize;
+                       validation_->getGenderSize() + validation_->getIndexNumberSize() + validation_->getSalarySize() + bordersAndSeparatorsSize + tableSize;
     std::string line { };
     line.append(lineSize, '-');
     std::cout << line << '\n';
 }
 
 void ShowPersons::generateAllRecord(std::vector<std::shared_ptr<Person>>& person) {
-    printSeparateLine();
+    printSeparateLine(static_cast<int>(person.size()));
     std::string singleStringLine { };
     auto personIndex { 0 };
     for (const auto & ele : person) {
         singleStringLine = generateSingleRecordLine(ele.get(), ++personIndex);
         std::cout << singleStringLine;
-        printSeparateLine();
+        printSeparateLine(static_cast<int>(person.size()));
     }
     std::cout << '\n';
 }

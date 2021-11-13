@@ -126,6 +126,7 @@ void SearchPerson::deleteRecords(std::vector<std::shared_ptr<Person>>& person) {
 void SearchPerson::deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person, size_t indexNumber) {
     std::swap(person[indexNumber], person.back());
     person.erase(person.end() - 1);
+    std::cout << "Deleted record was successful\n";
 }
 
 void SearchPerson::printDeleteInterface() {

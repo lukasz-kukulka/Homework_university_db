@@ -16,7 +16,7 @@ public:
 private:
     std::string generateSingleRecord(const std::string& singleRecord, int cellSize);
     std::string generateSingleRecordLine(Person* singlePerson, size_t personIndex);
-    void printSeparateLine();
+    void printSeparateLine(int tableSize);
     void generateAllRecord(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData>validation_;
