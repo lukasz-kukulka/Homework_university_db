@@ -35,7 +35,7 @@ private:
     void printDeleteInterface();
     std::string deleteInterfaceUserAnswer();
     bool validationDeleteInterfaceUserAnswer(std::string userAnswer);
-    int insertIndexNumberToDelete();
+    size_t insertIndexNumberToDelete();
 
     void searchByName(std::string nameToSearch, std::vector<std::shared_ptr<Person>>& person);
     void searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person);

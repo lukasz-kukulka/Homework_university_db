@@ -91,13 +91,16 @@ void SearchPerson::printSearchResult() {
 }
 
 void SearchPerson::deleteRecords(std::vector<std::shared_ptr<Person>>& person) {
-    printDeleteInterface();
-    auto userAnswer = deleteInterfaceUserAnswer();
-    if (userAnswer == "D" || userAnswer == "d") {
-        //deleteSingleRecord(person, foundPersons_.);
-    } else {
-        // to do
+    if (foundPersonsPlusIndexNumber_.size() > 0) {
+        printDeleteInterface();
+        auto userAnswer = deleteInterfaceUserAnswer();
+        if (userAnswer == "D" || userAnswer == "d") {
+            deleteSingleRecord(person, insertIndexNumberToDelete());
+        } else {
+            std::cout << "BACK TO MAIN MENU\n";
+        }
     }
+
 }
 
 void SearchPerson::deleteSingleRecord(std::vector<std::shared_ptr<Person>>& person, int indexNumber) {
@@ -125,9 +128,9 @@ bool SearchPerson::validationDeleteInterfaceUserAnswer(std::string userAnswer) {
     return false;
 }
 
-int SearchPerson::insertIndexNumberToDelete() {
+size_t SearchPerson::insertIndexNumberToDelete() {
     std::cout << "Please insert index number to delete\n";
-    int userAnswer { };
+    size_t userAnswer { };
     do {
         std::cin >> userAnswer;
     } while (validation_->isCorrectMenuChoice(userAnswer, foundPersonsPlusIndexNumber_.size()));
