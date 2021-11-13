@@ -14,7 +14,7 @@ SearchPerson::SearchPerson(std::shared_ptr<ValidationData> validation)
 void SearchPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
     std::cout << "SEARCH PERSON HERE\n";
-    
+    validationUserInsertDataMenu();
 }
 
 int SearchPerson::printSearchMenu() {
@@ -28,7 +28,6 @@ int SearchPerson::printSearchMenu() {
     std::cout << ++optionNumber << " Index Number\n";
     std::cout << ++optionNumber << " Salary\n";
     std::cout << ++optionNumber << " Back to main menu\n";
-    std::cout << "Insert your choice: ";
     return optionNumber;
 }
 
@@ -153,6 +152,7 @@ void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::share
             foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
+    deleteRecords(person);
 }
 
 void SearchPerson::searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person) {
@@ -162,6 +162,7 @@ void SearchPerson::searchBySurname(std::string surnameToSearch, std::vector<std:
             foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
+    deleteRecords(person);
 }
 
 void SearchPerson::searchByAddress(std::string addressToSearch, std::vector<std::shared_ptr<Person>>& person) {
@@ -171,6 +172,7 @@ void SearchPerson::searchByAddress(std::string addressToSearch, std::vector<std:
             foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
+    deleteRecords(person);
 }
 
 void SearchPerson::searchByPeselNumber(std::string peselToSearch, std::vector<std::shared_ptr<Person>>& person) {
@@ -180,6 +182,7 @@ void SearchPerson::searchByPeselNumber(std::string peselToSearch, std::vector<st
             foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
+    deleteRecords(person);
 }
 
 void SearchPerson::searchByGender(std::string genderToSearch, std::vector<std::shared_ptr<Person>>& person) {
@@ -189,6 +192,7 @@ void SearchPerson::searchByGender(std::string genderToSearch, std::vector<std::s
             foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
+    deleteRecords(person);
 }
 
 void SearchPerson::searchByIndexNumber(std::string indexNumberToSearch, std::vector<std::shared_ptr<Person>>& person) {
@@ -198,6 +202,7 @@ void SearchPerson::searchByIndexNumber(std::string indexNumberToSearch, std::vec
             foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
+    deleteRecords(person);
 }
 
 void SearchPerson::searchBySalary(std::string salaryToSearch, std::vector<std::shared_ptr<Person>>& person) {
@@ -207,4 +212,5 @@ void SearchPerson::searchBySalary(std::string salaryToSearch, std::vector<std::s
             foundPersonsPlusIndexNumber_.push_back(std::make_pair(person[i], i));
         }
     }
+    deleteRecords(person);
 }
