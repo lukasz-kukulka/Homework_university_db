@@ -35,9 +35,11 @@ std::string ShowPersons::generateSingleRecord(const std::string& singleRecord, i
     return output;
 }
 
-std::string ShowPersons::generateSingleRecordLine(Person* singlePerson) {
+std::string ShowPersons::generateSingleRecordLine(Person* singlePerson, size_t personIndex) {
     std::string output { };
-    output = "| " + generateSingleRecord(singlePerson->getName(), validation_->getNameSize()) + " | ";
+
+    output = "| " + generateSingleRecord(std::to_string(static_cast<int>(personIndex)), static_cast<int>(std::to_string(personIndex).size())) + " | ";
+    output += generateSingleRecord(singlePerson->getName(), validation_->getNameSize()) + " | ";
     output += generateSingleRecord(singlePerson->getSurname(), validation_->getSurnameSize()) + " | ";
     output += generateSingleRecord(singlePerson->getAddress(), validation_->getAddressSize()) + " | ";
     output += generateSingleRecord(singlePerson->getPeselNumber(), validation_->getPeselNumberSize()) + " | ";
@@ -60,8 +62,9 @@ void ShowPersons::printSeparateLine() {
 void ShowPersons::generateAllRecord(std::vector<std::shared_ptr<Person>>& person) {
     printSeparateLine();
     std::string singleStringLine { };
+    auto personIndex { 0 };
     for (const auto & ele : person) {
-        singleStringLine = generateSingleRecordLine(ele.get());
+        singleStringLine = generateSingleRecordLine(ele.get(), ++personIndex);
         std::cout << singleStringLine;
         printSeparateLine();
     }

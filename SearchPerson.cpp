@@ -106,6 +106,7 @@ void SearchPerson::printSearchResult() {
     if (foundPersonsPlusIndexNumber_.size() == 0) {
         std::cout << "Record not found\n";
     } else {
+        copyFoundPersonsForPrint();
         showPerson.operator()(foundPersons_);
     }
 }
@@ -153,7 +154,7 @@ size_t SearchPerson::insertIndexNumberToDelete() {
     size_t userAnswer { };
     do {
         std::cin >> userAnswer;
-    } while (validation_->isCorrectMenuChoice(userAnswer, foundPersonsPlusIndexNumber_.size()));
+    } while (validation_->isCorrectMenuChoice(userAnswer, foundPersonsPlusIndexNumber_.size()) == false);
     return userAnswer;
 }
 
@@ -165,7 +166,6 @@ void SearchPerson::searchByName(std::string nameToSearch, std::vector<std::share
         }
     }
     deleteRecords(person);
-    std::cout << "ERROR CHECK\n\n\n";
 }
 
 void SearchPerson::searchBySurname(std::string surnameToSearch, std::vector<std::shared_ptr<Person>>& person) {
