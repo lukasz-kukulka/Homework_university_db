@@ -8,5 +8,5 @@ public:
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
 private:
-    
+    int printSortMenu();
 };
