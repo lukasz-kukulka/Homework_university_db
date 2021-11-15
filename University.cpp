@@ -94,15 +94,15 @@ void University::applicationStart() {
 //     return true;
 // }
 
-void University::deleteRecordByIndexNumber() {
-    printDeletePersonByIndexNumber();
-    insertStudentIndexNumber();
-    deleteByIndexNumber(indexNumber_);
-}
+// void University::deleteRecordByIndexNumber() {
+//     printDeletePersonByIndexNumber();
+//     insertStudentIndexNumber();
+//     deleteByIndexNumber(indexNumber_);
+// }
 
-void University::printDeletePersonByIndexNumber() {
-    std::cout << "Please insert index number what you wanna delete\n";
-}
+// void University::printDeletePersonByIndexNumber() {
+//     std::cout << "Please insert index number what you wanna delete\n";
+// }
 
 // void University::addNewPerson() {
 //     selectPerson();
@@ -436,19 +436,19 @@ void University::assignmentPersonValue(size_t userChoicePerson) {
 //     std::cout << "Database of students is empty please load form file or add new students\n";
 // }
 
-int University::countRecord(std::string fileMane) { 
-    int lineNo = 0;
-    std::string line;
-    file_.open(fileMane, std::ios::in);
-    if (file_.good() == false) {
-        std::cout << "File not exist\n";
-    }
-    while (getline(file_, line)) {
-        lineNo++;
-    }
-    file_.close();
-    return lineNo / 8;
-}
+// int University::countRecord(std::string fileMane) { 
+//     int lineNo = 0;
+//     std::string line;
+//     file_.open(fileMane, std::ios::in);
+//     if (file_.good() == false) {
+//         std::cout << "File not exist\n";
+//     }
+//     while (getline(file_, line)) {
+//         lineNo++;
+//     }
+//     file_.close();
+//     return lineNo / 8;
+// }
 
 // void University::printSearchMenu() {
 //     std::cout << "SEARCH BY\n";

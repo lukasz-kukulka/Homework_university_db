@@ -24,7 +24,6 @@ void ShowPersons::operator()(std::vector<std::shared_ptr<Person>>& person) {
     } else {
         std::cout << "DATABASE IS EMPTY\n\n";
     }
-    
 }
 
 std::string ShowPersons::generateSingleRecord(const std::string& singleRecord, int cellSize) {
