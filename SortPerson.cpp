@@ -20,3 +20,7 @@ int SortPerson::printSortMenu() {
     std::cout << ++optionNumber << " Back to main menu\n";
     return optionNumber;
 }
+
+SortPerson::SortMenu SortPerson::userChoice() {
+
+}
