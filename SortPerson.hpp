@@ -20,5 +20,7 @@ public:
 
 private:
     int printSortMenu();
+    SortMenu userChoice();
+
     SortMenu userChoiceMenuOption { SortMenu::NoChoice };
 };

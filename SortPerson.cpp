@@ -22,5 +22,11 @@ int SortPerson::printSortMenu() {
 }
 
 SortPerson::SortMenu SortPerson::userChoice() {
-
+    auto menuSize = printSortMenu();
+    int userAnswer { };
+    std::cout << "Please insert your how you wanna sort database\n";
+    do {
+        std::cin >> userAnswer;
+    } while (true); // to do: validation 
+    // to do: menu
 }
