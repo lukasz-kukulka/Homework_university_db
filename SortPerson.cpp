@@ -30,3 +30,7 @@ SortPerson::SortMenu SortPerson::userChoice() {
     } while (true); // to do: validation 
     // to do: menu
 }
+
+SortPerson::SortMenu SortPerson::sortMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person) {
+    
+}
