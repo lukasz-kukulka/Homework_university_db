@@ -32,5 +32,35 @@ SortPerson::SortMenu SortPerson::userChoice() {
 }
 
 SortPerson::SortMenu SortPerson::sortMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person) {
-    
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    switch (static_cast<SortMenu>(userChoice)) {
+        case SortMenu::SortByName : {
+            // to do
+        } break;
+        case SortMenu::SortBySurname : {
+            // to do
+        } break;       
+        case SortMenu::SortByAddress : {
+            // to do
+        } break; 
+        case SortMenu::SortByPeselNumber : {
+            // to do
+        } break; 
+        case SortMenu::SortByGender : {
+            // to do
+        } break; 
+        case SortMenu::SortByIndex : {
+            // to do
+        } break;         
+        case SortMenu::SortBySalary : {
+            // to do
+        } break;  
+        case SortMenu::Back : {
+            std::cout << "BACK TO MAIN MENU\n";
+        } break; 
+        default : {
+            std::cout << "ERROR ... WRONG ANSWER(SWITCH)\n";
+        } break;
+    }
+    return static_cast<SortMenu>(userChoice);
 }
