@@ -32,6 +32,7 @@ private:
     void sortByPeselNumber(std::vector<std::shared_ptr<Person>>& person);
     void sortByGender(std::vector<std::shared_ptr<Person>>& person);
     void sortByIndexNumber(std::vector<std::shared_ptr<Person>>& person);
+    void sortBySalary(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData> validation_;
     SortMenu userChoiceMenuOption_ { SortMenu::NoChoice };

@@ -98,3 +98,8 @@ void SortPerson::sortByIndexNumber(std::vector<std::shared_ptr<Person>>& person)
     person.size(); // delete
     // to do
 }
+
+void SortPerson::sortBySalary(std::vector<std::shared_ptr<Person>>& person) {
+    person.size(); // delete
+    // to do
+}
