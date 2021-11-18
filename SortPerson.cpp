@@ -71,12 +71,20 @@ SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::
 
 void SortPerson::sortByName(std::vector<std::shared_ptr<Person>>& person) {
     person.size(); // delete
+    // to do
 }
 
 void SortPerson::sortBySurname(std::vector<std::shared_ptr<Person>>& person) {
     person.size(); // delete
+    // to do
 }
 
 void SortPerson::sortByAddress(std::vector<std::shared_ptr<Person>>& person) {
     person.size(); // delete
+    // to do
+}
+
+void SortPerson::sortByPeselNumber(std::vector<std::shared_ptr<Person>>& person) {
+    person.size(); // delete
+    // to do
 }
