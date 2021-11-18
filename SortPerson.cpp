@@ -1,5 +1,6 @@
 #include "SortPerson.hpp"
 
+#include <algorithm>
 #include <iostream>
 
 SortPerson::SortPerson(std::shared_ptr<ValidationData> validation) 
@@ -70,8 +71,7 @@ SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::
 }
 
 void SortPerson::sortByName(std::vector<std::shared_ptr<Person>>& person) {
-    person.size(); // delete
-    // to do
+    std::sort(begin(person), end(person), [&person](std::shared_ptr<Person> ele1, auto ele2){ return ele1->getName() < ele2->getName();});
 }
 
 void SortPerson::sortBySurname(std::vector<std::shared_ptr<Person>>& person) {
