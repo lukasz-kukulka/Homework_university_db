@@ -1,9 +1,13 @@
 #pragma once
 #include "Command.hpp"
+#include "ValidationData.hpp"
+
 #include <memory>
 
 class SortPerson : public Command {
 public:
+    SortPerson(std::shared_ptr<ValidationData> validation);
+    ~SortPerson() = default;
     enum class SortMenu{
         NoChoice,
         SortByName,
@@ -15,7 +19,6 @@ public:
         SortBySalary,
         Back
     };
-    ~SortPerson() = default;
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
 private:
@@ -23,5 +26,6 @@ private:
     SortMenu userChoice();
     SortMenu sortMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person);
 
-    SortMenu userChoiceMenuOption { SortMenu::NoChoice };
+    std::shared_ptr<ValidationData> validation_;
+    SortMenu userChoiceMenuOption_ { SortMenu::NoChoice };
 };

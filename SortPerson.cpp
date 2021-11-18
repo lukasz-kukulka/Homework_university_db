@@ -2,6 +2,9 @@
 
 #include <iostream>
 
+SortPerson::SortPerson(std::shared_ptr<ValidationData> validation) 
+    : validation_(validation) {}
+
 void SortPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
     person.size();
     std::cout << "SORT -- PERSON HERE\n";
