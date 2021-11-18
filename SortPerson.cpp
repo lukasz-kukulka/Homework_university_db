@@ -65,9 +65,10 @@ SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::
             std::cout << "ERROR ... WRONG ANSWER(SWITCH)\n";
         } break;
     }
+    person.size(); // delete
     return static_cast<SortMenu>(userChoice);
 }
 
 void SortPerson::sortByName(std::vector<std::shared_ptr<Person>>& person) {
-    person.size();
+    person.size(); // delete
 }
