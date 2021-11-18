@@ -7,7 +7,6 @@ SortPerson::SortPerson(std::shared_ptr<ValidationData> validation)
 
 void SortPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
     sortMenu(userChoice(), person);
-    person.size();
     std::cout << "SORT -- PERSON HERE\n";
 }
 
@@ -67,4 +66,8 @@ SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::
         } break;
     }
     return static_cast<SortMenu>(userChoice);
+}
+
+void SortPerson::sortByName(std::vector<std::shared_ptr<Person>>& person) {
+    person.size();
 }
