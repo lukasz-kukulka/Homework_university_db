@@ -27,6 +27,7 @@ private:
     SortMenu sortMenu(SortMenu userChoice, std::vector<std::shared_ptr<Person>>& person);
 
     void sortByName(std::vector<std::shared_ptr<Person>>& person);
+    void sortBySurname(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData> validation_;
     SortMenu userChoiceMenuOption_ { SortMenu::NoChoice };

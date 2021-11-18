@@ -72,3 +72,7 @@ SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::
 void SortPerson::sortByName(std::vector<std::shared_ptr<Person>>& person) {
     person.size(); // delete
 }
+
+void SortPerson::sortBySurname(std::vector<std::shared_ptr<Person>>& person) {
+    person.size(); // delete
+}
