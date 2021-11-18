@@ -30,13 +30,13 @@ SortPerson::SortMenu SortPerson::userChoice() {
     std::cout << "Please insert your how you wanna sort database\n";
     do {
         std::cin >> userAnswer;
-    } while (true); // to do: validation 
-    // to do: menu
+    } while (validation_->isCorrectMenuChoice(userAnswer, menuSize));
+    return static_cast<SortMenu>(userAnswer);
 }
 
-SortPerson::SortMenu SortPerson::sortMenu(int userChoice, std::vector<std::shared_ptr<Person>>& person) {
+SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::shared_ptr<Person>>& person) {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    switch (static_cast<SortMenu>(userChoice)) {
+    switch (userChoice) {
         case SortMenu::SortByName : {
             // to do
         } break;
