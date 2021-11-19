@@ -75,8 +75,7 @@ void SortPerson::sortByName(std::vector<std::shared_ptr<Person>>& person) {
 }
 
 void SortPerson::sortBySurname(std::vector<std::shared_ptr<Person>>& person) {
-    person.size(); // delete
-    // to do
+    std::sort(begin(person), end(person), [&person](std::shared_ptr<Person> ele1, auto ele2){ return ele1->getSurname() < ele2->getSurname();});
 }
 
 void SortPerson::sortByAddress(std::vector<std::shared_ptr<Person>>& person) {
