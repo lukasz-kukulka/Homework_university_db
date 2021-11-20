@@ -25,41 +25,41 @@ int SortPerson::printSortMenu() {
     return optionNumber;
 }
 
-SortPerson::SortMenu SortPerson::userChoice() {
+SortPerson::SortMenuOption SortPerson::userChoice() {
     auto menuSize = printSortMenu();
     int userAnswer { };
     std::cout << "Please insert your how you wanna sort database\n";
     do {
         std::cin >> userAnswer;
     } while (validation_->isCorrectMenuChoice(userAnswer, menuSize));
-    return static_cast<SortMenu>(userAnswer);
+    return static_cast<SortMenuOption>(userAnswer);
 }
 
-SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::shared_ptr<Person>>& person) {
+SortPerson::SortMenuOption SortPerson::sortMenu(SortMenuOption userChoice, std::vector<std::shared_ptr<Person>>& person) {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     switch (userChoice) {
-        case SortMenu::SortByName : {
+        case SortMenuOption::SortByName : {
             sortByName(person);
         } break;
-        case SortMenu::SortBySurname : {
+        case SortMenuOption::SortBySurname : {
             sortBySurname(person);
         } break;       
-        case SortMenu::SortByAddress : {
+        case SortMenuOption::SortByAddress : {
             sortByAddress(person);
         } break; 
-        case SortMenu::SortByPeselNumber : {
+        case SortMenuOption::SortByPeselNumber : {
             sortByPeselNumber(person);
         } break; 
-        case SortMenu::SortByGender : {
+        case SortMenuOption::SortByGender : {
             sortByGender(person);
         } break; 
-        case SortMenu::SortByIndex : {
+        case SortMenuOption::SortByIndex : {
             sortByIndexNumber(person);
         } break;         
-        case SortMenu::SortBySalary : {
+        case SortMenuOption::SortBySalary : {
             sortBySalary(person);
         } break;  
-        case SortMenu::Back : {
+        case SortMenuOption::Back : {
             std::cout << "BACK TO MAIN MENU\n";
         } break; 
         default : {
@@ -67,7 +67,7 @@ SortPerson::SortMenu SortPerson::sortMenu(SortMenu userChoice, std::vector<std::
         } break;
     }
     person.size(); // delete
-    return static_cast<SortMenu>(userChoice);
+    return static_cast<SortMenuOption>(userChoice);
 }
 
 void SortPerson::sortByName(std::vector<std::shared_ptr<Person>>& person) {

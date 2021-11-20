@@ -8,7 +8,7 @@ class SortPerson : public Command {
 public:
     SortPerson(std::shared_ptr<ValidationData> validation);
     ~SortPerson() = default;
-    enum class SortMenu{
+    enum class SortMenuOption{
         NoChoice,
         SortByName,
         SortBySurname,
@@ -23,8 +23,8 @@ public:
 
 private:
     int printSortMenu();
-    SortMenu userChoice();
-    SortMenu sortMenu(SortMenu userChoice, std::vector<std::shared_ptr<Person>>& person);
+    SortMenuOption userChoice();
+    SortMenuOption sortMenu(SortMenuOption userChoice, std::vector<std::shared_ptr<Person>>& person);
 
     void sortByName(std::vector<std::shared_ptr<Person>>& person);
     void sortBySurname(std::vector<std::shared_ptr<Person>>& person);
@@ -35,5 +35,5 @@ private:
     void sortBySalary(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData> validation_;
-    SortMenu userChoiceMenuOption_ { SortMenu::NoChoice };
+    SortMenuOption userChoiceMenuOption_ { SortMenuOption::NoChoice };
 };
