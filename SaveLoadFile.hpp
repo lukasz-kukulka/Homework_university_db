@@ -21,5 +21,7 @@ public:
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
 private:
+    int printSaveLoadMenu();
+
     std::shared_ptr<ValidationData>validation_;
 };
