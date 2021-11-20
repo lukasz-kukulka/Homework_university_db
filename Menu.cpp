@@ -63,7 +63,7 @@ void Menu::switchMenu() {
             command_ = std::make_unique<SortPerson>(valid_);
         } break;
         case MenuOptions::SaveLoadFile: {
-            command_ = std::make_unique<SaveLoadFile>();
+            command_ = std::make_unique<SaveLoadFile>(valid_);
         } break;
         case MenuOptions::GenerateData: {
             command_ = std::make_unique<GenerateData>();

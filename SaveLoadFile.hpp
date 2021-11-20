@@ -1,9 +1,14 @@
 #pragma once
+
 #include "Command.hpp"
+#include "ValidationData.hpp"
+
 #include <memory>
 
 class SaveLoadFile : public Command {
 public:
+    SaveLoadFile(std::shared_ptr<ValidationData> validation);
+    ~SaveLoadFile() = default;
     enum class SaveLoadOptions {
         NoChoice,
         SaveToExist,
@@ -13,8 +18,8 @@ public:
         Back
     };
 
-    ~SaveLoadFile() = default;
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
 
 private:
+    std::shared_ptr<ValidationData>validation_;
 };

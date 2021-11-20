@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Command.hpp"
 #include "ValidationData.hpp"
 
