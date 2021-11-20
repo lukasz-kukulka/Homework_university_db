@@ -22,6 +22,8 @@ public:
 
 private:
     int printSaveLoadMenu();
+    SaveLoadOptions userChoice();
 
     std::shared_ptr<ValidationData>validation_;
+    SaveLoadOptions SaveLoadOptions_ { SaveLoadOptions::NoChoice };
 };

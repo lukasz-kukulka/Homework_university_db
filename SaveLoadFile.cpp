@@ -22,3 +22,7 @@ int SaveLoadFile::printSaveLoadMenu() {
     std::cout << ++optionNumber << ". Back\n";
     return optionNumber;
 }
+
+SaveLoadFile::SaveLoadOptions SaveLoadFile::userChoice() {
+    return SaveLoadOptions::NoChoice;
+}
