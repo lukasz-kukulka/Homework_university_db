@@ -33,7 +33,7 @@ SortPerson::SortMenuOption SortPerson::userChoice() {
     std::cout << "Please insert your how you wanna sort database\n";
     do {
         std::cin >> userAnswer;
-    } while (validation_->isCorrectMenuChoice(userAnswer, menuSize));
+    } while (validation_->isCorrectMenuChoice(userAnswer, menuSize) == false);
     return static_cast<SortMenuOption>(userAnswer);
 }
 
