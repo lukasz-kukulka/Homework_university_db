@@ -14,5 +14,11 @@ void SaveLoadFile::operator()(std::vector<std::shared_ptr<Person>>& person) {
 }
 
 int SaveLoadFile::printSaveLoadMenu() {
-    return 0;
+    int optionNumber = 0;
+    std::cout << ++optionNumber << ". Save(add to currently file new records (delete duplicate)\n";
+    std::cout << ++optionNumber << ". Save to new file \n";
+    std::cout << ++optionNumber << ". Clear existing data and load new data from file \n";
+    std::cout << ++optionNumber << ". Load from file and add records to existing file (delete duplicate)\n";
+    std::cout << ++optionNumber << ". Back\n";
+    return optionNumber;
 }
