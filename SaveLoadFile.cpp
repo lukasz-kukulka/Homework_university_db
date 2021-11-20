@@ -26,7 +26,7 @@ int SaveLoadFile::printSaveLoadMenu() {
 SaveLoadFile::SaveLoadOptions SaveLoadFile::userChoice() {
     auto menuSize = printSaveLoadMenu();
     int userAnswer { };
-    std::cout << "Please insert your how you wanna sort database\n";
+    std::cout << "Please insert your how you wanna do\n";
     do {
         std::cin >> userAnswer;
     } while (validation_->isCorrectMenuChoice(userAnswer, menuSize) == false);
