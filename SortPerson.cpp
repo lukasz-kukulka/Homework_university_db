@@ -7,8 +7,10 @@ SortPerson::SortPerson(std::shared_ptr<ValidationData> validation)
     : validation_(validation) {}
 
 void SortPerson::operator()(std::vector<std::shared_ptr<Person>>& person) {
-    sortMenu(userChoice(), person);
     std::cout << "SORT -- PERSON HERE\n";
+    while (sortMenu(userChoice(), person) == SortMenuOption::Back) {
+
+    }
 }
 
 int SortPerson::printSortMenu() {
@@ -66,7 +68,6 @@ SortPerson::SortMenuOption SortPerson::sortMenu(SortMenuOption userChoice, std::
             std::cout << "ERROR ... WRONG ANSWER(SWITCH)\n";
         } break;
     }
-    person.size(); // delete
     return static_cast<SortMenuOption>(userChoice);
 }
 
