@@ -24,5 +24,11 @@ int SaveLoadFile::printSaveLoadMenu() {
 }
 
 SaveLoadFile::SaveLoadOptions SaveLoadFile::userChoice() {
+    // to do
+    return SaveLoadOptions::NoChoice;
+}
+
+SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userChoice, std::vector<std::shared_ptr<Person>>& person) {
+    // to do
     return SaveLoadOptions::NoChoice;
 }
