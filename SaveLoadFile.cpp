@@ -24,8 +24,13 @@ int SaveLoadFile::printSaveLoadMenu() {
 }
 
 SaveLoadFile::SaveLoadOptions SaveLoadFile::userChoice() {
-    // to do
-    return SaveLoadOptions::NoChoice;
+    auto menuSize = printSaveLoadMenu();
+    int userAnswer { };
+    std::cout << "Please insert your how you wanna sort database\n";
+    do {
+        std::cin >> userAnswer;
+    } while (validation_->isCorrectMenuChoice(userAnswer, menuSize) == false);
+    return static_cast<SaveLoadOptions>(userAnswer);
 }
 
 SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userChoice, std::vector<std::shared_ptr<Person>>& person) {
