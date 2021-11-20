@@ -34,6 +34,26 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::userChoice() {
 }
 
 SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userChoice, std::vector<std::shared_ptr<Person>>& person) {
-    // to do
-    return SaveLoadOptions::NoChoice;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    switch (userChoice) {
+        case SaveLoadOptions::SaveToExist : {
+            // TO DO
+        } break;
+        case SaveLoadOptions::SaveNew : {
+            // TO DO
+        } break;       
+        case SaveLoadOptions::LoadNew : {
+            // TO DO
+        } break; 
+        case SaveLoadOptions::LoadToExist : {
+            // TO DO
+        } break; 
+        case SaveLoadOptions::Back : {
+            std::cout << "BACK TO MAIN MENU\n";
+        } break; 
+        default : {
+            std::cout << "ERROR ... WRONG ANSWER(SWITCH)\n";
+        } break;
+    }
+    return static_cast<SaveLoadOptions>(userChoice);
 }
