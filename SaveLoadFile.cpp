@@ -46,7 +46,7 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userCho
             loadToNewVector(person);
         } break; 
         case SaveLoadOptions::LoadToExist : {
-            // TO DO
+            loadToExistVector(person);
         } break; 
         case SaveLoadOptions::Back : {
             std::cout << "BACK TO MAIN MENU\n";
