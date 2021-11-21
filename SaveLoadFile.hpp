@@ -3,7 +3,12 @@
 #include "Command.hpp"
 #include "ValidationData.hpp"
 
+#include <fstream> 
 #include <memory>
+
+namespace {
+    constexpr char DEFAULT_FILE_NAME[] { "default.txt" };
+}
 
 class SaveLoadFile : public Command {
 public:
@@ -27,4 +32,5 @@ private:
 
     std::shared_ptr<ValidationData>validation_;
     SaveLoadOptions SaveLoadOptions_ { SaveLoadOptions::NoChoice };
+    std::ifstream file_;
 };
