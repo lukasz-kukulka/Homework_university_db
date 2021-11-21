@@ -5,7 +5,7 @@
 SaveLoadFile::SaveLoadFile(std::shared_ptr<ValidationData> validation)
     : validation_(validation) 
 {
-    
+    file_{ filename, std::ios::binary };
 }
 
 void SaveLoadFile::operator()(std::vector<std::shared_ptr<Person>>& person) {

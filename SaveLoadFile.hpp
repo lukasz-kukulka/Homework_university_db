@@ -32,5 +32,5 @@ private:
 
     std::shared_ptr<ValidationData>validation_;
     SaveLoadOptions SaveLoadOptions_ { SaveLoadOptions::NoChoice };
-    std::ifstream file_;
+    std::ifstream file_("text.txt");
 };
