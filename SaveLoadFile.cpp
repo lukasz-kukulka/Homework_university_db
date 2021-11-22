@@ -59,7 +59,7 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userCho
 }
 
 void SaveLoadFile::saveToCurrentlyFile(std::vector<std::shared_ptr<Person>>& person) {
-    person.size(); // delete
+    saveMultiRecordsToFile(person);
 }
 
 void SaveLoadFile::saveToNewFile(std::vector<std::shared_ptr<Person>>& person) {
@@ -98,4 +98,8 @@ void SaveLoadFile::saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& 
         saveSingleRecordToFile(person, i, file);
     }
     std::cout << "Data saved in file\n";
+}
+
+void SaveLoadFile::deleteDuplicate(std::vector<std::shared_ptr<Person>>& person) {
+
 }
