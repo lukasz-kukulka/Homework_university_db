@@ -59,10 +59,7 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userCho
 }
 
 void SaveLoadFile::saveToCurrentlyFile(std::vector<std::shared_ptr<Person>>& person) {
-    std::fstream file(DEFAULT_FILE_NAME, file.in | file.app);
-    if (!file.is_open()) {
-        std::cout << "ERROR... CAN'T READ FILE\n";
-    }
+    person.size(); // delete
 }
 
 void SaveLoadFile::saveToNewFile(std::vector<std::shared_ptr<Person>>& person) {
@@ -87,6 +84,18 @@ void SaveLoadFile::saveSingleRecordToFile(std::vector<std::shared_ptr<Person>>& 
     file << person[indexNumber]->getSalary() << "\n\n";
 }
 
-void SaveLoadFile::saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& person, std::string file) {
-
+void SaveLoadFile::saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& person, std::string fileName) {
+    std::fstream file;
+    if (fileName == DEFAULT_FILE_NAME) {
+        file.open(fileName + ".txt", file.in | file.app);
+    } else {
+        file.open(fileName, file.in | file.trunc);
+    }
+    if (!file.is_open()) {
+        std::cout << "ERROR IN saveSingleRecordToFile() function\n";
+    }
+    for (int i = 0; i < static_cast<int>(person.size()); i++) {
+        saveSingleRecordToFile(person, i, file);
+    }
+    std::cout << "Data saved in file\n";
 }

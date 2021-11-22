@@ -5,9 +5,10 @@
 
 #include <fstream> 
 #include <memory>
+#include <string>
 
 namespace {
-    constexpr char DEFAULT_FILE_NAME[] { "default.txt" };
+    constexpr char DEFAULT_FILE_NAME[] { "default" };
 }
 
 class SaveLoadFile : public Command {
@@ -39,7 +40,7 @@ private:
     void loadToExistVector(std::vector<std::shared_ptr<Person>>& person);
 
     void saveSingleRecordToFile(std::vector<std::shared_ptr<Person>>& person, int indexNumber, std::fstream& file);
-    void saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& person, std::string file = DEFAULT_FILE_NAME);
+    void saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& person, std::string fileName = DEFAULT_FILE_NAME);
 
     std::shared_ptr<ValidationData>validation_;
     SaveLoadOptions SaveLoadOptions_ { SaveLoadOptions::NoChoice };
