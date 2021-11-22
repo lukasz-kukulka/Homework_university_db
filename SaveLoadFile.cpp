@@ -77,6 +77,12 @@ void SaveLoadFile::loadToExistVector(std::vector<std::shared_ptr<Person>>& perso
     person.size(); // delete
 }
 
-void SaveLoadFile::saveSingleRecordToFile(int indexNumber, std::fstream file) {
-
+void SaveLoadFile::saveSingleRecordToFile(std::vector<std::shared_ptr<Person>>& person, int indexNumber, std::fstream file) {
+    file << "[Person nr. : " << indexNumber + 1 << "]\n";
+    file << person[indexNumber]->getName() << "\n";
+    file << person[indexNumber]->getSurname() << "\n";
+    file << person[indexNumber]->getAddress() << "\n";
+    file << person[indexNumber]->getPeselNumber() << "\n";
+    file << person[indexNumber]->getIndexNumber() << "\n";
+    file << person[indexNumber]->getSalary() << "\n\n";
 }
