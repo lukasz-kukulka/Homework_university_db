@@ -38,6 +38,8 @@ private:
 
     void loadToExistVector(std::vector<std::shared_ptr<Person>>& person);
 
+    void saveSingleRecordToFile(int indexNumber, std::fstream file);
+
     std::shared_ptr<ValidationData>validation_;
     SaveLoadOptions SaveLoadOptions_ { SaveLoadOptions::NoChoice };
 };

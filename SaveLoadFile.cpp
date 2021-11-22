@@ -41,7 +41,7 @@ SaveLoadFile::SaveLoadOptions SaveLoadFile::saveLoadMenu(SaveLoadOptions userCho
         } break;
         case SaveLoadOptions::SaveNew : {
             saveToNewFile(person);
-        } break;       
+        } break;
         case SaveLoadOptions::LoadNew : {
             loadToNewVector(person);
         } break; 
@@ -75,4 +75,8 @@ void SaveLoadFile::loadToNewVector(std::vector<std::shared_ptr<Person>>& person)
 
 void SaveLoadFile::loadToExistVector(std::vector<std::shared_ptr<Person>>& person) {
     person.size(); // delete
+}
+
+void SaveLoadFile::saveSingleRecordToFile(int indexNumber, std::fstream file) {
+
 }
