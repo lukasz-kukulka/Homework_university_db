@@ -42,6 +42,9 @@ private:
 
     void saveSingleRecordToFile(std::vector<std::shared_ptr<Person>>& person, int indexNumber, std::fstream& file);
     void saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& person, std::string fileName = DEFAULT_FILE_NAME);
+
+    void loadSingleRecordFromFile(std::vector<std::shared_ptr<Person>>& person, int lineNumber, std::fstream& file);
+
     void deleteDuplicate(std::vector<std::shared_ptr<Person>>& person);
 
     std::shared_ptr<ValidationData>validation_;

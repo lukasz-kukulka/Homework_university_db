@@ -100,6 +100,10 @@ void SaveLoadFile::saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& 
     std::cout << "Data saved in " << fileName << '\n';
 }
 
+void SaveLoadFile::loadSingleRecordFromFile(std::vector<std::shared_ptr<Person>>& person, int lineNumber, std::fstream& file) {
+    
+}
+
 void SaveLoadFile::deleteDuplicate(std::vector<std::shared_ptr<Person>>& person) {
     std::vector<Person>tempPersons();
     person.size();
