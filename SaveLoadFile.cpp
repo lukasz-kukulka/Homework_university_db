@@ -101,5 +101,6 @@ void SaveLoadFile::saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& 
 }
 
 void SaveLoadFile::deleteDuplicate(std::vector<std::shared_ptr<Person>>& person) {
+    std::vector<Person>tempPersons();
     person.size();
 }
