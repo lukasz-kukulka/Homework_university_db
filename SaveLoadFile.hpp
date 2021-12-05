@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AddPerson.hpp"
 #include "Command.hpp"
 #include "ValidationData.hpp"
 
@@ -45,4 +46,5 @@ private:
 
     std::shared_ptr<ValidationData>validation_;
     SaveLoadOptions SaveLoadOptions_ { SaveLoadOptions::NoChoice };
+    AddPerson addPerson;
 };

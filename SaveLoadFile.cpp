@@ -97,9 +97,9 @@ void SaveLoadFile::saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& 
     for (int i = 0; i < static_cast<int>(person.size()); i++) {
         saveSingleRecordToFile(person, i, file);
     }
-    std::cout << "Data saved in file\n";
+    std::cout << "Data saved in " << fileName << '\n';
 }
 
 void SaveLoadFile::deleteDuplicate(std::vector<std::shared_ptr<Person>>& person) {
-
+    person.size();
 }

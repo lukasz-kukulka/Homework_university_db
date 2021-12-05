@@ -11,6 +11,7 @@ using ansvers = ValidationData::YesNoConfirm;
 
 class AddPerson : public Command {
 public:
+    AddPerson() = default;
     AddPerson(std::shared_ptr<ValidationData> validation);
     ~AddPerson() = default;
     void operator()(std::vector<std::shared_ptr<Person>>& person) override;
