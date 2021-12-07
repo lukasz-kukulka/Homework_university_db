@@ -44,6 +44,7 @@ private:
     void saveMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& person, std::string fileName = DEFAULT_FILE_NAME);
 
     void loadSingleRecordFromFile(std::vector<std::shared_ptr<Person>>& person, int lineNumber, std::fstream& file);
+    void loadMultiRecordsToFile(std::vector<std::shared_ptr<Person>>& person, std::string fileName);
 
     void deleteDuplicate(std::vector<std::shared_ptr<Person>>& person);
 
